@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
+  ["better-escape.nvim"] = {
+    loaded = true,
+    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
+    url = "https://github.com/edr3x/better-escape.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/catppuccin",

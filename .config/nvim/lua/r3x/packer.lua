@@ -1,6 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+    use 'edr3x/better-escape.nvim'
     use 'nvim-lua/plenary.nvim'
     use 'jiangmiao/auto-pairs'
     use 'folke/tokyonight.nvim'

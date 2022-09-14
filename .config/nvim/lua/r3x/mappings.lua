@@ -3,11 +3,9 @@ local options = { noremap = true, silent = true }
 
 vim.g.mapleader = ','
 
-map('i', 'jk', '<ESC>', options)
-map('i', 'kj', '<ESC>', options)
-map('n', 'ntt', ':NvimTreeToggle<CR>', options)
 map('n', 'ff', ':Telescope find_files<cr>', options)
 
+map('n', '<leader>ntt', ':NvimTreeToggle<CR>', options)
 map('n', '<leader>sd', ':Telescope flutter commands<cr>', options)
 map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", options)
 map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", options)
