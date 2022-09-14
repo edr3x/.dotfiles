@@ -1,0 +1,20 @@
+{
+    "trycatch": {
+        "prefix": "trycatch",
+        "body": [
+            "try {",
+            "   $1",
+            "} catch (e:any){",
+            "   console.error(e.message)",
+            "}"
+        ],
+        "description": "try catch block"
+    },
+    "console.log": {
+        "prefix": "cl",
+        "body": [
+            "console.log(\"$1\")"
+        ],
+        "description": "console log"
+    }
+}

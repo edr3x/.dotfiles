@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <property name="dark-mode" type="bool" value="true"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="icon-size" type="uint" value="18"/>
+      <property name="size" type="uint" value="26"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="1"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="8"/>
+        <value type="int" value="11"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="14"/>
+      </property>
+      <property name="mode" type="uint" value="0"/>
+      <property name="enter-opacity" type="uint" value="100"/>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-2" type="string" value="tasklist">
+      <property name="grouping" type="uint" value="1"/>
+    </property>
+    <property name="plugin-3" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager"/>
+    <property name="plugin-5" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="discord"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="discord1"/>
+      </property>
+    </property>
+    <property name="plugin-9" type="string" value="power-manager-plugin"/>
+    <property name="plugin-10" type="string" value="notification-plugin"/>
+    <property name="plugin-11" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-12" type="string" value="clock">
+      <property name="digital-format" type="string" value="%a %_d %b, %I:%M %p"/>
+      <property name="mode" type="uint" value="2"/>
+    </property>
+    <property name="plugin-13" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-14" type="string" value="actions"/>
+    <property name="plugin-8" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance10326;chromium.instance10682;chromium.instance1184;chromium.instance12061;chromium.instance12568;chromium.instance13375;chromium.instance13542;chromium.instance17288;chromium.instance1861;chromium.instance2177;chromium.instance22117;chromium.instance22532;chromium.instance2292;chromium.instance23274;chromium.instance2336;chromium.instance2498;chromium.instance26099;chromium.instance26176;chromium.instance27256;chromium.instance2841;chromium.instance30490;chromium.instance3120;chromium.instance36588;chromium.instance37160;chromium.instance37462;chromium.instance41601;chromium.instance46026;chromium.instance4795;chromium.instance50930;chromium.instance51164;chromium.instance53823;chromium.instance5471;chromium.instance6297;chromium.instance6367;chromium.instance6559;firefox.instance1002;firefox.instance1015;firefox.instance1045;firefox.instance10507;firefox.instance1053;firefox.instance1153;firefox.instance1194;firefox.instance1200;firefox.instance1228;firefox.instance1287;firefox.instance1296;firefox.instance1320;firefox.instance1354;firefox.instance1653;firefox.instance1716;firefox.instance1958;firefox.instance22525;firefox.instance2385;firefox.instance2412;firefox.instance2430;firefox.instance33534;firefox.instance40415;firefox.instance45012;firefox.instance47072;firefox.instance6110;firefox.instance6370;firefox.instance6978;firefox.instance859;firefox.instance864;firefox.instance870;firefox.instance907;firefox.instance935;firefox.instance948;firefox.instance951;firefox.instance957;firefox.instance965;firefox.instance975;firefox.instance988"/>
+    </property>
+    <property name="plugin-1" type="string" value="whiskermenu"/>
+  </property>
+</channel>
