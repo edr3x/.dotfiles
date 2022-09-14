@@ -1,3 +1,3 @@
 # Dotfiles
 
-personal dotfiles
+loading.sh
