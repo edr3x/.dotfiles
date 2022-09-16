@@ -4,8 +4,10 @@ local options = { noremap = true, silent = true }
 vim.g.mapleader = ','
 
 map('n', 'ff', ':Telescope find_files<cr>', options)
-
 map('n', '<leader>ntt', ':NvimTreeToggle<CR>', options)
+
+map('x', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', options)
+map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
 map('n', '<leader>sd', ':Telescope flutter commands<cr>', options)
 map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", options)
 map("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", options)
