@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 alias vi="nvim"
 alias vim="nvim"
 alias e="thunar ."
+alias x="exit"
 alias ls="ls --color=auto"
 
 PATH="$PATH:/home/r3x/.dev/flutter/bin"
