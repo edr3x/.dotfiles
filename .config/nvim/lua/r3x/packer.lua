@@ -7,7 +7,6 @@ return require('packer').startup(function(use)
     use 'folke/tokyonight.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'andweeb/presence.nvim'
-    use 'mfussenegger/nvim-dap'
     use 'neovim/nvim-lspconfig'
     use { 'kyazdani42/nvim-tree.lua', requires = {
         'kyazdani42/nvim-web-devicons',
@@ -38,4 +37,11 @@ return require('packer').startup(function(use)
         requires = { "nvim-lua/plenary.nvim" },
     }
     use "L3MON4D3/LuaSnip"
+
+    -- debugger
+    use 'mfussenegger/nvim-dap'
+    use 'leoluz/nvim-dap-go'
+    use 'rcarriga/nvim-dap-ui'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use 'nvim-telescope/telescope-dap.nvim'
 end)

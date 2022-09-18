@@ -102,7 +102,15 @@ local opts = {
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
         end,
     }, -- rust-analyer options
+
+    dap = {
+        adapter = {
+            type = "executable",
+            command = "lldb-vscode",
+            name = "rt_lldb",
+        },
+    },
 }
 
 require('rust-tools').setup(opts)
---require('rust-tools.inlay_hints').set_inlay_hints()
+require('rust-tools').inlay_hints.enable()
