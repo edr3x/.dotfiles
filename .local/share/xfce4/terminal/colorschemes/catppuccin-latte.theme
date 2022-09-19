@@ -1,0 +1,11 @@
+[Scheme]
+Name=Catppuccin-Latte
+ColorCursor=#DC8A78
+ColorCursorUseDefault=FALSE
+ColorForeground=#4C4F69
+ColorBackground=#EFF1F5
+ColorSelectionBackground=#DC8A78
+ColorSelection=#EFF1F5
+ColorSelectionUseDefault=FALSE
+TabActivityColor=#FE640B
+ColorPalette=#5C5F77;#D20F39;#40A02B;#DF8E1D;#1E66F5;#EA76CB;#179299;#ACB0BE;#6C6F85;#D20F39;#40A02B;#DF8E1D;#1E66F5;#EA76CB;#179299;#BCC0CC

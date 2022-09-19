@@ -1,0 +1,11 @@
+[Scheme]
+Name=Catppuccin-Macchiato
+ColorCursor=#F4DBD6
+ColorCursorUseDefault=FALSE
+ColorForeground=#CAD3F5
+ColorBackground=#24273A
+ColorSelectionBackground=#F4DBD6
+ColorSelection=#24273A
+ColorSelectionUseDefault=FALSE
+TabActivityColor=#F5A97F
+ColorPalette=#494D64;#ED8796;#A6DA95;#EED49F;#8AADF4;#F5BDE6;#8BD5CA;#B8C0E0;#5B6078;#ED8796;#A6DA95;#EED49F;#8AADF4;#F5BDE6;#8BD5CA;#A5ADCB
