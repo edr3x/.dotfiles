@@ -14,6 +14,7 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 --dart
+--[[
 dap.adapters.dart = {
     type = "executable",
     command = "node",
@@ -31,3 +32,22 @@ dap.configurations.dart = {
         cwd = "${workspaceFolder}",
     }
 }
+
+-- another try
+dap.adapters.dart = {
+    type = "executable",
+    command = "flutter",
+    args = { "debug_adapter" }
+}
+dap.configurations.dart = {
+    {
+        type = "dart",
+        request = "launch",
+        name = "Launch Flutter Program",
+        program = "${file}",
+        cwd = "${workspaceFolder}",
+        toolArgs = { "-d", "linux" }
+    }
+}
+]]
+--
