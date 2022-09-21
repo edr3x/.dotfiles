@@ -12,6 +12,5 @@ set.incsearch = true
 
 set.smartindent = true
 set.wrap = false
-set.laststatus = 3
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
