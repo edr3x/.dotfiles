@@ -24,11 +24,14 @@ alias e="thunar ."
 alias x="exit"
 alias ls="ls --color=auto"
 
+PATH="$PATH:/home/r3x/.local/scripts/"
 PATH="$PATH:/home/r3x/.dev/flutter/bin"
 PATH="$PATH:/home/r3x/.dev/android-studio/bin"
 PATH="$PATH:/home/r3x/.vscode/VSCode-linux-x64/bin/"
 PATH="$PATH":"$HOME/.pub-cache/bin"
 CHROME_EXECUTABLE="$PATH:/usr/bin/google-chrome-stable"
+
+bindkey -s ^f "tmux-sessionizer\n"
 
 alias pgadmin="cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
