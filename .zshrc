@@ -23,6 +23,8 @@ alias vim="nvim"
 alias e="thunar ."
 alias x="exit"
 alias ls="ls --color=auto"
+alias tls="tmux ls"
+alias ta="tmux a -t "
 
 PATH="$PATH:/home/r3x/.local/scripts/"
 PATH="$PATH:/home/r3x/.dev/flutter/bin"
