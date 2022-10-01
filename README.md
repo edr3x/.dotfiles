@@ -1,5 +1,7 @@
 # Dotfiles
 
+![dotfiles image](./dotfiles.png)
+
 ## Installing
 
 You will need `git` and GNU `stow`
