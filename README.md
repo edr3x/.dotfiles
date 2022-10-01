@@ -2,6 +2,9 @@
 
 ![dotfiles image](./dotfiles.png)
 
+- Theme: [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
+- Icon : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
+
 ## Installing
 
 You will need `git` and GNU `stow`
