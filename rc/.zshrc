@@ -25,6 +25,7 @@ alias x="exit"
 alias ls="ls --color=auto"
 alias tls="tmux ls"
 alias ta="tmux a -t "
+alias dot="nvim ~/.dotfiles"
 
 PATH="$PATH:/home/r3x/.local/scripts/"
 PATH="$PATH:/home/r3x/.dev/flutter/bin"
