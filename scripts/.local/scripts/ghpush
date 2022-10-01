@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+git init
+
+gh repo create --private --source=. 
+
+touch README.md
+
+git add .
+
+git commit -m 'init'
+
+git push --set-upstream origin master
