@@ -11,8 +11,8 @@ threshold = 30
 style = "bold red"
 
 [character]
-error_symbol = "[✖](bold red) "
-success_symbol = "[❯](bold green)" 
+error_symbol = "[✖](#FF0000) "
+success_symbol = "[❯](#00FF00)" 
 
 [cmd_duration]
 format = " took [$duration]($style)"
@@ -26,11 +26,11 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 [git_branch]
 format = " [$symbol$branch]($style) "
 symbol = " "
-style = "bold yellow"
+style = "#FFFF00"
 
 [git_commit]
 commit_hash_length = 8
-style = "bold white"
+style = "bright white"
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
@@ -53,18 +53,18 @@ format = "$all_status$ahead_behind"
 ssh_only = false
 format = " [$hostname]($style) "
 trim_at = "-"
-style = "bold dimmed purple"
+style = "#A020F0"
 disabled = false
 
 [memory_usage]
 format = "$symbol[${ram}( | ${swap})]($style) "
 threshold = 50 
-style = "bold dimmed white"
+style = "bold white"
 disabled = false
 symbol = " "
 
 [username]
-style_user = "bold dimmed green"
+style_user = "#00FF00"
 format = "[$user]($style) @"
 show_always = true
 

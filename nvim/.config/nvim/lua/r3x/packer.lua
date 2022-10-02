@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
         requires = { "nvim-lua/plenary.nvim" },
     }
     use "L3MON4D3/LuaSnip"
+    use 'NvChad/nvim-colorizer.lua'
 
     -- debugger
     use 'mfussenegger/nvim-dap'
