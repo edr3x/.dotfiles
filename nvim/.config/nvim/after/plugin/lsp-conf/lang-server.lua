@@ -1,5 +1,5 @@
 local servers = { 'clangd', 'sumneko_lua', 'tsserver', 'emmet_ls', 'jsonls', 'gopls', 'prismals', 'rust_analyzer',
-    'pyright', 'marksman' }
+    'pyright', 'marksman', 'yamlls' }
 require("nvim-lsp-installer").setup({
     ensure_installed = servers,
     ui = {
