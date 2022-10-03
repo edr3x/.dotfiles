@@ -74,11 +74,47 @@ disabled = true
 [package]
 disabled = true
 
+[aws]
+symbol = "  "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
 [dart]
-symbol = "🔰"
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
 
 [golang]
-symbol = "🏎💨"
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
 
 [rust]
-symbol = "🦀"
+symbol = " "
