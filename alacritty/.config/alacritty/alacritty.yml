@@ -48,6 +48,7 @@ font:
   size: 14
 
 window:
+  decorations: none
   opacity: 0.4
   padding:
     x: 2
