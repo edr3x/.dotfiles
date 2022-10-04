@@ -51,7 +51,7 @@ window:
   decorations: none
   opacity: 0.4
   padding:
-    x: 2
+    x: 0
     y: 0
   # scrolling:
   #   # Maximum number of lines in the scrollback buffer.
@@ -61,7 +61,7 @@ window:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
   live_config_reload: true
-
+    
 key_bindings:
   - { key: V, mods: Control, action: Paste }
   - { key: C, mods: Control, action: Copy }

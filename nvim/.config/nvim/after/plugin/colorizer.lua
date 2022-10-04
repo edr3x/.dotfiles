@@ -3,7 +3,7 @@ require("colorizer").setup {
     user_default_options = {
         RGB = true, -- #RGB hex codes
         RRGGBB = true, -- #RRGGBB hex codes
-        names = false, -- "Name" codes like Blue or blue
+        names = true, -- "Name" codes like Blue or blue
         RRGGBBAA = false, -- #RRGGBBAA hex codes
         AARRGGBB = true, -- 0xAARRGGBB hex codes
         rgb_fn = false, -- CSS rgb() and rgba() functions
