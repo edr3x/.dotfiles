@@ -1,53 +1,58 @@
-require("nvim-dap-virtual-text").setup()
-require('dap-go').setup()
-require("dapui").setup()
+local dap_status_ok, dap = pcall(require, "dap")
+if not dap_status_ok then
+    return
+end
 
-local dap, dapui = require("dap"), require("dapui")
+local dap_ui_status_ok, dapui = pcall(require, "dapui")
+if not dap_ui_status_ok then
+    return
+end
+
+local dap_install_status_ok, dap_install = pcall(require, "dap-install")
+if not dap_install_status_ok then
+    return
+end
+
+require('dap-go').setup()
+
+dap_install.setup {}
+
+dap_install.config("python", {})
+-- add other configs here
+
+dapui.setup {
+    layouts = {
+        {
+            elements = {
+                'scopes',
+                'breakpoints',
+                'stacks',
+                'watchers',
+            },
+            size = 40,
+            position = "right", -- Can be "left", "right", "top", "bottom"
+        },
+        {
+            elements = {
+                'repl',
+                'console',
+            },
+            size = 10,
+            position = 'bottom',
+        },
+    },
+}
+
+vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+
 dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
 end
+
 dap.listeners.before.event_terminated["dapui_config"] = function()
     dapui.close()
 end
+
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
-
---dart
---[[
-dap.adapters.dart = {
-    type = "executable",
-    command = "node",
-    args = { "/home/r3x/.dev/dart-code/Dart-Code/out/dist/debug.js", "flutter" }
-}
-
-dap.configurations.dart = {
-    {
-        type = "dart",
-        request = "launch",
-        name = "Launch flutter",
-        dartSdkPath = os.getenv('HOME') .. "/.dev/flutter/bin/cache/dart-sdk/",
-        flutterSdkPath = os.getenv('HOME') .. "/.dev/flutter",
-        program = "${workspaceFolder}/lib/main.dart",
-        cwd = "${workspaceFolder}",
-    }
-}
-
--- another try
-dap.adapters.dart = {
-    type = "executable",
-    command = "flutter",
-    args = { "debug_adapter" }
-}
-dap.configurations.dart = {
-    {
-        type = "dart",
-        request = "launch",
-        name = "Launch Flutter Program",
-        program = "${file}",
-        cwd = "${workspaceFolder}",
-        toolArgs = { "-d", "linux" }
-    }
-}
-]]
---

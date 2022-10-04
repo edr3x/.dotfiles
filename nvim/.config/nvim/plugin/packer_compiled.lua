@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["DAPInstall.nvim"] = {
+    loaded = true,
+    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/DAPInstall.nvim",
+    url = "https://github.com/ravenxrz/DAPInstall.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/LuaSnip",

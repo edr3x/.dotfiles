@@ -19,14 +19,15 @@ map("n", "<C-n>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", options)
 map("n", "<C-p>", "<cmd>lua vim.diagnostic.goto_next()<CR>", options)
 
 --debugger
-map("n", "<F5>", ":lua require'dap'.continue()<CR>")
-map("n", "<F3>", ":lua require'dap'.step_over()<CR>")
-map("n", "<F2>", ":lua require'dap'.step_into()<CR>")
-map("n", "<F12>", ":lua require'dap'.step_out()<CR>")
-map("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
-map("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-map("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
-map("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
+map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
+map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", options)
+map("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", options)
+map("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", options)
+map("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", options)
+map("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", options)
+map("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", options)
+map("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", options)
+map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", options)
 
 --debug for go
 map("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
