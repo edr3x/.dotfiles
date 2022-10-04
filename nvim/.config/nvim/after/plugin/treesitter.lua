@@ -8,6 +8,7 @@ require 'nvim-treesitter.configs'.setup {
         "prisma",
         "python",
         "dart",
+        "fish",
     },
     sync_install = false,
     ignore_install = { "javascript" },

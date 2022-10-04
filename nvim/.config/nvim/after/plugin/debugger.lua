@@ -26,8 +26,6 @@ dapui.setup {
             elements = {
                 'scopes',
                 'breakpoints',
-                'stacks',
-                'watchers',
             },
             size = 40,
             position = "right", -- Can be "left", "right", "top", "bottom"

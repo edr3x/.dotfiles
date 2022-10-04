@@ -1,5 +1,10 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# zsh plugins
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+
 alias vi="nvim"
 alias vim="nvim"
 alias e="thunar ."
