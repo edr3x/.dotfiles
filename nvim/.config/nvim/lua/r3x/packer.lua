@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
     }
     use "L3MON4D3/LuaSnip"
     use 'NvChad/nvim-colorizer.lua'
+    use 'ThePrimeagen/harpoon'
 
     -- debugger
     use 'mfussenegger/nvim-dap'

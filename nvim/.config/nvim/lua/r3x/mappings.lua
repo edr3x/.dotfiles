@@ -19,6 +19,16 @@ map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
 map('n', '<C-n>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
 map('n', '<C-p>', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
 
+--harpoon
+map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
+map('n', "<leader>o", function() require("harpoon.ui").toggle_quick_menu() end, options)
+
+map('n', "<leader>1", function() require("harpoon.ui").nav_file(1) end, options)
+map('n', "<leader>2", function() require("harpoon.ui").nav_file(2) end, options)
+map('n', "<leader>3", function() require("harpoon.ui").nav_file(3) end, options)
+map('n', "<leader>4", function() require("harpoon.ui").nav_file(4) end, options)
+map('n', "<leader>5", function() require("harpoon.ui").nav_file(5) end, options)
+
 --debugger
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
 map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", options)
