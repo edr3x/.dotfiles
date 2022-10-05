@@ -2,7 +2,7 @@ schemes:
   tokyo-night-modified: &tokyo-night
     primary:
       background: "0x000000"
-      foreground: "0xffffff"
+      foreground: "0xa9b1d6"
 
     # Normal colors
     normal:
@@ -49,13 +49,10 @@ font:
 
 window:
   decorations: none
-  opacity: 0.4
+  opacity: 0.85
   padding:
     x: 0
     y: 0
-  # scrolling:
-  #   # Maximum number of lines in the scrollback buffer.
-  #   # Specifying '0' will disable scrolling.
   history: 10000
   dynamic_title: true
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
@@ -64,7 +61,7 @@ window:
   dimensions:
     columns: 137
     lines: 35
-    
+      
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }
