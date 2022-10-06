@@ -62,6 +62,9 @@ window:
     columns: 137
     lines: 35
       
+shell:
+  program: /bin/fish
+    
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
   - { key: C, mods: Control|Shift, action: Copy }

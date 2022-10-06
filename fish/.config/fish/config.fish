@@ -9,6 +9,10 @@ alias ls="ls --color=auto"
 alias dot="nvim ~/.dotfiles"
 alias pgadmin="cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
+# Flutter
+alias fad="flutter pub add "
+set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
+
 # TMUX
 alias tls="tmux ls" # lists currently running sessions
 alias ta="tmux a -t " # attach to any of running session ( specify session name after this command )
