@@ -1,5 +1,14 @@
 set fish_greeting
+set TERM "xterm-256color"
 
+# Fish autocomplete and highlight colors
+set fish_color_normal brcyan
+set fish_color_autosuggestion '#7d7d7d'
+set fish_color_command brcyan
+set fish_color_error '#ff6c6b'
+set fish_color_param '#04cc85'
+
+# Personal alias
 alias vi="nvim"
 alias vim="nvim"
 alias e="thunar ."
@@ -19,6 +28,7 @@ alias ta="tmux a -t " # attach to any of running session ( specify session name 
 alias tkl="tmux kill-server" # kills all tmux sessions
 alias tk1="tmux kill-session -t" # kill specific running session ( specify session name after this command )
 
+# sessionizer script
 bind \cf "tmux-sessionizer"
 
 # Path variables
@@ -32,7 +42,7 @@ set PATH "$PATH":"$HOME/.pub-cache/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 
 if status is-interactive
-    # for interractive
+    # Placeholder
 end
 
 starship init fish | source

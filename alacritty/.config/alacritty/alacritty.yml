@@ -64,6 +64,9 @@ window:
       
 shell:
   program: /bin/fish
+
+env:
+  TERM: xterm-256color
     
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
