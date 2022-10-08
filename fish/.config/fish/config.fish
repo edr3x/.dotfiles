@@ -18,6 +18,9 @@ alias ls="ls --color=auto"
 alias dot="nvim ~/.dotfiles"
 alias pgadmin="cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
+# Rick
+alias rick="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+
 # Flutter
 alias fad="flutter pub add "
 set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
