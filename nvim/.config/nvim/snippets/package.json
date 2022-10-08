@@ -33,6 +33,26 @@
             {
                 "language": "go",
                 "path": "./go.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/base.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/comprehension.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/debug.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/python.json"
+            },
+            {
+                "language": "python",
+                "path": "./python/unittest.json"
             }
         ]
     }
