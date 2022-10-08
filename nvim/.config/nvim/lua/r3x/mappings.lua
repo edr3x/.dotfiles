@@ -3,10 +3,12 @@ local options = { noremap = true, silent = true }
 
 vim.g.mapleader = ','
 
-map('n', 'ff', ':Telescope find_files<cr>', options)
+map('n', 'ff', ':Telescope find_files<CR>', options)
 map('n', '<leader>ntt', ':NvimTreeToggle<CR>', options)
-map('n', '<leader>b', ':bprev<CR>', options)
+map('n', '<leader>b', ':bprev<CR>', options) -- go back a file
 map('n', '<leader>sd', ':Telescope flutter commands<CR>', options)
+map('n', '<S-j>', ':m+<CR>', options) -- move line down
+map('n', '<S-k>', ':m-2<CR>', options) -- move line up
 
 map('x', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<CR>', options)
 map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
