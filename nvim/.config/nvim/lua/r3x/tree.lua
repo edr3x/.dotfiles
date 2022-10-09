@@ -4,7 +4,7 @@ require("nvim-tree").setup({
     reload_on_bufenter = false,
     view = {
         adaptive_size = true,
-        width = 35,
+        width = 25,
         side = "right",
         number = false,
         relativenumber = false,
@@ -65,7 +65,7 @@ require("nvim-tree").setup({
                 },
             },
         },
-        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "go.mod" },
+        special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "go.mod", "pubspec.yaml" },
 
     },
     filters = {
