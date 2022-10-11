@@ -1,7 +1,10 @@
 require("nvim-tree").setup({
     sort_by = "name",
+    open_on_setup = true,
     auto_reload_on_write = true,
     reload_on_bufenter = false,
+    disable_netrw = true,
+    hijack_netrw = true,
     view = {
         adaptive_size = true,
         width = 25,
@@ -85,5 +88,4 @@ require("nvim-tree").setup({
             error = "",
         },
     },
-
 })
