@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
     url = "https://github.com/edr3x/better-escape.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/catppuccin",
