@@ -45,11 +45,11 @@ font:
     family: Fira Code Medium
     style: Bold Italic
 
-  size: 14
+  size: 12
 
 window:
   decorations: none
-  opacity: 0.85
+  opacity: 0.90
   padding:
     x: 0
     y: 0
@@ -59,8 +59,8 @@ window:
   save_to_clipboard: true
   live_config_reload: true
   dimensions:
-    columns: 137
-    lines: 35
+    columns: 159
+    lines: 40
       
 shell:
   program: /bin/fish
