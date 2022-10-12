@@ -51,8 +51,8 @@ window:
   decorations: none
   opacity: 0.90
   padding:
-    x: 0
-    y: 0
+    x: 5
+    y: 6
   history: 10000
   dynamic_title: true
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
@@ -63,7 +63,9 @@ window:
     lines: 40
       
 shell:
-  program: /bin/fish
+  program: /usr/bin/fish
+  #args:
+   #- --command=tmux new -s "home"
 
 env:
   TERM: xterm-256color
