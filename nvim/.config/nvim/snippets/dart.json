@@ -249,14 +249,14 @@
         ],
         "description": "route argument receive in next page"
     },
-    "generateroute": {
-        "prefix": "genroutespage",
+    "rotes.dart": {
+        "prefix": "routesdotdart",
         "body": [
             "import 'package:flutter/material.dart';",
             "import 'views/exports.dart';",
-            "Route<dynamic> generateRoute(RouteSettings settings) {",
+            "Route<MaterialPageRoute> generateRoute(RouteSettings settings) {",
             "  switch (settings.name) {",
-            "    case HomePage.routeName:",
+            "   case HomePage.routeName:",
             "      return MaterialPageRoute(",
             "        settings: settings,",
             "        builder: (context) => const HomePage(),",
@@ -275,14 +275,15 @@
         ],
         "description": "on generatedRoute snippet for routes.dart"
     },
-    "page case": {
-        "prefix": "pagecase",
+    "route case": {
+        "prefix": "routecase",
         "body": [
             "case $1.routeName:",
             "   return MaterialPageRoute(",
             "   settings: settings,",
             "   builder: (context) => const $1(),",
-            ");"
+            ");",
+            ""
         ],
         "description": "case satement for routes.dart file"
     }
