@@ -1,10 +1,9 @@
 schemes:
-  tokyo-night-modified: &tokyo-night
+  tokyo-night-modified: &tokyo
     primary:
       background: "0x000000"
       foreground: "0xa9b1d6"
 
-    # Normal colors
     normal:
       black: "0x32344a"
       red: "0xf7768e"
@@ -15,7 +14,6 @@ schemes:
       cyan: "0x449dab"
       white: "0x787c99"
 
-    # Bright colors
     bright:
       black: "0x444b6a"
       red: "0xff7a93"
@@ -26,23 +24,23 @@ schemes:
       cyan: "0x0db9d7"
       white: "0xacb0d0"
 
-colors: *tokyo-night
+colors: *tokyo
 
 font:
   normal:
-    family: Fira Code Medium
+    family: Fira Code
     style: Regular
 
   bold:
-    family: Fira Code Medium
+    family: Fira Code
     style: Bold
 
   italic:
-    family: Fira Code Medium
+    family: Fira Code
     style: Italic
 
   bold_italic:
-    family: Fira Code Medium
+    family: Fira Code
     style: Bold Italic
 
   size: 12
@@ -54,7 +52,6 @@ window:
     x: 5
     y: 6
   history: 10000
-  dynamic_title: true
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
   live_config_reload: true
