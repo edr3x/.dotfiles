@@ -17,7 +17,7 @@ map('n', '<leader>de', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
 map('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
 map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.reference()<CR>', options)
 map('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
-map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
+map('n', '<C-.>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
 map('n', '<C-n>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
 map('n', '<C-p>', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
 
