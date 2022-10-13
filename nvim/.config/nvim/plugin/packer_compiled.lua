@@ -99,25 +99,10 @@ _G.packer_plugins = {
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
-  },
-  ["cmp-path"] = {
-    loaded = true,
-    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/cmp-path",
-    url = "https://github.com/hrsh7th/cmp-path"
   },
   cmp_luasnip = {
     loaded = true,
@@ -133,11 +118,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/ThePrimeagen/harpoon"
-  },
-  ["lspkind.nvim"] = {
-    loaded = true,
-    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
-    url = "https://github.com/onsails/lspkind.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -198,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-treesitter-context"] = {
+    loaded = true,
+    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
+    url = "https://github.com/edr3x/nvim-treesitter-context"
   },
   ["nvim-ts-rainbow"] = {
     loaded = true,
