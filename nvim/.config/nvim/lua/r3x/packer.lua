@@ -34,10 +34,6 @@ return require('packer').startup(function(use)
     use "L3MON4D3/LuaSnip"
     use 'NvChad/nvim-colorizer.lua'
     use 'ThePrimeagen/harpoon'
-    use { 'akinsho/bufferline.nvim',
-        tag = "v2.*",
-        requires = 'kyazdani42/nvim-web-devicons'
-    }
 
     -- debugger
     use 'mfussenegger/nvim-dap'
