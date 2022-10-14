@@ -35,14 +35,14 @@ alias tk1="tmux kill-session -t" # kill specific running session ( specify sessi
 bind \cf "tmux-sessionizer"
 
 # Path variables
-set PATH "$PATH:/home/r3x/.local/scripts/"
-set PATH "$PATH:/home/r3x/.cargo/bin"
-set PATH "$PATH:/home/r3x/.dev/flutter/bin"
-set PATH "$PATH:/home/r3x/.dev/android-studio/bin"
-set PATH "$PATH:/home/r3x/.dev/ghcli/bin/"
-set PATH "$PATH:/home/r3x/.vscode/VSCode-linux-x64/bin/"
-set PATH "$PATH":"$HOME/.pub-cache/bin"
+set PATH "$PATH":"$HOME/.local/scripts/"
+set PATH "$PATH":"$HOME/.dev/ghcli/bin/"
+set PATH "$PATH":"$HOME/.dev/flutter/bin"
+set PATH "$PATH":"$HOME/.dev/android-studio/bin"
+set PATH "$PATH":"$HOME/.dev/vscode/VSCode-linux-x64/bin/"
+set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
+set PATH "$PATH":"$HOME/.pub-cache/bin"
 
 if status is-interactive
     # Placeholder
