@@ -1,1 +1,9 @@
+configuration {
+    modes: "window,run,ssh,drun,filebrowser";
+    sorting-method: "normal";
+    show-icons:true;
+    matching: "regex";
+    drun-match-fields: "name";
+}
+
 @theme "color"
