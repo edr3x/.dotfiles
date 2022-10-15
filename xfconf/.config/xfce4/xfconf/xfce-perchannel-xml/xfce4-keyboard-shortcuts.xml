@@ -58,8 +58,8 @@
       <property name="HomePage" type="string" value="exo-open --launch WebBrowser"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings --minimal"/>
       <property name="override" type="bool" value="true"/>
-      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="&lt;Alt&gt;Return" type="string" value="alacritty"/>
+      <property name="Super_L" type="string" value="rofi -show drun"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
