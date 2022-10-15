@@ -17,4 +17,3 @@
   urgent: @yellow;
 }
 
-@import "set.rasi"
