@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
     use "L3MON4D3/LuaSnip"
     use 'NvChad/nvim-colorizer.lua'
     use 'ThePrimeagen/harpoon'
+    use 'lewis6991/gitsigns.nvim'
 
     -- debugger
     use 'mfussenegger/nvim-dap'
