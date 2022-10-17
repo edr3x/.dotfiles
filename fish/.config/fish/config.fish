@@ -26,6 +26,7 @@ alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/m
 # Flutter
 alias fad "flutter pub add "
 set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
+set PATH "$PATH":"$HOME/.pub-cache/bin"
 
 # TMUX
 alias tls="tmux ls" # lists currently running sessions
@@ -44,7 +45,10 @@ set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.dev/vscode/VSCode-linux-x64/bin/"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
-set PATH "$PATH":"$HOME/.pub-cache/bin"
+
+# Deno
+set DENO_INSTALL "/home/r3x/.deno"
+set PATH "$DENO_INSTALL/bin:$PATH"
 
 if status is-interactive
     # Placeholder
