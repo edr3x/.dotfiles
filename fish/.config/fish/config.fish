@@ -1,7 +1,7 @@
 set fish_greeting
 set TERM "xterm-256color"
-
 # Fish autocomplete and highlight colors
+
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
@@ -9,20 +9,22 @@ set fish_color_error '#ff6c6b'
 set fish_color_param '#04cc85'
 
 # Personal alias
-alias vi="nvim"
-alias vim="nvim"
-alias e="thunar ."
-alias x="exit"
-alias c="clear"
-alias ls="ls --color=auto"
-alias dot="nvim ~/.dotfiles"
-alias pgadmin="cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
+alias vi "nvim"
+alias vim "nvim"
+alias e "thunar ."
+alias x "exit"
+alias c "clear"
+alias logout "pkill -u r3x"
+alias ls "exa -a --icons --no-permissions --no-user --git --group-directories-first"
+alias ll "exa -lah --icons --color automatic --no-permissions --no-user --git --group-directories-first"
+alias dot "nvim ~/.dotfiles"
+alias pgadmin "cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
 # Rick
-alias rick="curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
+alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
 # Flutter
-alias fad="flutter pub add "
+alias fad "flutter pub add "
 set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
 
 # TMUX
