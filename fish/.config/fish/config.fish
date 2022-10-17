@@ -16,7 +16,7 @@ alias x "exit"
 alias c "clear"
 alias logout "pkill -u r3x"
 alias ls "exa -a --icons --no-permissions --no-user --git --group-directories-first"
-alias ll "exa -lah --icons --color automatic --no-permissions --no-user --git --group-directories-first"
+alias ll "exa -lah --icons --color automatic --no-permissions --no-user --no-time --git --group-directories-first"
 alias dot "nvim ~/.dotfiles"
 alias pgadmin "cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
@@ -45,10 +45,6 @@ set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.dev/vscode/VSCode-linux-x64/bin/"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
-
-# Deno
-set DENO_INSTALL "/home/r3x/.deno"
-set PATH "$DENO_INSTALL/bin:$PATH"
 
 if status is-interactive
     # Placeholder
