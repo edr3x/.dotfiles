@@ -34,6 +34,10 @@ map('n', "<leader>3", function() require("harpoon.ui").nav_file(3) end, options)
 map('n', "<leader>4", function() require("harpoon.ui").nav_file(4) end, options)
 map('n', "<leader>5", function() require("harpoon.ui").nav_file(5) end, options)
 
+--md prev
+vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+
 --debugger
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
 map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", options)

@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
     use 'NvChad/nvim-colorizer.lua'
     use 'ThePrimeagen/harpoon'
     use 'lewis6991/gitsigns.nvim'
+    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
 
     -- debugger
     use 'mfussenegger/nvim-dap'
