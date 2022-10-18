@@ -20,12 +20,10 @@ require 'nvim-treesitter.configs'.setup {
         enable = true,
         extended_mode = true,
         colors = {
-            "#a89984",
-            "#b16286",
-            "#d79921",
-            "#689d6a",
-            "#d65d0e",
-            "#458588",
+            "#00FFFF",
+            "#BF40BF",
+            "#FF00CD",
+            "#66ff00"
         },
     },
     textobjects = {

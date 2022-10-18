@@ -192,7 +192,7 @@ _G.packer_plugins = {
   ["nvim-ts-rainbow"] = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
+    url = "https://github.com/edr3x/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,

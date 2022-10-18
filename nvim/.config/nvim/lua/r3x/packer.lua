@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
     }
     use 'edr3x/nvim-treesitter-context'
-    use 'p00f/nvim-ts-rainbow'
+    use 'edr3x/nvim-ts-rainbow'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use "hrsh7th/cmp-nvim-lsp"
