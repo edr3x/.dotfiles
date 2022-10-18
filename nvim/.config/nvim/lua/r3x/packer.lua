@@ -22,7 +22,8 @@ return require('packer').startup(function(use)
     }
     use 'edr3x/nvim-treesitter-context'
     use 'p00f/nvim-ts-rainbow'
-    use "williamboman/nvim-lsp-installer"
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     use "hrsh7th/cmp-nvim-lsp"
     use 'hrsh7th/nvim-cmp'
     use 'saadparwaiz1/cmp_luasnip'
