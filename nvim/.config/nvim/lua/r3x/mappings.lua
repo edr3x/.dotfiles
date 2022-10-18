@@ -10,9 +10,9 @@ map('n', '<leader>sd', ':Telescope flutter commands<CR>', options)
 map('n', '<S-j>', ':m+<CR>', options) -- move line down
 map('n', '<S-k>', ':m-2<CR>', options) -- move line up
 map('n', '<ESC><ESC>', ':q<CR>', options)
+map('x', '<leader>cc', '"+y', options)
 
-map('x', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
-map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
+map({ 'x', 'n' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
 map('n', '<leader>df', '<cmd>lua vim.lsp.buf.definition()<CR>', options)
 map('n', '<leader>de', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
 map('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
