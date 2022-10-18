@@ -1,15 +1,6 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = true
 
-[battery]
-full_symbol = "🔋"
-charging_symbol = "🔌"
-discharging_symbol = "⚡"
-
-[[battery.display]]
-threshold = 30
-style = "bold red"
-
 [character]
 error_symbol = "[✖](#FF0000) "
 success_symbol = "[❯](#00FF00)" 
