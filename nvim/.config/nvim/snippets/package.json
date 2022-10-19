@@ -35,6 +35,10 @@
                 "path": "./go.json"
             },
             {
+                "language": "c",
+                "path": "./c.json"
+            },
+            {
                 "language": "python",
                 "path": "./python/base.json"
             },
