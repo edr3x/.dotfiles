@@ -61,8 +61,7 @@ window:
       
 shell:
   program: /usr/bin/fish
-  #args:
-   #- --command=tmux new -s "home"
+    #  args: ["-c", "tmux"]
 
 env:
   TERM: xterm-256color
