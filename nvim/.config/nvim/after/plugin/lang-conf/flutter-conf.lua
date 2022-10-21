@@ -3,28 +3,13 @@ require("flutter-tools").setup {
         enabled = true,
         run_via_dap = true,
         exception_breakpoints = {},
-        register_configurations = function(_)
-            require("dap").configurations.dart = {
-                type = "dart",
-                request = "launch",
-                name = "Launch Flutter Program",
-                program = "${file}",
-                cwd = "${workspaceFolder}",
-                toolArgs = { "-d", "linux" }
-            }
-            require("dap.ext.vscode").load_launchjs()
-        end,
-    },
-    dev_log = {
-        enabled = true,
     },
     outline = { auto_open = false },
     decorations = {
         statusline = { device = true, app_version = true },
     },
-    widget_guides = {
-        enabled = true,
-    },
+    widget_guides = { enabled = true, debug = false },
+    dev_log = { enabled = false, open_cmd = 'tabedit' },
     lsp = {
         color = {
             enabled = true,
@@ -32,8 +17,11 @@ require("flutter-tools").setup {
             virtual_text = false,
         },
         settings = {
-            showTodos = true,
-            renameFilesWithClasses = "prompt",
+            showTodos = false,
+            renameFilesWithClasses = 'prompt',
+            updateImportsOnRename = true,
+            completeFunctionCalls = true,
+            lineLength = 100,
         },
     },
 }
