@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
     },
     }
     use 'folke/trouble.nvim'
-    use 'nvim-lualine/lualine.nvim'
+    use 'edr3x/lualine.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -32,7 +32,6 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
-    use 'weilbith/nvim-code-action-menu'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
