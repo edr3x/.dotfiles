@@ -1,6 +1,11 @@
 # Dotfiles
 
-![dotfiles image](./dotfiles.png)
+![Desktop](./.screenshots/desktop.png)
+![Rofi](./.screenshots/rofi.png)
+![Firefox](./.screenshots/firefox.png)
+![Neofetch](./.screenshots/fetch.png)
+![Nvim](./.screenshots/nvim.png)
+![Thunar](./.screenshots/thunar.png)
 
 - Theme: [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
 - Icon : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
