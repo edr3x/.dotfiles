@@ -24,6 +24,9 @@ alias ..... "cd ../../../.."
 alias dot "nvim ~/.dotfiles"
 alias pgadmin "cd ~/.pgadmin/pgadmin4-6.13/ && source venv/bin/activate && sudo python3 web/pgAdmin4.py"
 
+# protoc ( specify relative path to .proto file after this )
+alias protoc-go "protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative" # for golang
+
 # Rick
 alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
