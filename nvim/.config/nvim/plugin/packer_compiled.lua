@@ -132,7 +132,7 @@ _G.packer_plugins = {
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
+    url = "https://github.com/edr3x/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,

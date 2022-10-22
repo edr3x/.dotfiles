@@ -1,6 +1,5 @@
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -47,7 +46,7 @@ cmp.setup {
         ["<M-i>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<M-o>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        ["<C-y>"] = cmp.config.disable,
         ["<C-e>"] = cmp.mapping {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -120,6 +119,6 @@ cmp.setup {
     },
 }
 
-require("luasnip.loaders.from_vscode").load {
+require("luasnip/loaders/from_vscode").lazy_load({
     paths = vim.fn.stdpath "config" .. "/snippets",
-}
+})
