@@ -12,6 +12,10 @@
 
 ## Installing
 
+```bash
+sudo pacman -S alacritty fish neofetch neovim picom btop rofi starship tmux
+```
+
 You will need `git` and GNU `stow`
 
 Clone into `$HOME` directory
