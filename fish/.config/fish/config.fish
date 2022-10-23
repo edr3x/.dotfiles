@@ -1,7 +1,7 @@
 set fish_greeting
 set TERM "xterm-256color"
-# Fish autocomplete and highlight colors
 
+# Fish autocomplete and highlight colors
 set fish_color_normal brcyan
 set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
@@ -36,10 +36,10 @@ set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
 set PATH "$PATH":"$HOME/.pub-cache/bin"
 
 # TMUX
-alias tls="tmux ls" # lists currently running sessions
-alias ta="tmux a -t " # attach to any of running session ( specify session name after this command )
-alias tkl="tmux kill-server" # kills all tmux sessions
-alias tk1="tmux kill-session -t" # kill specific running session ( specify session name after this command )
+alias tls "tmux ls" # lists currently running sessions
+alias ta "tmux a -t " # attach to any of running session ( specify session name after this command )
+alias tkl "tmux kill-server" # kills all tmux sessions
+alias tk1 "tmux kill-session -t" # kill specific running session ( specify session name after this command )
 
 # sessionizer script
 bind \cf "tmux-sessionizer"
