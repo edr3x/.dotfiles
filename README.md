@@ -8,15 +8,18 @@
 ![Thunar](./.screenshots/thunar.png)
 
 - DE : [XFCE4](https://www.xfce.org/)
-- App Launcher : [Rofi](https://github.com/davatorium/rofi)
+- Bar : [XFCE bar](https://www.xfce.org/)
+- App Launcher : [Rofi](https://github.com/davatorium/rofi/)
 - Compositor : [Picom](https://github.com/yshui/picom)
-- Terminal : [Alacritty](https://alacritty.org/)
-- Terminal Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
-- Shell : [Fish](https://fishshell.com/)
-- Terminal Prompt : [Starship](https://starship.rs/)
+- Terminal :
+    - Emulator : [Alacritty](https://alacritty.org/)   
+    - Theme : [Modified Tokyonight]()
+    - Shell : [Fish](https://fishshell.com/)
+    - Prompt : [Starship](https://starship.rs/)
+    - Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
 - Code Editor : [Neovim](https://neovim.io/)
-- Nvim Theme : [Tokyonight](https://github.com/folke/tokyonight.nvim)
 - Theme : [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
+- System Font : [Iosevka Regular](https://github.com/be5invis/Iosevka)
 - Icon Theme : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
 
 ## Installing
