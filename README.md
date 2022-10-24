@@ -12,14 +12,14 @@
 - App Launcher : [Rofi](https://github.com/davatorium/rofi/)
 - Compositor : [Picom](https://github.com/yshui/picom)
 - Terminal :
-    - Emulator : [Alacritty](https://alacritty.org/)   
+    - Emulator : [Alacritty](https://alacritty.org/)
     - Theme : [Modified Tokyonight]()
     - Shell : [Fish](https://fishshell.com/)
     - Prompt : [Starship](https://starship.rs/)
     - Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
 - Code Editor : [Neovim](https://neovim.io/)
 - Theme : [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
-- System Font : [Iosevka Regular](https://github.com/be5invis/Iosevka)
+- System Font : [Iosevka-Regular](https://github.com/be5invis/Iosevka)
 - Icon Theme : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
 
 ## Installing
