@@ -179,14 +179,14 @@
       <property name="&lt;Alt&gt;8" type="string" value="workspace_8_key"/>
       <property name="&lt;Alt&gt;9" type="string" value="workspace_9_key"/>
       <property name="&lt;Alt&gt;0" type="string" value="workspace_10_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Up" type="string" value="tile_up_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Down" type="string" value="tile_down_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Left" type="string" value="tile_left_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Right" type="string" value="tile_right_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Home" type="string" value="tile_up_left_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;End" type="string" value="tile_up_right_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Page_Up" type="string" value="tile_down_left_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Page_Down" type="string" value="tile_down_right_key"/>
+      <property name="&lt;Super&gt;Up" type="string" value="tile_up_key"/>
+      <property name="&lt;Super&gt;Down" type="string" value="tile_down_key"/>
+      <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
+      <property name="&lt;Super&gt;Right" type="string" value="tile_right_key"/>
+      <property name="&lt;Super&gt;Home" type="string" value="tile_up_left_key"/>
+      <property name="&lt;Super&gt;End" type="string" value="tile_up_right_key"/>
+      <property name="&lt;Super&gt;Page_Up" type="string" value="tile_down_left_key"/>
+      <property name="&lt;Super&gt;Page_Down" type="string" value="tile_down_right_key"/>
     </property>
   </property>
   <property name="providers" type="array">
