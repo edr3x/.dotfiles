@@ -7,8 +7,17 @@
 ![Nvim](./.screenshots/nvim.png)
 ![Thunar](./.screenshots/thunar.png)
 
-- Theme: [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
-- Icon : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
+- DE : [XFCE4](https://www.xfce.org/)
+- App Launcher : [Rofi](https://github.com/davatorium/rofi)
+- Compositor : [Picom](https://github.com/yshui/picom)
+- Terminal : [Alacritty](https://alacritty.org/)
+- Terminal Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
+- Shell : [Fish](https://fishshell.com/)
+- Terminal Prompt : [Starship](https://starship.rs/)
+- Code Editor : [Neovim](https://neovim.io/)
+- Nvim Theme : [Tokyonight](https://github.com/folke/tokyonight.nvim)
+- Theme : [Tokyonight-Dark-B](https://www.xfce-look.org/p/1681315/)
+- Icon Theme : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
 
 ## Installing
 
