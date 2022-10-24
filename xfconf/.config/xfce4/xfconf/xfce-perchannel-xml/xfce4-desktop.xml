@@ -7,7 +7,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/the-neon-shallows-redish.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -96,7 +96,7 @@
         </property>
       </property>
       <property name="monitor0" type="empty">
-        <property name="image-path" type="string" value="/home/r3x/p/pics/2b.png"/>
+        <property name="image-path" type="string" value="/home/r3x/p/pics/the-neon-shallows-redish.png"/>
         <property name="image-show" type="bool" value="true"/>
         <property name="image-style" type="int" value="0"/>
         <property name="workspace0" type="empty">
@@ -129,7 +129,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/the-neon-shallows-redish.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -182,6 +182,121 @@
           <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
         </property>
         <property name="workspace11" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace12" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace13" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace14" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace15" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace16" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace17" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace18" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace19" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace20" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace21" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace22" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace23" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace24" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace25" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace26" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace27" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace28" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace29" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace30" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace31" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace32" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace33" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="3"/>
+          <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>
+        </property>
+        <property name="workspace34" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="3"/>
           <property name="last-image" type="string" value="/home/r3x/p/pics/2b.png"/>

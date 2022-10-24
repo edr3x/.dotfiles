@@ -73,11 +73,11 @@
     <property name="unredirect_overlays" type="bool" value="true"/>
     <property name="urgent_blink" type="bool" value="false"/>
     <property name="use_compositing" type="bool" value="false"/>
-    <property name="workspace_count" type="int" value="4"/>
+    <property name="workspace_count" type="int" value="10"/>
     <property name="wrap_cycle" type="bool" value="true"/>
     <property name="wrap_layout" type="bool" value="true"/>
     <property name="wrap_resistance" type="int" value="15"/>
-    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="zoom_desktop" type="bool" value="true"/>
     <property name="zoom_pointer" type="bool" value="true"/>
@@ -100,6 +100,23 @@
       <value type="string" value="Workspace 16"/>
       <value type="string" value="Workspace 17"/>
       <value type="string" value="Workspace 18"/>
+      <value type="string" value="Workspace 19"/>
+      <value type="string" value="Workspace 20"/>
+      <value type="string" value="Workspace 21"/>
+      <value type="string" value="Workspace 22"/>
+      <value type="string" value="Workspace 23"/>
+      <value type="string" value="Workspace 24"/>
+      <value type="string" value="Workspace 25"/>
+      <value type="string" value="Workspace 26"/>
+      <value type="string" value="Workspace 27"/>
+      <value type="string" value="Workspace 28"/>
+      <value type="string" value="Workspace 29"/>
+      <value type="string" value="Workspace 30"/>
+      <value type="string" value="Workspace 31"/>
+      <value type="string" value="Workspace 32"/>
+      <value type="string" value="Workspace 33"/>
+      <value type="string" value="Workspace 34"/>
+      <value type="string" value="Workspace 35"/>
     </property>
   </property>
 </channel>

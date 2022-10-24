@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="empty"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="Fira Code 11"/>
-    <property name="MonospaceFontName" type="string" value="FiraCode Nerd Font Italic 11"/>
+    <property name="FontName" type="string" value="Iosevka 11"/>
+    <property name="MonospaceFontName" type="string" value="Monospace 11"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>
