@@ -1,5 +1,6 @@
 set fish_greeting
 set TERM "xterm-256color"
+fish_vi_key_bindings
 
 # Fish autocomplete and highlight colors
 set fish_color_normal brcyan
@@ -8,14 +9,14 @@ set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param '#04cc85'
 
-# Personal alias
+# alias
 alias vi "nvim"
 alias vim "nvim"
 alias e "thunar ."
 alias x "exit"
 alias c "clear"
 alias logout "pkill -u r3x"
-alias ls "exa -a --icons --no-permissions --no-user --git --group-directories-first"
+alias ls "exa -a --icons --group-directories-first"
 alias ll "exa -lah --icons --color automatic --no-permissions --no-user --no-time --git --group-directories-first"
 alias .. "cd .."
 alias ... "cd ../.."
