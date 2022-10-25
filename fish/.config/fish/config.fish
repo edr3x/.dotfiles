@@ -1,6 +1,5 @@
 set fish_greeting
 set TERM "xterm-256color"
-fish_vi_key_bindings
 
 # Fish autocomplete and highlight colors
 set fish_color_normal brcyan
