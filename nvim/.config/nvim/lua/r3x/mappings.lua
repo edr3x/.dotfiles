@@ -3,24 +3,18 @@ local options = { noremap = true, silent = true }
 
 vim.g.mapleader = ','
 
-map('n', 'ff', ':Telescope find_files<CR>', options)
-map('n', '<leader>ntt', ':NvimTreeToggle<CR>', options)
-map('n', '<leader>b', ':bprev<CR>', options) -- go back a file
-map('n', '<leader>sd', ':Telescope flutter commands<CR>', options)
-map('n', '<S-j>', ':m+<CR>', options) -- move line down
-map('n', '<S-k>', ':m-2<CR>', options) -- move line up
-map('n', '<ESC><ESC>', ':q<CR>', options)
+map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
+map('n', '<leader>b', '<cmd>bprev<CR>', options) -- go back a file
+map('n', '<S-j>', '<cmd>m+<CR>', options) -- move line down
+map('n', '<S-k>', '<cmd>m-2<CR>', options) -- move line up
+map('n', '<ESC><ESC>', '<cmd>q<CR>', options)
 map('x', '<leader>cc', '"+y', options)
 
-map({ 'x', 'n' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
-map('n', '<leader>df', '<cmd>lua vim.lsp.buf.definition()<CR>', options)
-map('n', '<leader>de', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
-map('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
-map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.reference()<CR>', options)
-map('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
-map('n', '<C-.>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
-map('n', '<C-n>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
-map('n', '<C-p>', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
+--telescope
+map('n', 'ff', '<cmd>Telescope find_files<CR>', options)
+map('n', 'fg', '<cmd>Telescope live_grep<cr>', options)
+map('n', 'fb', '<cmd>Telescope buffers<cr>', options)
+map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
 --harpoon
 map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
@@ -37,6 +31,17 @@ map('n', "<leader>5", function() require("harpoon.ui").nav_file(5) end, options)
 --md prev
 map('n', "<leader>md", function() require('peek').open() end, options)
 map('n', "<leader>mc", function() require('peek').close() end, options)
+
+--lsp buffer
+map({ 'x', 'n' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
+map('n', '<leader>df', '<cmd>lua vim.lsp.buf.definition()<CR>', options)
+map('n', '<leader>de', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
+map('n', '<leader>gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
+map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.reference()<CR>', options)
+map('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
+map('n', '<C-.>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
+map('n', '<C-n>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
+map('n', '<C-p>', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
 
 --debugger
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
