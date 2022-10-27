@@ -24,6 +24,7 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
     use 'lewis6991/impatient.nvim'
+    use 'xiyaowong/telescope-emoji.nvim'
 
     --color
     use 'folke/tokyonight.nvim'

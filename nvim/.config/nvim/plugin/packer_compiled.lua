@@ -234,6 +234,11 @@ _G.packer_plugins = {
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
     url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
+  ["telescope-emoji.nvim"] = {
+    loaded = true,
+    path = "/home/r3x/.local/share/nvim/site/pack/packer/start/telescope-emoji.nvim",
+    url = "https://github.com/xiyaowong/telescope-emoji.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/r3x/.local/share/nvim/site/pack/packer/start/telescope.nvim",

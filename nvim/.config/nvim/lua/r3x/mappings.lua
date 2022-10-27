@@ -8,13 +8,15 @@ map('n', '<leader>b', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<S-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<S-k>', '<cmd>m-2<CR>', options) -- move line up
 map('n', '<ESC><ESC>', '<cmd>q<CR>', options)
-map('x', '<leader>cc', '"+y', options)
+map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
+map('n', '<leader>p', '"*p', options) -- paste for emoji
 
 --telescope
 map('n', 'ff', '<cmd>Telescope find_files<CR>', options)
 map('n', 'fg', '<cmd>Telescope live_grep<cr>', options)
 map('n', 'fb', '<cmd>Telescope buffers<cr>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
+map('n', '<leader>ej', '<cmd>Telescope emoji<CR>', options)
 
 --harpoon
 map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
