@@ -12,11 +12,11 @@ map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
 
 --telescope
-map('n', 'ff', '<cmd>Telescope find_files<CR>', options)
-map('n', 'fg', '<cmd>Telescope live_grep<cr>', options)
-map('n', 'fb', '<cmd>Telescope buffers<cr>', options)
+map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
+map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', options)
+map('n', '<leader>fe', '<cmd>Telescope emoji<CR>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
-map('n', '<leader>ej', '<cmd>Telescope emoji<CR>', options)
 
 --harpoon
 map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
