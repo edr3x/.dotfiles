@@ -1,11 +1,11 @@
 # Dotfiles
 
-![Desktop](./.screenshots/desktop.png)
-![Rofi](./.screenshots/rofi.png)
-![Firefox](./.screenshots/firefox.png)
-![Neofetch](./.screenshots/fetch.png)
-![Nvim](./.screenshots/nvim.png)
-![Thunar](./.screenshots/thunar.png)
+![desktop](https://user-images.githubusercontent.com/45848083/198842889-7b6b4a56-6175-4d6d-87c9-e4620f7951f6.png)
+![rofi](https://user-images.githubusercontent.com/45848083/198842904-54399bed-09ac-46bf-bd41-dfd4eecc1e9b.png)
+![firefox](https://user-images.githubusercontent.com/45848083/198842916-f6a934cd-0205-48fd-9058-0422af2c4e48.png)
+![fetch](https://user-images.githubusercontent.com/45848083/198842920-5715610c-4a8f-4034-98d3-ad3638e576ee.png)
+![nvim](https://user-images.githubusercontent.com/45848083/198842932-e0cdc8ba-99fd-4302-9f76-42033f9699c1.png)
+![thunar](https://user-images.githubusercontent.com/45848083/198842947-62a736b7-9eeb-4411-8372-c899de40b2ff.png)
 
 - DE : [XFCE4](https://www.xfce.org/)
 - Bar : [XFCE bar](https://www.xfce.org/)
