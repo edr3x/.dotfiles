@@ -42,3 +42,13 @@ for _, lsp in pairs(servers) do
         },
     }
 end
+
+require 'lspconfig'.sumneko_lua.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
