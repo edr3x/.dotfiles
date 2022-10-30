@@ -176,20 +176,20 @@
       <property name="&lt;Super&gt;End" type="string" value="tile_up_right_key"/>
       <property name="&lt;Super&gt;Page_Up" type="string" value="tile_down_left_key"/>
       <property name="&lt;Super&gt;Page_Down" type="string" value="tile_down_right_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;exclam" type="string" value="move_window_workspace_1_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;at" type="string" value="move_window_workspace_2_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;numbersign" type="string" value="move_window_workspace_3_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;dollar" type="string" value="move_window_workspace_4_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;percent" type="string" value="move_window_workspace_5_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;asciicircum" type="string" value="move_window_workspace_6_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;ampersand" type="string" value="move_window_workspace_7_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;asterisk" type="string" value="move_window_workspace_8_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;parenleft" type="string" value="move_window_workspace_9_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;parenright" type="string" value="move_window_workspace_10_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;underscore" type="string" value="move_window_workspace_11_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;plus" type="string" value="move_window_workspace_12_key"/>
       <property name="&lt;Alt&gt;minus" type="string" value="workspace_11_key"/>
       <property name="&lt;Alt&gt;equal" type="string" value="workspace_12_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;exclam" type="string" value="move_window_workspace_1_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;at" type="string" value="move_window_workspace_2_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;numbersign" type="string" value="move_window_workspace_3_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;dollar" type="string" value="move_window_workspace_4_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;percent" type="string" value="move_window_workspace_5_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;asciicircum" type="string" value="move_window_workspace_6_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;ampersand" type="string" value="move_window_workspace_7_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;asterisk" type="string" value="move_window_workspace_8_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;parenleft" type="string" value="move_window_workspace_9_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;parenright" type="string" value="move_window_workspace_10_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;underscore" type="string" value="move_window_workspace_11_key"/>
+      <property name="&lt;Shift&gt;&lt;Alt&gt;plus" type="string" value="move_window_workspace_12_key"/>
     </property>
   </property>
   <property name="providers" type="array">
