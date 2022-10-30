@@ -40,15 +40,12 @@ for _, lsp in pairs(servers) do
         flags = {
             debounce_text_changes = 150,
         },
-    }
-end
-
-require 'lspconfig'.sumneko_lua.setup {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                }
             }
         }
     }
-}
+end
