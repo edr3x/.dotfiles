@@ -10,6 +10,11 @@ scope.setup {
             i = esc,
             n = esc,
         },
+    },
+    pickers = {
+        find_files = {
+            hidden = true
+        }
     }
 }
 
