@@ -7,7 +7,7 @@ map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>b', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<S-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<S-k>', '<cmd>m-2<CR>', options) -- move line up
-map('n', '<ESC><ESC>', '<cmd>q<CR>', options)
+map('n', '<ESC><ESC><ESC>', '<cmd>qa<CR>', options)
 map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
 
