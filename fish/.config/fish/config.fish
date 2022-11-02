@@ -49,7 +49,6 @@ set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH":"$HOME/.dev/ghcli/bin/"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
-set PATH "$PATH":"$HOME/.dev/vscode/VSCode-linux-x64/bin/"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 
