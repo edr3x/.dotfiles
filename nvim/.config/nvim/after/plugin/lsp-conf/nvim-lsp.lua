@@ -9,7 +9,8 @@ local servers = {
     'rust_analyzer',
     'pyright',
     'marksman',
-    'yamlls'
+    'yamlls',
+    'dockerls',
 }
 
 local settings = {
