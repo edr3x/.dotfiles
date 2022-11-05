@@ -1,4 +1,5 @@
 local set = vim.opt
+local ncmd = vim.api.nvim_command
 
 set.nu = true
 set.relativenumber = true
@@ -13,5 +14,10 @@ set.incsearch = true
 set.smartindent = true
 set.wrap = false
 set.termguicolors = true
+
+ncmd("sign define DiagnosticSignError text= texthl=DiagnosticSignError")
+ncmd("sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn")
+ncmd("sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo")
+ncmd("sign define DiagnosticSignHint text= texthl=DiagnosticSignHint")
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

@@ -28,19 +28,19 @@ colors: *tokyo
 
 font:
   normal:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Regular
 
   bold:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Bold
 
   italic:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Italic
 
   bold_italic:
-    family: Fira Code
+    family: Fira Code Nerd Font
     style: Bold Italic
 
   size: 12

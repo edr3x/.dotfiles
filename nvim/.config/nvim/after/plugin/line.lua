@@ -14,7 +14,7 @@ local lspStatus = {
         end
         return msg
     end,
-    icon = "",
+    --icon = "",
     color = { fg = "#d3d3d3" }
 }
 
