@@ -4,10 +4,11 @@ local options = { noremap = true, silent = true }
 vim.g.mapleader = ','
 
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
-map('n', '<leader>b', '<cmd>bprev<CR>', options) -- go back a file
+map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
+map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
 map('n', '<S-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<S-k>', '<cmd>m-2<CR>', options) -- move line up
-map('n', '<ESC><ESC><ESC>', '<cmd>qa<CR>', options)
+map('n', '<leader><ESC>', '<cmd>qa<CR>', options)
 map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
 
@@ -21,7 +22,7 @@ map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 --harpoon
 map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
 map('n', "<leader>o", function() require("harpoon.ui").toggle_quick_menu() end, options)
-map('n', "<leader>f", function() require("harpoon.ui").nav_prev() end, options)
+map('n', "<leader>k", function() require("harpoon.ui").nav_prev() end, options)
 map('n', "<leader>j", function() require("harpoon.ui").nav_next() end, options)
 
 map('n', "<leader>1", function() require("harpoon.ui").nav_file(1) end, options)
