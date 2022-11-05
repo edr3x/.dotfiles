@@ -16,6 +16,7 @@ map('n', '<leader>p', '"*p', options) -- paste for emoji
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', options)
+map('n', '<leader>ft', '<cmd>Telescope treesitter<cr>', options)
 map('n', '<leader>fe', '<cmd>Telescope emoji<CR>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
