@@ -13,7 +13,7 @@ local servers = {
     'dockerls',
 }
 
-local settings = {
+require("mason").setup {
     ui = {
         border = "none",
         icons = {
@@ -26,18 +26,14 @@ local settings = {
     max_concurrent_installers = 4,
 }
 
-require("mason").setup(settings)
-require("mason-lspconfig").setup({
+require("mason-lspconfig").setup {
     ensure_installed = servers,
     automatic_installation = true,
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+}
 
 for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
-        capabilities = capabilities,
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
         flags = {
             debounce_text_changes = 150,
         },
