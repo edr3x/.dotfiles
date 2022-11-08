@@ -1,5 +1,6 @@
 local map = vim.keymap.set
 local options = { noremap = true, silent = true }
+local hook = require("harpoon.ui")
 
 vim.g.mapleader = ','
 
@@ -22,15 +23,15 @@ map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
 --harpoon
 map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
-map('n', "<leader>o", function() require("harpoon.ui").toggle_quick_menu() end, options)
-map('n', "<leader>k", function() require("harpoon.ui").nav_prev() end, options)
-map('n', "<leader>j", function() require("harpoon.ui").nav_next() end, options)
+map('n', "<leader>o", function() hook.toggle_quick_menu() end, options)
+map('n', "<leader>k", function() hook.nav_prev() end, options)
+map('n', "<leader>j", function() hook.nav_next() end, options)
 
-map('n', "<leader>1", function() require("harpoon.ui").nav_file(1) end, options)
-map('n', "<leader>2", function() require("harpoon.ui").nav_file(2) end, options)
-map('n', "<leader>3", function() require("harpoon.ui").nav_file(3) end, options)
-map('n', "<leader>4", function() require("harpoon.ui").nav_file(4) end, options)
-map('n', "<leader>5", function() require("harpoon.ui").nav_file(5) end, options)
+map('n', "<leader>1", function() hook.nav_file(1) end, options)
+map('n', "<leader>2", function() hook.nav_file(2) end, options)
+map('n', "<leader>3", function() hook.nav_file(3) end, options)
+map('n', "<leader>4", function() hook.nav_file(4) end, options)
+map('n', "<leader>5", function() hook.nav_file(5) end, options)
 
 --md prev
 map('n', "<leader>md", function() require('peek').open() end, options)

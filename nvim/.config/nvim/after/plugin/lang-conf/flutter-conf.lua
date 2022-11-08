@@ -14,7 +14,7 @@ require("flutter-tools").setup {
         color = {
             enabled = true,
             background = true,
-            virtual_text = false,
+            virtual_text = true,
         },
         settings = {
             showTodos = false,
