@@ -4,6 +4,7 @@ local hook = require("harpoon.ui")
 
 vim.g.mapleader = ','
 
+map('n', 'x', '"_x', options)
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file

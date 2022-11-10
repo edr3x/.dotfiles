@@ -1,5 +1,22 @@
-vim.cmd [[packadd packer.nvim]]
-return require('packer').startup(function(use)
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+local status, packer = pcall(require, "packer")
+if not status then
+    return
+end
+
+return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'edr3x/better-escape.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -23,7 +40,7 @@ return require('packer').startup(function(use)
     use 'edr3x/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
-    use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+    use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
     use 'lewis6991/impatient.nvim'
     use 'xiyaowong/telescope-emoji.nvim'
     use 'tpope/vim-obsession'
@@ -50,4 +67,8 @@ return require('packer').startup(function(use)
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'nvim-telescope/telescope-dap.nvim'
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 end)

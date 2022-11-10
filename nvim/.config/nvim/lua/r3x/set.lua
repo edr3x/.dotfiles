@@ -14,6 +14,9 @@ set.incsearch = true
 set.smartindent = true
 set.wrap = false
 set.termguicolors = true
+set.list = true
+set.iskeyword:append("-")
+set.backspace = "indent,eol,start"
 
 ncmd("sign define DiagnosticSignError text= texthl=DiagnosticSignError")
 ncmd("sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn")

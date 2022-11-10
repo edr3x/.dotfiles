@@ -1,4 +1,9 @@
-require("nvim-tree").setup({
+local status, ntree = pcall(require, "nvim-tree")
+if not status then
+    return
+end
+
+ntree.setup({
     sort_by = "name",
     open_on_setup = true,
     auto_reload_on_write = true,
