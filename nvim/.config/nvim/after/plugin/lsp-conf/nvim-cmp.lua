@@ -1,5 +1,18 @@
-local luasnip = require 'luasnip'
-local cmp = require 'cmp'
+local status, luasnip = pcall(require, "luasnip")
+if not status then
+    return
+end
+
+local stat, cmp = pcall(require, "cmp")
+if not stat then
+    return
+end
+
+local e, csnip = pcall(require, "luasnip/loaders/from_vscode")
+if not e then
+    return
+end
+
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -119,6 +132,6 @@ cmp.setup {
     },
 }
 
-require("luasnip/loaders/from_vscode").lazy_load({
+csnip.lazy_load({
     paths = vim.fn.stdpath "config" .. "/snippets",
 })

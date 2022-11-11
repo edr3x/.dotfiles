@@ -1,3 +1,23 @@
+local status, mason = pcall(require, "mason")
+if not status then
+    return
+end
+
+local stat, masonlsp = pcall(require, "mason-lspconfig")
+if not stat then
+    return
+end
+
+local sta, lspconf = pcall(require, "lspconfig")
+if not sta then
+    return
+end
+
+local e, cnl = pcall(require, "cmp_nvim_lsp")
+if not e then
+    return
+end
+
 local servers = {
     'clangd',
     'sumneko_lua',
@@ -13,7 +33,7 @@ local servers = {
     'dockerls',
 }
 
-require("mason").setup {
+mason.setup {
     ui = {
         border = "none",
         icons = {
@@ -26,14 +46,14 @@ require("mason").setup {
     max_concurrent_installers = 4,
 }
 
-require("mason-lspconfig").setup {
+masonlsp.setup {
     ensure_installed = servers,
     automatic_installation = true,
 }
 
 for _, lsp in pairs(servers) do
-    require('lspconfig')[lsp].setup {
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+    lspconf[lsp].setup {
+        capabilities = cnl.default_capabilities(),
         flags = {
             debounce_text_changes = 150,
         },

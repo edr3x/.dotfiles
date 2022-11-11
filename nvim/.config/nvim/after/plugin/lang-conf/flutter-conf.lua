@@ -1,4 +1,9 @@
-require("flutter-tools").setup {
+local status, ftools = pcall(require, "flutter-tools")
+if not status then
+    return
+end
+
+ftools.setup {
     debugger = {
         enabled = true,
         run_via_dap = true,

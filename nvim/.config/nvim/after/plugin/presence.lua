@@ -1,4 +1,9 @@
-require("presence"):setup({
+local status, presence = pcall(require, "presence")
+if not status then
+    return
+end
+
+presence:setup({
     auto_update        = true,
     show_time          = true,
     neovim_image_text  = "HELP!, couldn't exit.",

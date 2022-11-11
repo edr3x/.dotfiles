@@ -1,7 +1,17 @@
+local status, rtools = pcall(require, "rust-tools")
+if not status then
+    return
+end
+
+local stat, rxt = pcall(require, "rust-tools/executors")
+if not stat then
+    return
+end
+
 local opts = {
     tools = {
         autoSetHints = true,
-        executor = require("rust-tools/executors").termopen,
+        executor = rxt.termopen,
         on_initialized = nil,
         inlay_hints = {
             only_current_line = false,
@@ -106,5 +116,5 @@ local opts = {
     },
 }
 
-require('rust-tools').setup(opts)
-require('rust-tools').inlay_hints.enable()
+rtools.setup(opts)
+rtools.inlay_hints.enable()

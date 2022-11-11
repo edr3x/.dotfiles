@@ -1,3 +1,8 @@
+local status, line = pcall(require, "lualine")
+if not status then
+    return
+end
+
 local lspStatus = {
     function()
         local msg = "No Active Lsp"
@@ -18,7 +23,7 @@ local lspStatus = {
     color = { fg = "#d3d3d3" }
 }
 
-require('lualine').setup {
+line.setup {
     options = {
         icons_enabled = true,
         theme = 'powerline_cyan',

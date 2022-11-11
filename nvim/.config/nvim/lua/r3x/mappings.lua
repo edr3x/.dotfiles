@@ -1,10 +1,25 @@
 local map = vim.keymap.set
 local options = { noremap = true, silent = true }
-local hook = require("harpoon.ui")
+
+local status, hook = pcall(require, "harpoon.ui")
+if not status then
+    return
+end
+
+local stat, mark = pcall(require, "harpoon.mark")
+if not stat then
+    return
+end
+
+local e, peek = pcall(require, "peek")
+if not e then
+    return
+end
 
 vim.g.mapleader = ','
 
 map('n', 'x', '"_x', options)
+map('n', 'c', '"_c', options)
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
@@ -23,7 +38,7 @@ map('n', '<leader>fe', '<cmd>Telescope emoji<CR>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
 --harpoon
-map('n', "<leader>a", function() require("harpoon.mark").add_file() end, options)
+map('n', "<leader>a", function() mark.add_file() end, options)
 map('n', "<leader>o", function() hook.toggle_quick_menu() end, options)
 map('n', "<leader>k", function() hook.nav_prev() end, options)
 map('n', "<leader>j", function() hook.nav_next() end, options)
@@ -35,8 +50,8 @@ map('n', "<leader>4", function() hook.nav_file(4) end, options)
 map('n', "<leader>5", function() hook.nav_file(5) end, options)
 
 --md prev
-map('n', "<leader>md", function() require('peek').open() end, options)
-map('n', "<leader>mc", function() require('peek').close() end, options)
+map('n', "<leader>md", function() peek.open() end, options)
+map('n', "<leader>mc", function() peek.close() end, options)
 
 --lsp buffer
 map({ 'x', 'n' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)

@@ -1,5 +1,12 @@
-local scope = require('telescope')
-local esc = { ["<esc>"] = require('telescope.actions').close }
+local status, scope = pcall(require, "telescope")
+if not status then
+    return
+end
+
+local stat, tactions = pcall(require, "telescope.actions")
+if not stat then
+    return
+end
 
 scope.setup {
     defaults = {
@@ -7,8 +14,8 @@ scope.setup {
             "macos", "web", "windows", "%.lock$" },
         color_devicons = true,
         mappings = {
-            i = esc,
-            n = esc,
+            i = { ["<esc>"] = tactions.close },
+            n = { ["<esc>"] = tactions.close },
         },
     },
     pickers = {

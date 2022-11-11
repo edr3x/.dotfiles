@@ -1,4 +1,9 @@
-require 'treesitter-context'.setup {
+local status, tcontext = pcall(require, "treesitter-context")
+if not status then
+    return
+end
+
+tcontext.setup {
     enable = true,
     throttle = true,
     max_lines = 0,
