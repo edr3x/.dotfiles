@@ -43,21 +43,21 @@ font:
     family: Fira Code Nerd Font
     style: Bold Italic
 
-  size: 12
+  size: 10
 
 window:
   decorations: none
   opacity: 0.85
   padding:
-    x: 5
-    y: 6
+    y: 0
+    x: 0
   history: 10000
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
   live_config_reload: true
   dimensions:
     columns: 159
-    lines: 40
+    lines: 39
       
 shell:
   program: /usr/bin/fish
