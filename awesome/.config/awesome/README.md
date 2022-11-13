@@ -1,5 +1,3 @@
-# Minimum AwesomeWM Config
+# Minimal AwesomeWM config
 
-## Required packages
-
-### tbc
+tbc
