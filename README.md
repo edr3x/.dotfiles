@@ -1,14 +1,13 @@
 # Dotfiles
 
-![desktop](https://user-images.githubusercontent.com/45848083/198842889-7b6b4a56-6175-4d6d-87c9-e4620f7951f6.png)
+![desktop](https://user-images.githubusercontent.com/45848083/201687053-4b0e3c7e-836a-4714-92a5-78f14f34c040.png)
+![fetch](https://user-images.githubusercontent.com/45848083/201687532-6a597cda-4315-4af9-824e-7c12d86f35d4.png)
+![firefox](https://user-images.githubusercontent.com/45848083/201690200-38036d66-b315-4565-ba4b-737bbb7e48f3.png)
 ![rofi](https://user-images.githubusercontent.com/45848083/198842904-54399bed-09ac-46bf-bd41-dfd4eecc1e9b.png)
-![firefox](https://user-images.githubusercontent.com/45848083/198842916-f6a934cd-0205-48fd-9058-0422af2c4e48.png)
-![fetch](https://user-images.githubusercontent.com/45848083/198842920-5715610c-4a8f-4034-98d3-ad3638e576ee.png)
 ![nvim](https://user-images.githubusercontent.com/45848083/198842932-e0cdc8ba-99fd-4302-9f76-42033f9699c1.png)
-![thunar](https://user-images.githubusercontent.com/45848083/198842947-62a736b7-9eeb-4411-8372-c899de40b2ff.png)
 
-- DE : [XFCE4](https://www.xfce.org/)
-- Bar : [XFCE bar](https://www.xfce.org/)
+- WM : [awesome](https://awesomewm.org/)
+- Bar : [wibar](https://awesomewm.org/)
 - App Launcher : [Rofi](https://github.com/davatorium/rofi/)
 - Compositor : [Picom](https://github.com/yshui/picom)
 - Terminal :
