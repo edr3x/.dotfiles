@@ -12,6 +12,10 @@ awful.keyboard.append_global_keybindings({
         function() awful.util.spawn("rofi -show drun") end,
         { description = "run prompt", group = "launcher" }),
 
+    awful.key({ modkey }, "e",
+        function() awful.util.spawn("Thunar") end,
+        { description = "run Thunar", group = "launcher" }),
+
     awful.key({ modkey }, "s",
         hotkeys_popup.show_help,
         { description = "show hotkeys", group = "awesome" }),
