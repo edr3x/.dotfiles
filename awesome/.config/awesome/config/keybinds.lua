@@ -90,7 +90,7 @@ awful.keyboard.append_global_keybindings({
         end,
         { description = "focus previous by index", group = "client" }
     ),
-    awful.key({ modkey }, "Tab",
+    awful.key({ altkey }, "Tab",
         function()
             awful.client.focus.history.previous()
             if client.focus then

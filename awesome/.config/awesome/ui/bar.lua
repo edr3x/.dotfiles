@@ -21,7 +21,7 @@ local time = wibox.widget {
         widget = wibox.container.margin,
         margins = 10,
         {
-            widget = wibox.widget.textclock "%H:%M",
+            widget = wibox.widget.textclock "%l:%M %p",
             font = beautiful.font_name .. " Bold 11",
             align = "center",
         },
@@ -42,13 +42,24 @@ local action_icon = require("ui.gooey").make_button {
     end,
 }
 
+local mysystray = wibox.widget {
+    widget = wibox.container.background,
+    bg = beautiful.bg_normal,
+    {
+        widget = wibox.container.margin,
+        margins = 8,
+        {
+            widget = wibox.widget.systray(),
+            align = "center",
+        },
+    },
+}
+
 helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
-    -- Each screen has its own tag table.
-    awful.tag({ " ", " ", " ", " ", " ", " ", " ", " " }, s, awful.layout.layouts[1])
 
-    --awful.tag({ "1", "2", "3", "4", "5" }, s, awful.layout.layouts[1])
+    awful.tag({ " ", "  ", " ﭮ ", "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -101,7 +112,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         }
     }
 
-
     s.mywibar = awful.wibar({
         type = "dock",
         ontop = true,
@@ -113,13 +123,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         screen = s,
     })
 
-
-    --awful.placement.top(s.mywibar, { margins = beautiful.useless_gap * 1 })
-
     s.mywibar:struts({
         top = dpi(40),
     })
-
 
     -- Remove wibar on full screen
     local function remove_wibar(c)
@@ -146,8 +152,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     client.connect_signal("request::unmanage", add_wibar)
 
-
-
     -- Create the wibox
     s.mywibar:setup({
         {
@@ -155,9 +159,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 layout = wibox.layout.align.horizontal,
                 expand = "none",
                 {
-
                     s.mytaglist,
-                    margins = dpi(9),
+                    margins = dpi(2),
                     widget = wibox.container.margin,
                 },
                 time,
@@ -166,6 +169,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                         margins = dpi(9.7),
                         widget = wibox.container.margin,
                     },
+                    mysystray,
                     action_icon,
                     layout = wibox.layout.fixed.horizontal,
                 },
@@ -177,5 +181,4 @@ screen.connect_signal("request::desktop_decoration", function(s)
         shape = helpers.rrect(beautiful.border_radius),
         widget = wibox.container.background,
     })
-
 end)

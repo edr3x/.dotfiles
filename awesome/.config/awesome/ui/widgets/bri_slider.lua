@@ -20,7 +20,7 @@ helpers.add_hover_cursor(slider, "hand1")
 
 local bri_slider = wibox.widget {
     {
-        markup = helpers.colorize_text(" ", beautiful.yellow),
+        markup = helpers.colorize_text("  ", beautiful.yellow),
         font = beautiful.icon_font2 .. " 14",
         align = "center",
         valign = "center",

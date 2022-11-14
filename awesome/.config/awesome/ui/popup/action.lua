@@ -5,6 +5,7 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local naughty = require("naughty")
 local rubato = require("lib.rubato")
+
 F.action = {}
 
 local notifs_text = wibox.widget {
@@ -15,8 +16,8 @@ local notifs_text = wibox.widget {
 }
 
 local notifs_clear = wibox.widget {
-    markup = "<span foreground='" .. beautiful.red .. "'> </span>",
-    font = beautiful.icon_font2 .. " Bold 14",
+    markup = "<span foreground='" .. beautiful.red .. "'>  </span>",
+    font = beautiful.icon_font2 .. " Bold 20",
     align = "center",
     valign = "center",
     widget = wibox.widget.textbox,

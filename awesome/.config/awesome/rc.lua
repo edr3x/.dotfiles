@@ -1,13 +1,9 @@
 pcall(require, "luarocks.loader")
 
 local beautiful = require("beautiful")
-
 local naughty = require("naughty")
 require("awful.autofocus")
 require("awful.hotkeys_popup.keys")
-
-local ruled = require("ruled")
-local awful = require("awful")
 
 naughty.connect_signal("request::display_error", function(message, startup)
     naughty.notification {
@@ -17,8 +13,8 @@ naughty.connect_signal("request::display_error", function(message, startup)
     }
 end)
 
-beautiful.init("~/.config/awesome/themes/tokyo-darker/theme.lua")
---beautiful.init("~/.config/awesome/themes/night/theme.lua")
+--beautiful.init("~/.config/awesome/themes/tokyo-darker/theme.lua")
+beautiful.init("~/.config/awesome/themes/night/theme.lua")
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
@@ -56,8 +52,7 @@ require('ui.bar')
 require("ui.notifications")
 
 -- popup
---require("ui.popup.action")
-
+require("ui.popup.action")
 --}}}
 
 -- Enable sloppy focus, so that focus follows mouse.
