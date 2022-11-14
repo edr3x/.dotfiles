@@ -11,9 +11,13 @@
 
 ## Also Requires
 
-```sh
-sudo pacman -S lxappearance xclip scrot
-```
+- `lxappearance` : for GTK themes
+
+- `xclip` : for clip
+
+- `scrot` : for screenshot
+
+- `acpi` : for battery
 
 ### For awesomeness
 ```sh
