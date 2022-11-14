@@ -1,6 +1,7 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local menubar = require("menubar")
+require("lib.screenshot")
 require("awful.hotkeys_popup.keys")
 
 awful.keyboard.append_global_keybindings({
@@ -47,6 +48,7 @@ awful.keyboard.append_global_keybindings({
         function() menubar.show() end,
         { description = "show the menubar", group = "launcher" }),
 
+    -- Audio
     awful.key({}, "XF86AudioRaiseVolume",
         function() awful.spawn("pamixer -i 5") end,
         { description = "increase volume", group = "control" }),
@@ -58,6 +60,17 @@ awful.keyboard.append_global_keybindings({
     awful.key({}, "XF86AudioMute",
         function() awful.spawn("pamixer -t") end,
         { description = "mute volume", group = "control" }),
+
+    -- Screenshot
+    awful.key({ modkey }, "Print", scrot_full,
+        { description = "Take a screenshot of entire screen", group = "screenshot" }),
+    awful.key({}, "Print", scrot_selection,
+        { description = "Take a screenshot of selection", group = "screenshot" }),
+    awful.key({ "Shift" }, "Print", scrot_window,
+        { description = "Take a screenshot of focused window", group = "screenshot" }),
+    awful.key({ "Ctrl" }, "Print", scrot_delay,
+        { description = "Take a screenshot of delay", group = "screenshot" }),
+
 })
 
 -- Tags related keybindings

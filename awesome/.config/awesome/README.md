@@ -12,7 +12,7 @@
 ## Also Requires
 
 ```sh
-sudo pacman -S lxappearance
+sudo pacman -S lxappearance xclip scrot
 ```
 
 ### For awesomeness
