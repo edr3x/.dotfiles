@@ -2,38 +2,17 @@ local awful = require('awful')
 local wibox = require('wibox')
 
 client.connect_signal("request::titlebars", function(c)
-    -- buttons for the titlebar
-    local buttons = {
-        awful.button({}, 1, function()
-            c:activate { context = "titlebar", action = "mouse_move" }
-        end),
-        awful.button({}, 3, function()
-            c:activate { context = "titlebar", action = "mouse_resize" }
-        end),
-    }
-
-    awful.titlebar(c).widget = {
-        { -- Left
-            awful.titlebar.widget.iconwidget(c),
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
+    awful.titlebar(c, {
+        size = 0.5,
+        position = "left",
+    }):setup {
+        {
+            layout = wibox.layout.fixed.vertical,
+            spacing = 13,
         },
-        { -- Middle
-            { -- Title
-                halign = "center",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.flex.horizontal
-        },
-        { -- Right
-            awful.titlebar.widget.floatingbutton(c),
-            awful.titlebar.widget.maximizedbutton(c),
-            awful.titlebar.widget.stickybutton(c),
-            awful.titlebar.widget.ontopbutton(c),
-            awful.titlebar.widget.closebutton(c),
-            layout = wibox.layout.fixed.horizontal()
-        },
-        layout = wibox.layout.align.horizontal
+        widget = wibox.container.margin,
+        top = 15,
+        left = 15,
+        right = 15,
     }
 end)
