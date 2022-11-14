@@ -55,6 +55,23 @@ local mysystray = wibox.widget {
     },
 }
 
+-- Battery
+battery = require("config.battery")
+
+battery_widget = wibox.widget.textbox()
+battery_widget:set_align("right")
+battery_closure = battery.closure()
+
+function battery_update()
+    battery_widget:set_text(" " .. battery_closure() .. " ")
+end
+
+battery_update()
+battery_timer = timer({ timeout = 30 })
+battery_timer:connect_signal("timeout", battery_update)
+battery_timer:start()
+--
+
 helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -170,6 +187,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                         widget = wibox.container.margin,
                     },
                     mysystray,
+                    battery_widget,
                     action_icon,
                     layout = wibox.layout.fixed.horizontal,
                 },
