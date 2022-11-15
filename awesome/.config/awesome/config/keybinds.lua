@@ -1,8 +1,9 @@
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local menubar = require("menubar")
-require("lib.screenshot")
+local xrandr = require("config.xrandr")
 require("awful.hotkeys_popup.keys")
+require("config.screenshot")
 
 awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "Return",
@@ -71,6 +72,9 @@ awful.keyboard.append_global_keybindings({
     awful.key({ "Ctrl" }, "Print", scrot_delay,
         { description = "Take a screenshot of delay", group = "screenshot" }),
 
+    -- Display
+    awful.key({ modkey, "Control" }, "p", function() xrandr.xrandr() end,
+        { description = "Multi monitor display setting", group = "display" }),
 })
 
 -- Tags related keybindings
