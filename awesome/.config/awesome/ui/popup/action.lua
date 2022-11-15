@@ -230,7 +230,7 @@ local actions = wibox.widget {
                 spacing = 3,
             },
             {
-                { widget = require "ui.widgets.wifi" },
+                { widget = wibox.widget.systray() },
                 layout = wibox.layout.flex.horizontal,
                 spacing = 15,
             },

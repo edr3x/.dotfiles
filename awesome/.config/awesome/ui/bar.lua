@@ -42,19 +42,6 @@ local action_icon = require("ui.gooey").make_button {
     end,
 }
 
-local mysystray = wibox.widget {
-    widget = wibox.container.background,
-    bg = beautiful.bg_normal,
-    {
-        widget = wibox.container.margin,
-        margins = 8,
-        {
-            widget = wibox.widget.systray(),
-            align = "center",
-        },
-    },
-}
-
 -- Battery
 battery = require("config.battery")
 
@@ -67,7 +54,7 @@ function battery_update()
 end
 
 battery_update()
-battery_timer = timer({ timeout = 30 })
+battery_timer = timer({ timeout = 5 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
 --
@@ -76,7 +63,8 @@ helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
 
-    awful.tag({ " ", "  ", " ﭮ ", "  ", "  ", "  ", "  ", "  " }, s, awful.layout.layouts[1])
+    awful.tag({ " ", "  ", " ﭮ ", "  ", "  ", "  ", "  ", "  ", "  " }, s,
+        awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -186,7 +174,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
                         margins = dpi(9.7),
                         widget = wibox.container.margin,
                     },
-                    mysystray,
                     battery_widget,
                     action_icon,
                     layout = wibox.layout.fixed.horizontal,
