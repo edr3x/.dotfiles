@@ -54,7 +54,7 @@ function battery_update()
 end
 
 battery_update()
-battery_timer = timer({ timeout = 5 })
+battery_timer = timer({ timeout = 15 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
 --

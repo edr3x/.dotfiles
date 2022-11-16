@@ -18,7 +18,7 @@ theme.black        = "#1C252C"
 theme.red          = "#f7768e"
 theme.green        = "#9ece6a"
 theme.yellow       = "#e0af68"
-theme.blue         = "#6791C9"
+theme.blue         = "#7aa2f7"
 theme.magenta      = "#BC83E3"
 theme.cyan         = "#67AFC1"
 theme.white        = "#D9D7D6"
@@ -54,7 +54,7 @@ theme.fg_focus    = "#D9D7D6"
 theme.fg_urgent   = "#D9D7D6"
 theme.fg_minimize = "#D9D7D6"
 
-theme.useless_gap         = dpi(4)
+theme.useless_gap         = dpi(5)
 theme.border_width        = dpi(1)
 theme.border_color_normal = "#000000"
 theme.border_color_active = "#00CED1"
