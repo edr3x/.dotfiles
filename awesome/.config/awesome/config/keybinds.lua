@@ -34,21 +34,6 @@ awful.keyboard.append_global_keybindings({
         awesome.quit,
         { description = "quit awesome", group = "awesome" }),
 
-    awful.key({ modkey }, "x",
-        function()
-            awful.prompt.run {
-                prompt       = "Run Lua code: ",
-                textbox      = awful.screen.focused().mypromptbox.widget,
-                exe_callback = awful.util.eval,
-                history_path = awful.util.get_cache_dir() .. "/history_eval"
-            }
-        end,
-        { description = "lua execute prompt", group = "awesome" }),
-
-    awful.key({ modkey }, "p",
-        function() menubar.show() end,
-        { description = "show the menubar", group = "launcher" }),
-
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume",
         function() awful.spawn("pamixer -i 5") end,
@@ -61,6 +46,10 @@ awful.keyboard.append_global_keybindings({
     awful.key({}, "XF86AudioMute",
         function() awful.spawn("pamixer -t") end,
         { description = "mute volume", group = "control" }),
+
+    awful.key({ modkey, "Control" }, "v",
+        function() awful.spawn("pavucontrol") end,
+        { description = " Audio Contol all ", group = "control" }),
 
     -- Screenshot
     awful.key({ modkey }, "Print", scrot_full,
@@ -202,7 +191,6 @@ awful.keyboard.append_global_keybindings({
             end
         end,
     },
-
     awful.key {
         modifiers   = { altkey, "Control" },
         keygroup    = "numrow",

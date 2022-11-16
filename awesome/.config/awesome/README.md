@@ -8,6 +8,7 @@
 * [rofi](https://github.com/davatorium/rofi)
 * [picom](https://github.com/pijulius/picom)
 * [brightnessctl](https://github.com/Hummer12007/brightnessctl)
+* [pavucontrol](https://github.com/pulseaudio/pavucontrol)
 
 ## Also Requires
 
