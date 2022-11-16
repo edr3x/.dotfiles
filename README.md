@@ -4,10 +4,10 @@
 ![rofi](https://user-images.githubusercontent.com/45848083/201734117-24f3be65-18fa-4239-8a11-53b2dc30d5c0.png)
 ![fetch](https://user-images.githubusercontent.com/45848083/201687532-6a597cda-4315-4af9-824e-7c12d86f35d4.png)
 ![nvim](https://user-images.githubusercontent.com/45848083/201734727-be0faea7-7fa7-4b13-b302-03c1dfd08be0.png)
-![firefox](https://user-images.githubusercontent.com/45848083/201690200-38036d66-b315-4565-ba4b-737bbb7e48f3.png)
+![firefox](https://user-images.githubusercontent.com/45848083/202175460-a3b369f8-c9b9-423f-8db0-df3ba2455372.png)
 
 - WM : [awesome](https://awesomewm.org/)
-- Bar : [wibar](https://awesomewm.org/)
+- Bar : [wibar](https://awesomewm.org/apidoc/popups_and_bars/awful.wibar.html)
 - App Launcher : [Rofi](https://github.com/davatorium/rofi/)
 - Compositor : [Picom](https://github.com/yshui/picom)
 - Terminal :
