@@ -19,6 +19,10 @@
 
 - `acpi` : for battery
 
+- `network-manager-applet` : for network
+
+- `blueman` : for [bluetooth](https://wiki.archlinux.org/title/bluetooth#Installation)
+
 ### For awesomeness
 ```sh
 git clone https://github.com/BlingCorp/bling.git ~/.config/awesome/lib/bling
