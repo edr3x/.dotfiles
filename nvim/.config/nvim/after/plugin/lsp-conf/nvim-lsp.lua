@@ -13,11 +13,6 @@ if not sta then
     return
 end
 
-local e, cnl = pcall(require, "cmp_nvim_lsp")
-if not e then
-    return
-end
-
 local servers = {
     'clangd',
     'sumneko_lua',
@@ -31,6 +26,7 @@ local servers = {
     'marksman',
     'yamlls',
     'dockerls',
+    'jdtls',
 }
 
 mason.setup {
@@ -53,7 +49,8 @@ masonlsp.setup {
 
 for _, lsp in pairs(servers) do
     lspconf[lsp].setup {
-        capabilities = cnl.default_capabilities(),
+        on_attach = require("r3x.lsp-handlers").on_attach,
+        capabilities = require("r3x.lsp-handlers").capabilities,
         flags = {
             debounce_text_changes = 150,
         },

@@ -53,17 +53,6 @@ map('n', "<leader>5", function() hook.nav_file(5) end, options)
 map('n', "<leader>md", function() peek.open() end, options)
 map('n', "<leader>mc", function() peek.close() end, options)
 
---lsp buffer
-map({ 'x', 'n' }, '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', options)
-map('n', '<leader>df', '<cmd>lua vim.lsp.buf.definition()<CR>', options)
-map('n', '<leader>de', '<cmd>lua vim.lsp.buf.declaration()<CR>', options)
-map('n', '<leader>im', '<cmd>lua vim.lsp.buf.implementation()<CR>', options)
-map('n', '<leader>rf', '<cmd>lua vim.lsp.buf.reference()<CR>', options)
-map('n', '<leader>t', '<cmd>lua vim.lsp.buf.hover()<CR>', options)
-map('n', '<C-.>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', options)
-map('n', '<C-n>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', options)
-map('n', '<C-p>', '<cmd>lua vim.diagnostic.goto_next()<CR>', options)
-
 --debugger
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
 map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", options)
