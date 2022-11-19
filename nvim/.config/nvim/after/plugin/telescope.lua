@@ -15,7 +15,10 @@ scope.setup {
         color_devicons = true,
         mappings = {
             i = { ["<esc>"] = tactions.close },
-            n = { ["<esc>"] = tactions.close },
+            n = {
+                ["<esc>"] = tactions.close,
+                ["dd"] = "delete_buffer",
+            },
         },
     },
     pickers = {

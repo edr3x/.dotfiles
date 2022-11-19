@@ -18,20 +18,28 @@ end
 
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    use 'edr3x/better-escape.nvim'
     use 'nvim-lua/plenary.nvim'
+    use 'edr3x/better-escape.nvim'
+    use 'edr3x/lualine.nvim'
     use 'akinsho/toggleterm.nvim'
     use 'jiangmiao/auto-pairs'
     use 'nvim-telescope/telescope.nvim'
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
     use 'andweeb/presence.nvim'
-    use { 'kyazdani42/nvim-tree.lua', requires = {
-        'kyazdani42/nvim-web-devicons',
-    },
+    --use {
+    --    'nvim-tree/nvim-tree.lua',
+    --    requires = {
+    --        'nvim-tree/nvim-web-devicons',
+    --    },
+    --}
+    use {
+        'DaikyXendo/nvim-tree.lua',
+        requires = {
+            'DaikyXendo/nvim-material-icon',
+        },
     }
     use 'folke/trouble.nvim'
-    use 'edr3x/lualine.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -47,7 +55,7 @@ return packer.startup(function(use)
     use 'RRethy/vim-illuminate'
     use 'mfussenegger/nvim-jdtls'
 
-    --color
+    --theme
     use 'folke/tokyonight.nvim'
 
     --LSP and cmp

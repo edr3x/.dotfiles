@@ -1,18 +1,18 @@
 local map = vim.keymap.set
 local options = { noremap = true, silent = true }
 
-local status, hook = pcall(require, "harpoon.ui")
-if not status then
+local harpoon_ui_status, hook = pcall(require, "harpoon.ui")
+if not harpoon_ui_status then
     return
 end
 
-local stat, mark = pcall(require, "harpoon.mark")
-if not stat then
+local harpoon_mark_status, mark = pcall(require, "harpoon.mark")
+if not harpoon_mark_status then
     return
 end
 
-local e, peek = pcall(require, "peek")
-if not e then
+local peek_status, peek = pcall(require, "peek")
+if not peek_status then
     return
 end
 
