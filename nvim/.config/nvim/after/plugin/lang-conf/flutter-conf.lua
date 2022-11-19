@@ -16,6 +16,7 @@ ftools.setup {
     widget_guides = { enabled = true, debug = false },
     dev_log = { enabled = false, open_cmd = 'tabedit' },
     lsp = {
+        on_attach = require('r3x.lsp-handlers').on_attach,
         color = {
             enabled = true,
             background = true,
