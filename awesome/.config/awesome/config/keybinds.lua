@@ -10,6 +10,10 @@ awful.keyboard.append_global_keybindings({
         function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
 
+    awful.key({ modkey, "Control" }, "Return",
+        function() awful.util.spawn('xterm -e "zsh"') end,
+        { description = "run xterm", group = "launcher" }),
+
     awful.key({ altkey }, "Return",
         function() awful.util.spawn("rofi -show drun") end,
         { description = "run prompt", group = "launcher" }),

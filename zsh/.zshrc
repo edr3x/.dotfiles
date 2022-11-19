@@ -3,7 +3,10 @@ alias vim="nvim"
 alias e="thunar ."
 alias x="exit"
 alias c="clear"
-alias logout="pkill -u r3x"
+alias ls="exa -a --icons --group-directories-first"
+alias ll="exa -lah --icons --color automatic --no-user --no-time --git --group-directories-first"
+alias ..="cd .."
+alias ...="cd ../.."
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

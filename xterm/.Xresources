@@ -3,8 +3,8 @@ xterm*termName: xterm-256color
 xterm*locale: false
 xterm*utf8: true
 xterm*reverseVideo: false
-xterm*faceName: Fira Code
-xterm*faceSize: 11
+xterm*faceName: Fira Code Nerd Font
+xterm*faceSize: 15
 xterm*dynamicColors: On
 xterm*geometry: 80x20
 xterm*scrollBar: false
@@ -49,8 +49,8 @@ xterm*color15: #ffffff
 urxvt*locale: false
 urxvt*utf8: true
 urxvt*reverseVideo: false
-urxvt*faceName: Iosevka
-urxvt*faceSize: 11
+urxvt*faceName: Iosevka Nerd Font
+urxvt*faceSize: 15
 urxvt*dynamicColors: On
 urxvt*geometry: 80x20
 urxvt*scrollBar: false
