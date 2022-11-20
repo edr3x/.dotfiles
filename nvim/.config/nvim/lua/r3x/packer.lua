@@ -27,12 +27,6 @@ return packer.startup(function(use)
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
     use 'andweeb/presence.nvim'
-    --use {
-    --    'nvim-tree/nvim-tree.lua',
-    --    requires = {
-    --        'nvim-tree/nvim-web-devicons',
-    --    },
-    --}
     use {
         'DaikyXendo/nvim-tree.lua',
         requires = {
@@ -51,7 +45,6 @@ return packer.startup(function(use)
     use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
     use 'lewis6991/impatient.nvim'
     use 'xiyaowong/telescope-emoji.nvim'
-    use 'tpope/vim-obsession'
     use 'RRethy/vim-illuminate'
     use 'mfussenegger/nvim-jdtls'
 

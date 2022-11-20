@@ -31,9 +31,9 @@ map('n', '<leader>p', '"*p', options) -- paste for emoji
 
 --telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', options)
-map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', options)
-map('n', '<leader>ft', '<cmd>Telescope treesitter<cr>', options)
+map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', options)
+map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', options)
+map('n', '<leader>ft', '<cmd>Telescope treesitter<CR>', options)
 map('n', '<leader>fe', '<cmd>Telescope emoji<CR>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
@@ -65,4 +65,4 @@ map("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", options)
 map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", options)
 
 --debug for go
-map("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
+map("n", "<leader>dg", ":lua require'dap-go'.debug_test()<CR>")

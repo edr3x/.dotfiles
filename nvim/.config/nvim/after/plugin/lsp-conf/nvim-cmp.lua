@@ -1,18 +1,17 @@
-local status, luasnip = pcall(require, "luasnip")
-if not status then
+local luaship_status, luasnip = pcall(require, "luasnip")
+if not luaship_status then
     return
 end
 
-local stat, cmp = pcall(require, "cmp")
-if not stat then
+local cmp_status, cmp = pcall(require, "cmp")
+if not cmp_status then
     return
 end
 
-local e, csnip = pcall(require, "luasnip/loaders/from_vscode")
-if not e then
+local snippet_status, csnip = pcall(require, "luasnip/loaders/from_vscode")
+if not snippet_status then
     return
 end
-
 
 local check_backspace = function()
     local col = vim.fn.col "." - 1
@@ -47,6 +46,11 @@ local kind_icons = {
     TypeParameter = "",
 }
 
+local borderstyle = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+}
+
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -78,10 +82,7 @@ cmp.setup {
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s", }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -90,10 +91,7 @@ cmp.setup {
             else
                 fallback()
             end
-        end, {
-            "i",
-            "s",
-        }),
+        end, { "i", "s", }),
     }),
 
     formatting = {
@@ -122,9 +120,8 @@ cmp.setup {
         select = false,
     },
     window = {
-        documentation = {
-            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-        },
+        completion = borderstyle,
+        documentation = borderstyle,
     },
     experimental = {
         ghost_text = false,
@@ -132,6 +129,4 @@ cmp.setup {
     },
 }
 
-csnip.lazy_load({
-    paths = vim.fn.stdpath "config" .. "/snippets",
-})
+csnip.lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
