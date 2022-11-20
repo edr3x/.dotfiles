@@ -47,6 +47,7 @@ return packer.startup(function(use)
     use 'xiyaowong/telescope-emoji.nvim'
     use 'RRethy/vim-illuminate'
     use 'mfussenegger/nvim-jdtls'
+    use 'folke/todo-comments.nvim'
 
     --theme
     use 'folke/tokyonight.nvim'

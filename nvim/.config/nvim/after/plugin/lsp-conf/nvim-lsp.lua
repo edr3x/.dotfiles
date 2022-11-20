@@ -17,7 +17,7 @@ local servers = {
     'clangd',
     'sumneko_lua',
     'tsserver',
-    'emmet_ls',
+    --'emmet_ls',
     'jsonls',
     'gopls',
     'prismals',
