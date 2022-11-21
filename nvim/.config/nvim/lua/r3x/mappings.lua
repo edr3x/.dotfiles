@@ -20,11 +20,13 @@ vim.g.mapleader = ','
 
 map('n', 'x', '"_x', options)
 map('n', 'c', '"_c', options)
+map({ 'n', 'x' }, '<S-h>', '^', options)
+map({ 'n', 'x' }, '<S-l>', '$', options)
+map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
+map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
-map('n', '<S-j>', '<cmd>m+<CR>', options) -- move line down
-map('n', '<S-k>', '<cmd>m-2<CR>', options) -- move line up
 map('n', '<leader><ESC>', '<cmd>qa<CR>', options)
 map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
