@@ -54,9 +54,9 @@ theme.fg_focus    = "#D9D7D6"
 theme.fg_urgent   = "#D9D7D6"
 theme.fg_minimize = "#D9D7D6"
 
-theme.useless_gap         = dpi(5)
-theme.border_width        = dpi(1)
-theme.border_color_normal = "#000000"
+theme.useless_gap         = dpi(6)
+theme.border_width        = dpi(2)
+theme.border_color_normal = "#505050"
 theme.border_color_active = "#00CED1"
 theme.border_color_marked = "#91231c"
 
@@ -79,8 +79,6 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height       = dpi(15)
 theme.menu_width        = dpi(100)
-
--- Define the image to load
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(
