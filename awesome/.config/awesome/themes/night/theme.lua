@@ -9,7 +9,7 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.confdir      = os.getenv("HOME") .. "/.config/awesome/themes/night"
-theme.wallpaper    = theme.confdir .. "/neon.png"
+theme.wallpaper    = theme.confdir .. "/wall/night.jpg"
 theme.font_name    = "FiraCode Nerd Font"
 theme.taglist_font = "FiraCode Nerd Font, 14"
 theme.background   = "#1a1b26"
