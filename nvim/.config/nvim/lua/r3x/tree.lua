@@ -12,8 +12,7 @@ ntree.setup({
     hijack_netrw = true,
     view = {
         adaptive_size = true,
-        width = 25,
-        side = "right",
+        width = 40,
         number = false,
         relativenumber = false,
         signcolumn = "yes",
@@ -21,6 +20,16 @@ ntree.setup({
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },
+            },
+        },
+        float = {
+            enable = true,
+            open_win_config = {
+                border = "rounded",
+                width = 100,
+                height = 25,
+                row = 6,
+                col = 60,
             },
         },
     },
