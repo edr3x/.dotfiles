@@ -1,9 +1,9 @@
 # Dotfiles
 
-![desktop](https://user-images.githubusercontent.com/45848083/201687053-4b0e3c7e-836a-4714-92a5-78f14f34c040.png)
-![rofi](https://user-images.githubusercontent.com/45848083/201734117-24f3be65-18fa-4239-8a11-53b2dc30d5c0.png)
-![fetch](https://user-images.githubusercontent.com/45848083/201687532-6a597cda-4315-4af9-824e-7c12d86f35d4.png)
-![nvim](https://user-images.githubusercontent.com/45848083/201734727-be0faea7-7fa7-4b13-b302-03c1dfd08be0.png)
+![desktop](https://user-images.githubusercontent.com/45848083/202978298-4aba3969-5c10-4db6-94c1-8d4d678401ad.png)
+![rofi](https://user-images.githubusercontent.com/45848083/202978750-f6807663-a065-442d-a1fe-22a422499aaa.png)
+![fetch](https://user-images.githubusercontent.com/45848083/202978129-11fc0306-e4dd-4a01-a4cc-d6ee0880dd3d.png)
+![nvim](https://user-images.githubusercontent.com/45848083/202977955-dc4cdb59-6c32-4447-add8-1ff85428d3f2.png)
 ![firefox](https://user-images.githubusercontent.com/45848083/202175460-a3b369f8-c9b9-423f-8db0-df3ba2455372.png)
 
 - WM : [awesome](https://awesomewm.org/)
