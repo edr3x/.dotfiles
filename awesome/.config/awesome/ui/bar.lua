@@ -122,17 +122,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
         ontop = true,
         stretch = false,
         visible = true,
-        height = dpi(39),
-        width = s.geometry.width - dpi(0),
-        -- shape = helpers.rrect(6), --input radius
+        height = dpi(35),
+        width = s.geometry.width - dpi(25),
+        shape = helpers.rrect(6),
         screen = s,
     })
 
-    s.mywibar:struts({
-        top = dpi(40),
-    })
+    awful.placement.top(s.mywibar, { margins = beautiful.useless_gap * 1 })
 
-    -- Remove wibar on full screen
+    --{{{ Remove wibar on full screen
     local function remove_wibar(c)
         if c.fullscreen or c.maximized then
             c.screen.mywibar.visible = false
@@ -141,12 +139,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
         end
     end
 
-    -- Remove wibar on full screen
     local function add_wibar(c)
         if c.fullscreen or c.maximized then
             c.screen.mywibar.visible = true
         end
     end
+
+    ---}}}
 
     -- Hide bar when a splash widget is visible
     awesome.connect_signal("widgets::splash::visibility", function(vis)
