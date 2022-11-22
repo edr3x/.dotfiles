@@ -5,16 +5,15 @@ end
 
 ftools.setup {
     debugger = {
-        enabled = true,
-        run_via_dap = true,
-        exception_breakpoints = {},
+        enabled = false,
+        run_via_dap = false,
     },
     outline = { auto_open = false },
     decorations = {
         statusline = { device = true, app_version = true },
     },
     widget_guides = { enabled = true, debug = false },
-    dev_log = { enabled = false, open_cmd = 'tabedit' },
+    dev_log = { enabled = true, open_cmd = 'tabedit' },
     lsp = {
         on_attach = require('r3x.lsp-handlers').on_attach,
         color = {

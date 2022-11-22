@@ -43,7 +43,7 @@ font:
     family: Fira Code Nerd Font
     style: Bold Italic
 
-  size: 10
+  size: 9
 
 window:
   decorations: none

@@ -16,6 +16,11 @@ if not status then
     return
 end
 
+local which_status, wkey = pcall(require, "which-key")
+if not which_status then
+    return
+end
+
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -29,11 +34,8 @@ return packer.startup(function(use)
     use 'andweeb/presence.nvim'
     use {
         'DaikyXendo/nvim-tree.lua',
-        requires = {
-            'DaikyXendo/nvim-material-icon',
-        },
+        requires = { 'DaikyXendo/nvim-material-icon' },
     }
-    use 'folke/trouble.nvim'
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
@@ -47,10 +49,13 @@ return packer.startup(function(use)
     use 'xiyaowong/telescope-emoji.nvim'
     use 'RRethy/vim-illuminate'
     use 'mfussenegger/nvim-jdtls'
+    use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
-
-    --theme
     use 'folke/tokyonight.nvim'
+    use {
+        "folke/which-key.nvim",
+        config = function() wkey.setup {} end
+    }
 
     --LSP and cmp
     use 'neovim/nvim-lspconfig'
