@@ -1,10 +1,11 @@
 # Dotfiles
 
-![desktop](https://user-images.githubusercontent.com/45848083/202978298-4aba3969-5c10-4db6-94c1-8d4d678401ad.png)
-![rofi](https://user-images.githubusercontent.com/45848083/202978750-f6807663-a065-442d-a1fe-22a422499aaa.png)
-![fetch](https://user-images.githubusercontent.com/45848083/202978129-11fc0306-e4dd-4a01-a4cc-d6ee0880dd3d.png)
-![nvim](https://user-images.githubusercontent.com/45848083/202977955-dc4cdb59-6c32-4447-add8-1ff85428d3f2.png)
-![firefox](https://user-images.githubusercontent.com/45848083/202175460-a3b369f8-c9b9-423f-8db0-df3ba2455372.png)
+![desktop](https://user-images.githubusercontent.com/45848083/203314137-03c75847-dde5-427a-aff3-5bef0d3d11ff.png)
+![rofi](https://user-images.githubusercontent.com/45848083/203314240-ec3effc0-8929-477d-8f36-8b5bac64c711.png)
+![notification](https://user-images.githubusercontent.com/45848083/203314628-ea042acd-0e19-4314-9b8a-acdf3d48bdf8.png)
+![fetch](https://user-images.githubusercontent.com/45848083/203314336-a53a12a5-df77-4808-a6b4-9b951ba1aab2.png)
+![neovim](https://user-images.githubusercontent.com/45848083/203314395-62c2108b-13a8-4d55-b923-f2d10a11f9d9.png)
+![firefox](https://user-images.githubusercontent.com/45848083/203314824-737c6de0-8ed5-4fd0-af41-0c4d1d566a18.png)
 
 - WM : [awesome](https://awesomewm.org/)
 - Bar : [wibar](https://awesomewm.org/apidoc/popups_and_bars/awful.wibar.html)
