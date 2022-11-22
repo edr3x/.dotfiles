@@ -48,14 +48,13 @@ return packer.startup(function(use)
     use 'lewis6991/impatient.nvim'
     use 'xiyaowong/telescope-emoji.nvim'
     use 'RRethy/vim-illuminate'
-    use 'mfussenegger/nvim-jdtls'
     use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
     use 'folke/tokyonight.nvim'
-    use {
-        "folke/which-key.nvim",
-        config = function() wkey.setup {} end
-    }
+    --use {
+    --    "folke/which-key.nvim",
+    --    config = function() wkey.setup {} end
+    --}
 
     --LSP and cmp
     use 'neovim/nvim-lspconfig'
@@ -68,6 +67,7 @@ return packer.startup(function(use)
     use 'simrat39/rust-tools.nvim'
     use 'akinsho/flutter-tools.nvim'
     use 'L3MON4D3/LuaSnip'
+    use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
     -- debugger
     use 'mfussenegger/nvim-dap'
