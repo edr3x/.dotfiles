@@ -37,6 +37,7 @@ set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
 set PATH "$PATH":"$HOME/.pub-cache/bin"
 
 # TMUX
+alias tnew "tmux new -s" # creates new tmux session
 alias tls "tmux ls" # lists currently running sessions
 alias ta "tmux a -t " # attach to any of running session ( specify session name after this command )
 alias tkl "tmux kill-server" # kills all tmux sessions
