@@ -20,12 +20,16 @@ scope.setup {
                 ["dd"] = "delete_buffer",
             },
         },
+        layout_strategy = 'vertical',
+        layout_config = { height = 0.95, preview_height = 0.6, preview_cutoff = 0 },
+        path_display = { "smart", shorten = { len = 3 } },
+        dynamic_preview_title = true,
+        wrap_results = true,
     },
     pickers = {
-        find_files = {
-            hidden = true
-        }
-    }
+        find_files = { hidden = true },
+        live_grep = { additional_args = function() return { "--hidden" } end },
+    },
 }
 
 scope.load_extension('flutter')

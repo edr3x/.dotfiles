@@ -16,11 +16,6 @@ if not status then
     return
 end
 
-local which_status, wkey = pcall(require, "which-key")
-if not which_status then
-    return
-end
-
 return packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -53,7 +48,7 @@ return packer.startup(function(use)
     use 'folke/tokyonight.nvim'
     --use {
     --    "folke/which-key.nvim",
-    --    config = function() wkey.setup {} end
+    --    config = function() require("which-key").setup {} end
     --}
 
     --LSP and cmp

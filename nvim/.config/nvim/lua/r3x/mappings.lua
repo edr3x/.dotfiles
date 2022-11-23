@@ -22,6 +22,8 @@ map('n', 'x', '"_x', options)
 map('n', 'c', '"_c', options)
 map({ 'n', 'x' }, '<S-h>', '^', options)
 map({ 'n', 'x' }, '<S-l>', '$', options)
+map({ "v", "x" }, "<M-j>", ":m '>+1<cr>gv=gv")
+map({ "v", "x" }, "<M-k>", ":m '<-2<cr>gv=gv")
 map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
