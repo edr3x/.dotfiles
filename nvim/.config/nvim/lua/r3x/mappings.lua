@@ -33,6 +33,9 @@ map('n', '<leader><ESC>', '<cmd>qa<CR>', options)
 map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
 
+--errors
+map("n", "<leader>cf", "<cmd>TroubleToggle quickfix<cr>", options)
+
 --telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', options)
