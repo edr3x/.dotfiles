@@ -264,5 +264,26 @@
             "}, ${1:timeout});"
         ],
         "description": "Set Timeout Function"
+    },
+    "Prisma Client Init Snippet": {
+        "prefix": "prismainit",
+        "body": [
+            "import { PrismaClient } from '@prisma/client';",
+            "",
+            "let db: PrismaClient;",
+            "",
+            "declare global {",
+            "\tvar __db: PrismaClient | undefined;",
+            "}",
+            "",
+            "if (!global.__db) {",
+            "\tglobal.__db = new PrismaClient();",
+            "}",
+            "",
+            "db = global.__db;",
+            "",
+            "export { db };"
+        ],
+        "description": "Snippet to initialize @prisma/client"
     }
 }
