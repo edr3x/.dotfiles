@@ -14,8 +14,6 @@ set.smartindent = true
 set.wrap = false
 set.termguicolors = true
 set.list = true
-set.iskeyword:append("-")
-set.backspace = "indent,eol,start"
 
 local ncmd = vim.api.nvim_command
 ncmd("sign define DiagnosticSignError text= texthl=DiagnosticSignError")

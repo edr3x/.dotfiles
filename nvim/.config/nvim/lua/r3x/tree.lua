@@ -86,7 +86,7 @@ ntree.setup({
 
     },
     filters = {
-        dotfiles = false,
+        dotfiles = true,
         custom = { 'node_modules' },
     },
     actions = {
