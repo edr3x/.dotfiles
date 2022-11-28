@@ -26,6 +26,7 @@ local servers = {
     'marksman',
     'yamlls',
     'dockerls',
+    'hls',
     'jdtls',
 }
 
