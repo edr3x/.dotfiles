@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+state=`pacmd list-sources | awk '/muted/ { print $2 }' | head -2 | tail -1`
+micStatus="no"
+if [ $state = "yes" ]; then
+    micStatus="on"
+    icon="/home/r3x/.config/awesome/icons/mic.svg"
+else
+    micStatus="off"
+    icon="/home/r3x/.config/awesome/icons/mic-mute.svg"
+fi
+
+pactl set-source-mute 3 toggle
+
+notify-send --hint=int:transient:1 -t 1600 -i $icon "Mic switched: $state"

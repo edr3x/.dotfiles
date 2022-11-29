@@ -55,6 +55,10 @@ awful.keyboard.append_global_keybindings({
         function() awful.spawn("pavucontrol") end,
         { description = " Audio Contol all ", group = "control" }),
 
+    awful.key({ modkey }, "Pause",
+        function() awful.spawn("mic-toggle") end,
+        { description = "Microphone toggle", group = "control" }),
+
     -- Screenshot
     awful.key({ modkey }, "Print", scrot_full,
         { description = "Take a screenshot of entire screen", group = "screenshot" }),
