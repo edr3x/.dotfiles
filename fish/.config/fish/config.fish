@@ -27,6 +27,7 @@ alias fuckyou "git push --force --no-verify"
 alias cc "clang"
 alias cxx "clang++"
 alias idea "~/.dev/idea/bin/idea.sh"
+alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
 
 # protoc ( specify relative path to .proto file after this )
 alias protoc-go "protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative" # for golang
