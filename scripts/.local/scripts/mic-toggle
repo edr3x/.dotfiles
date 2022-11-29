@@ -12,4 +12,4 @@ fi
 
 pactl set-source-mute 3 toggle
 
-notify-send --hint=int:transient:1 -t 1600 -i $icon "Mic switched: $state"
+notify-send --hint=int:transient:1 -t 1600 -i $icon "Mic switched: $micStatus"
