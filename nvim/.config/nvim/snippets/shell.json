@@ -1,14 +1,7 @@
 {
-    "sh": {
-        "prefix": [
-            "sh",
-            "#!",
-            "shebang"
-        ],
-        "body": "#!/bin/sh\n"
-    },
     "bash": {
         "prefix": [
+            "sh",
             "bash",
             "#!",
             "shebang"
