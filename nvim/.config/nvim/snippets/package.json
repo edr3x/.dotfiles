@@ -39,6 +39,10 @@
                 "path": "./c.json"
             },
             {
+                "language": "cpp",
+                "path": "./cpp.json"
+            },
+            {
                 "language": "python",
                 "path": "./python/base.json"
             },
