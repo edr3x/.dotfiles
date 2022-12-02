@@ -22,10 +22,11 @@ map('n', 'x', '"_x', options)
 map('n', 'c', '"_c', options)
 map({ 'n', 'x' }, '<S-h>', '^', options)
 map({ 'n', 'x' }, '<S-l>', '$', options)
-map({ "v", "x" }, "<M-j>", ":m '>+1<cr>gv=gv")
-map({ "v", "x" }, "<M-k>", ":m '<-2<cr>gv=gv")
+map({ "v", "x" }, "<M-j>", "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
+map({ "v", "x" }, "<M-k>", "<cmd>m '<-2<cr>gv=gv", options) -- move code block up
 map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
+map("n", "<C-a>", "ggVG", options) -- select all
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
@@ -72,4 +73,4 @@ map("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", options)
 map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", options)
 
 --debug for go
-map("n", "<leader>dg", ":lua require'dap-go'.debug_test()<CR>")
+map("n", "<leader>dg", ":lua require'dap-go'.debug_test()<CR>", options)

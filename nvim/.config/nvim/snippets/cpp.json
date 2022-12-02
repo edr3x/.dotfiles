@@ -348,11 +348,9 @@
         "prefix": "init",
         "body": [
             "#include<iostream>",
-            "using namespace std;",
             "",
-            "int main ()",
-            "{",
-            "\t$1",
+            "int main (){",
+            "\tstd::cout<<\"Hello There\"<<std::endl;",
             "\treturn 0;",
             "}"
         ],

@@ -63,7 +63,7 @@ helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
 
-    awful.tag({ " ", "  ", " ﭮ ", "  ", "  ", "  ", "  ", "  ", "  " }, s,
+    awful.tag({ " ", "  ", " ﭮ ", "  ", "  ", "  ", "  ", "  ", "  " }, s,
         awful.layout.layouts[1])
 
     -- Create a promptbox for each screen

@@ -47,26 +47,28 @@ return packer.startup(function(use)
     use 'folke/todo-comments.nvim'
     use 'folke/tokyonight.nvim'
 
-    --LSP and cmp
+    -- LSP and cmp
     use 'neovim/nvim-lspconfig'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+
+    -- Language specific
     use 'simrat39/rust-tools.nvim'
     use 'akinsho/flutter-tools.nvim'
-    use 'L3MON4D3/LuaSnip'
     use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
-    -- debugger
+    -- Debugging
     use 'mfussenegger/nvim-dap'
-    use 'leoluz/nvim-dap-go'
     use 'ravenxrz/DAPInstall.nvim'
     use 'rcarriga/nvim-dap-ui'
     use 'theHamsta/nvim-dap-virtual-text'
     use 'nvim-telescope/telescope-dap.nvim'
+    use 'leoluz/nvim-dap-go'
 
     if packer_bootstrap then
         require('packer').sync()
