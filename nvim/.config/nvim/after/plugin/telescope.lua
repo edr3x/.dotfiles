@@ -34,5 +34,5 @@ scope.setup {
 
 scope.load_extension('flutter')
 scope.load_extension('harpoon')
-scope.load_extension('dap')
+--scope.load_extension('dap')
 scope.load_extension('emoji')

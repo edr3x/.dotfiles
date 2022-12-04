@@ -1,3 +1,4 @@
+--[[
 local dap_status_ok, dap = pcall(require, "dap")
 if not dap_status_ok then
     return
@@ -59,3 +60,4 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
+]] --

@@ -63,12 +63,12 @@ return packer.startup(function(use)
     use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
     -- Debugging
-    use 'mfussenegger/nvim-dap'
-    use 'ravenxrz/DAPInstall.nvim'
-    use 'rcarriga/nvim-dap-ui'
-    use 'theHamsta/nvim-dap-virtual-text'
-    use 'nvim-telescope/telescope-dap.nvim'
-    use 'leoluz/nvim-dap-go'
+    --use 'mfussenegger/nvim-dap'
+    --use 'ravenxrz/DAPInstall.nvim'
+    --use 'rcarriga/nvim-dap-ui'
+    --use 'theHamsta/nvim-dap-virtual-text'
+    --use 'nvim-telescope/telescope-dap.nvim'
+    --use 'leoluz/nvim-dap-go'
 
     if packer_bootstrap then
         require('packer').sync()
