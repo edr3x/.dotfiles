@@ -9,13 +9,19 @@
 - For some LSP we need `Node.js` and `npm`
 
 ```sh
-sudo pacman -S nodejs npm
+paru -S nodejs npm
 ```
 
 - For Markdown preview we need `deno` and `webkit2gtk`
 
 ```sh
-sudo pacman -S deno webkit2gtk
+paru -S deno webkit2gtk
+```
+
+- For prettier formatter
+
+```sh
+paru -S prettierd
 ```
 
 ### To copy form editor to clipboard
@@ -23,5 +29,5 @@ sudo pacman -S deno webkit2gtk
 - To do this we need tool called `xclip`
 
 ```sh
-sudo pacman -S xclip
+paru -S xclip
 ```

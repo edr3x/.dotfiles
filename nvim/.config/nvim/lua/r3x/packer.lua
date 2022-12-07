@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     -- Language specific
     use 'simrat39/rust-tools.nvim'
