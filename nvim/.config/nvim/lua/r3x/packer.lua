@@ -40,7 +40,6 @@ return packer.startup(function(use)
     use 'NvChad/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
     use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
-    use 'lewis6991/impatient.nvim'
     use 'xiyaowong/telescope-emoji.nvim'
     use 'RRethy/vim-illuminate'
     use 'folke/trouble.nvim'
