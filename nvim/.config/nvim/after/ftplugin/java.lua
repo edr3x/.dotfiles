@@ -74,11 +74,7 @@ local config = {
                 includeDecompiledSources = true,
             },
             format = {
-                enabled = true,
-                settings = {
-                    url = "/home/r3x/.config/nvim/conf/intellij-java-google-style.xml",
-                    profile = "GoogleStyle",
-                },
+                enabled = false,
             },
         },
         signatureHelp = { enabled = true },
