@@ -22,7 +22,7 @@ return packer.startup(function(use)
     use 'edr3x/better-escape.nvim'
     use 'edr3x/lualine.nvim'
     use 'akinsho/toggleterm.nvim'
-    use 'jiangmiao/auto-pairs'
+    use 'windwp/nvim-autopairs'
     use 'nvim-telescope/telescope.nvim'
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
