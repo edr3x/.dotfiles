@@ -70,8 +70,9 @@ awful.keyboard.append_global_keybindings({
         { description = "Take a screenshot of delay", group = "screenshot" }),
 
     -- Display
-    awful.key({ modkey, "Control" }, "p", function() xrandr.xrandr() end,
-        { description = "Multi monitor display setting", group = "display" }),
+    awful.key({ modkey, "Control" }, "p",
+        function() awful.util.spawn("arandr") end,
+        { description = "multi display config", group = "display" }),
 })
 
 -- Tags related keybindings

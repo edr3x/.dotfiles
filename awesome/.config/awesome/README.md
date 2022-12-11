@@ -2,13 +2,13 @@
 
 ## Requirement
 
-* [awesome-git](https://github.com/codic12/worm)
-* [pamixer](https://github.com/cdemoulins/pamixer)
-* [alacritty](https://github.com/alacritty/alacritty)
-* [rofi](https://github.com/davatorium/rofi)
-* [picom](https://github.com/pijulius/picom)
-* [brightnessctl](https://github.com/Hummer12007/brightnessctl)
-* [pavucontrol](https://github.com/pulseaudio/pavucontrol)
+- [awesome-git](https://github.com/codic12/worm)
+- [pamixer](https://github.com/cdemoulins/pamixer)
+- [alacritty](https://github.com/alacritty/alacritty)
+- [rofi](https://github.com/davatorium/rofi)
+- [picom](https://github.com/pijulius/picom)
+- [brightnessctl](https://github.com/Hummer12007/brightnessctl)
+- [pavucontrol](https://github.com/pulseaudio/pavucontrol)
 
 ## Also Requires
 
@@ -26,7 +26,10 @@
 
 - `pulseaudio-bluetooth` : for bluetooth speakers
 
+- `arandr` : for multi monitor config
+
 ### For awesomeness
+
 ```sh
 git clone https://github.com/BlingCorp/bling.git ~/.config/awesome/lib/bling
 
