@@ -29,22 +29,30 @@ return packer.startup(function(use)
     use 'andweeb/presence.nvim'
     use {
         'DaikyXendo/nvim-tree.lua',
-        requires = { 'DaikyXendo/nvim-material-icon' },
+        requires = {
+            'DaikyXendo/nvim-material-icon'
+        },
     }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end or ':TSUpdate',
     }
+    use { 'sindrets/diffview.nvim',
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        },
+    }
+    use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
     use 'edr3x/nvim-treesitter-context'
     use 'edr3x/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
-    use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
     use 'xiyaowong/telescope-emoji.nvim'
     use 'RRethy/vim-illuminate'
     use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
     use 'folke/tokyonight.nvim'
+    use 'goolord/alpha-nvim'
 
     -- LSP and cmp
     use 'neovim/nvim-lspconfig'
