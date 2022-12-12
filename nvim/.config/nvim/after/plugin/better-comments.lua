@@ -9,7 +9,7 @@ comments.setup {
         TODO = { icon = " ", color = "#FF8C00" },
         HACK = { icon = " ", color = "#3498DB" },
         WARN = { icon = " ", color = "#FF2D00", alt = { "WARNING", "XXX" } },
-        NOTE = { icon = " ", color = "#98C379", alt = { "INFO", "imp" } },
+        NOTE = { icon = " ", color = "#98C379", alt = { "INFO" } },
     },
     highlight = { pattern = [[(KEYWORDS)]] },
 }

@@ -22,6 +22,8 @@ map('n', 'x', '"_x', options)
 map('n', 'c', '"_c', options)
 map('n', '<C-d>', '<C-d>zz', options)
 map('n', '<C-u>', '<C-u>zz', options)
+map('n', 'n', 'nzz', options)
+map('n', 'N', 'Nzz', options)
 map({ 'n', 'x' }, '<S-h>', '^', options)
 map({ 'n', 'x' }, '<S-l>', '$', options)
 map({ "v", "x" }, "<M-j>", "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
