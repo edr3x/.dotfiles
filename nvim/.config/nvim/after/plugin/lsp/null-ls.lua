@@ -8,7 +8,9 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup {
     debug = false,
     sources = {
-        formatting.prettierd,
+        formatting.prettierd.with({
+            disabled_filetypes = { "markdown" },
+        }),
         formatting.google_java_format,
     },
 }
