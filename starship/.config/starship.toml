@@ -2,7 +2,7 @@
 add_newline = true
 
 [[battery.display]]
-threshold = 20
+threshold = 30
 
 [character]
 error_symbol = "[✖](#FF0000) "
@@ -31,15 +31,15 @@ format = '[\($state( $progress_current of $progress_total)\)]($style) '
 
 [git_status]
 conflicted = "⚔️ "
-ahead = "⇡×${count} "
-behind = "⇣×${count} "
-diverged = "⇕×${ahead_count}  ×${behind_count} "
-untracked = "×${count} "
+ahead = "⇡ ×${count} "
+behind = "⇣ ×${count} "
+diverged = "⇕ ×${ahead_count}  ×${behind_count} "
+untracked = " ×${count} "
 stashed = " 📦 "
-modified = "×${count} "
-staged = "×${count} "
-renamed = "×${count} "
-deleted = "✘×${count} "
+modified = " ×${count} "
+staged = " ×${count} "
+renamed = " ×${count} "
+deleted = "✘ ×${count} "
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
@@ -51,11 +51,11 @@ style = "#A020F0"
 disabled = false
 
 [memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
-threshold = 50 
-style = "bold white"
+format = "$symbol[${ram}(  )]($style) "
+threshold = 40 
+symbol = "  "
+style = "#6ba4cf"
 disabled = false
-symbol = " "
 
 [username]
 style_user = "#00FF00"

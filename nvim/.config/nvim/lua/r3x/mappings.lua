@@ -24,13 +24,14 @@ map('n', '<C-d>', '<C-d>zz', options)
 map('n', '<C-u>', '<C-u>zz', options)
 map('n', 'n', 'nzz', options)
 map('n', 'N', 'Nzz', options)
+map('n', 'G', 'Gzz', options)
 map({ 'n', 'x' }, '<S-h>', '^', options)
 map({ 'n', 'x' }, '<S-l>', '$', options)
-map({ "v", "x" }, "<M-j>", "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
-map({ "v", "x" }, "<M-k>", "<cmd>m '<-2<cr>gv=gv", options) -- move code block up
+map({ 'v', 'x' }, '<M-j>', "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
+map({ 'v', 'x' }, '<M-k>', "<cmd>m '<-2<cr>gv=gv", options) -- move code block up
 map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
-map("n", "<C-a>", "ggVG", options) -- select all
+map('n', '<C-a>', 'ggVG', options) -- select all
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
@@ -39,7 +40,7 @@ map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
 map('n', '<leader>p', '"*p', options) -- paste for emoji
 
 --errors
-map("n", "<leader>cf", "<cmd>TroubleToggle quickfix<cr>", options)
+map('n', '<leader>cf', '<cmd>TroubleToggle quickfix<cr>', options)
 
 --telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
@@ -65,6 +66,8 @@ map('n', "<leader>5", function() hook.nav_file(5) end, options)
 map('n', "<leader>md", function() peek.open() end, options)
 map('n', "<leader>mc", function() peek.close() end, options)
 
+--[[
+
 --debugger
 map("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", options)
 map("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", options)
@@ -78,3 +81,5 @@ map("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", options)
 
 --debug for go
 map("n", "<leader>dg", ":lua require'dap-go'.debug_test()<CR>", options)
+
+]] --
