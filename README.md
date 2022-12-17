@@ -12,10 +12,10 @@
 - App Launcher : [Rofi](https://github.com/davatorium/rofi/)
 - Compositor : [Picom](https://github.com/yshui/picom)
 - Terminal :
-    - Emulator : [Alacritty](https://alacritty.org/)
-    - Shell : [Fish](https://fishshell.com/)
-    - Prompt : [Starship](https://starship.rs/)
-    - Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
+  - Emulator : [Alacritty](https://alacritty.org/)
+  - Shell : [Fish](https://fishshell.com/)
+  - Prompt : [Starship](https://starship.rs/)
+  - Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
 - Code Editor : [Neovim](https://neovim.io/)
 - Theme Manager : [lxappearance](https://archlinux.org/packages/community/x86_64/lxappearance/)
 - System Font : [Iosevka-Regular](https://github.com/be5invis/Iosevka)
@@ -32,7 +32,7 @@ You will need `git` and GNU `stow`
 Clone into `$HOME` directory
 
 ```bash
-git clone https://github.com/edr3x/.dotfiles.git 
+git clone https://github.com/edr3x/.dotfiles.git
 ```
 
 Run `stow` to symlink everything or just select what you want
@@ -43,4 +43,9 @@ stow */  # For Everything
 
 ```bash
 stow nvim # Only nvim config
+```
+
+```submodules
+git submodules init
+git submodules update
 ```

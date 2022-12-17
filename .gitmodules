@@ -1,0 +1,6 @@
+[submodule "awesome/lib/rubato"]
+	path = awesome/lib/rubato
+	url = https://github.com/andOrlando/rubato.git
+[submodule "awesome/lib/bling"]
+	path = awesome/lib/bling
+	url = https://github.com/BlingCorp/bling.git
