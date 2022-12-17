@@ -26,10 +26,10 @@ ntree.setup({
             enable = true,
             open_win_config = {
                 border = "rounded",
-                width = 100,
+                width = 85,
                 height = 25,
-                row = 6,
-                col = 60,
+                row = 7,
+                col = 66,
             },
         },
     },

@@ -14,3 +14,10 @@ set.smartindent = true
 set.wrap = false
 set.termguicolors = true
 set.list = true
+
+set.swapfile = false
+set.backup = false
+set.undodir = os.getenv("HOME") .. "/.vim/undodir"
+set.undofile = true
+
+set.scrolloff = 10
