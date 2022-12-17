@@ -2,7 +2,7 @@ local awful = require("awful")
 local naughty = require("naughty")
 
 timers = { 5, 10 }
-screenshot = os.getenv("HOME") .. "/screenshots/$(date +%F_%T).png"
+screenshot = os.getenv("HOME") .. "/Pictures/Screenshots/$(date +%F_%T).png"
 
 function scrot_full()
     scrot("scrot " .. screenshot .. " -e 'xclip -selection c -t image/png < $f', scrot_callback", scrot_callback,

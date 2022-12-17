@@ -41,6 +41,7 @@ theme.font_name  = "Iosevka"
 theme.icon_font  = "Ubuntu Mono Nerd Font"
 theme.icon_font2 = "Ubuntu Mono Nerd Font"
 
+theme.bg = "#17171C"
 theme.bg_normal   = "#061115"
 theme.bg_subtle   = "#0a171c"
 theme.bg_focus    = "#1C252C"
@@ -49,13 +50,14 @@ theme.bg_urgent   = "#DF5B61"
 theme.bg_minimize = "#484e5b"
 theme.bg_systray  = theme.bg_normal
 
+theme.fg = "#f2f2e9"
 theme.fg_normal   = "#D9D7D6"
 theme.fg_focus    = "#D9D7D6"
 theme.fg_urgent   = "#D9D7D6"
 theme.fg_minimize = "#D9D7D6"
 
 theme.useless_gap         = dpi(6)
-theme.border_width        = dpi(2)
+theme.border_width        = dpi(0)
 theme.border_color_normal = "#505050"
 theme.border_color_active = "#00CED1"
 theme.border_color_marked = "#91231c"
