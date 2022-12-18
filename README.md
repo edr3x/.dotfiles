@@ -45,6 +45,8 @@ stow */  # For Everything
 stow nvim # Only nvim config
 ```
 
+Pull git submodules
+
 ```git submodules
 git submodules init
 git submodules update
