@@ -10,8 +10,20 @@ end
 
 scope.setup {
     defaults = {
-        file_ignore_patterns = { "%.git$", "%.git[/\\]", "node_modules", "target", "build", "ios", "android", "linux",
-            "macos", "web", "windows", "%.lock$" },
+        file_ignore_patterns = {
+            "%.git$",
+            "%.git[/\\]",
+            "node_modules",
+            "target",
+            "build",
+            "ios",
+            "android",
+            "linux",
+            "macos",
+            "web",
+            "windows",
+            "%.lock$"
+        },
         color_devicons = true,
         mappings = {
             i = { ["<esc>"] = tactions.close },
@@ -35,4 +47,3 @@ scope.setup {
 scope.load_extension('flutter')
 scope.load_extension('harpoon')
 --scope.load_extension('dap')
-scope.load_extension('emoji')

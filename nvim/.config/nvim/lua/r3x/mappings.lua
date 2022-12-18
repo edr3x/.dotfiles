@@ -22,9 +22,10 @@ map('n', 'x', '"_x', options)
 map('n', 'c', '"_c', options)
 map('n', '<C-d>', '<C-d>zz', options)
 map('n', '<C-u>', '<C-u>zz', options)
-map('n', 'n', 'nzz', options)
-map('n', 'N', 'Nzz', options)
-map('n', 'G', 'Gzz', options)
+map('n', 'n', 'nzzzv', options)
+map('n', 'N', 'Nzzzv', options)
+map('n', 'G', 'Gzzzv', options)
+map('n', 'Q', '<nop>', options)
 map({ 'n', 'x' }, '<S-h>', '^', options)
 map({ 'n', 'x' }, '<S-l>', '$', options)
 map({ 'v', 'x' }, '<M-j>', "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
@@ -32,22 +33,21 @@ map({ 'v', 'x' }, '<M-k>', "<cmd>m '<-2<cr>gv=gv", options) -- move code block u
 map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
 map('n', '<C-a>', 'ggVG', options) -- select all
-map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
 map('n', '<leader><ESC>', '<cmd>qa<CR>', options)
-map('x', '<leader>cc', '"+y', options) -- copy to system clipboard
-map('n', '<leader>p', '"*p', options) -- paste for emoji
+map({ 'n', 'x' }, '<leader>y', '"+y', options) -- copy to system clipboard
+map('n', '<leader>Y', '"+Y', options) -- copy to system clipboard
 
---errors
-map('n', '<leader>cf', '<cmd>TroubleToggle quickfix<cr>', options)
+-- tree
+map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
+map('n', '<leader>u', '<cmd>UndotreeToggle<CR>', options)
 
 --telescope
 map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', options)
 map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', options)
 map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', options)
 map('n', '<leader>ft', '<cmd>Telescope treesitter<CR>', options)
-map('n', '<leader>fe', '<cmd>Telescope emoji<CR>', options)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', options)
 
 --harpoon

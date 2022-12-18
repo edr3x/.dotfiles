@@ -17,6 +17,15 @@ treesitter.setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = '<c-space>',
+            node_incremental = '<c-space>',
+            scope_incremental = '<c-s>',
+            node_decremental = '<c-backspace>',
+        },
+    },
     rainbow = {
         enable = true,
         extended_mode = true,
@@ -28,7 +37,7 @@ treesitter.setup {
             "#d65d0e",
             "#458588",
         },
-    }
+    },
 }
 
 tcontext.setup {
