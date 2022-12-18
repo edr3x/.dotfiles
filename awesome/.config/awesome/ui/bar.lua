@@ -54,7 +54,7 @@ function battery_update()
 end
 
 battery_update()
-battery_timer = timer({ timeout = 15 })
+battery_timer = timer({ timeout = 10 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
 --
@@ -121,14 +121,15 @@ screen.connect_signal("request::desktop_decoration", function(s)
         type = "dock",
         ontop = true,
         stretch = false,
+        margins = dpi(4),
         visible = true,
         height = dpi(35),
-        width = s.geometry.width - dpi(25),
+        width = s.geometry.width - dpi(30),
         shape = helpers.rrect(6),
         screen = s,
     })
 
-    awful.placement.top(s.mywibar, { margins = beautiful.useless_gap * 1 })
+    awful.placement.top(s.mywibar, { margins = dpi(10) })
 
     --{{{ Remove wibar on full screen
     local function remove_wibar(c)
