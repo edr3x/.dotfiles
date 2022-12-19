@@ -38,6 +38,7 @@ return packer.startup(function(use)
         },
     }
     use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
+    use { "folke/tokyonight.nvim", commit = "06d0eadc5e8efe6b2516675c75614df36117eaf1" }
     use 'edr3x/nvim-treesitter-context'
     use 'edr3x/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
@@ -45,7 +46,6 @@ return packer.startup(function(use)
     use 'RRethy/vim-illuminate'
     use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
-    use 'folke/tokyonight.nvim'
     use 'goolord/alpha-nvim'
     use 'mbbill/undotree'
 

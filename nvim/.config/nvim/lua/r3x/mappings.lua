@@ -26,18 +26,19 @@ map('n', 'n', 'nzzzv', options)
 map('n', 'N', 'Nzzzv', options)
 map('n', 'G', 'Gzzzv', options)
 map('n', 'Q', '<nop>', options)
-map({ 'n', 'x' }, '<S-h>', '^', options)
-map({ 'n', 'x' }, '<S-l>', '$', options)
-map({ 'v', 'x' }, '<M-j>', "<cmd>m '>+1<cr>gv=gv", options) -- move code block down
-map({ 'v', 'x' }, '<M-k>', "<cmd>m '<-2<cr>gv=gv", options) -- move code block up
+map({ 'n', 'v' }, '<S-h>', '^', options)
+map({ 'n', 'v' }, '<S-l>', '$', options)
 map('n', '<M-j>', '<cmd>m+<CR>', options) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', options) -- move line up
+map("v", "<M-j>", ":m '>+1<CR>gv=gv", options) -- move code block down
+map("v", "<M-k>", ":m '<-2<CR>gv=gv", options) -- move code block up
 map('n', '<C-a>', 'ggVG', options) -- select all
 map('n', '<leader>h', '<cmd>bprev<CR>', options) -- go back a file
 map('n', '<leader>l', '<cmd>bnext<CR>', options) -- go back a file
 map('n', '<leader><ESC>', '<cmd>qa<CR>', options)
-map({ 'n', 'x' }, '<leader>y', '"+y', options) -- copy to system clipboard
-map('n', '<leader>Y', '"+Y', options) -- copy to system clipboard
+map("x", "<leader>p", [["_dP]], options)
+map('n', '<leader>Y', [["+Y]], options) -- copy to system clipboard
+map({ "n", "v" }, "<leader>y", [["+y]], options) -- copy to system clipboard
 
 -- tree
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', options)
