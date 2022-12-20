@@ -9,7 +9,7 @@ null_ls.setup {
     debug = false,
     sources = {
         formatting.prettierd.with({
-            disabled_filetypes = { "markdown" },
+            disabled_filetypes = { "markdown", "yaml" },
         }),
         formatting.google_java_format,
     },
