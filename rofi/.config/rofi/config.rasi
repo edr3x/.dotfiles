@@ -13,7 +13,7 @@ configuration {
 @theme "tokyo"
 
 * {
-    font: "Fira Code 12";
+    font: "Iosevka 12";
 
     background-color:   transparent;
     text-color:         @fg0;

@@ -10,7 +10,7 @@ local theme = {}
 
 theme.confdir      = os.getenv("HOME") .. "/.config/awesome/themes/night"
 theme.wallpaper    = theme.confdir .. "/wall/night.jpg"
-theme.font_name    = "FiraCode Nerd Font"
+theme.font_name    = "Iosevka Nerd Font"
 theme.taglist_font = "FiraCode Nerd Font, 14"
 theme.background   = "#1a1b26"
 theme.foreground   = "#c0caf5"
@@ -38,8 +38,8 @@ theme.notification_icon = gears.surface.load_uncached(gfs.get_configuration_dir(
 
 theme.font       = "Iosevka, Bold 10"
 theme.font_name  = "Iosevka"
-theme.icon_font  = "Ubuntu Mono Nerd Font"
-theme.icon_font2 = "Ubuntu Mono Nerd Font"
+theme.icon_font  = "Iosevka Nerd Font"
+theme.icon_font2 = "Iosevka Nerd Font"
 
 theme.bg_normal   = "#061115"
 theme.bg_subtle   = "#0a171c"
