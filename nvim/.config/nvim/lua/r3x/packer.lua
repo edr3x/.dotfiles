@@ -37,8 +37,15 @@ return packer.startup(function(use)
             'nvim-tree/nvim-web-devicons',
         },
     }
-    use { 'toppair/peek.nvim', run = 'deno task --quiet build:fast' }
-    use { "folke/tokyonight.nvim", commit = "06d0eadc5e8efe6b2516675c75614df36117eaf1" }
+    use {
+        'toppair/peek.nvim',
+        run = 'deno task --quiet build:fast',
+        commit = "18284b64f6c5103ccf18d6b53f288d2b2de2dc4a"
+    }
+    use {
+        "folke/tokyonight.nvim",
+        commit = "06d0eadc5e8efe6b2516675c75614df36117eaf1"
+    }
     use 'edr3x/nvim-treesitter-context'
     use 'edr3x/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
