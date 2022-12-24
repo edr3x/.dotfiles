@@ -5,7 +5,7 @@ end
 
 local lspStatus = {
     function()
-        local msg = "No Active Lsp"
+        local msg = "No LSP detected"
         local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
         local clients = vim.lsp.get_active_clients()
         if next(clients) == nil then
@@ -29,16 +29,16 @@ line.setup {
         theme = 'powerline_cyan',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
+        disabled_filetypes = { "alpha", "dashboard" },
         always_divide_middle = true,
         globalstatus = true,
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
-        lualine_x = { lspStatus, 'fileformat', 'filetype' },
-        lualine_y = { 'progress' },
+        lualine_b = { 'branch', 'diff' },
+        lualine_c = { 'windows' },
+        lualine_x = { 'diagnostics', lspStatus },
+        lualine_y = { 'filetype', 'progress' },
         lualine_z = { 'location' }
     },
     inactive_sections = {

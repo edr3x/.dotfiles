@@ -9,12 +9,13 @@ local config_dir = "<cmd>silent !tmux neww tmux-sessionizer ~/.dotfiles/nvim/.co
 local dashboard_nvim = {
     [[                                                 ]],
     [[                                                 ]],
-    [[███╗░░██╗███████╗░█████╗░██╗░░░██╗██╗███╗░░░███╗ ]],
-    [[████╗░██║██╔════╝██╔══██╗██║░░░██║██║████╗░████║ ]],
-    [[██╔██╗██║█████╗░░██║░░██║╚██╗░██╔╝██║██╔████╔██║ ]],
-    [[██║╚████║██╔══╝░░██║░░██║░╚████╔╝░██║██║╚██╔╝██║ ]],
-    [[██║░╚███║███████╗╚█████╔╝░░╚██╔╝░░██║██║░╚═╝░██║ ]],
-    [[╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝ ]],
+    [[                                                 ]],
+    [[ ███╗  ██╗███████╗ █████╗ ██╗   ██╗██╗███╗   ███╗]],
+    [[ ████╗ ██║██╔════╝██╔══██╗██║   ██║██║████╗ ████║]],
+    [[ ██╔██╗██║█████╗  ██║  ██║╚██╗ ██╔╝██║██╔████╔██║]],
+    [[ ██║╚████║██╔══╝  ██║  ██║ ╚████╔╝ ██║██║╚██╔╝██║]],
+    [[ ██║ ╚███║███████╗╚█████╔╝  ╚██╔╝  ██║██║ ╚═╝ ██║]],
+    [[ ╚═╝  ╚══╝╚══════╝ ╚════╝    ╚═╝   ╚═╝╚═╝     ╚═╝]],
     [[                                                 ]],
     [[                                                 ]],
 }
@@ -23,8 +24,8 @@ dashboard.section.header.val = dashboard_nvim
 
 dashboard.section.buttons.val = {
     dashboard.button("f", " " .. " Find file", "<cmd>Telescope find_files <CR>"),
-    dashboard.button("p", " " .. " Browse Projects", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),
     dashboard.button("t", " " .. " File Tree", "<cmd>NvimTreeToggle<CR>"),
+    dashboard.button("p", " " .. " Browse Projects", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),
     dashboard.button("r", " " .. " Recent files", "<cmd>Telescope oldfiles <CR>"),
     dashboard.button("g", " " .. " Git Diff View", "<cmd>DiffviewOpen <CR>"),
     dashboard.button("x", " " .. " Find text", "<cmd>Telescope live_grep <CR>"),
@@ -32,7 +33,7 @@ dashboard.section.buttons.val = {
     dashboard.button("q", " " .. " Quit", "<cmd>qa<CR>"),
 }
 
-dashboard.section.footer.val = function() return "㠪ᗪ 尺㇌乂" end
+dashboard.section.footer.val = "㠪ᗪ 尺㇌乂"
 
 dashboard.section.footer.opts.hl = "Type"
 dashboard.section.header.opts.hl = "Include"
