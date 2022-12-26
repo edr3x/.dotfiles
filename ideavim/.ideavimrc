@@ -1,0 +1,36 @@
+set number
+set relativenumber
+set smartindent
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set incsearch
+set history=1000
+set scrolloff=10
+
+let mapleader = ","
+
+inoremap jk <ESC>
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+nnoremap Q <nop>
+
+nnoremap <leader><ESC> :qa<CR>
+
+nnoremap <M-j> :m+<CR>'
+nnoremap <M-k> :m-2<CR>'
+vnoremap <M-j> :m '>+1<CR>gv=gv"
+vnoremap <M-k> :m '<-2<CR>gv=gv"
+
+nnoremap x "_x
+nnoremap c "_c
+vnoremap p "_dP
+nnoremap <leader>Y "+Y
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+nnoremap <leader>p "+p
+nnoremap <a-h> gT
+nnoremap <a-l> gt
