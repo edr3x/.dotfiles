@@ -67,11 +67,11 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'jose-elias-alvarez/null-ls.nvim'
-    use 'j-hui/fidget.nvim'
+    --use 'j-hui/fidget.nvim'
 
     -- Language specific
-    use 'simrat39/rust-tools.nvim'
     use 'akinsho/flutter-tools.nvim'
+    use { 'simrat39/rust-tools.nvim', ft = { "rust" } }
     use { "mfussenegger/nvim-jdtls", ft = { "java" } }
 
     -- Debugging

@@ -1,0 +1,11 @@
+{
+    "main": {
+        "prefix": "main",
+        "body": [
+            " public static void main(String[] args) {",
+            "${1}",
+            "}"
+        ],
+        "description": "main method"
+    }
+}
