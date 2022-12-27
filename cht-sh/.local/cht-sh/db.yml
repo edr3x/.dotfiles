@@ -1,0 +1,16 @@
+postgres:
+  start:
+    docker run --name <set-container-name> -e POSTGRES_PASSWORD=<set-password> -p 5432:5432 -d postgres
+  connect:
+    postgresql://postgres:<password>@localhost:5432/<container-name>
+
+mongoDB:
+      start:
+        docker run -d --name <contailer-name> -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=<input-username> -e MONGO_INITDB_ROOT_PASSWORD=<input-password> mongo
+      connect:
+        mongodb://<username>:<password>@0.0.0.0:27017/
+        
+      less:
+        docker run --name <container-name> -p 27017:27017 -d mongo
+      short-one:
+        mongodb://localhost/<container-name>

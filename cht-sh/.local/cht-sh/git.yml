@@ -1,0 +1,9 @@
+revert_chages:
+  to_last_commit:
+    git restore <filename>
+    
+  unstage-changes:
+    git restore <filename>
+
+  uncommit-last-change:
+    git reset HEAD~

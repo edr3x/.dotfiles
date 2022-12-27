@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bat ~/.local/cht-sh/$1.yml

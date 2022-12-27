@@ -17,13 +17,6 @@ nnoremap N Nzzzv
 
 nnoremap Q <nop>
 
-nnoremap <leader><ESC> :qa<CR>
-
-nnoremap <M-j> :m+<CR>'
-nnoremap <M-k> :m-2<CR>'
-vnoremap <M-j> :m '>+1<CR>gv=gv"
-vnoremap <M-k> :m '<-2<CR>gv=gv"
-
 nnoremap x "_x
 nnoremap c "_c
 vnoremap p "_dP
