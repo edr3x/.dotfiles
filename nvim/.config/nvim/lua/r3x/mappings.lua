@@ -40,9 +40,10 @@ map('n', '<M-k>', '<cmd>m-2<CR>', opts) -- move line up
 map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
 map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
--- buffer jump
+-- buffer
 map('n', '<M-h>', '<cmd>bprev<CR>', opts)
 map('n', '<M-l>', '<cmd>bnext<CR>', opts)
+map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 
 -- avoid vim register for some operations
 map('n', 'x', '"_x', opts)
@@ -72,8 +73,6 @@ map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', opts)
 --harpoon
 map('n', "<leader>a", function() mark.add_file() end, opts)
 map('n', "<leader>o", function() hook.toggle_quick_menu() end, opts)
-map('n', "<leader>k", function() hook.nav_prev() end, opts)
-map('n', "<leader>j", function() hook.nav_next() end, opts)
 
 map('n', "<leader>1", function() hook.nav_file(1) end, opts)
 map('n', "<leader>2", function() hook.nav_file(2) end, opts)
