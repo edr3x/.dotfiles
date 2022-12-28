@@ -19,6 +19,7 @@ return packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'
     use 'windwp/nvim-autopairs'
     use 'nvim-telescope/telescope.nvim'
+    use 'tpope/vim-commentary'
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
     use 'andweeb/presence.nvim'
@@ -67,7 +68,6 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
     use 'jose-elias-alvarez/null-ls.nvim'
-    --use 'j-hui/fidget.nvim'
 
     -- Language specific
     use 'akinsho/flutter-tools.nvim'

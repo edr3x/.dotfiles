@@ -13,16 +13,6 @@ if not lsp_status then
     return
 end
 
---[[
-local fidget_status, fidget = pcall(require, "fidget")
-if not fidget_status then
-    return
-end
-
-fidget.setup()
-
-]]--
-
 local servers = {
     'clangd',
     'sumneko_lua',

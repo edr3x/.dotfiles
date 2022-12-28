@@ -41,8 +41,8 @@ map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
 map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
 -- buffer jump
-map('n', '<leader>h', '<cmd>bprev<CR>', opts)
-map('n', '<leader>l', '<cmd>bnext<CR>', opts)
+map('n', '<M-h>', '<cmd>bprev<CR>', opts)
+map('n', '<M-l>', '<cmd>bnext<CR>', opts)
 
 -- avoid vim register for some operations
 map('n', 'x', '"_x', opts)
