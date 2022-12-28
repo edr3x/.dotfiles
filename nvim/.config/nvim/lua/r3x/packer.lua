@@ -47,11 +47,14 @@ return packer.startup(function(use)
         "folke/tokyonight.nvim",
         commit = "06d0eadc5e8efe6b2516675c75614df36117eaf1"
     }
+    use {
+        'RRethy/vim-illuminate',
+        commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3"
+    }
     use 'edr3x/nvim-treesitter-context'
     use 'edr3x/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
-    use 'RRethy/vim-illuminate'
     use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
     use 'goolord/alpha-nvim'

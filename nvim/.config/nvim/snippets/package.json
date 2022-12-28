@@ -7,10 +7,6 @@
     "contributes": {
         "snippets": [
             {
-                "language": "dart",
-                "path": "./dart.json"
-            },
-            {
                 "language": "lua",
                 "path": "./lua.json"
             },
@@ -33,6 +29,14 @@
             {
                 "language": "go",
                 "path": "./go.json"
+            },
+            {
+                "language": "dart",
+                "path": "./flutter/dart.json"
+            },
+            {
+                "language": "dart",
+                "path": "./flutter/bloc.json"
             },
             {
                 "language": "c",

@@ -47,7 +47,6 @@ map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 
 -- avoid vim register for some operations
 map('n', 'x', '"_x', opts)
-map('n', 'c', '"_c', opts)
 map("v", "p", '"_dP', opts)
 map('n', '<leader>Y', '"+Y', opts) -- for yank commands but for system clipboard
 map({ "n", "v" }, "<leader>y", '"+y', opts) -- copy to system clipboard
