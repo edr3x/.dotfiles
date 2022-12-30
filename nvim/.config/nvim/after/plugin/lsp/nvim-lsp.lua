@@ -18,14 +18,12 @@ local servers = {
     'sumneko_lua',
     'tsserver',
     'bashls',
-    'jsonls',
     'gopls',
     'prismals',
     'rust_analyzer',
     'pyright',
     'yamlls',
     'dockerls',
-    'hls',
     'jdtls',
 }
 
