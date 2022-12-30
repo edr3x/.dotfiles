@@ -65,6 +65,10 @@
             {
                 "language": "python",
                 "path": "./python/unittest.json"
+            },
+            {
+                "language": "java",
+                "path": "./java.json"
             }
         ]
     }
