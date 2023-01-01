@@ -40,6 +40,10 @@ map('n', '<M-k>', '<cmd>m-2<CR>', opts) -- move line up
 map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
 map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
+-- better indents
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
+
 -- buffer
 map('n', '<M-h>', '<cmd>bprev<CR>', opts)
 map('n', '<M-l>', '<cmd>bnext<CR>', opts)
@@ -82,6 +86,8 @@ map('n', "<leader>5", function() hook.nav_file(5) end, opts)
 --md prev
 map('n', "<leader>md", function() peek.open() end, opts)
 map('n', "<leader>mc", function() peek.close() end, opts)
+
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 --[[
 
