@@ -5,7 +5,7 @@ local wibox = require("wibox")
 local styles = {}
 
 styles.month = {
-    padding = 10,
+    padding = 0,
 }
 
 styles.normal = {
@@ -26,7 +26,7 @@ styles.focus = {
 
 styles.header = {
     markup = function(t)
-        return "<span font_desc='" .. beautiful.font_name .. " Bold 15" .. "'>" .. t .. "</span>"
+        return "<span font_desc='" .. beautiful.font_name .. " Bold 12" .. "'>" .. t .. "</span>"
     end,
 }
 styles.weekday = {
