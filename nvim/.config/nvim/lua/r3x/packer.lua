@@ -20,6 +20,7 @@ return packer.startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'nvim-telescope/telescope.nvim'
     use 'tpope/vim-commentary'
+    use 'tpope/vim-fugitive'
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
     use 'andweeb/presence.nvim'
