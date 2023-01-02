@@ -87,7 +87,8 @@ map('n', "<leader>5", function() hook.nav_file(5) end, opts)
 map('n', "<leader>md", function() peek.open() end, opts)
 map('n', "<leader>mc", function() peek.close() end, opts)
 
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+-- search and replace
+map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 --[[
 
