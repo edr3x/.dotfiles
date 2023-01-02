@@ -11,7 +11,7 @@ end
 treesitter.setup {
     ensure_installed = { "bash", "c", "cpp", "css", "dart", "dockerfile", "fish", "go", "html", "java", "javascript",
         "json", "llvm", "lua", "make", "markdown", "prisma", "proto", "python", "rust", "scss", "sql", "toml", "tsx",
-        "typescript", "yaml" },
+        "typescript", "yaml", "help" },
     auto_install = false,
     highlight = {
         enable = true,
