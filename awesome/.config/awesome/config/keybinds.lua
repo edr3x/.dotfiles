@@ -36,6 +36,15 @@ awful.keyboard.append_global_keybindings({
         awesome.quit,
         { description = "quit awesome", group = "awesome" }),
 
+    -- brightness
+    awful.key({}, "XF86MonBrightnessUp",
+        function() awful.util.spawn("brightnessctl set +5%") end,
+        { description = "Increase Brightness", group = "control" }),
+
+    awful.key({}, "XF86MonBrightnessDown",
+        function() awful.util.spawn("brightnessctl set 5%-") end,
+        { description = "Decrease Brightness", group = "control" }),
+
     -- Audio
     awful.key({}, "XF86AudioRaiseVolume",
         function() awful.spawn("pamixer -i 5") end,
