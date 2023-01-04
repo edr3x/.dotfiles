@@ -3,15 +3,9 @@ if not status then
     return
 end
 
-local stat, rxt = pcall(require, "rust-tools/executors")
-if not stat then
-    return
-end
-
 local opts = {
     tools = {
         autoSetHints = true,
-        executor = rxt.termopen,
         on_initialized = nil,
         inlay_hints = {
             only_current_line = false,
@@ -26,80 +20,11 @@ local opts = {
             right_align_padding = 7,
             highlight = "Comment",
         },
-        crate_graph = {
-            backend = "x11",
-            output = nil,
-            full = true,
-            enabled_graphviz_backends = {
-                "bmp",
-                "cgimage",
-                "canon",
-                "dot",
-                "gv",
-                "xdot",
-                "xdot1.2",
-                "xdot1.4",
-                "eps",
-                "exr",
-                "fig",
-                "gd",
-                "gd2",
-                "gif",
-                "gtk",
-                "ico",
-                "cmap",
-                "ismap",
-                "imap",
-                "cmapx",
-                "imap_np",
-                "cmapx_np",
-                "jpg",
-                "jpeg",
-                "jpe",
-                "jp2",
-                "json",
-                "json0",
-                "dot_json",
-                "xdot_json",
-                "pdf",
-                "pic",
-                "pct",
-                "pict",
-                "plain",
-                "plain-ext",
-                "png",
-                "pov",
-                "ps",
-                "ps2",
-                "psd",
-                "sgi",
-                "svg",
-                "svgz",
-                "tga",
-                "tiff",
-                "tif",
-                "tk",
-                "vml",
-                "vmlz",
-                "wbmp",
-                "webp",
-                "xlib",
-                "x11",
-            },
-        },
     },
 
     server = {
         standalone = true,
         on_attach = require("r3x.lsp-handlers").on_attach,
-    }, -- rust-analyer options
-
-    dap = {
-        adapter = {
-            type = "executable",
-            command = "lldb-vscode",
-            name = "rt_lldb",
-        },
     },
 }
 
