@@ -6,7 +6,6 @@ end
 local opts = {
     tools = {
         autoSetHints = true,
-        on_initialized = nil,
         inlay_hints = {
             only_current_line = false,
             only_current_line_autocmd = "CursorHold",
@@ -21,10 +20,10 @@ local opts = {
             highlight = "Comment",
         },
     },
-
     server = {
         standalone = true,
         on_attach = require("r3x.lsp-handlers").on_attach,
+        capabilities = require("r3x.lsp-handlers").capabilities,
     },
 }
 
