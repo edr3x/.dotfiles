@@ -24,6 +24,7 @@ local servers = {
     'pyright',
     'yamlls',
     'dockerls',
+    'graphql',
     'jdtls',
 }
 
