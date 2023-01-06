@@ -52,7 +52,7 @@ return packer.startup(function(use)
         commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3"
     }
     use 'edr3x/nvim-treesitter-context'
-    use 'edr3x/nvim-ts-rainbow'
+    use 'mrjones2014/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
     use 'lewis6991/gitsigns.nvim'
     use 'folke/trouble.nvim'
