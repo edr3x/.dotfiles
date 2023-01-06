@@ -1,0 +1,9 @@
+{
+    "pretteirrc": {
+        "prefix": "prettierrc",
+        "body": [
+            "{\"trailingComma\": \"es5\", \"tabWidth\": 4, \"bracketSpacing\": true, \"semi\": true, \"singleQuote\": false }"
+        ],
+        "description": "pretteirrc"
+    }
+}

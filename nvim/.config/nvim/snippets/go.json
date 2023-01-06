@@ -260,10 +260,7 @@
         "description": "Snippet for main function"
     },
     "method declaration": {
-        "prefix": [
-            "meth",
-            "fum"
-        ],
+        "prefix": ["meth", "fum"],
         "body": "func (${1:receiver} ${2:type}) ${3:method}($4) $5 {\n\t$0\n}",
         "description": "Snippet for method declaration"
     },

@@ -19,92 +19,52 @@
     },
     "while": {
         "prefix": "while",
-        "body": [
-            "while ($1) {",
-            "\t$0",
-            "}"
-        ],
+        "body": ["while ($1) {", "\t$0", "}"],
         "description": ""
     },
     "if": {
         "prefix": "if",
-        "body": [
-            "if ($1) {",
-            "\t$0",
-            "}"
-        ],
+        "body": ["if ($1) {", "\t$0", "}"],
         "description": "Code snippet for if statement"
     },
     "else": {
         "prefix": "else",
-        "body": [
-            "else {",
-            "\t$0",
-            "}"
-        ],
+        "body": ["else {", "\t$0", "}"],
         "description": "Code snippet for else statement"
     },
     "else if": {
         "prefix": "else if",
-        "body": [
-            "else if ($1) {",
-            "\t$0",
-            "}"
-        ],
+        "body": ["else if ($1) {", "\t$0", "}"],
         "description": "Code snippet for else-if statement"
     },
     "enum": {
         "prefix": "enum",
-        "body": [
-            "enum ${1:MyEnum} {",
-            "\t$0",
-            "};"
-        ],
+        "body": ["enum ${1:MyEnum} {", "\t$0", "};"],
         "description": "Code snippet for enum"
     },
     "#ifdef": {
         "prefix": "#ifdef",
-        "body": [
-            "#ifdef ${1:DEBUG}",
-            "$0",
-            "#endif /* $1 */"
-        ],
+        "body": ["#ifdef ${1:DEBUG}", "$0", "#endif /* $1 */"],
         "description": "Code snippet for #ifdef"
     },
     "#ifndef": {
         "prefix": "#ifndef",
-        "body": [
-            "#ifndef ${1:DEBUG}",
-            "$0",
-            "#endif /* !$1 */"
-        ],
+        "body": ["#ifndef ${1:DEBUG}", "$0", "#endif /* !$1 */"],
         "description": "Code snippet for #ifndef"
     },
     "#if": {
         "prefix": "#if",
-        "body": [
-            "#if ${1:0}",
-            "$0",
-            "#endif /* $1 */"
-        ],
+        "body": ["#if ${1:0}", "$0", "#endif /* $1 */"],
         "description": "Code snippet for #if"
     },
     "struct": {
         "prefix": "struct",
-        "body": [
-            "struct ${1:MyStruct} {",
-            "\t$0",
-            "};"
-        ],
+        "body": ["struct ${1:MyStruct} {", "\t$0", "};"],
         "description": "Code snippet for struct"
     },
     "typedef struct": {
         "prefix": "structt",
-        "body": [
-            "typedef struct {",
-            "\t$0",
-            "} ${1:MyStruct};"
-        ],
+        "body": ["typedef struct {", "\t$0", "} ${1:MyStruct};"],
         "description": "Code snippet to define a type with struct"
     },
     "switch": {
@@ -120,41 +80,27 @@
     },
     "case": {
         "prefix": "case",
-        "body": [
-            "case $1:",
-            "\t$0",
-            "\tbreak;"
-        ],
+        "body": ["case $1:", "\t$0", "\tbreak;"],
         "description": "Code snippet for case branch"
     },
     "union": {
         "prefix": "union",
-        "body": [
-            "union ${1:MyUnion} {",
-            "\t$0",
-            "};"
-        ],
+        "body": ["union ${1:MyUnion} {", "\t$0", "};"],
         "description": "Code snippet for union"
     },
     "#inc": {
         "prefix": "#inc",
-        "body": [
-            "#include \"$0\""
-        ],
+        "body": ["#include \"$0\""],
         "description": "Code snippet for #include \" \""
     },
     "#inc<": {
         "prefix": "#inc<",
-        "body": [
-            "#include <$0>"
-        ],
+        "body": ["#include <$0>"],
         "description": "Code snippet for #include < >"
     },
     "#def": {
         "prefix": "def",
-        "body": [
-            "#define $0"
-        ],
+        "body": ["#define $0"],
         "description": "Code snippet for #define \" \""
     },
     "Main function template": {
@@ -197,11 +143,7 @@
     },
     "Do...while loop": {
         "prefix": "do",
-        "body": [
-            "do {",
-            "\t$1",
-            "} while($2);"
-        ],
+        "body": ["do {", "\t$1", "} while($2);"],
         "description": "Creates a do...while loop"
     },
     "Create linked list": {
@@ -218,34 +160,17 @@
     },
     "Create a function": {
         "prefix": "func",
-        "body": [
-            "${2:void} ${1:func}(${4:void})",
-            "{",
-            "\t$3",
-            "}"
-        ],
+        "body": ["${2:void} ${1:func}(${4:void})", "{", "\t$3", "}"],
         "description": "Creates a function"
     },
     "Create int function": {
         "prefix": "intfunc",
-        "body": [
-            "int $1 ()",
-            "{",
-            "\tint $2 = $3;$4",
-            "\treturn $2;",
-            "}"
-        ],
+        "body": ["int $1 ()", "{", "\tint $2 = $3;$4", "\treturn $2;", "}"],
         "description": "Creates a function that returns the int type"
     },
     "Create float function": {
         "prefix": "flfunc",
-        "body": [
-            "float $1 ()",
-            "{",
-            "\tfloat $2 = $3;$4",
-            "\treturn $2;",
-            "}"
-        ],
+        "body": ["float $1 ()", "{", "\tfloat $2 = $3;$4", "\treturn $2;", "}"],
         "description": "Creates a function that returns the float type"
     },
     "Create double function": {
@@ -272,90 +197,62 @@
     },
     "Create long function": {
         "prefix": "longfunc",
-        "body": [
-            "long $1 ()",
-            "{",
-            "\tlong $2 = $3;$4",
-            "\treturn $3;",
-            "}"
-        ],
+        "body": ["long $1 ()", "{", "\tlong $2 = $3;$4", "\treturn $3;", "}"],
         "description": "Creates a function that returns the long type"
     },
     "Print variable of type float (2 decimal places)": {
         "prefix": "pflo",
-        "body": [
-            "printf(\"$0 :>> %.2f\\n\", $0);"
-        ],
+        "body": ["printf(\"$0 :>> %.2f\\n\", $0);"],
         "description": "Calls printf() to log value of variable of type float rounded to 2 decimal places"
     },
     "Print variable of type integer": {
         "prefix": "pint",
-        "body": [
-            "printf(\"$0 :>> %d\\n\", $0);"
-        ],
+        "body": ["printf(\"$0 :>> %d\\n\", $0);"],
         "description": "Calls printf() to log value of variable of type signed integer"
     },
     "Print variable of type char": {
         "prefix": "pcha",
-        "body": [
-            "printf(\"$0 :>> %c\\n\", $0);"
-        ],
+        "body": ["printf(\"$0 :>> %c\\n\", $0);"],
         "description": "Calls printf() to log value of variable of type char"
     },
     "Print variable of type pointer": {
         "prefix": "ppoint",
-        "body": [
-            "printf(\"$0 :>> %p\\n\", (void *) $0);"
-        ],
+        "body": ["printf(\"$0 :>> %p\\n\", (void *) $0);"],
         "description": "Calls printf() to log value of variable of type pointer"
     },
     "Print variable of type size_t": {
         "prefix": "psiz",
-        "body": [
-            "printf(\"$0 :>> %zu\\n\", $0);"
-        ],
+        "body": ["printf(\"$0 :>> %zu\\n\", $0);"],
         "description": "Calls printf() to log value of variable of type size_t"
     },
     "printf": {
         "prefix": "printf",
-        "body": [
-            "printf(\"$1\\n\"$0);"
-        ],
+        "body": ["printf(\"$1\\n\"$0);"],
         "description": "Generic printf() snippet"
     },
     "sprintf": {
         "prefix": "sprintf",
-        "body": [
-            "sprintf($1, \"$2\\n\"$0);"
-        ],
+        "body": ["sprintf($1, \"$2\\n\"$0);"],
         "description": "Generic sprintf() snippet"
     },
     "fprintf": {
         "prefix": "fprintf",
-        "body": [
-            "fprintf(${1:stderr}, \"$2\\n\"$0);"
-        ],
+        "body": ["fprintf(${1:stderr}, \"$2\\n\"$0);"],
         "description": "Generic fprintf() snippet"
     },
     "scanf": {
         "prefix": "scanf",
-        "body": [
-            "scanf(\"$1\"$0);"
-        ],
+        "body": ["scanf(\"$1\"$0);"],
         "description": "Generic scanf() snippet"
     },
     "sscanf": {
         "prefix": "sscanf",
-        "body": [
-            "sscanf($1, \"$2\"$0);"
-        ],
+        "body": ["sscanf($1, \"$2\"$0);"],
         "description": "Generic sscanf() snippet"
     },
     "fscanf": {
         "prefix": "fscanf",
-        "body": [
-            "fscanf($1, \"$2\"$0);"
-        ],
+        "body": ["fscanf($1, \"$2\"$0);"],
         "description": "Generic fscanf() snippet"
     },
     "Allocate memory using malloc": {

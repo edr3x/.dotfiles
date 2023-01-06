@@ -27,11 +27,7 @@
     },
     "get props": {
         "prefix": "gprops",
-        "body": [
-            "@override  ",
-            "  List<Object> get props => [$1];  ",
-            "$2"
-        ],
+        "body": ["@override  ", "  List<Object> get props => [$1];  ", "$2"],
         "description": "equatable @override"
     },
     "eventdebounce": {
@@ -85,9 +81,7 @@
     },
     "importprovider": {
         "prefix": "importprovider",
-        "body": [
-            "import 'package:provider/provider.dart';"
-        ],
+        "body": ["import 'package:provider/provider.dart';"],
         "description": "import snipphet for provider"
     },
     "trycatch": {
@@ -105,9 +99,7 @@
     },
     "routeName": {
         "prefix": "routename",
-        "body": [
-            "static const String routeName = '$1';"
-        ],
+        "body": ["static const String routeName = '$1';"],
         "description": "static const routeName creation for named redirection"
     },
     "fromjson": {
@@ -119,9 +111,7 @@
     },
     "tojson": {
         "prefix": "tojson",
-        "body": [
-            "Map<String, dynamic> toJson() => _$$1ToJson(this);"
-        ],
+        "body": ["Map<String, dynamic> toJson() => _$$1ToJson(this);"],
         "description": "tojson snipphet create"
     },
     "create custom error": {
@@ -210,9 +200,7 @@
     },
     "returnfromjson": {
         "prefix": "returnfromjson",
-        "body": [
-            "return $1.fromJson(json.decode(response.body));"
-        ],
+        "body": ["return $1.fromJson(json.decode(response.body));"],
         "description": "returnfromjson"
     },
     "importexception": {

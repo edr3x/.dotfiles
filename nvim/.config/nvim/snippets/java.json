@@ -1,18 +1,12 @@
 {
     "main": {
         "prefix": "psvm",
-        "body": [
-            "public static void main(String[] args) {",
-            "${1}",
-            "}"
-        ],
+        "body": ["public static void main(String[] args) {", "${1}", "}"],
         "description": "main method"
     },
     "println": {
         "prefix": "println",
-        "body": [
-            "System.out.println(\"${1}\");"
-        ],
+        "body": ["System.out.println(\"${1}\");"],
         "description": "println"
     }
 }
