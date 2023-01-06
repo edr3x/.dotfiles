@@ -90,6 +90,14 @@ map('n', "<leader>mc", function() peek.close() end, opts)
 -- search and replace
 map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
+-- git
+map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
+map("n", "<leader>gl", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
+map("n", "<leader>gs", "<cmd>Gitsigns toggle_signs<CR>", opts)
+map("n", "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", opts)
+map("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", opts)
+map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", opts)
+
 --[[
 
 --debugger
