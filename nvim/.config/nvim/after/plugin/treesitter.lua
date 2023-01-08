@@ -39,6 +39,9 @@ treesitter.setup {
         "typescript",
         "yaml"
     },
+    autotag = {
+        enable = true,
+    },
     auto_install = false,
     highlight = {
         enable = true,

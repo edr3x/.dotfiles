@@ -25,6 +25,8 @@ local servers = {
     'yamlls',
     'dockerls',
     'graphql',
+    'tailwindcss',
+    'cssls',
     'jdtls',
 }
 
