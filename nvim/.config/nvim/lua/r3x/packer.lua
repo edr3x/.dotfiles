@@ -51,6 +51,10 @@ return packer.startup(function(use)
         'RRethy/vim-illuminate',
         commit = "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3"
     }
+    use {
+        'akinsho/bufferline.nvim', tag = "v3.*",
+        requires = 'nvim-tree/nvim-web-devicons'
+    }
     use 'edr3x/nvim-treesitter-context'
     use 'mrjones2014/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'

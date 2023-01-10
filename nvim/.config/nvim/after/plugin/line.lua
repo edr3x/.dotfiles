@@ -23,16 +23,14 @@ local lspStatus = {
     color = { fg = "#d3d3d3" }
 }
 
-local buffer = {
-    'buffers',
+local window = {
+    'windows',
     show_filename_only = true,
-    hide_filename_extension = false,
     show_modified_status = true,
-    mode = 0,
-    buffers_color = {
+    windows_color = {
         active = { fg = "#d3d3d3" },
         inactive = { fg = "#414141" },
-    },
+    }
 }
 
 line.setup {
@@ -48,7 +46,7 @@ line.setup {
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { 'branch' },
-        lualine_c = { buffer },
+        lualine_c = { window },
         lualine_x = { 'diff', 'diagnostics' },
         lualine_y = { lspStatus, 'filetype' },
         lualine_z = { 'progress' }
