@@ -41,6 +41,9 @@ end
 local signature_cfg = {
     hint_enable = false,
     floating_window = true,
+    check_completion_visible = true,
+    toggle_key = '<M-t>',
+    select_signature_key = '<M-s>',
 }
 
 M.on_attach = function(client, bufnr)
