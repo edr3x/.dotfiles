@@ -86,12 +86,12 @@ awful.keyboard.append_global_keybindings({
 awful.keyboard.append_global_keybindings({
 
     -- Switch to the previous tag
-    awful.key({ modkey }, "Left",
+    awful.key({ modkey, altkey }, "h",
         awful.tag.viewprev,
         { description = "view previous", group = "tag" }),
 
     -- Switch to the next tag
-    awful.key({ modkey }, "Right",
+    awful.key({ modkey, altkey }, "l",
         awful.tag.viewnext,
         { description = "view next", group = "tag" }),
 
@@ -171,8 +171,6 @@ awful.keyboard.append_global_keybindings({
         { description = "increase the number of master clients", group = "layout" }),
 
     awful.key({ modkey, "Shift" }, "l",
-
-
         function() awful.tag.incnmaster(-1, nil, true) end,
         { description = "decrease the number of master clients", group = "layout" }),
 
