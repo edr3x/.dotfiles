@@ -19,8 +19,8 @@ end
 vim.g.mapleader = ','
 
 -- center screen
-map('n', '<C-d>', '<C-d>zz', opts)
-map('n', '<C-u>', '<C-u>zz', opts)
+map('n', 'D', '<C-d>zz', opts)
+map('n', 'U', '<C-u>zz', opts)
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
 map('n', 'G', 'Gzzzv', opts)

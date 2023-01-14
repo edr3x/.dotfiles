@@ -58,7 +58,7 @@ for _, lsp in pairs(servers) do
         settings = {
             Lua = {
                 diagnostics = {
-                    globals = { 'vim' }
+                    globals = { 'vim', 'awesome', 'client' }
                 }
             }
         }
