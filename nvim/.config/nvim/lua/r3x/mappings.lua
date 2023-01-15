@@ -37,12 +37,12 @@ map('n', '<leader><ESC>', '<cmd>qa<CR>', opts)
 -- move code up and down
 map('n', '<M-j>', '<cmd>m+<CR>', opts) -- move line down
 map('n', '<M-k>', '<cmd>m-2<CR>', opts) -- move line up
-map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
-map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
+map("x", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
+map("x", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
 -- better indents
-map("v", "<", "<gv", opts)
-map("v", ">", ">gv", opts)
+map("x", "<", "<gv", opts)
+map("x", ">", ">gv", opts)
 
 -- buffer
 map('n', '<M-h>', '<cmd>bprev<CR>', opts)
@@ -51,10 +51,10 @@ map('n', '<leader>bd', '<cmd>bdelete<CR>', opts)
 
 -- avoid vim register for some operations
 map('n', 'x', '"_x', opts)
-map("v", "p", '"_dP', opts)
+map("x", "p", '"_dP', opts)
 map('n', '<leader>Y', '"+Y', opts) -- for yank commands but for system clipboard
-map({ "n", "v" }, "<leader>y", '"+y', opts) -- copy to system clipboard
-map({ "n", "v" }, "<leader>p", '"+p', opts) -- paste from system clipboard
+map({ "n", "x" }, "<leader>y", '"+y', opts) -- copy to system clipboard
+map({ "n", "x" }, "<leader>p", '"+p', opts) -- paste from system clipboard
 
 -- split resize
 map("n", "<C-Up>", ":resize -2<CR>", opts)
