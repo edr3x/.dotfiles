@@ -18,8 +18,6 @@ if not illuminate_status then
     return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities()
-
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_buf_set_keymap
 
@@ -46,10 +44,14 @@ local signature_cfg = {
     select_signature_key = '<M-s>',
 }
 
+M.capabilities = cmp_nvim_lsp.default_capabilities()
+
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
     end
+
+    client.server_capabilities.semanticTokensProvider = nil
 
     lsp_keymaps(bufnr)
 
