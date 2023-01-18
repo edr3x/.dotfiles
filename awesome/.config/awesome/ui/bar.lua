@@ -123,9 +123,9 @@ screen.connect_signal("request::desktop_decoration", function(s)
         stretch = false,
         margins = dpi(4),
         visible = true,
-        height = dpi(35),
+        height = dpi(38),
         width = s.geometry.width - dpi(30),
-        shape = helpers.rrect(6),
+        shape = helpers.rrect(0),
         screen = s,
     })
 
