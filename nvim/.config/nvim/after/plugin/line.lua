@@ -25,10 +25,11 @@ local lspStatus = {
 
 local buffer = {
     'buffers',
-    show_filename_only = true,
-    hide_filename_extension = false,
-    show_modified_status = true,
     mode = 0,
+    show_filename_only = true,
+    show_modified_status = true,
+    hide_filename_extension = false,
+    symbols = { alternate_file = "" },
     buffers_color = {
         active = { fg = "#d3d3d3" },
         inactive = { fg = "#414141" },
