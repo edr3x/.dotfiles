@@ -18,7 +18,7 @@
     - Font : [Fira Code](https://www.nerdfonts.com/font-downloads)
 - Code Editor : [Neovim](https://neovim.io/)
 - Theme Manager : [lxappearance](https://archlinux.org/packages/community/x86_64/lxappearance/)
-- System Font : [Iosevka-Regular](https://github.com/be5invis/Iosevka)
+- System Font : [Iosevka-Nerd-Font](https://github.com/ryanoasis/nerd-fonts)
 - Icon Theme : [Tela-circle-dracula](https://www.xfce-look.org/p/1359276/)
 
 ## Installing

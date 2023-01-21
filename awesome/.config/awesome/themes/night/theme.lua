@@ -36,8 +36,8 @@ theme.transparent  = "#00000000"
 
 theme.notification_icon = gears.surface.load_uncached(gfs.get_configuration_dir() .. "themes/night/hello.jpg")
 
-theme.font       = "Iosevka, Bold 10"
-theme.font_name  = "Iosevka"
+theme.font       = "Iosevka Nerd Font, Bold 10"
+theme.font_name  = "Iosevka Nerd Font"
 theme.icon_font  = "Iosevka Nerd Font"
 theme.icon_font2 = "Iosevka Nerd Font"
 
