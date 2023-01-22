@@ -3,6 +3,7 @@ if not status then
     return
 end
 
+
 local lspStatus = {
     function()
         local msg = "No LSP detected"
@@ -39,7 +40,7 @@ local buffer = {
 line.setup {
     options = {
         icons_enabled = true,
-        theme = 'custom_minimal',
+        theme = 'custom_transparent',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = { "alpha", "dashboard" },
