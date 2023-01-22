@@ -8,6 +8,8 @@ set incsearch
 set history=1000
 set scrolloff=10
 
+set commentary
+
 let mapleader = ","
 
 inoremap jk <ESC>
@@ -20,6 +22,7 @@ nnoremap Q <nop>
 nnoremap x "_x
 nnoremap c "_c
 vnoremap p "_dP
+
 nnoremap <leader>Y "+Y
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
