@@ -4,6 +4,7 @@ if not null_ls_status_ok then
 end
 
 local formatting = null_ls.builtins.formatting
+local code_actions = null_ls.builtins.code_actions
 
 null_ls.setup {
     debug = false,
@@ -12,5 +13,6 @@ null_ls.setup {
             disabled_filetypes = { "markdown", "yaml" },
         }),
         formatting.google_java_format,
+        code_actions.gitsigns,
     },
 }

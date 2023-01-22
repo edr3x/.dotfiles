@@ -5,10 +5,11 @@ end
 
 gitsigns.setup({
     signs = {
-        add = { text = "★" },
-        change = { text = "➜ " },
-        delete = { text = " " },
-        topdelete = { text = "‾" },
-        changedelete = { text = "➜ " },
+        untracked    = { text = 'U' },
+        add          = { text = "A" },
+        change       = { text = "M" },
+        delete       = { text = "D" },
+        topdelete    = { text = "D" },
+        changedelete = { text = "D" },
     },
 })

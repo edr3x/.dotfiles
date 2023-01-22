@@ -97,6 +97,7 @@ map("n", "<leader>gs", "<cmd>Gitsigns toggle_signs<CR>", opts)
 map("n", "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", opts)
 map("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", opts)
 map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", opts)
+map("n", "<leader>gw", "<cmd>Gitsigns toggle_word_diff<CR>", opts)
 
 --[[
 
