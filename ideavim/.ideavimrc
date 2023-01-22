@@ -30,3 +30,9 @@ vnoremap <leader>p "+p
 nnoremap <leader>p "+p
 nnoremap <a-h> gT
 nnoremap <a-l> gt
+
+nnoremap <leader>ca :action GotoAction<CR>
+nnoremap <leader>df :action GotoImplementation<CR>
+nnoremap <leader>gc :action GotoClass<CR>
+nnoremap <leader>gd :action GotToDeclaration<CR>
+nnoremap <leader>gs :action GotoSymbol<CR>
