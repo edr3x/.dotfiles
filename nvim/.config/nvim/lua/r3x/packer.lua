@@ -20,9 +20,13 @@ return packer.startup(function(use)
     use 'windwp/nvim-autopairs'
     use 'nvim-telescope/telescope.nvim'
     use 'tpope/vim-commentary'
+    use 'github/copilot.vim'
     use 'ThePrimeagen/harpoon'
     use 'ThePrimeagen/vim-be-good'
     use 'andweeb/presence.nvim'
+    use 'lewis6991/gitsigns.nvim'
+    use 'folke/trouble.nvim'
+    use 'mbbill/undotree'
     use {
         'DaikyXendo/nvim-tree.lua',
         requires = {
@@ -54,11 +58,8 @@ return packer.startup(function(use)
     use 'edr3x/nvim-treesitter-context'
     use 'mrjones2014/nvim-ts-rainbow'
     use 'NvChad/nvim-colorizer.lua'
-    use 'lewis6991/gitsigns.nvim'
-    use 'folke/trouble.nvim'
     use 'folke/todo-comments.nvim'
     use 'goolord/alpha-nvim'
-    use 'mbbill/undotree'
 
     -- LSP and cmp
     use 'neovim/nvim-lspconfig'

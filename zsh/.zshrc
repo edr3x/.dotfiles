@@ -8,6 +8,7 @@ alias ll="exa -lah --icons --color automatic --no-user --no-time --git --group-d
 alias ..="cd .."
 alias ...="cd ../.."
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 eval "$(starship init zsh)"
