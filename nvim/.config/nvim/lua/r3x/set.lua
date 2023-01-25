@@ -21,3 +21,5 @@ set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.undofile = true
 
 set.scrolloff = 10
+
+vim.cmd [[autocmd FileType * set formatoptions-=ro]]
