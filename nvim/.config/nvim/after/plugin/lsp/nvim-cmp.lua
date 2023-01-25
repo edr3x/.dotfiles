@@ -63,13 +63,10 @@ cmp.setup {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         },
-
         ["<CR>"] = cmp.mapping.confirm { select = true },
     }),
-
     formatting = {
         fields = { "kind", "abbr", "menu" },
-
         format = function(entry, vim_item)
             vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
             vim_item.menu = ({

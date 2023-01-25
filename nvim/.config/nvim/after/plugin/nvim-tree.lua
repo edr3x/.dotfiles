@@ -20,16 +20,19 @@ ntree.setup({
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },
+                { key = "U", action = "cd" },
+                { key = "d", action = "trash" },
             },
         },
         float = {
             enable = true,
             open_win_config = {
+                relative = "editor",
                 border = "rounded",
-                width = 85,
-                height = 25,
-                row = 7,
-                col = 66,
+                width = 120,
+                height = 35,
+                row = 5,
+                col = 75,
             },
         },
     },
@@ -83,7 +86,6 @@ ntree.setup({
             },
         },
         special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "go.mod", "pubspec.yaml" },
-
     },
     filters = {
         dotfiles = true,
@@ -93,13 +95,13 @@ ntree.setup({
         use_system_clipboard = true,
     },
     diagnostics = {
-        enable = false,
+        enable = true,
         show_on_dirs = false,
         icons = {
-            hint = "",
-            info = "",
-            warning = "",
             error = "",
+            warning = "",
+            hint = "",
+            info = "",
         },
     },
 })
