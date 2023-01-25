@@ -62,6 +62,12 @@ map("n", "<C-Down>", ":resize +2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- split navigation
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
+
 -- tree
 map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', opts)
 map('n', '<leader>u', '<cmd>UndotreeToggle<CR>', opts)
