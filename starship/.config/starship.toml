@@ -43,6 +43,9 @@ deleted = "✘ ×${count} "
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
+[git_metrics]
+disabled = false
+
 [hostname]
 ssh_only = false
 format = " [$hostname]($style) "
@@ -52,7 +55,7 @@ disabled = false
 
 [memory_usage]
 format = "$symbol[${ram}(  )]($style) "
-threshold = 40 
+threshold = 40
 symbol = "  "
 style = "#6ba4cf"
 disabled = false
@@ -63,7 +66,7 @@ format = "[$user]($style) @"
 show_always = true
 
 [time]
-disabled = true 
+disabled = true
 
 [package]
 disabled = true
