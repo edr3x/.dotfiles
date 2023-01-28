@@ -43,16 +43,13 @@
         "prefix": "while",
         "body": ["while ${1:true} do", "\t$0", "end"]
     },
-    "vimapi": {
-        "prefix": "lapi",
-        "body": ["local api = vim.api"]
-    },
-    "vimfn": {
-        "prefix": "lfn",
-        "body": ["local fn = vim.fn"]
-    },
-    "vimlsp": {
-        "prefix": "llsp",
-        "body": ["local lsp = vim.lsp"]
+    "pcall": {
+        "prefix": "pcall",
+        "body": [
+            "local ${1}_status, ${1} = pcall(require, '${1}')",
+            "if not status then",
+            "    return",
+            "end"
+        ]
     }
 }
