@@ -36,6 +36,9 @@ return packer.startup(function(use)
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end or ':TSUpdate',
+        dependencies = {
+            { "nvim-treesitter/playground", cmd = "TSPlayground" },
+        },
     }
     use { 'sindrets/diffview.nvim',
         requires = {
@@ -60,6 +63,7 @@ return packer.startup(function(use)
     use 'NvChad/nvim-colorizer.lua'
     use 'folke/todo-comments.nvim'
     use 'goolord/alpha-nvim'
+    use 'echasnovski/mini.nvim'
 
     -- LSP and cmp
     use 'neovim/nvim-lspconfig'

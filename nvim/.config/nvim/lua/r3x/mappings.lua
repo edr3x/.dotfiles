@@ -105,6 +105,11 @@ map("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", opts)
 map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", opts)
 map("n", "<leader>gw", "<cmd>Gitsigns toggle_word_diff<CR>", opts)
 
+-- minimap
+map('n', '<Leader>mf', "<cmd>lua MiniMap.toggle_focus()<CR>", opts)
+map('n', '<Leader>mr', "<cmd>lua MiniMap.refresh()<CR>", opts)
+map('n', '<Leader>mt', "<cmd>lua MiniMap.toggle()<CR>", opts)
+
 --[[
 
 --debugger

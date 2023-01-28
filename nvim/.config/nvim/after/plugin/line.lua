@@ -3,7 +3,6 @@ if not status then
     return
 end
 
-
 local lspStatus = {
     function()
         local msg = "No LSP detected"
