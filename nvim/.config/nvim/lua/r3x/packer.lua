@@ -64,6 +64,7 @@ return packer.startup(function(use)
     use 'folke/todo-comments.nvim'
     use 'goolord/alpha-nvim'
     use 'echasnovski/mini.nvim'
+    use 'ggandor/leap.nvim'
 
     -- LSP and cmp
     use 'neovim/nvim-lspconfig'
