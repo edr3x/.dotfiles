@@ -32,8 +32,8 @@ local lsp_keymaps = function(bufnr)
     keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
     keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "<C-n>", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
-    keymap(bufnr, "n", "<C-p>", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", opts)
+    keymap(bufnr, "n", "dn", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
+    keymap(bufnr, "n", "dN", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", opts)
 end
 
 local signature_cfg = {

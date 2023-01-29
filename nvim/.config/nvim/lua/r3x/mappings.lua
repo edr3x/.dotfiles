@@ -35,8 +35,8 @@ map('n', '<C-a>', 'ggVG', opts)
 map('n', '<leader><ESC>', '<cmd>qa<CR>', opts)
 
 -- move code up and down
-map('n', '<M-j>', '<cmd>m+<CR>', opts) -- move line down
-map('n', '<M-k>', '<cmd>m-2<CR>', opts) -- move line up
+map('n', '<M-j>', ':m+<CR>', opts) -- move line down
+map('n', '<M-k>', ':m-2<CR>', opts) -- move line up
 map("x", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
 map("x", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
@@ -97,13 +97,14 @@ map('n', "<leader>mc", function() peek.close() end, opts)
 map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 
 -- git
+map("n", "gn", "<cmd>Gitsigns next_hunk<CR>", opts)
+map("n", "gN", "<cmd>Gitsigns prev_hunk<CR>", opts)
 map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
 map("n", "<leader>gl", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
-map("n", "<leader>gs", "<cmd>Gitsigns toggle_signs<CR>", opts)
-map("n", "<leader>gn", "<cmd>Gitsigns next_hunk<CR>", opts)
-map("n", "<leader>gp", "<cmd>Gitsigns prev_hunk<CR>", opts)
 map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", opts)
 map("n", "<leader>gw", "<cmd>Gitsigns toggle_word_diff<CR>", opts)
+map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
+map("n", "<leader>gt", "<cmd>Telescope git_branches<CR>", opts)
 
 -- minimap
 map('n', '<Leader>mf', "<cmd>lua MiniMap.toggle_focus()<CR>", opts)

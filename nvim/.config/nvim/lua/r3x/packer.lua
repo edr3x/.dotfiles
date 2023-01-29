@@ -19,6 +19,7 @@ return packer.startup(function(use)
     use 'akinsho/toggleterm.nvim'
     use 'windwp/nvim-autopairs'
     use 'nvim-telescope/telescope.nvim'
+    use 'tpope/vim-fugitive'
     use 'tpope/vim-commentary'
     use 'github/copilot.vim'
     use 'ThePrimeagen/harpoon'
