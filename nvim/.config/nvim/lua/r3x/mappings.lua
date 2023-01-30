@@ -1,21 +1,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-local harpoon_ui_status, hook = pcall(require, "harpoon.ui")
-if not harpoon_ui_status then
-    return
-end
-
-local harpoon_mark_status, mark = pcall(require, "harpoon.mark")
-if not harpoon_mark_status then
-    return
-end
-
-local peek_status, peek = pcall(require, "peek")
-if not peek_status then
-    return
-end
-
 vim.g.mapleader = ','
 
 -- center screen
@@ -78,20 +63,6 @@ map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
 map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
 map('n', '<leader>ft', '<cmd>Telescope treesitter<CR>', opts)
 map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', opts)
-
---harpoon
-map('n', "<leader>a", function() mark.add_file() end, opts)
-map('n', "<leader>o", function() hook.toggle_quick_menu() end, opts)
-
-map('n', "<leader>1", function() hook.nav_file(1) end, opts)
-map('n', "<leader>2", function() hook.nav_file(2) end, opts)
-map('n', "<leader>3", function() hook.nav_file(3) end, opts)
-map('n', "<leader>4", function() hook.nav_file(4) end, opts)
-map('n', "<leader>5", function() hook.nav_file(5) end, opts)
-
---md prev
-map('n', "<leader>md", function() peek.open() end, opts)
-map('n', "<leader>mc", function() peek.close() end, opts)
 
 -- search and replace
 map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)

@@ -13,3 +13,6 @@ comments.setup {
     },
     highlight = { pattern = [[(KEYWORDS)]] },
 }
+
+vim.keymap.set("n", "tn", function() comments.jump_next() end, { noremap = true, silent = true })
+vim.keymap.set("n", "tN", function() comments.jump_prev() end, { noremap = true, silent = true })
