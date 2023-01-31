@@ -217,6 +217,27 @@
             "",
             "export { db };"
         ],
-        "description": "Snippet to initialize @prisma/client"
+        "description": "Snippet to initialize @prisma/client for express"
+    },
+    "Prisma Client Init Nest": {
+        "prefix": "prismainitnest",
+        "body": [
+            "import { INestApplication, Injectable, OnModuleInit } from '@nestjs/common';",
+            "import { PrismaClient } from '@prisma/client';",
+            "",
+            "@Injectable()",
+            "export class PrismaService extends PrismaClient implements OnModuleInit {",
+            "    async onModuleInit() {",
+            "        await this.$connect();",
+            "    }",
+            "",
+            "    async enableShutdownHooks(app: INestApplication) {",
+            "        this.$on('beforeExit', async () => {",
+            "            await app.close();",
+            "        });",
+            "    }",
+            "}"
+        ],
+        "description": "Snippet to initialize @prisma/client for nestjs"
     }
 }
