@@ -32,8 +32,6 @@ helpers.add_hover_cursor(time, "hand1")
 
 local action_icon = require("ui.gooey").make_button {
     icon = "bell2",
-    --bg = beautiful.background,
-    --fg = beautiful.white,
     width = 34,
     margins = 6.9,
     hover = true,
