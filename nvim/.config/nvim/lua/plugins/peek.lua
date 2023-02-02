@@ -1,0 +1,10 @@
+return {
+    'toppair/peek.nvim',
+    build = 'deno task --quiet build:fast',
+    commit = "18284b64f6c5103ccf18d6b53f288d2b2de2dc4a",
+    config = function()
+        local peek = require("peek")
+        vim.keymap.set('n', "<leader>md", function() peek.open() end, { noremap = true, silent = true })
+        vim.keymap.set('n', "<leader>mc", function() peek.close() end, { noremap = true, silent = true })
+    end
+}
