@@ -12,7 +12,4 @@ return {
     'RRethy/vim-illuminate',
     'jose-elias-alvarez/null-ls.nvim',
     'windwp/nvim-ts-autotag',
-
-    { 'simrat39/rust-tools.nvim', ft = { "rust" } },
-    { "mfussenegger/nvim-jdtls", ft = { "java" } },
 }
