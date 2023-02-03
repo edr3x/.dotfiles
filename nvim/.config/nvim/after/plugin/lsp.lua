@@ -2,7 +2,6 @@ local servers = {
     'clangd',
     'sumneko_lua',
     'tsserver',
-    'bashls',
     'gopls',
     'prismals',
     'rust_analyzer',
@@ -10,9 +9,8 @@ local servers = {
     'yamlls',
     'dockerls',
     'graphql',
-    'tailwindcss',
-    'cssls',
-    'jdtls',
+    -- 'tailwindcss',
+    -- 'cssls',
 }
 
 local opts = {
