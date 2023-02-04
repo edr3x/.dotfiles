@@ -18,22 +18,22 @@ if not illuminate_status then
     return
 end
 
-local opts = { noremap = true, silent = true }
+local options = { noremap = true, silent = true }
 local keymap = vim.api.nvim_buf_set_keymap
 
 local lsp_keymaps = function(bufnr)
-    keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap(bufnr, "n", "<leader>im", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    keymap(bufnr, "n", "<leader>fr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+    keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", options)
+    keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", options)
+    keymap(bufnr, "n", "<leader>im", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
+    keymap(bufnr, "n", "<leader>fr", "<cmd>lua vim.lsp.buf.references()<CR>", options)
+    keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", options)
+    keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", options)
+    keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", options)
+    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", options)
 
-    keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "dn", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
-    keymap(bufnr, "n", "dN", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", opts)
+    keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", options)
+    keymap(bufnr, "n", "dn", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", options)
+    keymap(bufnr, "n", "dN", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", options)
 end
 
 local signature_cfg = {
@@ -43,6 +43,8 @@ local signature_cfg = {
     toggle_key = '<M-t>',
     select_signature_key = '<M-s>',
 }
+
+M.opts = options
 
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 

@@ -23,8 +23,8 @@ return {
             },
             server = {
                 standalone = true,
-                on_attach = require("r3x.lsp-handlers").on_attach,
-                capabilities = require("r3x.lsp-handlers").capabilities,
+                on_attach = require("r3x.handlers").on_attach,
+                capabilities = require("r3x.handlers").capabilities,
             },
         }
 

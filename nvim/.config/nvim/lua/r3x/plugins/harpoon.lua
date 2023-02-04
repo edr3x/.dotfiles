@@ -4,7 +4,7 @@ return {
         local hook = require("harpoon.ui")
         local mark = require("harpoon.mark")
 
-        local opts = { noremap = true, silent = true }
+        local opts = require("r3x.handlers").opts
 
         vim.keymap.set('n', "<leader>a", function() mark.add_file() end, opts)
         vim.keymap.set('n', "<leader>o", function() hook.toggle_quick_menu() end, opts)

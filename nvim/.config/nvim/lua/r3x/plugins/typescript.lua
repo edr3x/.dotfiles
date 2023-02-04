@@ -7,7 +7,7 @@ return {
             fallback = true,
         },
         server = {
-            on_attach = require("r3x.lsp-handlers").on_attach,
+            on_attach = require("r3x.handlers").on_attach,
         },
     }
 

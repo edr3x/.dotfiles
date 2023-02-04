@@ -13,8 +13,8 @@ return {
             widget_guides = { enabled = true, debug = false },
             dev_log = { enabled = true, open_cmd = 'tabedit' },
             lsp = {
-                on_attach = require("r3x.lsp-handlers").on_attach,
-                capabilities = require("r3x.lsp-handlers").capabilities,
+                on_attach = require("r3x.handlers").on_attach,
+                capabilities = require("r3x.handlers").capabilities,
                 color = {
                     enabled = true,
                     background = true,

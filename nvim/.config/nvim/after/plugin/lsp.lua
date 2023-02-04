@@ -30,8 +30,8 @@ require("mason").setup()
 require("mason-lspconfig").setup(opts)
 for _, lsp in pairs(servers) do
     require("lspconfig")[lsp].setup {
-        on_attach = require("r3x.lsp-handlers").on_attach,
-        capabilities = require("r3x.lsp-handlers").capabilities,
+        on_attach = require("r3x.handlers").on_attach,
+        capabilities = require("r3x.handlers").capabilities,
         flags = {
             debounce_text_changes = 150,
         },
