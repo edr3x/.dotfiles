@@ -11,7 +11,6 @@ return {
                 formatting.prettierd.with({
                     disabled_filetypes = { "markdown", "yaml" },
                 }),
-                formatting.google_java_format,
                 require("typescript.extensions.null-ls.code-actions"),
             },
         }

@@ -5,8 +5,10 @@ return {
     },
     config = function()
         local dashboard = require "alpha.themes.dashboard"
+        local btn = dashboard.button
+        local section = dashboard.section
 
-        dashboard.section.header.val = {
+        section.header.val = {
             [[                                                 ]],
             [[                                                 ]],
             [[                                                 ]],
@@ -22,21 +24,21 @@ return {
             [[                                                 ]],
         }
 
-        dashboard.section.buttons.val = {
-            dashboard.button("f", " " .. " Find file", "<cmd>Telescope find_files <CR>"),
-            dashboard.button("t", " " .. " File Tree", "<cmd>NvimTreeToggle<CR>"),
-            dashboard.button("p", " " .. " Browse Projects", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),
-            dashboard.button("r", " " .. " Recent files", "<cmd>Telescope oldfiles <CR>"),
-            dashboard.button("g", " " .. " Git Diff View", "<cmd>DiffviewOpen <CR>"),
-            dashboard.button("x", " " .. " Find text", "<cmd>Telescope live_grep <CR>"),
-            dashboard.button("q", " " .. " Quit", "<cmd>qa<CR>"),
+        section.buttons.val = {
+            btn("o", "󰨣 " .. " Current Session", "<cmd>lua require('persistence').load()<CR>"),
+            btn("f", " " .. " Find file", "<cmd>Telescope find_files<CR>"),
+            btn("t", " " .. " File Tree", "<cmd>NvimTreeToggle<CR>"),
+            btn("r", " " .. " Recent Session", "<cmd>lua require('persistence').load({ last = true })<CR>"),
+            btn("p", " " .. " Browse Projects", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),
+            btn("g", " " .. " Git Diff View", "<cmd>DiffviewOpen <CR>"),
+            btn("q", " " .. " Quit", "<cmd>qa<CR>"),
         }
 
-        dashboard.section.footer.val = "㠪ᗪ 尺㇌乂"
+        section.footer.val = "㠪ᗪ 尺㇌乂"
 
-        dashboard.section.footer.opts.hl = "Type"
-        dashboard.section.header.opts.hl = "Include"
-        dashboard.section.buttons.opts.hl = "Keyword"
+        section.footer.opts.hl = "Type"
+        section.header.opts.hl = "Include"
+        section.buttons.opts.hl = "Keyword"
 
         dashboard.opts.opts.noautocmd = true
 

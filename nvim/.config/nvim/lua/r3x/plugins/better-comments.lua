@@ -1,5 +1,6 @@
 return {
     'folke/todo-comments.nvim',
+    cmd = "TodoTelescope",
     config = function()
         local comments = require("todo-comments")
         local opts = require("r3x.handlers").opts
