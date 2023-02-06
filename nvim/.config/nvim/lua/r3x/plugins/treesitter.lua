@@ -1,9 +1,9 @@
 return {
     'nvim-treesitter/nvim-treesitter',
+    event = "BufReadPre",
     build = function() require('nvim-treesitter.install').update({ with_sync = true }) end or ':TSUpdate',
     dependencies = {
         'mrjones2014/nvim-ts-rainbow',
-        { "nvim-treesitter/playground", cmd = "TSPlayground" },
     },
     config = function()
         require("nvim-treesitter.configs").setup {

@@ -1,5 +1,6 @@
 return {
     'lewis6991/gitsigns.nvim',
+    event = "BufReadPre",
     opts = {
         signs = {
             untracked    = { text = 'U' },

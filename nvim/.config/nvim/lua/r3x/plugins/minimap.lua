@@ -1,5 +1,6 @@
 return {
     'echasnovski/mini.nvim',
+    event = "BufReadPre",
     config = function()
         local map = require("mini.map")
         map.setup {

@@ -1,5 +1,6 @@
 return {
     'akinsho/toggleterm.nvim',
+    event = "BufReadPre",
     opts = {
         size = 15,
         open_mapping = [[<M-t>]],

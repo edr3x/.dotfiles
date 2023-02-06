@@ -76,7 +76,7 @@ return {
                             symlink_open = "",
                         },
                         git = {
-                            unstaged = "U",
+                            unstaged = "M",
                             staged = "A",
                             unmerged = "",
                             renamed = "R",

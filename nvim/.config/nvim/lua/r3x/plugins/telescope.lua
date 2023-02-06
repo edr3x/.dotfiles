@@ -1,5 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
         local scope = require("telescope")
         local tactions = require("telescope.actions")
@@ -38,9 +39,5 @@ return {
                 live_grep = { additional_args = function() return { "--hidden" } end },
             },
         }
-
-        scope.load_extension('flutter')
-        scope.load_extension('harpoon')
-        --scope.load_extension('dap')
     end
 }

@@ -1,5 +1,6 @@
 return {
     'edr3x/nvim-treesitter-context',
+    event = "BufReadPre",
     config = function()
         require("treesitter-context").setup {
             enable = true,

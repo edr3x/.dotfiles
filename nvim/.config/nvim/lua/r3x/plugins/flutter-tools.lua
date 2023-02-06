@@ -30,5 +30,6 @@ return {
                 },
             },
         }
+        require("telescope").load_extension('flutter')
     end
 }
