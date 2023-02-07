@@ -1,21 +1,17 @@
 return {
     'ThePrimeagen/harpoon',
     lazy = true,
+    keys = {
+        { "<leader>a", function() require("harpoon.mark").add_file() end },
+        { "<leader>o", function() require("harpoon.ui").toggle_quick_menu() end },
+
+        { "<leader>1", function() require("harpoon.ui").nav_file(1) end },
+        { "<leader>2", function() require("harpoon.ui").nav_file(2) end },
+        { "<leader>3", function() require("harpoon.ui").nav_file(3) end },
+        { "<leader>4", function() require("harpoon.ui").nav_file(4) end },
+        { "<leader>5", function() require("harpoon.ui").nav_file(5) end },
+    },
     config = function()
-        local hook = require("harpoon.ui")
-        local mark = require("harpoon.mark")
-
-        local opts = require("r3x.handlers").opts
-
-        vim.keymap.set('n', "<leader>a", function() mark.add_file() end, opts)
-        vim.keymap.set('n', "<leader>o", function() hook.toggle_quick_menu() end, opts)
-
-        vim.keymap.set('n', "<leader>1", function() hook.nav_file(1) end, opts)
-        vim.keymap.set('n', "<leader>2", function() hook.nav_file(2) end, opts)
-        vim.keymap.set('n', "<leader>3", function() hook.nav_file(3) end, opts)
-        vim.keymap.set('n', "<leader>4", function() hook.nav_file(4) end, opts)
-        vim.keymap.set('n', "<leader>5", function() hook.nav_file(5) end, opts)
-
         require("telescope").load_extension('harpoon')
     end
 }

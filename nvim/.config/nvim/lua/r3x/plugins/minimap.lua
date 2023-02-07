@@ -1,6 +1,11 @@
 return {
     'echasnovski/mini.nvim',
     event = "BufReadPre",
+    keys = {
+        { '<Leader>mf', "<cmd>lua MiniMap.toggle_focus()<CR>" },
+        { '<Leader>mr', "<cmd>lua MiniMap.refresh()<CR>" },
+        { '<Leader>mt', "<cmd>lua MiniMap.toggle()<CR>" },
+    },
     config = function()
         local map = require("mini.map")
         map.setup {

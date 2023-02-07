@@ -53,31 +53,5 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
--- tree
-map('n', '<leader>ntt', '<cmd>NvimTreeToggle<CR>', opts)
-map('n', '<leader>u', '<cmd>UndotreeToggle<CR>', opts)
-
---telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
-map('n', '<leader>ft', '<cmd>Telescope treesitter<CR>', opts)
-map('n', '<leader>sd', '<cmd>Telescope flutter commands<CR>', opts)
-
 -- search and replace
 map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
-
--- git
-map("n", "gn", "<cmd>Gitsigns next_hunk<CR>", opts)
-map("n", "gN", "<cmd>Gitsigns prev_hunk<CR>", opts)
-map("n", "<leader>gb", "<cmd>Gitsigns blame_line<CR>", opts)
-map("n", "<leader>gl", "<cmd>Gitsigns toggle_current_line_blame<CR>", opts)
-map("n", "<leader>gd", "<cmd>Gitsigns toggle_deleted<CR>", opts)
-map("n", "<leader>gw", "<cmd>Gitsigns toggle_word_diff<CR>", opts)
-map("n", "<leader>gs", "<cmd>Telescope git_status<CR>", opts)
-map("n", "<leader>gt", "<cmd>Telescope git_branches<CR>", opts)
-
--- minimap
-map('n', '<Leader>mf', "<cmd>lua MiniMap.toggle_focus()<CR>", opts)
-map('n', '<Leader>mr', "<cmd>lua MiniMap.refresh()<CR>", opts)
-map('n', '<Leader>mt', "<cmd>lua MiniMap.toggle()<CR>", opts)

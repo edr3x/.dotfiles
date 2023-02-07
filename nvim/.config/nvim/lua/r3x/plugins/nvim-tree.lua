@@ -3,6 +3,10 @@ return {
     dependencies = {
         'DaikyXendo/nvim-material-icon'
     },
+    cmd = { 'NvimTreeToggle' },
+    keys = {
+        { '<leader>ntt', '<cmd>NvimTreeToggle<CR>' },
+    },
     config = function()
         require("nvim-tree").setup {
             sort_by = "name",
