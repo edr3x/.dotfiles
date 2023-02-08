@@ -3,14 +3,13 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     cmd = { 'Telescope find_files' },
     keys = {
-        { '<leader>ff', '<cmd>Telescope find_files<CR>' },
-        { '<leader>ff', '<cmd>Telescope find_files<CR>' },
-        { '<leader>fg', '<cmd>Telescope live_grep<CR>' },
-        { '<leader>fb', '<cmd>Telescope buffers<CR>' },
-        { '<leader>ft', '<cmd>Telescope treesitter<CR>' },
-        { '<leader>sd', '<cmd>Telescope flutter commands<CR>' },
-        { "<leader>gs", "<cmd>Telescope git_status<CR>" },
-        { "<leader>gt", "<cmd>Telescope git_branches<CR>" },
+        { '<leader>ff', '<cmd>Telescope find_files<CR>',       desc = "Find Files" },
+        { '<leader>fg', '<cmd>Telescope live_grep<CR>',        desc = "Find texts" },
+        { '<leader>fb', '<cmd>Telescope buffers<CR>',          desc = "List Opened Buffers" },
+        { '<leader>ft', '<cmd>Telescope treesitter<CR>',       desc = "List Treesitter Variables" },
+        { '<leader>fc', '<cmd>Telescope flutter commands<CR>', desc = "Flutter Commands" },
+        { "<leader>gs", "<cmd>Telescope git_status<CR>",       desc = "Git status" },
+        { "<leader>gt", "<cmd>Telescope git_branches<CR>",     desc = "Git branches" },
     },
     config = function()
         local scope = require("telescope")

@@ -24,8 +24,7 @@ local keymap = vim.api.nvim_buf_set_keymap
 local lsp_keymaps = function(bufnr)
     keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", options)
     keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", options)
-    keymap(bufnr, "n", "<leader>im", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
-    keymap(bufnr, "n", "<leader>fr", "<cmd>lua vim.lsp.buf.references()<CR>", options)
+    keymap(bufnr, "n", "<leader>di", "<cmd>lua vim.lsp.buf.implementation()<CR>", options)
     keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", options)
     keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", options)
     keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", options)
@@ -37,14 +36,17 @@ local lsp_keymaps = function(bufnr)
 end
 
 local signature_cfg = {
+    bind = true,
     hint_enable = false,
     floating_window = true,
+    floating_window_above_cur_line = true,
     check_completion_visible = true,
     toggle_key = '<M-t>',
     select_signature_key = '<M-s>',
+    handler_opts = {
+        border = "rounded"
+    }
 }
-
-M.opts = options
 
 M.capabilities = cmp_nvim_lsp.default_capabilities()
 
