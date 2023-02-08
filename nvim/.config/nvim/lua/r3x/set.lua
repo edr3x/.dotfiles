@@ -10,6 +10,9 @@ set.expandtab = true
 set.hlsearch = false
 set.incsearch = true
 
+set.timeout = true
+set.timeoutlen = 300
+
 set.smartindent = true
 set.wrap = false
 set.termguicolors = true
@@ -24,9 +27,9 @@ set.scrolloff = 10
 
 local signs = {
     { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignWarn",  text = "" },
+    { name = "DiagnosticSignHint",  text = "" },
+    { name = "DiagnosticSignInfo",  text = "" },
 }
 
 for _, sign in ipairs(signs) do
@@ -55,12 +58,12 @@ vim.diagnostic.config({
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-})
+        border = "rounded",
+    })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-})
+        border = "rounded",
+    })
 
 vim.cmd [[autocmd FileType * set formatoptions-=ro]]
 

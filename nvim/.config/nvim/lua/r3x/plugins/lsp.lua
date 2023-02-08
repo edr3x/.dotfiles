@@ -9,7 +9,6 @@ return {
         local servers = {
             'clangd',
             'sumneko_lua',
-            'tsserver',
             'gopls',
             'prismals',
             'rust_analyzer',

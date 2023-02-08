@@ -2,8 +2,11 @@ return {
     "folke/which-key.nvim",
     event = "BufReadPre",
     config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
+        -- disable hints for certain operators
+        local presets = require("which-key.plugins.presets")
+        presets.operators["v"] = nil
+        presets.operators["c"] = nil
+        presets.operators["d"] = nil
 
         local wk = require("which-key")
 
