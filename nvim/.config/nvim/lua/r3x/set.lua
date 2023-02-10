@@ -16,7 +16,7 @@ set.timeoutlen = 300
 set.smartindent = true
 set.wrap = false
 set.termguicolors = true
-set.list = true
+set.list = false
 
 set.swapfile = false
 set.backup = false
