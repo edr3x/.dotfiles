@@ -7,6 +7,7 @@ return {
         presets.operators["v"] = nil
         presets.operators["c"] = nil
         presets.operators["d"] = nil
+        presets.operators["y"] = nil
 
         local wk = require("which-key")
 
