@@ -1,6 +1,6 @@
 return {
     'akinsho/flutter-tools.nvim',
-    cmd = "Flutter",
+    ft = "dart",
     config = function()
         require("flutter-tools").setup {
             debugger = {
