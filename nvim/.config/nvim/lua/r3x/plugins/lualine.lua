@@ -40,7 +40,7 @@ return {
                 theme = 'custom_transparent',
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
-                disabled_filetypes = { "alpha", "dashboard" },
+                disabled_filetypes = { "alpha", "dashboard", "lazy" },
                 always_divide_middle = true,
                 globalstatus = true,
             },
