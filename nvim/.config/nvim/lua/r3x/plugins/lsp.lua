@@ -15,10 +15,10 @@ return {
             'gopls',
             'prismals',
             'rust_analyzer',
-            'pyright',
+            -- 'pyright',
             'yamlls',
             'dockerls',
-            'graphql',
+            -- 'graphql',
             -- 'tailwindcss',
             -- 'cssls',
         }
