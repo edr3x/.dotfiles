@@ -10,7 +10,7 @@ return {
     event = "BufReadPre",
     config = function()
         local servers = {
-            'clangd',
+            --'clangd',
             'lua_ls',
             'gopls',
             'prismals',
