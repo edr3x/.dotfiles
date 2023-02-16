@@ -1,6 +1,6 @@
 return {
     'jose-elias-alvarez/null-ls.nvim',
-    ft = "typescript",
+    ft = { "typescript", "typescriptreact", "javascript", "json" },
     config = function()
         local null_ls = require("null-ls")
 

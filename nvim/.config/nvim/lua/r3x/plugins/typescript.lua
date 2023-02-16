@@ -1,6 +1,6 @@
 return {
     "jose-elias-alvarez/typescript.nvim",
-    ft = "typescript",
+    ft = { "typescript", "typescriptreact", "javascript" },
     opts = {
         disable_commands = false,
         debug = false,
