@@ -11,7 +11,7 @@ return {
     config = function()
         local servers = {
             'clangd',
-            'sumneko_lua',
+            'lua_ls',
             'gopls',
             'prismals',
             'rust_analyzer',

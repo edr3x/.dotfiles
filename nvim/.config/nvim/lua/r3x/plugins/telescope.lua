@@ -14,6 +14,7 @@ return {
     config = function()
         local scope = require("telescope")
         local tactions = require("telescope.actions")
+        local trouble = require("trouble.providers.telescope")
         scope.setup {
             defaults = {
                 file_ignore_patterns = {
@@ -32,10 +33,14 @@ return {
                 },
                 color_devicons = true,
                 mappings = {
-                    i = { ["<esc>"] = tactions.close },
+                    i = {
+                        ["<esc>"] = tactions.close,
+                        ["<c-t>"] = trouble.open_with_trouble
+                    },
                     n = {
                         ["<esc>"] = tactions.close,
                         ["dd"] = "delete_buffer",
+                        ["<c-t>"] = trouble.open_with_trouble
                     },
                 },
                 layout_strategy = 'vertical',
