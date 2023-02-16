@@ -8,9 +8,6 @@ return {
         { '<leader>ntt', '<cmd>NvimTreeToggle<CR>' },
     },
     opts = {
-        sort_by = "name",
-        auto_reload_on_write = true,
-        reload_on_bufenter = false,
         disable_netrw = true,
         hijack_netrw = true,
         view = {
@@ -40,43 +37,12 @@ return {
             },
         },
         renderer = {
-            add_trailing = false,
-            group_empty = false,
-            highlight_git = false,
-            highlight_opened_files = "none",
             root_folder_modifier = ":~",
             indent_markers = {
                 enable = true,
-                icons = {
-                    corner = "└ ",
-                    edge = "│ ",
-                    none = "  ",
-                },
             },
             icons = {
-                webdev_colors = true,
-                git_placement = "before",
-                padding = " ",
-                symlink_arrow = " ➛ ",
-                show = {
-                    file = true,
-                    folder = true,
-                    folder_arrow = true,
-                    git = true,
-                },
                 glyphs = {
-                    default = "",
-                    symlink = "",
-                    folder = {
-                        arrow_closed = "",
-                        arrow_open = "",
-                        default = "",
-                        open = "",
-                        empty = "",
-                        empty_open = "",
-                        symlink = "",
-                        symlink_open = "",
-                    },
                     git = {
                         unstaged = "M",
                         staged = "A",
@@ -88,7 +54,12 @@ return {
                     },
                 },
             },
-            special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "go.mod", "pubspec.yaml" },
+            special_files = {
+                "Cargo.toml",
+                "Makefile",
+                "README.md",
+                "go.mod",
+            },
         },
         filters = {
             dotfiles = true,
@@ -97,9 +68,13 @@ return {
         actions = {
             use_system_clipboard = true,
         },
+        modified = {
+            enable = true,
+        },
         diagnostics = {
             enable = true,
             show_on_dirs = false,
+            debounce_delay = 450,
             icons = {
                 error = "",
                 warning = "",
