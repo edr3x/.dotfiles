@@ -12,10 +12,10 @@ return {
         local servers = {
             'gopls',
             'prismals',
-            'rust_analyzer',
-            -- 'pyright',
             'yamlls',
             'dockerls',
+            -- 'rust_analyzer',
+            -- 'pyright',
             -- 'graphql',
             -- 'tailwindcss',
             -- 'cssls',
