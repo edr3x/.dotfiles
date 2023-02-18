@@ -1,7 +1,6 @@
 return {
     "folke/persistence.nvim",
     lazy = false,
-    event = "BufReadPre",
     config = function()
         require("persistence").setup()
 

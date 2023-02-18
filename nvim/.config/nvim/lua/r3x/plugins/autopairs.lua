@@ -1,6 +1,6 @@
 return {
     'windwp/nvim-autopairs',
-    event = "BufReadPre",
+    event = "InsertEnter",
     config = function()
         require("nvim-autopairs").setup({
             check_ts = true, -- treesitter integration
@@ -10,7 +10,6 @@ return {
                 javascript = { "string", "template_string" },
                 java = false,
             },
-
             fast_wrap = {
                 map = "<M-e>",
                 chars = { "{", "[", "(", '"', "'" },

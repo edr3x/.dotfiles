@@ -7,7 +7,7 @@ return {
         'RRethy/vim-illuminate', -- highlight references
         'windwp/nvim-ts-autotag', -- auto close tags for html and tsx
     },
-    event = "BufReadPre",
+    event = "InsertEnter",
     config = function()
         local servers = {
             'gopls',

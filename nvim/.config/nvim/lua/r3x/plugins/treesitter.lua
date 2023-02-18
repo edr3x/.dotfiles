@@ -58,7 +58,8 @@ return {
             rainbow = {
                 enable = true,
                 extended_mode = true,
-            },
+                colors = {},
+            }
         }
     end
 }

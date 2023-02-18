@@ -5,7 +5,7 @@ return {
     },
     {
         'github/copilot.vim',
-        event = "BufReadPre",
+        event = "InsertEnter",
     },
     {
         'andweeb/presence.nvim',

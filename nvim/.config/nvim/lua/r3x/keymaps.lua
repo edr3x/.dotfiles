@@ -38,7 +38,6 @@ map('n', '<leader>ba', '<cmd>%bd|e#<cr>', { desc = "Close all buffers but not cu
 -- avoid vim register for some operations
 map('n', 'x', '"_x', opts)
 map("x", "p", '"_dP', opts)
-map('n', '<leader>Y', '"+Y', opts) -- for yank commands but for system clipboard
 map({ "n", "x" }, "<leader>y", '"+y', opts) -- copy to system clipboard
 map({ "n", "x" }, "<leader>p", '"+p', opts) -- paste from system clipboard
 
