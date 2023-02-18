@@ -24,7 +24,7 @@ return {
         }
 
         section.buttons.val = {
-            btn("o", "󰨣 " .. " Current Session", "<cmd>lua require('persistence').load()<CR>"),
+            btn("o", " " .. " Current Session", "<cmd>lua require('persistence').load()<CR>"),
             btn("t", " " .. " File Tree", "<cmd>NvimTreeToggle<CR>"),
             btn("r", " " .. " Last Session", "<cmd>lua require('persistence').load({ last = true })<CR>"),
             btn("p", " " .. " Browse Projects", "<cmd>silent !tmux neww tmux-sessionizer<CR>"),

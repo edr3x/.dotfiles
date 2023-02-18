@@ -58,13 +58,27 @@ vim.diagnostic.config({
 })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "rounded",
-    })
+    border = "rounded",
+})
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "rounded",
-    })
+    border = "rounded",
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        vim.highlight.on_yank({
+            higroup = "IncSearch", -- see `:highlight` for more options
+            timeout = 300
+        })
+    end,
+})
+
+-- format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
 
 vim.cmd [[autocmd FileType * set formatoptions-=ro]]
-
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
