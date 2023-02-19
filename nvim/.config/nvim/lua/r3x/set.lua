@@ -81,4 +81,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
-vim.cmd [[autocmd FileType * set formatoptions-=ro]]
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  command = "setl formatoptions-=ro",
+})
