@@ -5,7 +5,6 @@ return {
         'williamboman/mason-lspconfig.nvim', -- for automatic installation of lsp servers
         'ray-x/lsp_signature.nvim', -- for hover signature help on insert mode
         'RRethy/vim-illuminate', -- highlight references
-        'windwp/nvim-ts-autotag', -- auto close tags for html and tsx
     },
     event = "InsertEnter",
     config = function()
