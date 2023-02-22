@@ -3,10 +3,7 @@ return {
         'nvim-treesitter/nvim-treesitter',
         event = "BufReadPre",
         build = function() require('nvim-treesitter.install').update({ with_sync = true }) end or ':TSUpdate',
-        dependencies = {
-            'mrjones2014/nvim-ts-rainbow',
-            'windwp/nvim-ts-autotag',
-        },
+        dependencies = { 'windwp/nvim-ts-autotag' },
         config = function()
             require("nvim-treesitter.configs").setup {
                 ensure_installed = {
@@ -39,14 +36,7 @@ return {
                     "typescript",
                     "yaml"
                 },
-                autotag = {
-                    enable = true,
-                },
-                rainbow = {
-                    enable = true,
-                    extended_mode = true,
-                    colors = {},
-                },
+                autotag = { enable = true },
                 auto_install = false,
                 highlight = {
                     enable = true,
