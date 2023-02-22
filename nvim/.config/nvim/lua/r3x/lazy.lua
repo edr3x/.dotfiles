@@ -12,34 +12,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {
-    defaults = {
-        version = "*",
-    },
-    install = {
-        missing = true,
-        colorscheme = { "Tokyonight" },
-    },
-    change_detection = {
-        enabled = true,
-        notify = false,
-    },
-    performance = {
-        rtp = {
-            reset = true,
-            paths = {}, -- add any custom paths here that you want to includes in the rtp
-            disabled_plugins = {
-                "gzip",
-                "matchit",
-                "matchparen",
-                "netrwPlugin",
-                "tarPlugin",
-                "tohtml",
-                "tutor",
-                "zipPlugin",
-            },
-        },
-    },
-}
+local opts = {}
 
 require('lazy').setup('r3x.plugins', opts)
