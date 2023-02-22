@@ -12,6 +12,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
+local opts = {
+    change_detection = {
+        enabled = true,
+        notify = false,
+    },
+}
 
 require('lazy').setup('r3x.plugins', opts)
