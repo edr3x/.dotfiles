@@ -67,13 +67,15 @@ return {
                     vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                     vim_item.menu = ({
                             nvim_lsp = "[LSP]",
-                            luasnip = "[Snippet]",
-                            buffer = "[Buffer]",
+                            luasnip = "[Snip]",
+                            buffer = "[Buff]",
                             path = "[Path]",
                         })[entry.source.name]
                     return vim_item
                 end,
             },
+            preselect = cmp.PreselectMode.None,
+            completion = { completeopt = "noselect" },
             sources = {
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
