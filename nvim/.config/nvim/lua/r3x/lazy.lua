@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     { import = 'r3x.plugins' },
-    { import = 'r3x.plugins.lsp' },
+    { import = 'r3x.lsp' },
 }
 
 local opts = {
