@@ -12,6 +12,17 @@ return {
         event = "BufReadPre",
     },
     {
+        "folke/persistence.nvim",
+        lazy = false,
+        opts = {},
+    },
+    {
+        'mbbill/undotree',
+        keys = {
+            { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undotree" },
+        },
+    },
+    {
         'tpope/vim-fugitive',
         cmd = { 'G', 'Git' },
     },
