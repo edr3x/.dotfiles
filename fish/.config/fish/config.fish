@@ -62,6 +62,9 @@ set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/r3x/.ghcup/bin $PATH # ghcup-env
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 if status is-interactive
     # Placeholder
 end

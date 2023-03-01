@@ -8,6 +8,9 @@ alias ll="exa -lah --icons --color automatic --no-user --no-time --git --group-d
 alias ..="cd .."
 alias ...="cd ../.."
 
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
