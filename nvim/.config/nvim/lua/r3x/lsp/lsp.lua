@@ -6,7 +6,7 @@ return {
         'ray-x/lsp_signature.nvim', -- for hover signature help on insert mode
         'RRethy/vim-illuminate', -- highlight references
     },
-    event = "InsertEnter",
+    event = "BufReadPre",
     config = function()
         local servers = {
             'gopls',
