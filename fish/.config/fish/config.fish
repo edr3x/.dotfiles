@@ -38,35 +38,26 @@ alias protoc-go "protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=
 # Rick
 alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
-# Flutter
-alias fad "flutter pub add "
-set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
-set PATH "$PATH":"$HOME/.pub-cache/bin"
-
 # TMUX
 alias tnew "tmux new -s" # creates new tmux session
-alias tls "tmux ls" # lists currently running sessions
-alias ta "tmux a -t " # attach to any of running session ( specify session name after this command )
-alias tkl "tmux kill-server" # kills all tmux sessions
-alias tk1 "tmux kill-session -t" # kill specific running session ( specify session name after this command )
+alias tls  "tmux ls" # lists currently running sessions
+alias ta   "tmux a -t " # attach to any of running session ( specify session name after this command )
+alias tkl  "tmux kill-server" # kills all tmux sessions
+alias tk1  "tmux kill-session -t" # kill specific running session ( specify session name after this command )
 
 # sessionizer script
 bind \cf "tmux-sessionizer"
 
 # Path variables
 set PATH "$PATH":"$HOME/.local/scripts/"
-set PATH "$PATH":"$HOME/.dev/ghcli/bin/"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/r3x/.ghcup/bin $PATH # ghcup-env
+
+set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-
-if status is-interactive
-    # Placeholder
-end
 
 starship init fish | source
