@@ -32,5 +32,6 @@ return {
                 capabilities = require("r3x.handlers").capabilities,
             }
         end
+        require("r3x.handlers").setup()
     end
 }
