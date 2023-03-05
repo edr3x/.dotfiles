@@ -1,8 +1,6 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = ','
-
 -- center screen
 map('n', 'D', '<C-d>zz', opts)
 map('n', 'U', '<C-u>zz', opts)
