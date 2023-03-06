@@ -7,14 +7,17 @@ return {
         'saadparwaiz1/cmp_luasnip',
     },
     config = function()
+        local luasnip = require("luasnip")
+        local cmp = require("cmp")
+
         local kind_icons = {
-            Text = "",
+            Text = "",
             Method = "m",
             Function = "",
-            Constructor = "",
+            Constructor = "",
             Field = "",
             Variable = "",
-            Class = "",
+            Class = "ﴯ",
             Interface = "",
             Module = "",
             Property = "",
@@ -28,7 +31,7 @@ return {
             Reference = "",
             Folder = "",
             EnumMember = "",
-            Constant = "",
+            Constant = "",
             Struct = "",
             Event = "",
             Operator = "",
@@ -40,9 +43,7 @@ return {
             winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
         }
 
-        local luasnip = require("luasnip")
-        local cmp = require("cmp")
-        cmp.setup {
+        cmp.setup({
             snippet = {
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
@@ -92,8 +93,8 @@ return {
                 ghost_text = false,
                 native_menu = false,
             },
-        }
+        })
 
-        require("luasnip/loaders/from_vscode").lazy_load { paths = vim.fn.stdpath "config" .. "/snippets" }
+        require("luasnip/loaders/from_vscode").lazy_load({ paths = vim.fn.stdpath "config" .. "/snippets" })
     end
 }
