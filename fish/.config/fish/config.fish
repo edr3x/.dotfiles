@@ -14,8 +14,6 @@ alias vim "nvim"
 alias e "thunar ."
 alias x "exit"
 alias c "clear"
-alias p "pnpm"
-alias px "pnpx"
 alias rm "trash"
 alias ls "exa -a --icons --group-directories-first"
 alias ll "exa -lah --icons --color automatic --no-user --no-time --git --group-directories-first"
@@ -56,6 +54,12 @@ set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 
 set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
+
+#pnpm
+alias p "pnpm"
+alias px "pnpx"
+set -gx PNPM_HOME "/home/r3x/.local/share/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
 
 export EDITOR="nvim"
 export VISUAL="nvim"
