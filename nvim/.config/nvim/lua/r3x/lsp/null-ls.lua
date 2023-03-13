@@ -3,7 +3,6 @@ return {
     ft = { "typescript", "typescriptreact", "javascript", "json" },
     config = function()
         local null_ls = require("null-ls")
-
         local formatting = null_ls.builtins.formatting
 
         null_ls.setup {
@@ -12,7 +11,6 @@ return {
                 formatting.prettierd.with({
                     disabled_filetypes = { "markdown", "yaml" },
                 }),
-                require("typescript.extensions.null-ls.code-actions"),
             },
         }
     end
