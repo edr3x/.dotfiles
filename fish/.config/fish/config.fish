@@ -52,6 +52,7 @@ set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
+set PATH "$PATH":"$HOME/.bun/bin"
 
 set CHROME_EXECUTABLE "$CHROME_EXECUTABLE:/usr/bin/google-chrome"
 
