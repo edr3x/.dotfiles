@@ -11,6 +11,7 @@ set fish_color_param '#04cc85'
 # alias
 alias vi "nvim"
 alias vim "nvim"
+alias lf "lfimg"
 alias e "thunar ."
 alias x "exit"
 alias c "clear"
