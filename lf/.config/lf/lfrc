@@ -7,7 +7,13 @@ set previewer ~/.config/lf/preview
 set ignorecase true
 set icons
 
-# Custom Functions
+cmd open ${{
+    case $(file --mime-type "$f" -bL) in
+        text/*|application/json) $EDITOR "$f";;
+        *) xdg-open "$f" ;;
+    esac
+}}
+
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -42,6 +48,7 @@ cmd restore_trash ${{
 # Bindings
 # Remove some defaults
 map m
+map a
 map r
 map o
 map n
@@ -53,14 +60,20 @@ map d
 map . set hidden!
 map dd trash
 map dr restore_trash
+map dc clear_trash
 map p paste
 map x cut
 map y copy
 map <enter> open
 map R reload
-map mf mkfile
-map md mkdir
-map C clear
+map a mkfile
+map m mkdir
+map c clear
 map r rename
+map o $$EDITOR
 
 map gt cd ~/.local/share/Trash/files
+map gw cd ~/projects/work
+map gl cd ~/projects/learning
+map ga cd ~/projects/of_all_things
+map gf cd ~/files
