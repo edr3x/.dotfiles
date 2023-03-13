@@ -5,7 +5,7 @@ set previewer ~/.config/lf/preview
 
 # Basic Settings
 set ignorecase true
-set icons true
+set icons
 
 # Custom Functions
 cmd mkdir ${{
