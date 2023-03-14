@@ -6,12 +6,11 @@ return {
     },
     opts = {
         keywords = {
-            FIX  = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE", "myth" } },
-            TODO = { icon = " ", color = "#FF8C00" },
-            HACK = { icon = " ", color = "#3498DB" },
-            WARN = { icon = " ", color = "#FF2D00", alt = { "WARNING", "XXX" } },
+            FIX  = { icon = " ", color = "#FF2D00", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+            TODO = { icon = " ", color = "#FF8C00", alt = { "todo" } },
+            HACK = { icon = " ", color = "#3498DB", alt = { "myth" } },
+            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "warn" } },
             NOTE = { icon = " ", color = "#98C379", alt = { "INFO" } },
         },
-        highlight = { pattern = [[(KEYWORDS)]] },
     }
 }
