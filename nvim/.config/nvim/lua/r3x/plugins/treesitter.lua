@@ -56,24 +56,8 @@ return {
         end
     },
     {
-        'edr3x/nvim-treesitter-context',
+        'nvim-treesitter/nvim-treesitter-context',
         event = "BufReadPre",
-        opts = {
-            enable = true,
-            max_lines = 0,
-            patterns = {
-                rust = {
-                    'impl_item',
-                    'loop_expression',
-                    'struct',
-                    'enum',
-                },
-                typescript = {
-                    "class_declaration",
-                    "abstract_class_declaration",
-                    "else_clause",
-                },
-            },
-        }
+        opts = {},
     }
 }
