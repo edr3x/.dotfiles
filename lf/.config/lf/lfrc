@@ -74,6 +74,7 @@ map o $$EDITOR
 
 map gt cd ~/.local/share/Trash/files
 map gw cd ~/projects/work
+map gp cd ~/projects/personal
 map gl cd ~/projects/learning
 map ga cd ~/projects/of_all_things
 map gf cd ~/files
