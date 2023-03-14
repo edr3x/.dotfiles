@@ -16,7 +16,7 @@ return {
             Function = "",
             Constructor = "",
             Field = "",
-            Variable = "",
+            Variable = "",
             Class = "ﴯ",
             Interface = "",
             Module = "",
@@ -52,7 +52,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<M-k>"] = cmp.mapping.select_prev_item(),
                 ["<M-j>"] = cmp.mapping.select_next_item(),
-                ["<M-i>"] = cmp.mapping(cmp.mapping.scroll_docs( -1), { "i", "c" }),
+                ["<M-i>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
                 ["<M-o>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
                 ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
                 ["<C-y>"] = cmp.config.disable,
@@ -67,11 +67,11 @@ return {
                 format = function(entry, vim_item)
                     vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                     vim_item.menu = ({
-                            nvim_lsp = "[LSP]",
-                            luasnip = "[Snip]",
-                            buffer = "[Buff]",
-                            path = "[Path]",
-                        })[entry.source.name]
+                        nvim_lsp = "[LSP]",
+                        luasnip = "[Snip]",
+                        buffer = "[Buff]",
+                        path = "[Path]",
+                    })[entry.source.name]
                     return vim_item
                 end,
             },

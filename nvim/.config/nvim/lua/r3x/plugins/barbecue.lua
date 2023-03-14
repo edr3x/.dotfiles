@@ -1,13 +1,42 @@
 return {
     "utilyre/barbecue.nvim",
     event = "BufReadPre",
-    name = "barbecue",
-    version = "*",
+    lazy = false,
     dependencies = {
         "SmiteshP/nvim-navic",
         "nvim-tree/nvim-web-devicons",
     },
-    opts = {
-        vim.keymap.set({ 'n', 'x' }, '<leader>bt', "<cmd>lua require('barbecue.ui').toggle()<cr>")
+    keys = {
+        { '<leader>bt', "<cmd>lua require('barbecue.ui').toggle()<cr>" }
     },
+    opts = {
+        kinds = {
+            File = "",
+            Module = "",
+            Namespace = "n",
+            Package = "",
+            Class = "ﴯ",
+            Method = "m",
+            Property = "",
+            Field = "",
+            Constructor = "",
+            Enum = "",
+            Interface = "",
+            Function = "",
+            Variable = "",
+            Constant = "",
+            String = "",
+            Number = "",
+            Boolean = "",
+            Array = "",
+            Object = "",
+            Key = "",
+            Null = "",
+            EnumMember = "",
+            Struct = "",
+            Event = "",
+            Operator = "",
+            TypeParameter = "",
+        },
+    }
 }
