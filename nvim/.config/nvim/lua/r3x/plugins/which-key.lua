@@ -13,7 +13,7 @@ return {
 
         wk.setup({})
         wk.register({
-            c = { name = "Code Actions", },
+            c = { name = "Code Actions" },
             b = { name = "Buffer" },
             d = { name = "LSP diganostics" },
             f = { name = "Telescope" },
@@ -21,7 +21,7 @@ return {
             m = { name = "Minimap and md" },
             n = { name = "Tree prefix", t = "tree" },
             s = { name = "Search and replace current highlight" },
-            t = { name = "Trouble" }
+            t = { name = "Trouble" },
         }, { prefix = "<leader>" })
-    end
+    end,
 }

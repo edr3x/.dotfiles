@@ -1,10 +1,10 @@
 return {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp',
-        'L3MON4D3/LuaSnip',
-        'saadparwaiz1/cmp_luasnip',
+        "hrsh7th/cmp-nvim-lsp",
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
     },
     config = function()
         local luasnip = require("luasnip")
@@ -56,11 +56,11 @@ return {
                 ["<M-o>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
                 ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
                 ["<C-y>"] = cmp.config.disable,
-                ["<C-e>"] = cmp.mapping {
+                ["<C-e>"] = cmp.mapping({
                     i = cmp.mapping.abort(),
                     c = cmp.mapping.close(),
-                },
-                ["<CR>"] = cmp.mapping.confirm { select = true },
+                }),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
             }),
             formatting = {
                 fields = { "kind", "abbr", "menu" },
@@ -95,6 +95,6 @@ return {
             },
         })
 
-        require("luasnip/loaders/from_vscode").lazy_load({ paths = vim.fn.stdpath "config" .. "/snippets" })
-    end
+        require("luasnip/loaders/from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
+    end,
 }

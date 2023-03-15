@@ -1,7 +1,7 @@
 return {
     "goolord/alpha-nvim",
     config = function()
-        local dashboard = require "alpha.themes.dashboard"
+        local dashboard = require("alpha.themes.dashboard")
         local btn = dashboard.button
         local section = dashboard.section
 
@@ -44,5 +44,5 @@ return {
         dashboard.opts.opts.noautocmd = true
 
         require("alpha").setup(dashboard.opts)
-    end
+    end,
 }

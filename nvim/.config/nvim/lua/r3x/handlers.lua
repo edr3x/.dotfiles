@@ -3,20 +3,17 @@ local M = {}
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = "" },
-        { name = "DiagnosticSignWarn",  text = "" },
-        { name = "DiagnosticSignHint",  text = "" },
-        { name = "DiagnosticSignInfo",  text = "" },
+        { name = "DiagnosticSignWarn", text = "" },
+        { name = "DiagnosticSignHint", text = "" },
+        { name = "DiagnosticSignInfo", text = "" },
     }
 
     for _, sign in ipairs(signs) do
-        vim.fn.sign_define(
-            sign.name,
-            {
-                texthl = sign.name,
-                text = sign.text,
-                numhl = "",
-            }
-        )
+        vim.fn.sign_define(sign.name, {
+            texthl = sign.name,
+            text = sign.text,
+            numhl = "",
+        })
     end
 
     vim.diagnostic.config({
@@ -41,28 +38,27 @@ M.setup = function()
         border = "rounded",
     })
 
-    vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-        vim.lsp.diagnostic.on_publish_diagnostics,
-        {
-            underline = true,
-            virtual_text = {
-                spacing = 5,
-                severity_limit = 'Warning',
-            },
-            update_in_insert = true,
-        }
-    )
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+        underline = true,
+        virtual_text = {
+            spacing = 5,
+            severity_limit = "Warning",
+        },
+        update_in_insert = true,
+    })
 
     vim.api.nvim_create_autocmd("TextYankPost", {
         callback = function()
             vim.highlight.on_yank({
                 higroup = "IncSearch", -- see `:highlight` for more options
-                timeout = 200
+                timeout = 200,
             })
         end,
     })
 
-    vim.api.nvim_create_user_command('Fmt', function() vim.lsp.buf.format() end, {})
+    vim.api.nvim_create_user_command("Fmt", function()
+        vim.lsp.buf.format()
+    end, {})
 
     -- format on save
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -71,7 +67,7 @@ M.setup = function()
         end,
     })
 
-    vim.cmd [[autocmd FileType * set formatoptions-=ro]]
+    vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 end
 
 local opts = { noremap = true, silent = true }
@@ -82,17 +78,21 @@ local signature_cfg = {
     floating_window = true,
     floating_window_above_cur_line = true,
     check_completion_visible = true,
-    toggle_key = '<M-t>',
-    select_signature_key = '<M-s>',
+    toggle_key = "<M-t>",
+    select_signature_key = "<M-s>",
     handler_opts = {
-        border = "rounded"
-    }
+        border = "rounded",
+    },
 }
 
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
+        client.server_capabilities.documentFormattingProvider = false
+    end
+
+    if client.name == "lua_ls" then
         client.server_capabilities.documentFormattingProvider = false
     end
 

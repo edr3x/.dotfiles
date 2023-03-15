@@ -1,19 +1,19 @@
 return {
-    'akinsho/toggleterm.nvim',
+    "akinsho/toggleterm.nvim",
     event = "BufReadPre",
     opts = {
         size = 15,
         open_mapping = [[<M-t>]],
         shade_filetypes = {},
         shade_terminals = true,
-        shading_factor = '1',
+        shading_factor = "1",
         close_on_exit = false,
         start_in_insert = true,
         persist_size = true,
-        direction = 'float',
+        direction = "float",
         float_opts = {
-            border = 'curved',
+            border = "curved",
             winblend = 0,
-        }
-    }
+        },
+    },
 }

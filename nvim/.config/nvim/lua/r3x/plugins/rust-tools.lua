@@ -1,6 +1,6 @@
 return {
-    'simrat39/rust-tools.nvim',
-    ft = 'rust',
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
     opts = {
         tools = {
             autoSetHints = true,
@@ -24,5 +24,5 @@ return {
             on_attach = require("r3x.handlers").on_attach,
             capabilities = require("r3x.handlers").capabilities,
         },
-    }
+    },
 }

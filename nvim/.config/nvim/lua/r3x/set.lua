@@ -1,6 +1,6 @@
 local set = vim.opt
 
-vim.g.mapleader = ','
+vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 set.nu = true

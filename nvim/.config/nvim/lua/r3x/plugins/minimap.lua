@@ -1,14 +1,14 @@
 return {
-    'echasnovski/mini.nvim',
+    "echasnovski/mini.nvim",
     event = "BufReadPre",
     keys = {
-        { '<Leader>mf', "<cmd>lua MiniMap.toggle_focus()<CR>" },
-        { '<Leader>mr', "<cmd>lua MiniMap.refresh()<CR>" },
-        { '<Leader>mt', "<cmd>lua MiniMap.toggle()<CR>" },
+        { "<Leader>mf", "<cmd>lua MiniMap.toggle_focus()<CR>" },
+        { "<Leader>mr", "<cmd>lua MiniMap.refresh()<CR>" },
+        { "<Leader>mt", "<cmd>lua MiniMap.toggle()<CR>" },
     },
     config = function()
         local map = require("mini.map")
-        map.setup {
+        map.setup({
             integrations = {
                 map.gen_integration.builtin_search(),
                 map.gen_integration.diagnostic(),
@@ -16,23 +16,26 @@ return {
             },
             symbols = {
                 encode = {
-                    ' ', '_', '-', '‾',
+                    " ",
+                    "_",
+                    "-",
+                    "‾",
                     resolution = {
                         row = 1,
                         col = 2,
-                    }
+                    },
                 },
-                scroll_line = '▶',
-                scroll_view = ' ',
+                scroll_line = "▶",
+                scroll_view = " ",
             },
             window = {
                 focusable = false,
-                side = 'right',
+                side = "right",
                 show_integration_count = false,
                 width = 10,
                 winblend = 0,
             },
-        }
-        vim.cmd [[:lua MiniMap.open()]]
-    end
+        })
+        vim.cmd([[:lua MiniMap.open()]])
+    end,
 }

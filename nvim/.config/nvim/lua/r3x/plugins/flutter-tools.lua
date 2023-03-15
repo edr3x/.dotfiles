@@ -1,8 +1,8 @@
 return {
-    'akinsho/flutter-tools.nvim',
+    "akinsho/flutter-tools.nvim",
     ft = "dart",
     config = function()
-        require("flutter-tools").setup {
+        require("flutter-tools").setup({
             debugger = {
                 enabled = false,
                 run_via_dap = false,
@@ -12,7 +12,7 @@ return {
                 statusline = { device = true, app_version = true },
             },
             widget_guides = { enabled = true, debug = false },
-            dev_log = { enabled = true, open_cmd = 'tabedit' },
+            dev_log = { enabled = true, open_cmd = "tabedit" },
             lsp = {
                 on_attach = require("r3x.handlers").on_attach,
                 capabilities = require("r3x.handlers").capabilities,
@@ -23,13 +23,13 @@ return {
                 },
                 settings = {
                     showTodos = false,
-                    renameFilesWithClasses = 'prompt',
+                    renameFilesWithClasses = "prompt",
                     updateImportsOnRename = true,
                     completeFunctionCalls = true,
                     lineLength = 100,
                 },
             },
-        }
-        require("telescope").load_extension('flutter')
-    end
+        })
+        require("telescope").load_extension("flutter")
+    end,
 }

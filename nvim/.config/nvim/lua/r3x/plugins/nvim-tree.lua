@@ -1,11 +1,11 @@
 return {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     dependencies = {
-        'nvim-tree/nvim-web-devicons'
+        "nvim-tree/nvim-web-devicons",
     },
-    cmd = { 'NvimTreeToggle' },
+    cmd = { "NvimTreeToggle" },
     keys = {
-        { '<leader>ntt', '<cmd>NvimTreeToggle<CR>' },
+        { "<leader>ntt", "<cmd>NvimTreeToggle<CR>" },
     },
     opts = {
         view = {
@@ -61,7 +61,7 @@ return {
         },
         filters = {
             dotfiles = true,
-            custom = { 'node_modules' },
+            custom = { "node_modules" },
         },
         actions = {
             use_system_clipboard = true,
@@ -80,5 +80,5 @@ return {
                 info = "",
             },
         },
-    }
+    },
 }

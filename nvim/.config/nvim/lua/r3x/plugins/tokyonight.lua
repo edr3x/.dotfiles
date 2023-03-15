@@ -20,5 +20,5 @@ return {
             hl.LineNrAbove = { fg = c.fg_gutter }
             hl.LineNrBelow = { fg = c.fg_gutter }
         end,
-    }
+    },
 }

@@ -1,5 +1,5 @@
 return {
-    'edr3x/lualine.nvim',
+    "edr3x/lualine.nvim",
     config = function()
         local lspStatus = {
             function()
@@ -18,11 +18,11 @@ return {
                 return msg
             end,
             --icon = "",
-            color = { fg = "#d3d3d3" }
+            color = { fg = "#d3d3d3" },
         }
 
         local buffer = {
-            'buffers',
+            "buffers",
             mode = 0,
             show_filename_only = true,
             show_modified_status = true,
@@ -34,24 +34,24 @@ return {
             },
         }
 
-        require("lualine").setup {
+        require("lualine").setup({
             options = {
                 icons_enabled = true,
-                theme = 'custom_transparent',
-                component_separators = { left = '', right = '' },
-                section_separators = { left = '', right = '' },
+                theme = "custom_transparent",
+                component_separators = { left = "", right = "" },
+                section_separators = { left = "", right = "" },
                 disabled_filetypes = { "alpha", "dashboard", "lazy" },
                 always_divide_middle = true,
                 globalstatus = true,
             },
             sections = {
-                lualine_a = { 'mode' },
-                lualine_b = { 'branch' },
+                lualine_a = { "mode" },
+                lualine_b = { "branch" },
                 lualine_c = { buffer },
-                lualine_x = { 'diff', 'diagnostics' },
-                lualine_y = { lspStatus, 'filetype' },
-                lualine_z = { 'progress' }
+                lualine_x = { "diff", "diagnostics" },
+                lualine_y = { lspStatus, "filetype" },
+                lualine_z = { "progress" },
             },
-        }
-    end
+        })
+    end,
 }
