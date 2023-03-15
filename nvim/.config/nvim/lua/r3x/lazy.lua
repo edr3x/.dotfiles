@@ -22,6 +22,24 @@ local opts = {
         enabled = true,
         notify = false,
     },
+    performance = {
+        rtp = {
+            disabled_plugins = {
+                "gzip",
+                "man",
+                "matchit",
+                "matchparen",
+                "netrwPlugin",
+                "rplugin",
+                "shada",
+                "spellfile",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
+                "zipPlugin",
+            },
+        },
+    },
 }
 
 require('lazy').setup(plugins, opts)

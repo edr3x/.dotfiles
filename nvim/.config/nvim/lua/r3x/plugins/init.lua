@@ -35,6 +35,13 @@ return {
         cmd = "CellularAutomaton",
     },
     {
+        "lalitmee/browse.nvim",
+        keys = {
+            { "<leader>fs", function() require('browse').input_search() end, desc = "Google Search" }
+        },
+        opts = { provider = "google" }
+    },
+    {
         'ggandor/leap.nvim',
         cmd = "Leap",
         config = function()

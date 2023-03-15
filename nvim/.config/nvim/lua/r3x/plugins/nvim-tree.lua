@@ -8,8 +8,6 @@ return {
         { '<leader>ntt', '<cmd>NvimTreeToggle<CR>' },
     },
     opts = {
-        disable_netrw = true,
-        hijack_netrw = true,
         view = {
             adaptive_size = true,
             width = 40,
