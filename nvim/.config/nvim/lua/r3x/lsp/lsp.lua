@@ -1,37 +1,43 @@
 return {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-        'williamboman/mason.nvim', -- package manager for lsp, debug-adapters and more
-        'williamboman/mason-lspconfig.nvim', -- for automatic installation of lsp servers
-        'ray-x/lsp_signature.nvim', -- for hover signature help on insert mode
-        'RRethy/vim-illuminate', -- highlight references
+    {
+        'williamboman/mason.nvim',
+        event = "BufReadPre",
+        opts = {}
     },
-    event = "BufReadPre",
-    config = function()
-        local servers = {
-            'gopls',
-            'prismals',
-            'yamlls',
-            'dockerls',
-            -- 'rust_analyzer',
-            -- 'pyright',
-            -- 'graphql',
-            -- 'tailwindcss',
-            -- 'cssls',
-        }
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            'ray-x/lsp_signature.nvim',
+            'RRethy/vim-illuminate',
+        },
+        event = "BufReadPre",
+        config = function()
+            local on_attach = require("r3x.handlers").on_attach
+            local capabilities = require("r3x.handlers").capabilities
 
-        require("mason").setup()
-        require("mason-lspconfig").setup {
-            ensure_installed = servers,
-            automatic_installation = true,
-        }
-
-        for _, lsp in pairs(servers) do
-            require("lspconfig")[lsp].setup {
-                on_attach = require("r3x.handlers").on_attach,
-                capabilities = require("r3x.handlers").capabilities,
+            local servers = {
+                'tsserver',
+                'gopls',
+                'prismals',
+                'yamlls',
+                'dockerls',
+                'tailwindcss'
             }
+
+            require("lspconfig").lua_ls.setup {
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = { Lua = { diagnostics = { globals = { 'vim' } } } },
+            }
+
+            for _, lsp in pairs(servers) do
+                require("lspconfig")[lsp].setup {
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                }
+            end
+
+            require("r3x.handlers").setup()
         end
-        require("r3x.handlers").setup()
-    end
+    }
 }

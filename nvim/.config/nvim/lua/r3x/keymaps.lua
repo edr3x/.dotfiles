@@ -18,8 +18,8 @@ map('n', '<C-a>', 'ggVG', opts)
 map('n', '<leader><ESC>', '<cmd>qa<CR>', opts)
 
 -- move code up and down
-map('n', '<M-j>', ':m+<CR>', opts) -- move line down
-map('n', '<M-k>', ':m-2<CR>', opts) -- move line up
+map('n', '<M-j>', ':m+<CR>', opts)          -- move line down
+map('n', '<M-k>', ':m-2<CR>', opts)         -- move line up
 map("x", "<M-j>", ":m '>+1<CR>gv=gv", opts) -- move code block down
 map("x", "<M-k>", ":m '<-2<CR>gv=gv", opts) -- move code block up
 
