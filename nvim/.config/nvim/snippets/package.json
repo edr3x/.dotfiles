@@ -71,8 +71,8 @@
                 "path": "./json.json"
             },
             {
-                "language": "java",
-                "path": "./java.json"
+                "language": "yaml",
+                "path": "./yaml.json"
             }
         ]
     }

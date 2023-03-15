@@ -1,0 +1,15 @@
+{
+    "pretteirrc": {
+        "prefix": "prettierrc",
+        "body": [
+            "arrowParens: \"always\"",
+            "bracketSameLine: false",
+            "bracketSpacing: true",
+            "semi: true",
+            "singleQuote: false",
+            "tabWidth: 4",
+            "trailingComma: \"all\""
+        ],
+        "description": "pretteirrc"
+    }
+}
