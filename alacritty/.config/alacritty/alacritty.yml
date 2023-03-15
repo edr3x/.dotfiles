@@ -36,11 +36,11 @@ font:
     style: Bold
 
   italic:
-    family: Fira Code Nerd Font
+    family: Iosevka Nerd Font
     style: Italic
 
   bold_italic:
-    family: Fira Code Nerd Font
+    family: Iosevka Nerd Font
     style: Bold Italic
 
   size: 8
