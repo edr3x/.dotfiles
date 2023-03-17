@@ -66,6 +66,7 @@ set -gx PATH "$PNPM_HOME" $PATH
 # xauth error on lf fix (temp solution, will fix later)
 alias xlf "xauth generate :0 . trusted"
 
+export TERM="alacritty"
 export EDITOR="nvim"
 export VISUAL="nvim"
 

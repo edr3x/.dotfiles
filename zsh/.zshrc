@@ -10,6 +10,7 @@ alias ...="cd ../.."
 
 bindkey -s ^f "tmux-sessionizer\n"
 
+export TERM="alacritty"
 export EDITOR="nvim"
 export VISUAL="nvim"
 
