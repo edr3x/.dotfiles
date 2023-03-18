@@ -26,7 +26,8 @@ return {
                 "prismals",
                 "yamlls",
                 "dockerls",
-                "tailwindcss",
+                "cssls",
+                -- "tailwindcss",
             }
 
             require("lspconfig").lua_ls.setup({

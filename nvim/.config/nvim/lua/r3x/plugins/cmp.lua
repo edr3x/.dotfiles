@@ -77,9 +77,17 @@ return {
             },
             preselect = cmp.PreselectMode.None,
             completion = { completeopt = "noselect" },
-            sources = {
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
+            sources = cmp.config.sources({
+                { name = "nvim_lsp", priority = 1000 },
+                { name = "luasnip", priority = 750 },
+                { name = "buffer", priority = 500 },
+                { name = "path", priority = 250 },
+            }),
+            duplicates = {
+                nvim_lsp = 1,
+                luasnip = 1,
+                buffer = 1,
+                path = 1,
             },
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
