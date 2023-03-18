@@ -47,7 +47,7 @@ font:
 
 window:
   decorations: none
-  opacity: 0.55
+  opacity: 0.45
   history: 10000
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
   save_to_clipboard: true
