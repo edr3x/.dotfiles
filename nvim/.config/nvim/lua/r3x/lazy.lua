@@ -27,7 +27,6 @@ local opts = {
                 "gzip",
                 "man",
                 "matchit",
-                "matchparen",
                 "netrwPlugin",
                 "rplugin",
                 "shada",
