@@ -27,9 +27,6 @@ alias nodepurge "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
 alias idea "~/.dev/idea/bin/idea.sh"
 
-# protoc ( specify relative path to .proto file after this )
-alias protoc-go "protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative" # for golang
-
 # Rick
 alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
 
@@ -50,6 +47,7 @@ set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 set PATH "$PATH":"$HOME/.bun/bin"
+set PATH "$PATH":"$HOME/go/bin"
 
 #pnpm
 alias p "pnpm"
