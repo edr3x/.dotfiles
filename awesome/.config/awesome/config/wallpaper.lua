@@ -3,19 +3,19 @@ local beautiful = require("beautiful")
 local wibox = require("wibox")
 
 screen.connect_signal("request::wallpaper", function(s)
-    awful.wallpaper {
+    awful.wallpaper({
         screen = s,
         widget = {
             {
-                image     = beautiful.wallpaper,
-                upscale   = true,
+                image = beautiful.wallpaper,
+                upscale = true,
                 downscale = true,
-                widget    = wibox.widget.imagebox,
+                widget = wibox.widget.imagebox,
             },
             valign = "center",
             halign = "center",
-            tiled  = false,
+            tiled = false,
             widget = wibox.container.tile,
-        }
-    }
+        },
+    })
 end)

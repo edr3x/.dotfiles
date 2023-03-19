@@ -4,18 +4,20 @@ local pairs = pairs
 
 local battery = {}
 
-local limits = { { 25, 5 },
-    { 12, 3 },
-    { 7, 1 },
-    { 0 } }
+local limits = { { 25, 5 }, { 12, 3 }, { 7, 1 }, { 0 } }
 
 local function file_exists(name)
     local f = io.open(name, "r")
-    if f ~= nil then io.close(f) return true else return false end
+    if f ~= nil then
+        io.close(f)
+        return true
+    else
+        return false
+    end
 end
 
 local function get_adapters()
-    local adapters = { 'BAT0', 'BAT1' }
+    local adapters = { "BAT0", "BAT1" }
     local found_adapters = {}
     local c = 1
     for i = 1, #adapters do
@@ -65,8 +67,8 @@ end
 
 local function getnextlim(num)
     for ind, pair in pairs(limits) do
-        lim = pair[1];
-        step = pair[2];
+        lim = pair[1]
+        step = pair[2]
         nextlim = limits[ind + 1][1] or 0
         if num > nextlim then
             repeat
@@ -102,7 +104,7 @@ function battery.closure()
             battery = battery .. "%"
             batteries = batteries .. dirsign .. " " .. battery .. " "
         end
-        return prefix .. "" .. batteries:gsub("%s+$", '')
+        return prefix .. "" .. batteries:gsub("%s+$", "")
     end
 end
 

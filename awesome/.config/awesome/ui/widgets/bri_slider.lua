@@ -4,7 +4,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local helpers = require("helpers")
 
-local slider = wibox.widget {
+local slider = wibox.widget({
     bar_shape = require("helpers").rrect(9),
     bar_height = 6,
     bar_color = beautiful.bg_focus,
@@ -14,11 +14,11 @@ local slider = wibox.widget {
     handle_width = 12,
     value = 25,
     widget = wibox.widget.slider,
-}
+})
 
 helpers.add_hover_cursor(slider, "hand1")
 
-local bri_slider = wibox.widget {
+local bri_slider = wibox.widget({
     {
         markup = helpers.colorize_text("  ", beautiful.yellow),
         font = beautiful.icon_font2 .. " 14",
@@ -29,7 +29,7 @@ local bri_slider = wibox.widget {
     slider,
     layout = wibox.layout.fixed.horizontal,
     spacing = 0,
-}
+})
 
 awful.spawn.easy_async_with_shell(
     "brightnessctl | grep -i  'current' | awk '{ print $4}' | tr -d \"(%)\"",

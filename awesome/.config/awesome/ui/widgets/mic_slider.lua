@@ -4,7 +4,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local helpers = require("helpers")
 
-local slider = wibox.widget {
+local slider = wibox.widget({
     bar_shape = require("helpers").rrect(9),
     bar_height = 6,
     bar_color = beautiful.bg_focus,
@@ -14,11 +14,11 @@ local slider = wibox.widget {
     handle_width = 12,
     value = 75,
     widget = wibox.widget.slider,
-}
+})
 
 helpers.add_hover_cursor(slider, "hand1")
 
-local vol_slider = wibox.widget {
+local vol_slider = wibox.widget({
     {
         markup = helpers.colorize_text(" ", beautiful.fg_normal),
         font = beautiful.icon_font .. "Round 15",
@@ -29,17 +29,21 @@ local vol_slider = wibox.widget {
     slider,
     layout = wibox.layout.fixed.horizontal,
     spacing = 0,
-}
+})
 
-awful.spawn.easy_async_with_shell("pamixer --source alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback --get-volume"
-    , function(stdout)
-    local value = string.gsub(stdout, "^%s*(.-)%s*$", "%1")
-    vol_slider.value = tonumber(value)
-end)
+awful.spawn.easy_async_with_shell(
+    "pamixer --source alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback --get-volume",
+    function(stdout)
+        local value = string.gsub(stdout, "^%s*(.-)%s*$", "%1")
+        vol_slider.value = tonumber(value)
+    end
+)
 
 slider:connect_signal("property::value", function(_, new_value)
     vol_slider.value = new_value
-    awful.spawn("pamixer --source alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback --set-volume " .. new_value,
-        false)
+    awful.spawn(
+        "pamixer --source alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback --set-volume " .. new_value,
+        false
+    )
 end)
 return vol_slider
