@@ -12,6 +12,16 @@ return {
         event = "BufReadPre",
     },
     {
+        "edr3x/better-escape.nvim",
+        event = "BufReadPre",
+        opts = {
+            mapping = { "jk", "kj", "JK", "KJ", "jK", "kJ", "Jk", "Kj" },
+            timeout = vim.o.timeoutlen,
+            clear_empty_lines = false,
+            keys = "<Esc>",
+        },
+    },
+    {
         "folke/persistence.nvim",
         lazy = false,
         opts = {},
@@ -46,12 +56,5 @@ return {
             },
         },
         opts = { provider = "google" },
-    },
-    {
-        "ggandor/leap.nvim",
-        cmd = "Leap",
-        config = function()
-            require("leap").add_default_mappings()
-        end,
     },
 }

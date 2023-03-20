@@ -47,6 +47,12 @@ return {
                 },
             })
 
+            lspconfig["rust_analyzer"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                cmd = { "rustup", "run", "stable", "rust-analyzer" }, --TODO: `rustup component add rust-analyzer` to install LSP
+            })
+
             lspconfig["yamlls"].setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
