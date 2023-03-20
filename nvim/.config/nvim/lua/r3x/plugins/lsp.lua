@@ -17,6 +17,7 @@ return {
         },
         event = "BufReadPre",
         config = function()
+            local lspconfig = require("lspconfig")
             local on_attach = require("r3x.handlers").on_attach
             local capabilities = require("r3x.handlers").capabilities
 
@@ -24,26 +25,56 @@ return {
                 "tsserver",
                 "gopls",
                 "prismals",
-                "yamlls",
                 "dockerls",
                 "cssls",
                 -- "tailwindcss",
             }
 
-            require("lspconfig").lua_ls.setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-                settings = { Lua = { diagnostics = { globals = { "vim" } } } },
-            })
-
             for _, lsp in pairs(servers) do
-                require("lspconfig")[lsp].setup({
+                lspconfig[lsp].setup({
                     on_attach = on_attach,
                     capabilities = capabilities,
                 })
             end
 
+            lspconfig["lua_ls"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = { globals = { "vim" } },
+                    },
+                },
+            })
+
+            lspconfig["yamlls"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    yaml = {
+                        keyOrdering = false,
+                    },
+                },
+            })
+
             require("r3x.handlers").setup()
+        end,
+    },
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        event = "LspAttach",
+        config = function()
+            local nls = require("null-ls")
+
+            nls.setup({
+                debug = false,
+                sources = {
+                    nls.builtins.formatting.stylua,
+                    nls.builtins.formatting.prettierd.with({
+                        disabled_filetypes = { "markdown", "yaml" },
+                    }),
+                },
+            })
         end,
     },
 }
