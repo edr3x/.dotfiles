@@ -57,6 +57,14 @@ return {
                 },
             })
 
+            local cap = capabilities
+            cap.offsetEncoding = "utf-8"
+
+            lspconfig["clangd"].setup({
+                on_attach = on_attach,
+                capabilities = cap,
+            })
+
             require("r3x.handlers").setup()
         end,
     },
