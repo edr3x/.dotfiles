@@ -46,16 +46,27 @@ font:
   size: 8
 
 window:
+  dynamic_padding: true
   decorations: none
   opacity: 0.45
+    
+scrolling:
   history: 10000
-  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
-  save_to_clipboard: true
-  live_config_reload: true
 
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: true
+    
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+      
+live_config_reload: true
+    
 shell:
   program: /usr/bin/fish
-  #args: ["-c", "tmux"]
+  # args: ["-c", "tmux"]
 
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
