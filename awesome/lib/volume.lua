@@ -42,15 +42,6 @@ volume.popup : setup {
         margins = {left = dpi(20)},
         widget = wibox.container.margin,
     },
-    {
-        {
-            font = "Roboto 18",
-            align = "center",
-            markup = "<span> "..indicator.value.. "</span>",
-            widget = wibox.widget.textbox,
-        },
-        widget = wibox.container.margin,
-    },
     layout = wibox.layout.stack,
 }
 

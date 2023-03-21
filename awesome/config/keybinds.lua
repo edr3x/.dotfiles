@@ -95,6 +95,12 @@ awful.keyboard.append_global_keybindings({
     -- Powermenu
     awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell("/home/cleff/.config/rofi/powermenu/powermenu.sh") end,
               {description = "powermenu", group = "launcher"}),
+    -- Select Emoji
+    awful.key({ modkey }, ".", function() awful.util.spawn_with_shell("rofi -modi emoji -show emoji") end,
+              {description = "emoji", group = "launcher"}) ,
+    -- Show Timetable
+    awful.key({ altkey }, "t", function() awful.util.spawn_with_shell("feh --zoom 150 -F $HOME/timetable.png") end,
+              {description = "timetable", group = "launcher"}) ,
 
 })
 
@@ -297,89 +303,6 @@ for i = 1, 5 do
                   {description = "toggle focused client on tag #" .. i, group = "tag"})
   })
 end
-
---awful.keyboard.append_global_keybindings({
-    --awful.key {
-        --modifiers   = { altkey },
-        --keygroup    = "numrow",
-        --description = "only view tag",
-        --group       = "tag",
-        --on_press    = function(index)
-            --local screen = awful.screen.focused()
-            --local tag = screen.tags[index]
-            --if tag then
-                --tag:view_only()
-            --end
-        --end,
-    --},
-    --awful.key {
-        --modifiers   = { altkey, "Control" },
-        --keygroup    = "numrow",
-        --description = "toggle tag",
-        --group       = "tag",
-        --on_press    = function(index)
-            --local screen = awful.screen.focused()
-            --local tag = screen.tags[index]
-            --if tag then
-                --awful.tag.viewtoggle(tag)
-            --end
-        --end,
-    --},
-    --awful.key {
-        --modifiers   = { altkey, "Shift" },
-        --keygroup    = "numrow",
-        --description = "move focused client to tag",
-        --group       = "tag",
-        --on_press    = function(index)
-            --if client.focus then
-                --local tag = client.focus.screen.tags[index]
-                --if tag then
-                    --client.focus:move_to_tag(tag)
-                --end
-            --end
-        --end,
-    --},
-    --awful.key {
-        --modifiers   = { altkey, "Control", "Shift" },
-        --keygroup    = "numrow",
-        --description = "toggle focused client on tag",
-        --group       = "tag",
-        --on_press    = function(index)
-            --if client.focus then
-                --local tag = client.focus.screen.tags[index]
-                --if tag then
-                    --client.focus:toggle_tag(tag)
-                --end
-            --end
-        --end,
-    --},
-    --awful.key {
-        --modifiers   = { modkey },
-        --keygroup    = "numpad",
-        --description = "select layout directly",
-        --group       = "layout",
-        --on_press    = function(index)
-            --local t = awful.screen.focused().selected_tag
-            --if t then
-                --t.layout = t.layouts[index] or t.layout
-            --end
-        --end,
-    --}
---})
-
---client.connect_signal("request::default_mousebindings", function()
-    --awful.mouse.append_client_mousebindings({
-        --awful.button({}, 1, function(c)
-            --c:activate { context = "mouse_click" }
-        --end),
-        --awful.button({ modkey }, 1, function(c)
-            --c:activate { context = "mouse_click", action = "mouse_move" }
-        --end),
-        --awful.button({ modkey }, 3, function(c)
-            --c:activate { context = "mouse_click", action = "mouse_resize" }
-        --end),
-    --})
---end)
 
 client.connect_signal("request::default_keybindings", function()
     awful.keyboard.append_client_keybindings({
