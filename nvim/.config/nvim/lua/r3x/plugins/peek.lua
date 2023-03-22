@@ -7,16 +7,14 @@ return {
         {
             "<leader>md",
             function()
-                require("peek").open()
+                local peek = require("peek")
+                if peek.is_open() then
+                    peek.close()
+                else
+                    peek.open()
+                end
             end,
-            desc = "Open markdown preview",
-        },
-        {
-            "<leader>mc",
-            function()
-                require("peek").close()
-            end,
-            desc = "Close markdown preview",
+            desc = "Markdown Preview",
         },
     },
 }
