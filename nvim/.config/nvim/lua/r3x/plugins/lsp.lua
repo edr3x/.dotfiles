@@ -23,7 +23,6 @@ return {
 
             local servers = {
                 "tsserver",
-                "gopls",
                 "prismals",
                 "dockerls",
                 "cssls",
@@ -43,6 +42,7 @@ return {
                 settings = {
                     Lua = {
                         diagnostics = { globals = { "vim" } },
+                        hint = { enable = true },
                     },
                 },
             })
@@ -59,6 +59,24 @@ return {
                         check = {
                             command = "clippy", --TODO: `rustup component add clippy` to install clippy
                             extraArgs = { "--no-deps" },
+                        },
+                    },
+                },
+            })
+
+            lspconfig["gopls"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    gopls = {
+                        hints = {
+                            assignVariableTypes = true,
+                            compositeLiteralFields = true,
+                            compositeLiteralTypes = true,
+                            constantValues = true,
+                            functionTypeParameters = true,
+                            parameterNames = true,
+                            rangeVariableTypes = true,
                         },
                     },
                 },
@@ -84,6 +102,40 @@ return {
 
             require("r3x.handlers").setup()
         end,
+    },
+    {
+        "simrat39/inlay-hints.nvim",
+        event = "LspAttach",
+        opts = {
+            renderer = "inlay-hints/render/eol", -- dynamic, eol, virtline or custom
+            hints = {
+                parameter = {
+                    show = true,
+                    highlight = "Comment",
+                },
+                type = {
+                    show = true,
+                    highlight = "Comment",
+                },
+            },
+            only_current_line = false,
+            eol = {
+                right_align = false, -- whether to align to the extreme right or not
+                right_align_padding = 7, -- padding from the right if right_align is true
+                parameter = {
+                    separator = ", ",
+                    format = function(hints)
+                        return string.format(" <- (%s)", hints)
+                    end,
+                },
+                type = {
+                    separator = ", ",
+                    format = function(hints)
+                        return string.format(" »  (%s)", hints)
+                    end,
+                },
+            },
+        },
     },
     {
         "jose-elias-alvarez/null-ls.nvim",
