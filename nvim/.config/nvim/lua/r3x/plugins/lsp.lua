@@ -22,7 +22,6 @@ return {
             local capabilities = require("r3x.handlers").capabilities
 
             local servers = {
-                "tsserver",
                 "prismals",
                 "dockerls",
                 "cssls",
@@ -43,6 +42,35 @@ return {
                     Lua = {
                         diagnostics = { globals = { "vim" } },
                         hint = { enable = true },
+                    },
+                },
+            })
+
+            lspconfig["tsserver"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                settings = {
+                    javascript = {
+                        inlayHints = {
+                            includeInlayEnumMemberValueHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                        },
+                    },
+                    typescript = {
+                        inlayHints = {
+                            includeInlayEnumMemberValueHints = true,
+                            includeInlayFunctionLikeReturnTypeHints = true,
+                            includeInlayFunctionParameterTypeHints = true,
+                            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+                            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+                            includeInlayPropertyDeclarationTypeHints = true,
+                            includeInlayVariableTypeHints = true,
+                        },
                     },
                 },
             })
@@ -104,36 +132,27 @@ return {
         end,
     },
     {
-        "simrat39/inlay-hints.nvim",
+        "lvimuser/lsp-inlayhints.nvim",
         event = "LspAttach",
         opts = {
-            renderer = "inlay-hints/render/eol", -- dynamic, eol, virtline or custom
-            hints = {
-                parameter = {
+            inlay_hints = {
+                parameter_hints = {
                     show = true,
-                    highlight = "Comment",
+                    prefix = "<- ",
+                    separator = ", ",
+                    remove_colon_start = false,
+                    remove_colon_end = true,
                 },
-                type = {
+                type_hints = {
                     show = true,
-                    highlight = "Comment",
-                },
-            },
-            only_current_line = false,
-            eol = {
-                right_align = false, -- whether to align to the extreme right or not
-                right_align_padding = 7, -- padding from the right if right_align is true
-                parameter = {
+                    prefix = " » ",
                     separator = ", ",
-                    format = function(hints)
-                        return string.format(" <- (%s)", hints)
-                    end,
+                    remove_colon_start = false,
+                    remove_colon_end = false,
                 },
-                type = {
-                    separator = ", ",
-                    format = function(hints)
-                        return string.format(" »  (%s)", hints)
-                    end,
-                },
+                only_current_line = false,
+                labels_separator = "  ", -- gap between type hints and parameter hints
+                highlight = "Comment", -- see `:highlight` for more options
             },
         },
     },
