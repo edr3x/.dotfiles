@@ -134,6 +134,15 @@ return {
     {
         "lvimuser/lsp-inlayhints.nvim",
         event = "LspAttach",
+        keys = {
+            {
+                "<leader>lh",
+                function()
+                    require("lsp-inlayhints").toggle()
+                end,
+                desc = "Toggle inlay hints",
+            },
+        },
         opts = {
             inlay_hints = {
                 parameter_hints = {

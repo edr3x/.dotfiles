@@ -23,6 +23,7 @@ return {
             d = { name = "LSP diganostics" },
             f = { name = "Telescope" },
             g = { name = "Git" },
+            l = { name = "LSP" },
             m = { name = "Minimap and md" },
             n = { name = "Tree prefix", t = "tree" },
             s = { name = "Search and replace current highlight" },
