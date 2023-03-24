@@ -90,7 +90,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "Right", function() brightness.increase() end,
               {description = "increase brightness", group = "control"}),
     -- Screenshot
-    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot -s '$HOME/Pictures/Screenshots/%d-%m-%Y-%T-screenshot.jpg'") end,
+    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot -e 'xclip -selection clipboard -t image/png -i $f' -s $HOME/Pictures/Screenshots/%d-%m-%Y-%T-screenshot.jpg") end,
               {description = "take a screenshot", group = "launcher"}),
     -- Powermenu
     awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell("$HOME/.config/rofi/powermenu/powermenu.sh") end,
@@ -99,7 +99,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, ".", function() awful.util.spawn_with_shell("rofi -modi emoji -show emoji") end,
               {description = "emoji", group = "launcher"}) ,
     -- Show Timetable
-    awful.key({ altkey }, "t", function() awful.util.spawn_with_shell("feh --zoom 150 -F $HOME/timetable.png") end,
+    awful.key({ altkey }, "t", function() awful.util.spawn_with_shell("feh --zoom 140 -F $HOME/timetable.png") end,
               {description = "timetable", group = "launcher"}) ,
     -- Powermenu
     awful.key({ modkey, "Shift" }, "l", function() awful.util.spawn_with_shell("$HOME/.config/rofi/powermenu/powermenu.sh") end,
