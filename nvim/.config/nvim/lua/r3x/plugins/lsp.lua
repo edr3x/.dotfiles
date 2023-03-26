@@ -131,6 +131,7 @@ return {
             require("r3x.handlers").setup()
         end,
     },
+    -- inlay hints
     {
         "lvimuser/lsp-inlayhints.nvim",
         event = "LspAttach",
@@ -165,6 +166,7 @@ return {
             },
         },
     },
+    -- code formatters
     {
         "jose-elias-alvarez/null-ls.nvim",
         event = "LspAttach",
@@ -181,5 +183,59 @@ return {
                 },
             })
         end,
+    },
+    -- code navigation
+    {
+        "SmiteshP/nvim-navbuddy",
+        event = "LspAttach",
+        dependencies = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+            "MunifTanjim/nui.nvim",
+        },
+        keys = {
+            {
+                "<leader>nf",
+                function()
+                    require("nvim-navbuddy").open()
+                end,
+                desc = "Navbuddy open",
+            },
+        },
+        opts = {
+            window = {
+                border = "rounded",
+                size = "80%",
+                position = "50%",
+            },
+            icons = {
+                Namespace = " ",
+                Package = " ",
+                String = " ",
+                Number = " ",
+                Boolean = "◩ ",
+                Array = " ",
+                Object = " ",
+                Key = " ",
+                Null = "ﳠ ",
+                Method = "m",
+                Function = "",
+                Constructor = "",
+                Field = "",
+                Variable = "",
+                Class = "ﴯ",
+                Interface = "",
+                Module = "",
+                Property = "",
+                Enum = "",
+                File = "",
+                EnumMember = "",
+                Constant = "",
+                Struct = "",
+                Event = "",
+                Operator = "",
+                TypeParameter = "",
+            },
+        },
     },
 }
