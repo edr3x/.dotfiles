@@ -189,13 +189,12 @@ return {
         "SmiteshP/nvim-navbuddy",
         event = "LspAttach",
         dependencies = {
-            "neovim/nvim-lspconfig",
             "SmiteshP/nvim-navic",
             "MunifTanjim/nui.nvim",
         },
         keys = {
             {
-                "<leader>nf",
+                "<leader>lt",
                 function()
                     require("nvim-navbuddy").open()
                 end,
