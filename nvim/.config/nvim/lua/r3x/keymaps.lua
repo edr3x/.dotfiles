@@ -51,5 +51,8 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 
+-- term mode
+map("t", "<esc>", "<C-\\><C-n>", opts) -- go back to normal mode with <esc> on terminal mode
+
 -- search and replace
 map("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
