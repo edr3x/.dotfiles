@@ -6,7 +6,13 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     keys = {
-        { "<leader>bt", "<cmd>lua require('barbecue.ui').toggle()<cr>" },
+        {
+            "<leader>bt",
+            function()
+                require("barbecue.ui").toggle()
+            end,
+            desc = "Toggle Barbecue",
+        },
     },
     opts = {
         kinds = {
