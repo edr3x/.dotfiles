@@ -1,5 +1,6 @@
 return {
     "ThePrimeagen/harpoon",
+    dependencies = { "nvim-lua/plenary.nvim" },
     lazy = true,
     keys = {
         {
@@ -16,7 +17,20 @@ return {
             end,
             desc = "Harpoon open",
         },
-
+        {
+            "<Tab>",
+            function()
+                require("harpoon.ui").nav_next()
+            end,
+            desc = "Jump to next buffer",
+        },
+        {
+            "<S-Tab>",
+            function()
+                require("harpoon.ui").nav_prev()
+            end,
+            desc = "Jump to prev buffer",
+        },
         {
             "<leader>1",
             function()
