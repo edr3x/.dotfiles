@@ -198,6 +198,29 @@
         "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
         "description": "Set Timeout Function"
     },
+    "Zod Input Verify Middleware Express.js": {
+        "prefix": "zodmiddleware",
+        "body": [
+            "import { Request, Response, NextFunction } from 'express';",
+            "import { AnyZodObject } from 'zod';",
+            "",
+            "export const verifyInput =",
+            "    (schema: AnyZodObject) =>",
+            "    (req: Request, res: Response, next: NextFunction) => {",
+            "        try {",
+            "            schema.parse({",
+            "                body: req.body,",
+            "                query: req.query,",
+            "                params: req.params,",
+            "            });",
+            "            next();",
+            "        } catch (e: any) {",
+            "            return res.status(400).json({ success: false, error: e.message });",
+            "        }",
+            "    };"
+        ],
+        "description": "Snippet for zod input verify middleware"
+    },
     "Prisma Client Init Snippet": {
         "prefix": "prismainit",
         "body": [
