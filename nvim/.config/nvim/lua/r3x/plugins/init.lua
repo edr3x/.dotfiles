@@ -36,25 +36,4 @@ return {
         "tpope/vim-fugitive",
         cmd = { "G", "Git" },
     },
-    {
-        "ThePrimeagen/vim-be-good",
-        cmd = "VimBeGood",
-    },
-    {
-        "Eandrju/cellular-automaton.nvim",
-        cmd = "CellularAutomaton",
-    },
-    {
-        "lalitmee/browse.nvim",
-        keys = {
-            {
-                "<leader>fs",
-                function()
-                    require("browse").input_search()
-                end,
-                desc = "Google Search",
-            },
-        },
-        opts = { provider = "google" },
-    },
 }
