@@ -43,8 +43,20 @@ return {
                         ["<c-t>"] = trouble.open_with_trouble,
                     },
                 },
-                layout_strategy = "vertical",
-                layout_config = { height = 0.95, preview_height = 0.6, preview_cutoff = 0 },
+                -- layout_strategy = "vertical",
+                -- layout_config = { height = 0.95, preview_height = 0.6, preview_cutoff = 0 },
+                layout_config = {
+                    horizontal = {
+                        prompt_position = "bottom",
+                        preview_width = 0.60,
+                    },
+                    vertical = {
+                        mirror = false,
+                    },
+                    width = 0.92,
+                    height = 0.87,
+                    preview_cutoff = 0,
+                },
                 path_display = { "smart", shorten = { len = 3 } },
                 dynamic_preview_title = true,
                 wrap_results = true,
