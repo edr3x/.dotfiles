@@ -11,64 +11,51 @@ return {
         { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
     },
-    config = function()
-        local scope = require("telescope")
-        local tactions = require("telescope.actions")
-        local trouble = require("trouble.providers.telescope")
-        scope.setup({
-            defaults = {
-                file_ignore_patterns = {
-                    "%.git$",
-                    "%.git[/\\]",
-                    "node_modules",
-                    "target",
-                    "build",
-                    "ios",
-                    "android",
-                    "linux",
-                    "macos",
-                    "web",
-                    "windows",
-                    "%.lock$",
-                },
-                color_devicons = true,
-                mappings = {
-                    i = {
-                        ["<esc>"] = tactions.close,
-                        ["<c-t>"] = trouble.open_with_trouble,
-                    },
-                    n = {
-                        ["<esc>"] = tactions.close,
-                        ["dd"] = "delete_buffer",
-                        ["<c-t>"] = trouble.open_with_trouble,
-                    },
-                },
-                -- layout_strategy = "vertical",
-                -- layout_config = { height = 0.95, preview_height = 0.6, preview_cutoff = 0 },
-                layout_config = {
-                    horizontal = {
-                        prompt_position = "top",
-                        preview_width = 0.60,
-                    },
-                    vertical = {
-                        mirror = false,
-                    },
-                    width = 0.92,
-                    height = 0.87,
-                    preview_cutoff = 0,
-                },
-                path_display = { "smart", shorten = { len = 3 } },
-                dynamic_preview_title = true,
-                wrap_results = true,
+    opts = {
+        defaults = {
+            file_ignore_patterns = {
+                "%.git$",
+                "%.git[/\\]",
+                "node_modules",
+                "target",
+                "build",
+                "ios",
+                "android",
+                "linux",
+                "macos",
+                "web",
+                "windows",
+                "%.lock$",
             },
-            pickers = {
-                find_files = { hidden = true },
-                live_grep = {
-                    additional_args = function()
-                        return { "--hidden" }
-                    end,
+            color_devicons = true,
+            mappings = {
+                n = {
+                    ["dd"] = "delete_buffer",
                 },
             },
-        })
-    end,
+            layout_config = {
+                horizontal = {
+                    prompt_position = "top",
+                    preview_width = 0.60,
+                },
+                vertical = {
+                    mirror = false,
+                },
+                width = 0.92,
+                height = 0.87,
+                preview_cutoff = 0,
+            },
+            path_display = { "smart", shorten = { len = 3 } },
+            dynamic_preview_title = true,
+            wrap_results = true,
+        },
+        pickers = {
+            find_files = { hidden = true },
+            live_grep = {
+                additional_args = function()
+                    return { "--hidden" }
+                end,
+            },
+        },
+    },
 }
