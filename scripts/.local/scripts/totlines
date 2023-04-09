@@ -20,15 +20,18 @@ function count_lines_recursive {
 }
 
 if [[ $# -ne 1 ]]; then
-    echo "Usage: $0 <directory>"
+    echo "Usage: $0 <file or directory>"
     exit 1
 fi
 
-dir="$1"
-if [[ ! -d "$dir" ]]; then
-    echo "Error: $dir is not a directory"
+file_or_dir="$1"
+if [[ -d "$file_or_dir" ]]; then
+    count=$(count_lines_recursive "$file_or_dir")
+    echo "Total number of lines in $file_or_dir: $count"
+elif [[ -f "$file_or_dir" ]]; then
+    count=$(count_lines "$file_or_dir")
+    echo "Number of lines in $file_or_dir: $count"
+else
+    echo "Error: $file_or_dir is not a file or directory"
     exit 1
 fi
-
-count=$(count_lines_recursive "$dir")
-echo "Total number of lines in $dir: $count"
