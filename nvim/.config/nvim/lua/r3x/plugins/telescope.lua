@@ -47,7 +47,7 @@ return {
                 -- layout_config = { height = 0.95, preview_height = 0.6, preview_cutoff = 0 },
                 layout_config = {
                     horizontal = {
-                        prompt_position = "bottom",
+                        prompt_position = "top",
                         preview_width = 0.60,
                     },
                     vertical = {
