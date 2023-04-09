@@ -20,7 +20,7 @@ set.signcolumn = "yes"
 set.showmode = false
 
 set.timeout = true
-set.timeoutlen = 300
+set.timeoutlen = 200
 
 set.smartindent = true
 set.wrap = false
