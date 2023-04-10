@@ -107,13 +107,12 @@ M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.semanticTokensProvider = nil
     end
 
     if client.name == "lua_ls" then
         client.server_capabilities.documentFormattingProvider = false
     end
-
-    client.server_capabilities.semanticTokensProvider = nil
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
