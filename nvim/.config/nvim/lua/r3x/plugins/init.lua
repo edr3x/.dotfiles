@@ -16,7 +16,7 @@ return {
         event = "BufReadPre",
         opts = {
             mapping = { "jk", "kj", "JK", "KJ", "jK", "kJ", "Jk", "Kj" },
-            timeout = vim.o.timeoutlen,
+            timeout = 120,
             clear_empty_lines = false,
             keys = "<Esc>",
         },
@@ -35,5 +35,9 @@ return {
     {
         "tpope/vim-fugitive",
         cmd = { "G", "Git" },
+    },
+    {
+        "tpope/vim-surround",
+        event = "BufReadPre",
     },
 }
