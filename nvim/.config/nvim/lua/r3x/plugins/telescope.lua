@@ -5,8 +5,9 @@ return {
     keys = {
         { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find texts" },
+        { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help tags" },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "List Opened Buffers" },
-        { "<leader>ft", "<cmd>Telescope treesitter<CR>", desc = "List Treesitter Variables" },
+        { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "List buffer diagnostics" },
         { "<leader>fc", "<cmd>Telescope flutter commands<CR>", desc = "Flutter Commands" },
         { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
