@@ -49,6 +49,11 @@ M.setup = function()
         update_in_insert = true,
     })
 
+    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+    vim.keymap.set("n", "dn", vim.diagnostic.goto_next)
+    vim.keymap.set("n", "dN", vim.diagnostic.goto_prev)
+
     vim.api.nvim_create_autocmd("TextYankPost", {
         callback = function()
             vim.highlight.on_yank({
@@ -57,10 +62,6 @@ M.setup = function()
             })
         end,
     })
-
-    -- vim.api.nvim_create_user_command("Fmt", function()
-    --     vim.lsp.buf.format()
-    -- end, {})
 
     -- format on save
     vim.api.nvim_create_autocmd("BufWritePre", {
@@ -122,9 +123,10 @@ M.on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "dn", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "dN", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", opts)
+
+    vim.api.nvim_buf_create_user_command(bufnr, "Fmt", function(_)
+        vim.lsp.buf.format()
+    end, {})
 
     require("illuminate").on_attach(client)
 
