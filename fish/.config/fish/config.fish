@@ -38,12 +38,18 @@ alias tkl  "tmux kill-server"     # kills all tmux sessions
 alias tk1  "tmux kill-session -t" # kill specific running session ( specify session name after this command )
 
 # nvim distros
-function lazyvim
-    NVIM_APPNAME=lvim nvim
-end
+alias lazyvim "NVIM_APPNAME=LazyVim nvim"
+alias astrovim "NVIM_APPNAME=AstroNvim nvim"
+alias nvchad "NVIM_APPNAME=NvChad nvim"
 
-function astrovim
-    NVIM_APPNAME=astrovim nvim
+function nvims
+    set items LazyVim AstroNvim NvChad
+    set config (printf "%s\n" $items | fzf --prompt=" Neovim Config  " --height=~50% --layout=reverse --border --exit-0)
+    if [ -z $config ]
+        echo "Nothing selected"
+        return 0
+    end
+    env NVIM_APPNAME=$config nvim $argv
 end
 
 # sessionizer script
