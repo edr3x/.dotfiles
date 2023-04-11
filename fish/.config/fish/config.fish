@@ -37,6 +37,15 @@ alias ta   "tmux a -t "           # attach to any of running session ( specify s
 alias tkl  "tmux kill-server"     # kills all tmux sessions
 alias tk1  "tmux kill-session -t" # kill specific running session ( specify session name after this command )
 
+# nvim distros
+function lazyvim
+    NVIM_APPNAME=lvim nvim
+end
+
+function astrovim
+    NVIM_APPNAME=astrovim nvim
+end
+
 # sessionizer script
 bind \cf "tmux-sessionizer"
 
