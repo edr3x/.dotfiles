@@ -42,6 +42,16 @@ return {
                 info = " ",
                 hint = " ",
             },
+            icon = "|",
+        }
+
+        local diff = {
+            "diff",
+            symbols = {
+                added = " ",
+                modified = " ",
+                removed = " ",
+            },
         }
 
         return {
@@ -58,7 +68,7 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch" },
                 lualine_c = { buffer },
-                lualine_x = { "diff", diagnostic },
+                lualine_x = { diff, diagnostic },
                 lualine_y = { lspStatus, "filetype" },
                 lualine_z = { "progress" },
             },
