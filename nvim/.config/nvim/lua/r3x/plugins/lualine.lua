@@ -1,6 +1,6 @@
 return {
     "edr3x/lualine.nvim",
-    config = function()
+    opts = function()
         local lspStatus = {
             function()
                 local msg = "No LSP detected"
@@ -17,7 +17,7 @@ return {
                 end
                 return msg
             end,
-            --icon = "",
+            icon = "",
             color = { fg = "#d3d3d3" },
         }
 
@@ -34,7 +34,17 @@ return {
             },
         }
 
-        require("lualine").setup({
+        local diagnostic = {
+            "diagnostics",
+            symbols = {
+                error = " ",
+                warn = " ",
+                info = " ",
+                hint = " ",
+            },
+        }
+
+        return {
             options = {
                 icons_enabled = true,
                 theme = "custom_transparent",
@@ -48,10 +58,10 @@ return {
                 lualine_a = { "mode" },
                 lualine_b = { "branch" },
                 lualine_c = { buffer },
-                lualine_x = { "diff", "diagnostics" },
+                lualine_x = { "diff", diagnostic },
                 lualine_y = { lspStatus, "filetype" },
                 lualine_z = { "progress" },
             },
-        })
+        }
     end,
 }
