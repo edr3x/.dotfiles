@@ -103,16 +103,29 @@ local signature_cfg = {
     },
 }
 
+local semantic_token_support = {
+    "clangd",
+    "rust-analyzer",
+    "lua_ls",
+    "pyright",
+    "tsserver",
+}
+
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.semanticTokensProvider = nil
     end
 
     if client.name == "lua_ls" then
         client.server_capabilities.documentFormattingProvider = false
+    end
+
+    for _, support_lang in pairs(semantic_token_support) do
+        if not client.name == support_lang then
+            client.server_capabilities.semanticTokensProvider = nil
+        end
     end
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -132,7 +145,9 @@ M.on_attach = function(client, bufnr)
 
     require("lsp_signature").on_attach(signature_cfg, bufnr)
 
-    require("nvim-navbuddy").attach(client, bufnr)
+    if not (client.name == "tailwindcss" or client.name == "null-ls") then
+        require("nvim-navbuddy").attach(client, bufnr)
+    end
 end
 
 return M
