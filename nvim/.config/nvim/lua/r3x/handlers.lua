@@ -145,7 +145,7 @@ M.on_attach = function(client, bufnr)
 
     require("lsp_signature").on_attach(signature_cfg, bufnr)
 
-    if not (client.name == "tailwindcss" or client.name == "null-ls") then
+    if client.server_capabilities.documentSymbolProvider then
         require("nvim-navbuddy").attach(client, bufnr)
     end
 end
