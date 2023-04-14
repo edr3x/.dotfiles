@@ -5,6 +5,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "edr3x/tailwindcss-colorizer-cmp.nvim",
     },
     config = function()
         local luasnip = require("luasnip")
@@ -72,6 +73,7 @@ return {
                         buffer = "[Buff]",
                         path = "[Path]",
                     })[entry.source.name]
+                    require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
                     return vim_item
                 end,
             },

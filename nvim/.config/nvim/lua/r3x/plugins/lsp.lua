@@ -18,6 +18,7 @@ return {
         event = "BufReadPre",
         config = function()
             local lspconfig = require("lspconfig")
+            local root_pattern = require("lspconfig.util").root_pattern
             local on_attach = require("r3x.handlers").on_attach
             local capabilities = require("r3x.handlers").capabilities
 
@@ -25,7 +26,6 @@ return {
                 "prismals",
                 "dockerls",
                 "cssls",
-                -- "tailwindcss",
             }
 
             for _, lsp in pairs(servers) do
@@ -126,6 +126,12 @@ return {
             lspconfig["clangd"].setup({
                 on_attach = on_attach,
                 capabilities = cap,
+            })
+
+            lspconfig["tailwindcss"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                root_dir = root_pattern("tailwind.config.js", "postcss.config.js"),
             })
 
             require("r3x.handlers").setup()
