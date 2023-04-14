@@ -23,7 +23,7 @@ return {
     },
     {
         "folke/persistence.nvim",
-        lazy = false,
+        event = "BufReadPre",
         opts = {},
     },
     {
