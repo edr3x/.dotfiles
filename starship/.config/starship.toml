@@ -1,6 +1,8 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = true
 
+right_format = """$git_metrics$memory_usage$cmd_duration"""
+
 [[battery.display]]
 threshold = 30
 
