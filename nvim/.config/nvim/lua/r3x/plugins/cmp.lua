@@ -5,7 +5,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        "edr3x/tailwindcss-colorizer-cmp.nvim",
+        "js-everts/cmp-tailwind-colors",
     },
     config = function()
         local luasnip = require("luasnip")
@@ -66,14 +66,24 @@ return {
             formatting = {
                 fields = { "kind", "abbr", "menu" },
                 format = function(entry, vim_item)
-                    vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                     vim_item.menu = ({
                         nvim_lsp = "[LSP]",
                         luasnip = "[Snip]",
                         buffer = "[Buff]",
                         path = "[Path]",
                     })[entry.source.name]
-                    require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+
+                    -- for tailwind colors
+                    if vim_item.kind == "Color" then
+                        vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
+
+                        if vim_item.kind ~= "Color" then
+                            vim_item.menu = "Color"
+                            return vim_item
+                        end
+                    end
+
+                    vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                     return vim_item
                 end,
             },

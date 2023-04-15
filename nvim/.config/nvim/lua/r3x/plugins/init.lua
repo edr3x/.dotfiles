@@ -4,6 +4,19 @@ return {
         event = "BufReadPre",
     },
     {
+        "tpope/vim-surround",
+        event = "BufReadPre",
+    },
+    {
+        "tpope/vim-fugitive",
+        cmd = { "G", "Git" },
+    },
+    {
+        "folke/persistence.nvim",
+        event = "BufReadPre",
+        opts = {},
+    },
+    {
         "github/copilot.vim",
         event = "InsertEnter",
     },
@@ -22,22 +35,9 @@ return {
         },
     },
     {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
-        opts = {},
-    },
-    {
         "mbbill/undotree",
         keys = {
             { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undotree" },
         },
-    },
-    {
-        "tpope/vim-fugitive",
-        cmd = { "G", "Git" },
-    },
-    {
-        "tpope/vim-surround",
-        event = "BufReadPre",
     },
 }
