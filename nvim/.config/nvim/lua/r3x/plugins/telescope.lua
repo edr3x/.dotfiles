@@ -1,6 +1,9 @@
 return {
     "nvim-telescope/telescope.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope-symbols.nvim",
+    },
     cmd = { "Telescope find_files" },
     keys = {
         { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
@@ -8,6 +11,7 @@ return {
         { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help tags" },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "List Opened Buffers" },
         { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "List buffer diagnostics" },
+        { "<leader>fs", "<cmd>Telescope symbols<CR>", desc = "List symbols" },
         { "<leader>fc", "<cmd>Telescope flutter commands<CR>", desc = "Flutter Commands" },
         { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
