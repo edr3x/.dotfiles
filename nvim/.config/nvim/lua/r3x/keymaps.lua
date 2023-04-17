@@ -2,14 +2,14 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- center screen
-map("n", "D", "<C-d>zz", opts)
-map("n", "U", "<C-u>zz", opts)
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("n", "G", "Gzzzv", opts)
 
 -- remove mapping
-map("n", "Q", "<nop>", opts)
+map({ "n", "x" }, "Q", "<nop>")
 
 -- because im lazy
 map({ "n", "v" }, "<S-h>", "^", opts)
@@ -34,10 +34,11 @@ map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
 map("n", "<leader>ba", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but not current one" })
 
 -- avoid vim register for some operations
-map("n", "x", '"_x', opts)
-map("x", "p", '"_dP', opts)
-map({ "n", "x" }, "<leader>y", '"+y', opts) -- copy to system clipboard
-map({ "n", "x" }, "<leader>p", '"+p', opts) -- paste from system clipboard
+map("n", "x", [["_x]], opts)
+map("x", "p", [["_dP]], opts)
+map("n", "<leader>Y", [["+Y]], opts) -- copy current line to system clipboard
+map({ "n", "x" }, "<leader>y", [["+y]], opts) -- copy to system clipboard
+map({ "n", "x" }, "<leader>p", [["+p]], opts) -- paste from system clipboard
 
 -- split resize
 map("n", "<C-Up>", ":resize -2<CR>", opts)
