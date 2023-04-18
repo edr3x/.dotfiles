@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-mem=`free | awk '{print $3}' | tail -2 | head -1`
-shared=`free | awk '{print $5}' | tail -2`
+mem_usage=$(free -m | awk 'NR==2{printf "%.1f", $3/1024}')
 
-total_mem=$((mem+shared))
-
-echo $((total_mem / 1024 / 1024 )) # remove the last division to get the value in MB
+echo "$mem_usage"
