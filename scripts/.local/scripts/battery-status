@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+remaining=`acpi -b | cut -d, -f2 | tr -d '[:space:]%'`
+status=`acpi -b | awk -F"[, ]" '{printf $3}'`
+
+if [ $status = "Discharging" ]; then
+    icon="󰂁"
+else
+    icon=""
+fi
+
+echo $icon $remaining%
