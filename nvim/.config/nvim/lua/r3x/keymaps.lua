@@ -14,7 +14,6 @@ map({ "n", "x" }, "Q", "<nop>")
 -- because im lazy
 map({ "n", "v" }, "<S-h>", "^", opts)
 map({ "n", "v" }, "<S-l>", "$", opts)
-map("n", "<C-a>", "ggVG", opts)
 map("n", "<leader><ESC>", "<cmd>qa<CR>", opts)
 
 -- move code up and down
