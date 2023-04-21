@@ -1,0 +1,117 @@
+#!/usr/bin/env bash
+
+has_command=false
+
+to_pascal_case() {
+  input="$1"
+  output="$(echo $input | sed -E 's/(^|_)([a-z])/\U\2/g')"
+  echo "$output"
+}
+
+while getopts ":c:b:h" opt; do
+  case $opt in
+    c)
+      # Code to run if -c flag is provided
+      topascal=$(to_pascal_case "$OPTARG")
+      mkdir ${OPTARG}_cubit
+      cd ${OPTARG}_cubit
+
+      touch "${OPTARG}_cubit.dart"
+      echo "import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part '${OPTARG}_state.dart';
+
+class ${topascal}Cubit extends Cubit<${topascal}State> {
+  ${topascal}Cubit() : super(${topascal}Initial());
+}" > "${OPTARG}_cubit.dart"
+
+      touch "${OPTARG}_state.dart"
+      echo "part of '${OPTARG}_cubit.dart';
+
+class ${topascal}State extends Equatable {
+  const ${topascal}State();
+
+  @override
+  List<Object> get props => [];
+}" > "${OPTARG}_state.dart"
+
+     has_command=true
+
+      echo "Cubit created successfully: ${OPTARG}_cubit"
+      ;;
+    b)
+      # Code to run if -b flag is provided
+      topascal=$(to_pascal_case "$OPTARG")
+      mkdir ${OPTARG}_bloc
+      cd ${OPTARG}_bloc
+
+      # First file
+      touch "${OPTARG}_bloc.dart"
+      echo " import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+
+part '${OPTARG}_event.dart';
+part '${OPTARG}_state.dart';
+
+class ${topascal}Bloc extends Bloc<${topascal}Event, ${topascal}State> {
+  ${topascal}Bloc() : super(${topascal}Initial()) {
+    on<${topascal}Event>((event, emit) {
+      // TODO: implement event handler
+    });
+  }
+}" > "${OPTARG}_bloc.dart"
+
+      # Second file
+      touch "${OPTARG}_event.dart"
+      echo "part of 'counter_bloc.dart';
+
+abstract class ${topascal}Event extends Equatable {
+  const ${topascal}Event();
+
+  @override
+  List<Object> get props => [];
+}" > "${OPTARG}_event.dart"
+      
+      # Third file
+      touch "${OPTARG}_state.dart"
+      echo "part of '${OPTARG}_bloc.dart';
+
+class ${topascal}State extends Equatable {
+  const ${topascal}State();
+
+  @override
+  List<Object> get props => [];
+}" > "${OPTARG}_state.dart"
+
+        has_command=true
+
+      echo "BLoC created successfully: ${OPTARG}_bloc"
+      ;;
+    h )
+      # Help information
+      echo "Usage: blocgen [-b name] [-c name] [-h]"
+      echo "  -b    Generate BLoC with name"
+      echo "  -c    Generate Cubit with name"
+      echo "  -h    Display this help message"
+      exit 0
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    : )
+      echo "Option -$OPTARG requires an argument" >&2
+      exit 1
+      ;;
+    * )
+      echo "Invalid command. Use -h option to see usage instructions." >&2
+      exit 1
+      ;;
+  esac
+done
+
+if ! $has_command; then
+  echo "No command specified. Use -h option to see usage instructions." >&2
+  exit 1
+fi
