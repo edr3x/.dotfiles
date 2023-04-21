@@ -2,23 +2,22 @@
 
 ### HomePage
 
-![Greeting](https://user-images.githubusercontent.com/45848083/219462074-bbf44e67-6615-4942-b781-ae73e537f1f2.png)
+![Greeting](https://user-images.githubusercontent.com/45848083/233694894-7c6370d0-8e57-4bbb-ace5-f626738230a0.png)
 
 ### FileTree
 
-![Nvim-Tree](https://user-images.githubusercontent.com/45848083/219462143-d798aa97-0b3e-4f23-b05e-64edd6aac685.png)
+![nvim-tree](https://user-images.githubusercontent.com/45848083/233694988-5251c531-beca-4a8d-9a2c-ba723e0e6443.png)
 
 ### Code Environment
 
-![Main-Editor](https://user-images.githubusercontent.com/45848083/219462226-eb6a0e85-13b4-40e7-bf27-48f82b1f70e7.png)
+![environment](https://user-images.githubusercontent.com/45848083/233695048-2e9889af-210b-4a4e-90c6-cc4528322a43.png)
 
 ### Telescope
 
-![Telescope](https://user-images.githubusercontent.com/45848083/219462675-5fd7564f-6a5e-4f16-8265-0e77015d0b02.png)
+![telescope](https://user-images.githubusercontent.com/45848083/233695134-5abbd833-74a2-4d21-8d03-5618c7784643.png)
 
 ### Terminal
-
-![Toggleterm](https://user-images.githubusercontent.com/45848083/219462400-5529779c-4e61-4139-852d-0a9dba8a562d.png)
+![terminal](https://user-images.githubusercontent.com/45848083/233695183-b03c4d6c-8830-449a-8b8c-8c4ba9071c25.png)
 
 ## Requirements
 
