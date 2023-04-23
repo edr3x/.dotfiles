@@ -14,6 +14,9 @@ return {
             sidebars = "transparent",
             floats = "transparent",
         },
+        on_colors = function(colors)
+            colors.border = "#208397"
+        end,
         on_highlights = function(hl, c)
             hl.CursorLineNr = { fg = c.orange, bold = true }
             hl.LineNr = { fg = c.orange, bold = true }

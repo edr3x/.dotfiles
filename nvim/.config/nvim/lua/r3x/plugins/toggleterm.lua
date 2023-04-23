@@ -15,5 +15,10 @@ return {
             border = "curved",
             winblend = 0,
         },
+        highlights = {
+            FloatBorder = {
+                guifg = "#208397",
+            },
+        },
     },
 }

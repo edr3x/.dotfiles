@@ -50,8 +50,8 @@ return {
                 vertical = {
                     mirror = false,
                 },
-                width = 0.92,
-                height = 0.87,
+                width = 0.90,
+                height = 0.85,
                 preview_cutoff = 0,
             },
             path_display = { "smart", shorten = { len = 3 } },
