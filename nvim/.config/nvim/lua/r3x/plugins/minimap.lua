@@ -37,6 +37,5 @@ return {
             },
         })
         vim.cmd([[:lua MiniMap.open()]])
-        require("mini.surround").setup() -- select word and press `s`
     end,
 }
