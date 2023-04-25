@@ -90,27 +90,6 @@ end
 
 local opts = { noremap = true, silent = true }
 
-local signature_cfg = {
-    bind = true,
-    hint_enable = false,
-    floating_window = true,
-    floating_window_above_cur_line = true,
-    check_completion_visible = true,
-    toggle_key = "<M-t>",
-    select_signature_key = "<M-s>",
-    handler_opts = {
-        border = "rounded",
-    },
-}
-
-local semantic_token_support = {
-    "clangd",
-    "rust-analyzer",
-    "lua_ls",
-    "pyright",
-    "tsserver",
-}
-
 M.capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 M.on_attach = function(client, bufnr)
@@ -122,28 +101,23 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
-    for _, support_lang in pairs(semantic_token_support) do
-        if not client.name == support_lang then
-            client.server_capabilities.semanticTokensProvider = nil
-        end
+    if not client.server_capabilities.semanticTokensProvider then
+        client.server_capabilities.semanticTokensProvider = nil
     end
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>di", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>h", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "i", "<M-t>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
     vim.api.nvim_buf_create_user_command(bufnr, "Fmt", function(_)
         vim.lsp.buf.format()
     end, {})
 
     require("illuminate").on_attach(client)
-
-    require("lsp_signature").on_attach(signature_cfg, bufnr)
 
     if client.server_capabilities.documentSymbolProvider then
         require("nvim-navbuddy").attach(client, bufnr)
