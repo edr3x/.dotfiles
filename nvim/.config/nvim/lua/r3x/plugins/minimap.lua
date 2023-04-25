@@ -1,5 +1,5 @@
 return {
-    "echasnovski/mini.nvim",
+    "echasnovski/mini.map",
     event = "BufReadPre",
     keys = {
         { "<Leader>mf", "<cmd>lua MiniMap.toggle_focus()<CR>" },

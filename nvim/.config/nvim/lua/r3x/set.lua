@@ -12,7 +12,7 @@ set.shiftwidth = 4
 set.expandtab = true
 set.hlsearch = false
 set.incsearch = true
-set.scrolloff = 10
+set.scrolloff = 15
 
 set.splitbelow = true
 set.splitright = true
