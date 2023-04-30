@@ -72,27 +72,27 @@ return {
             },
             pickers = {
                 git_status = {
-                    prompt_prefix = "󰊢 ",
+                    prompt_prefix = " 󰊢  ",
                     show_untracked = true,
                     initial_mode = "normal",
                     previewer = delta,
                 },
                 git_commits = {
-                    prompt_prefix = "󰊢 ",
+                    prompt_prefix = " 󰊢  ",
                     initial_mode = "normal",
                     git_command = { "git", "log", "--all", "--pretty=%h %s (%cr)", "--", "." },
                     results_title = "git log (current buffer)",
                     previewer = delta,
                 },
                 git_bcommits = {
-                    prompt_prefix = "󰊢 ",
+                    prompt_prefix = " 󰊢  ",
                     initial_mode = "normal",
                     git_command = { "git", "log", "--all", "--pretty=%h %s (%cr)" },
                     results_title = "git log",
                     previewer = delta,
                 },
                 git_branches = {
-                    prompt_prefix = "󰊢 ",
+                    prompt_prefix = " 󰊢  ",
                     initial_mode = "normal",
                 },
                 find_files = { hidden = true },
