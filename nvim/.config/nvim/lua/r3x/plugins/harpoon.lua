@@ -17,20 +17,6 @@ return {
             desc = "Harpoon open",
         },
         {
-            "<Tab>",
-            function()
-                require("harpoon.ui").nav_next()
-            end,
-            desc = "Jump to next buffer",
-        },
-        {
-            "<S-Tab>",
-            function()
-                require("harpoon.ui").nav_prev()
-            end,
-            desc = "Jump to prev buffer",
-        },
-        {
             "<leader>1",
             function()
                 require("harpoon.ui").nav_file(1)
