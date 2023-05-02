@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Had 0 idea to write lua script for code-action in nvim so ..........
+# This is for my personal preference of flutter_bloc state class generator
+
+classname=`awk '/class/ {print $2}' "$1"`
+
+types=`awk '/final/ {print $2}' "$1"`
+
+vars=`awk '/final/ {print $3}' "$1" | awk '{gsub(";",""); print}'`
+
+first_type=`echo "$types" | sed -n '1p'`
+second_type=`echo "$types" | sed -n '2p'`
+third_type=`echo "$types" | sed -n '3p'`
+
+first_var=`echo "$vars" | sed -n '1p'`
+second_var=`echo "$vars" | sed -n '2p'`
+third_var=`echo "$vars" | sed -n '3p'`
+
+prev_content=`cat "$1" | tr -d '}'`
+
+echo "${prev_content}
+
+  const ${classname}({
+    required this.${first_var},
+    required this.${second_var},
+    required this.${third_var},
+  });
+  
+  factory ${classname}.initial() => ${classname}(
+      ${first_var}: init, 
+      ${second_var}: init,
+      ${third_var}: init,
+  );
+
+  @override
+  List<Object> get props => [${first_var}, ${second_var}, ${third_var}];
+
+  @override
+  bool get stringify => true;
+
+  ${classname} copyWith({
+    ${first_type}? ${first_var},
+    ${second_type}? ${second_var},
+    ${third_type}? ${third_var},
+  }) {
+    return ${classname}(
+      ${first_var}: ${first_var} ?? this.${first_var},
+      ${second_var}: ${second_var} ?? this.${second_var},
+      ${third_var}: ${third_var} ?? this.${third_var},
+    );
+  }
+}" > "$1"
