@@ -23,18 +23,13 @@ import 'package:equatable/equatable.dart';
 part '${OPTARG}_state.dart';
 
 class ${topascal}Cubit extends Cubit<${topascal}State> {
-  ${topascal}Cubit() : super(${topascal}Initial());
+  ${topascal}Cubit() : super(${topascal}State.initial());
 }" > "${OPTARG}_cubit.dart"
 
       touch "${OPTARG}_state.dart"
       echo "part of '${OPTARG}_cubit.dart';
 
-class ${topascal}State extends Equatable {
-  const ${topascal}State();
-
-  @override
-  List<Object> get props => [];
-}" > "${OPTARG}_state.dart"
+class ${topascal}State extends Equatable {}" > "${OPTARG}_state.dart"
 
      has_command=true
 
@@ -55,7 +50,7 @@ part '${OPTARG}_event.dart';
 part '${OPTARG}_state.dart';
 
 class ${topascal}Bloc extends Bloc<${topascal}Event, ${topascal}State> {
-  ${topascal}Bloc() : super(${topascal}Initial()) {
+  ${topascal}Bloc() : super(${topascal}State.initial()) {
     on<${topascal}Event>((event, emit) {
       // TODO: implement event handler
     });
@@ -77,12 +72,7 @@ abstract class ${topascal}Event extends Equatable {
       touch "${OPTARG}_state.dart"
       echo "part of '${OPTARG}_bloc.dart';
 
-class ${topascal}State extends Equatable {
-  const ${topascal}State();
-
-  @override
-  List<Object> get props => [];
-}" > "${OPTARG}_state.dart"
+class ${topascal}State extends Equatable {}" > "${OPTARG}_state.dart"
 
         has_command=true
 
