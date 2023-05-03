@@ -4,17 +4,8 @@ return {
         event = "BufReadPre",
     },
     {
-        "tpope/vim-surround",
-        event = "BufReadPre",
-    },
-    {
         "tpope/vim-fugitive",
         cmd = { "G", "Git" },
-    },
-    {
-        "folke/persistence.nvim",
-        event = "BufReadPre",
-        opts = {},
     },
     {
         "github/copilot.vim",
@@ -23,6 +14,17 @@ return {
     {
         "andweeb/presence.nvim",
         event = "BufReadPre",
+    },
+    {
+        "kylechui/nvim-surround",
+        event = "BufReadPre",
+        version = "*",
+        opts = {},
+    },
+    {
+        "folke/persistence.nvim",
+        event = "BufReadPre",
+        opts = {},
     },
     {
         "edr3x/better-escape.nvim",
