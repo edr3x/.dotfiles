@@ -25,6 +25,7 @@ alias dot "tmux-sessionizer ~/.dotfiles"
 alias fuckyou "git push --force"
 alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
 alias nodepurge "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+alias scrkey "screenkey -s small --opacity 0.6 -p fixed -g 30%x7%+69%-2%"
 
 alias idea "~/.dev/idea/bin/idea.sh"
 
