@@ -1,10 +1,7 @@
 local io = io
 local math = math
-local pairs = pairs
 
 local battery = {}
-
-local limits = { { 25, 5 }, { 12, 3 }, { 7, 1 }, { 0 } }
 
 local function file_exists(name)
     local f = io.open(name, "r")
@@ -58,51 +55,19 @@ local function get_bat_state(adapter)
     return battery, dir
 end
 
-local function get_bat_time()
-    local facp = io.popen("acpi -b | grep -Eo '[^ ]* (remaining|until charged)' | cut -d' ' -f1")
-    local acp = facp:read()
-    facp:close()
-    return acp
-end
-
-local function getnextlim(num)
-    for ind, pair in pairs(limits) do
-        lim = pair[1]
-        step = pair[2]
-        nextlim = limits[ind + 1][1] or 0
-        if num > nextlim then
-            repeat
-                lim = lim - step
-            until num > lim
-            if lim < nextlim then
-                lim = nextlim
-            end
-            return lim
-        end
-    end
-end
-
 function battery.closure()
     local adapters = get_adapters()
-    local nextlim = limits[1][1]
     return function()
         local prefix = "⚡"
-        local time = get_bat_time()
         local batteries = ""
         for i = 1, #adapters do
             adapter = adapters[i]
             local battery, dir = get_bat_state(adapter)
             if dir == -1 then
-                dirsign = ""
-                prefix = ""
-            elseif dir == 1 then
-                dirsign = ""
-                nextlim = limits[1][1]
-            else
-                dirsign = ""
+                prefix = "󰂁 "
             end
             battery = battery .. "%"
-            batteries = batteries .. dirsign .. " " .. battery .. " "
+            batteries = batteries .. " " .. battery .. " "
         end
         return prefix .. "" .. batteries:gsub("%s+$", "")
     end
