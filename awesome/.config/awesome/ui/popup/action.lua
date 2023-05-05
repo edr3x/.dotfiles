@@ -16,7 +16,7 @@ local notifs_text = wibox.widget({
 })
 
 local notifs_clear = wibox.widget({
-    markup = "<span foreground='" .. beautiful.red .. "'>  </span>",
+    markup = "<span foreground='" .. beautiful.red .. "'>  </span>",
     font = beautiful.icon_font2 .. " Bold 20",
     align = "center",
     valign = "center",
