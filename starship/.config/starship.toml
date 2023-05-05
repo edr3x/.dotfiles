@@ -38,7 +38,7 @@ behind = "⇣ ×${count} "
 diverged = "⇕ ×${ahead_count}  ×${behind_count} "
 untracked = " ×${count} "
 stashed = " 📦 "
-modified = " ×${count} "
+modified = "! ×${count} "
 staged = " ×${count} "
 renamed = " ×${count} "
 deleted = "✘ ×${count} "
@@ -58,7 +58,7 @@ disabled = false
 [memory_usage]
 format = "$symbol[${ram}(  )]($style) "
 threshold = 40
-symbol = "  "
+symbol = "  "
 style = "#6ba4cf"
 disabled = false
 
