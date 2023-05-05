@@ -82,10 +82,10 @@ return {
                 show_on_dirs = false,
                 debounce_delay = 450,
                 icons = {
-                    error = "",
-                    warning = "",
-                    hint = "",
-                    info = "",
+                    error = " ",
+                    warning = " ",
+                    hint = " ",
+                    info = " ",
                 },
             },
         }
