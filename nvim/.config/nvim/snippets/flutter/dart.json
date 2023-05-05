@@ -30,6 +30,11 @@
         "body": ["@override  ", "  List<Object> get props => [$1];  ", "$2"],
         "description": "equatable @override"
     },
+    "materialpage": {
+        "prefix": "importm",
+        "body": ["import 'package:flutter/material.dart';"],
+        "description": "import material.dart"
+    },
     "eventdebounce": {
         "prefix": "eventdebounce",
         "body": [
