@@ -61,7 +61,7 @@ helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag(
-        { " ", "  ", " 󰙯 ", "  ", " 󰘳 ", " 󱗼 ", "  ", " 󱘗 ", "  " },
+        { " ", "  ", " 󰙯 ", "  ", " 󰘳 ", "  ", " 󱙋 ", " 󱘗 ", "  " },
         s,
         awful.layout.layouts[1]
     )
