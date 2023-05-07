@@ -1,9 +1,32 @@
 return {
     "nvim-tree/nvim-tree.lua",
+    lazy = false,
     dependencies = {
-        "nvim-tree/nvim-web-devicons",
+        {
+            "nvim-tree/nvim-web-devicons",
+            opts = {
+                override_by_filename = {
+                    [".gitignore"] = {
+                        icon = "",
+                        color = "#f1502f",
+                        name = "Gitignore",
+                    },
+                    ["package.json"] = {
+                        icon = "",
+                        color = "#3e863d",
+                        name = "Package.json",
+                    },
+                },
+                override_by_extension = {
+                    ["log"] = {
+                        icon = "",
+                        color = "#81e043",
+                        name = "Log",
+                    },
+                },
+            },
+        },
     },
-    cmd = { "NvimTreeToggle" },
     keys = {
         { "<leader>ntt", "<cmd>NvimTreeToggle<CR>" },
     },
