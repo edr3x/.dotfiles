@@ -96,6 +96,12 @@ return {
                 capabilities = capabilities,
                 settings = {
                     gopls = {
+                        completeUnimported = true,
+                        usePlaceholders = true,
+                        staticcheck = true,
+                        analyses = {
+                            unusedparams = true,
+                        },
                         hints = {
                             assignVariableTypes = true,
                             compositeLiteralFields = true,
