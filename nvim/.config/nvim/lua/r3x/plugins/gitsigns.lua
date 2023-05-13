@@ -11,7 +11,7 @@ return {
     },
     opts = {
         signs = {
-            untracked = { text = " " },
+            untracked = { text = "┆" },
             add = { text = " +" },
             change = { text = " " },
             delete = { text = " " },
