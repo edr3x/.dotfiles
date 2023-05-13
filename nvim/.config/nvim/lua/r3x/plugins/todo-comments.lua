@@ -22,7 +22,7 @@ return {
             TODO = { icon = " ", color = "#FF8C00", alt = { "todo" } },
             HACK = { icon = " ", color = "#3498DB", alt = { "myth" } },
             WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX", "warn" } },
-            NOTE = { icon = " ", color = "#98C379", alt = { "INFO", "note", "info" } },
+            NOTE = { icon = " ", color = "#98C379", alt = { "INFO", "note", "info" } },
         },
     },
 }

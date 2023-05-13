@@ -11,12 +11,12 @@ return {
     },
     opts = {
         signs = {
-            untracked = { text = "U" },
-            add = { text = "A" },
-            change = { text = "M" },
-            delete = { text = "D" },
-            topdelete = { text = "D" },
-            changedelete = { text = "D" },
+            untracked = { text = " " },
+            add = { text = " +" },
+            change = { text = " " },
+            delete = { text = " " },
+            topdelete = { text = " " },
+            changedelete = { text = " " },
         },
     },
 }
