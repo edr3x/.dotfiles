@@ -3,6 +3,10 @@ add_newline = true
 
 right_format = """$git_metrics$memory_usage$cmd_duration"""
 
+[battery]
+charging_symbol = ' '
+discharging_symbol = '󰂁 '
+
 [[battery.display]]
 threshold = 30
 
