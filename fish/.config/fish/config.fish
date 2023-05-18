@@ -21,6 +21,7 @@ alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
 alias ..... "cd ../../../.."
+alias cdd 'cd "$(fd -t d . | fzf)"'
 alias dot "tmux-sessionizer ~/.dotfiles"
 alias fuckyou "git push --force"
 alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
