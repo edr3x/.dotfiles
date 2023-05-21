@@ -33,6 +33,7 @@ return {
                     "prisma",
                     "proto",
                     "python",
+                    "query",
                     "rust",
                     "scss",
                     "sql",
@@ -61,6 +62,12 @@ return {
                         scope_incremental = "<c-s>",
                         node_decremental = "<c-backspace>",
                     },
+                },
+                playground = { enable = true },
+                query_linter = {
+                    enable = true,
+                    use_virtual_text = true,
+                    lint_events = { "BufWrite", "CursorHold" },
                 },
             })
         end,
