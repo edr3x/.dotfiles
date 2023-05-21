@@ -12,10 +12,12 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
+            "folke/neodev.nvim",
             "RRethy/vim-illuminate",
         },
         event = "BufReadPre",
         config = function()
+            require("neodev").setup()
             local lspconfig = require("lspconfig")
             local root_pattern = require("lspconfig.util").root_pattern
             local on_attach = require("r3x.handlers").on_attach
