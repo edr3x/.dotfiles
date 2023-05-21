@@ -49,10 +49,10 @@ M.setup = function()
         update_in_insert = true,
     })
 
-    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
-    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
     vim.keymap.set("n", "dn", vim.diagnostic.goto_next)
     vim.keymap.set("n", "dN", vim.diagnostic.goto_prev)
+    vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
 
     vim.api.nvim_create_autocmd("TextYankPost", {
         callback = function()
@@ -99,10 +99,6 @@ M.on_attach = function(client, bufnr)
 
     if client.name == "lua_ls" then
         client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if not client.server_capabilities.semanticTokensProvider then
-        client.server_capabilities.semanticTokensProvider = nil
     end
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
