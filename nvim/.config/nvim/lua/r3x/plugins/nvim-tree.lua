@@ -26,6 +26,10 @@ return {
                 },
             },
         },
+        {
+            "antosha417/nvim-lsp-file-operations",
+            opts = {},
+        },
     },
     keys = {
         { "<leader>ntt", "<cmd>NvimTreeToggle<CR>" },
