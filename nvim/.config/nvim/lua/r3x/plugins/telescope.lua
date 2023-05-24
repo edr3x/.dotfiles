@@ -35,12 +35,6 @@ return {
                     "node_modules",
                     "target",
                     "build",
-                    "ios",
-                    "android",
-                    "linux",
-                    "macos",
-                    "web",
-                    "windows",
                     "%.lock$",
                 },
                 color_devicons = true,
@@ -71,6 +65,12 @@ return {
                 wrap_results = true,
             },
             pickers = {
+                find_files = { hidden = true },
+                live_grep = {
+                    additional_args = function()
+                        return { "--hidden" }
+                    end,
+                },
                 git_status = {
                     prompt_prefix = " 󰊢  ",
                     show_untracked = true,
@@ -94,12 +94,6 @@ return {
                 git_branches = {
                     prompt_prefix = " 󰊢  ",
                     initial_mode = "normal",
-                },
-                find_files = { hidden = true },
-                live_grep = {
-                    additional_args = function()
-                        return { "--hidden" }
-                    end,
                 },
             },
         }
