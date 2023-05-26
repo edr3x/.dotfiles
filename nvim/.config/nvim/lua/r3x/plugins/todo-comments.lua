@@ -15,6 +15,11 @@ return {
             end,
             desc = "prev marked comment",
         },
+        {
+            "<leader>ft",
+            ":TodoTelescope<CR>",
+            desc = "search todo comments",
+        },
     },
     opts = {
         keywords = {
