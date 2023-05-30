@@ -38,6 +38,7 @@ map("x", "p", [["_dP]], opts)
 map("n", "<leader>Y", [["+Y]], opts) -- copy current line to system clipboard
 map({ "n", "x" }, "<leader>y", [["+y]], opts) -- copy to system clipboard
 map({ "n", "x" }, "<leader>p", [["+p]], opts) -- paste from system clipboard
+map("n", "YY", "va{Vy", opts)
 
 -- split resize
 map("n", "<C-Up>", ":resize -2<CR>", opts)
