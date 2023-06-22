@@ -30,6 +30,8 @@ alias scrkey "screenkey -s small --opacity 0.6 -p fixed -g 30%x7%+69%-2%"
 
 # git
 alias ggpush "git push"
+alias gs "git status"
+alias gd "git diff"
 
 alias idea "~/.dev/idea/bin/idea.sh"
 
