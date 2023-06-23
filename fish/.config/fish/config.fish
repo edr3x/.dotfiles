@@ -33,6 +33,14 @@ alias ggpush "git push"
 alias gs "git status"
 alias gd "git diff"
 
+# docker
+alias dps "docker ps"
+alias dcu "docker-compose up -d"
+alias dcd "docker-compose down"
+function dex
+    docker exec -it $argv bash
+end
+
 alias idea "~/.dev/idea/bin/idea.sh"
 
 # Rick
