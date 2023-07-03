@@ -115,9 +115,9 @@ M.on_attach = function(client, bufnr)
 
     require("illuminate").on_attach(client)
 
-    if client.server_capabilities.documentSymbolProvider then
-        require("nvim-navbuddy").attach(client, bufnr)
-    end
+    -- if client.server_capabilities.documentSymbolProvider then
+    --     require("nvim-navbuddy").attach(client, bufnr)
+    -- end
 end
 
 return M

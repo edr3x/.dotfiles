@@ -18,6 +18,7 @@ set.splitbelow = true
 set.splitright = true
 set.signcolumn = "yes"
 set.showmode = false
+set.ignorecase = true
 
 set.timeout = true
 set.timeoutlen = 200
