@@ -223,4 +223,13 @@ return {
             })
         end,
     },
+    {
+        "stevearc/dressing.nvim",
+        event = "LspAttach",
+        opts = {
+            input = {
+                enabled = false,
+            },
+        },
+    },
 }
