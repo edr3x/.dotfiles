@@ -78,6 +78,10 @@ set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 
+# fnm
+set PATH "/home/r3x/.local/share/fnm" $PATH
+fnm env | source
+
 #pnpm
 alias p "pnpm"
 alias px "pnpx"

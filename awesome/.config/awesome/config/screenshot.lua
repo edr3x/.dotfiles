@@ -51,8 +51,8 @@ function scrot(cmd, callback, args)
 end
 
 function scrot_callback(text)
-    naughty.notify({
-        text = text,
-        timeout = 0.5,
-    })
+    -- naughty.notify({
+    --     text = text,
+    --     timeout = 0.1,
+    -- })
 end

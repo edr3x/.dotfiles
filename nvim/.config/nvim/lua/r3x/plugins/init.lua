@@ -1,7 +1,6 @@
 return {
     {
         "tpope/vim-commentary",
-        event = "BufReadPre",
     },
     {
         "tpope/vim-fugitive",
@@ -23,7 +22,6 @@ return {
     },
     {
         "folke/persistence.nvim",
-        event = "BufReadPre",
         opts = {},
     },
     {
