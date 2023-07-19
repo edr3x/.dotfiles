@@ -19,11 +19,10 @@ return {
         config = function()
             require("neodev").setup()
             local lspconfig = require("lspconfig")
-            local root_pattern = require("lspconfig.util").root_pattern
             local on_attach = require("r3x.handlers").on_attach
             local capabilities = require("r3x.handlers").capabilities
 
-            local servers = { "prismals", "dockerls" }
+            local servers = { "prismals", "dockerls", "pyright", "tailwindcss" }
 
             for _, lsp in pairs(servers) do
                 lspconfig[lsp].setup({
@@ -41,11 +40,6 @@ return {
                         hint = { enable = true },
                     },
                 },
-            })
-
-            lspconfig["pyright"].setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
             })
 
             lspconfig["tsserver"].setup({
@@ -125,7 +119,6 @@ return {
 
             local cap = capabilities
             cap.offsetEncoding = "utf-8"
-
             lspconfig["clangd"].setup({
                 on_attach = on_attach,
                 capabilities = cap,
@@ -154,12 +147,6 @@ return {
                         },
                     },
                 },
-            })
-
-            lspconfig["tailwindcss"].setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-                root_dir = root_pattern("tailwind.config.js", "postcss.config.js"),
             })
 
             require("r3x.handlers").setup()
@@ -217,14 +204,5 @@ return {
                 },
             })
         end,
-    },
-    {
-        "stevearc/dressing.nvim",
-        event = "LspAttach",
-        opts = {
-            input = {
-                enabled = false,
-            },
-        },
     },
 }

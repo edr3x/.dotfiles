@@ -57,8 +57,9 @@ return {
                 relativenumber = false,
                 signcolumn = "yes",
                 hide_root_folder = false,
+                side = "right",
                 float = {
-                    enable = true,
+                    enable = false,
                     open_win_config = {
                         relative = "editor",
                         border = "rounded",

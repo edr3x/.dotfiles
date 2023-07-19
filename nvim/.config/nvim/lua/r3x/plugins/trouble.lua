@@ -12,6 +12,11 @@ return {
         opts = {},
     },
     {
+        "stevearc/dressing.nvim",
+        event = "LspAttach",
+        opts = {},
+    },
+    {
         "edr3x/lsp_lines.nvim",
         keys = {
             {
