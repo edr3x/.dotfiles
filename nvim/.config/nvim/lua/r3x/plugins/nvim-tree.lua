@@ -58,17 +58,6 @@ return {
                 signcolumn = "yes",
                 hide_root_folder = false,
                 side = "right",
-                float = {
-                    enable = false,
-                    open_win_config = {
-                        relative = "editor",
-                        border = "rounded",
-                        width = 120,
-                        height = 35,
-                        row = 5,
-                        col = 75,
-                    },
-                },
             },
             renderer = {
                 root_folder_modifier = ":~",
@@ -87,12 +76,6 @@ return {
                             ignored = "I",
                         },
                     },
-                },
-                special_files = {
-                    "Cargo.toml",
-                    "Makefile",
-                    "README.md",
-                    "go.mod",
                 },
             },
             filters = {
