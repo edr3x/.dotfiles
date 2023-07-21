@@ -22,7 +22,7 @@ return {
             local on_attach = require("r3x.handlers").on_attach
             local capabilities = require("r3x.handlers").capabilities
 
-            local servers = { "prismals", "dockerls", "pyright", "tailwindcss" }
+            local servers = { "prismals", "dockerls", "pyright", "tailwindcss", "svelte" }
 
             for _, lsp in pairs(servers) do
                 lspconfig[lsp].setup({

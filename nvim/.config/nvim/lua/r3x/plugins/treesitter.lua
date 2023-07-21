@@ -36,6 +36,7 @@ return {
                     "query",
                     "rust",
                     "scss",
+                    "svelte",
                     "sql",
                     "toml",
                     "tsx",
