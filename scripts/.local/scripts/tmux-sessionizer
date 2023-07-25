@@ -3,7 +3,15 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/projects ~/projects/personal ~/projects/learning/ ~/projects/work ~/projects/of_all_things ~/projects/of_all_things/playground -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find \
+        ~/projects/personal \
+        ~/projects/learning/ \
+        ~/projects/work \
+        ~/projects/work/webpoint \
+        ~/projects/work/internsathi \
+        ~/projects/of_all_things \
+        ~/projects/of_all_things/playground \
+        -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then
