@@ -90,7 +90,7 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "Right", function() brightness.increase() end,
               {description = "increase brightness", group = "control"}),
     -- Screenshot
-    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot -e 'xclip -selection clipboard -t image/png -i $f' -s $HOME/Pictures/Screenshots/%d-%m-%Y-%T-screenshot.jpg") end,
+    awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("scrot -e 'xclip -selection clipboard -t image/png -i $f' -s $HOME/Pictures/Screenshots/%d-%m-%Y-%T-screenshot.jpg -f") end,
               {description = "take a screenshot", group = "launcher"}),
     -- Powermenu
     awful.key({}, "XF86PowerOff", function() awful.util.spawn_with_shell("$HOME/.config/rofi/powermenu/powermenu.sh") end,
@@ -99,12 +99,17 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, ".", function() awful.util.spawn_with_shell("rofi -modi emoji -show emoji") end,
               {description = "emoji", group = "launcher"}) ,
     -- Show Timetable
-    awful.key({ altkey }, "t", function() awful.util.spawn_with_shell("feh --zoom 140 -F $HOME/timetable.png") end,
+    awful.key({ altkey }, "t", function() awful.util.spawn_with_shell("feh --zoom 110 -F $HOME/timetable.png") end,
               {description = "timetable", group = "launcher"}) ,
     -- Powermenu
     awful.key({ modkey, "Shift" }, "l", function() awful.util.spawn_with_shell("$HOME/.config/rofi/powermenu/powermenu.sh") end,
               {description = "powermenu", group = "launcher"}) ,
-
+    -- Kill
+    awful.key({ altkey, "Ctrl" }, "x", function() awful.util.spawn("xkill") end,
+              {description = "powermenu", group = "launcher"}) ,
+    -- Summon Train -- F13
+    awful.key({}, "XF86Tools", function() awful.util.spawn("alacritty -e \"sl\"") end,
+              {description = "train", group = "launcher"}) ,
 })
 
 -- Tags related keybindings
@@ -196,8 +201,6 @@ awful.keyboard.append_global_keybindings({
         { description = "increase the number of master clients", group = "layout" }),
 
     awful.key({ modkey, "Shift" }, "l",
-
-
         function() awful.tag.incnmaster(-1, nil, true) end,
         { description = "decrease the number of master clients", group = "layout" }),
 
@@ -315,6 +318,12 @@ client.connect_signal("request::default_keybindings", function()
                 c:raise()
             end,
             { description = "toggle fullscreen", group = "client" }),
+
+        awful.key({ modkey, }, "b",
+            function(c)
+                c.screen.mywibar.visible = not c.screen.mywibar.visible
+            end,
+            { description = "toggle top bar", group = "client" }),
 
         awful.key({ modkey, "Shift" }, "c", function(c) c:kill() end,
             { description = "close", group = "client" }),
