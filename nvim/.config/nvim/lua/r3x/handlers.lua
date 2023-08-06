@@ -116,4 +116,67 @@ M.on_attach = function(client, bufnr)
     require("illuminate").on_attach(client)
 end
 
+M.settings = {
+    Lua = {
+        diagnostics = { globals = { "vim" } },
+        hint = { enable = true },
+    },
+
+    javascript = {
+        inlayHints = {
+            includeInlayEnumMemberValueHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayVariableTypeHints = true,
+        },
+    },
+    typescript = {
+        inlayHints = {
+            includeInlayEnumMemberValueHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayVariableTypeHints = true,
+        },
+    },
+
+    gopls = {
+        completeUnimported = true,
+        usePlaceholders = true,
+        gofumpt = true,
+        staticcheck = true,
+        analyses = {
+            unusedparams = true,
+        },
+    },
+
+    yaml = {
+        keyOrdering = false,
+    },
+
+    css = {
+        validate = true,
+        lint = {
+            unknownAtRules = "ignore",
+        },
+    },
+    scss = {
+        validate = true,
+        lint = {
+            unknownAtRules = "ignore",
+        },
+    },
+    less = {
+        validate = true,
+        lint = {
+            unknownAtRules = "ignore",
+        },
+    },
+}
+
 return M
