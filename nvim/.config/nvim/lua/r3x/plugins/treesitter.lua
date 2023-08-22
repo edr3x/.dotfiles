@@ -45,6 +45,7 @@ return {
                 "tsx",
                 "typescript",
                 "vimdoc",
+                "vue",
                 "yaml",
             },
             ignore_install = { "php" },

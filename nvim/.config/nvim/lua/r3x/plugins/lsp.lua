@@ -39,6 +39,7 @@ return {
                 "pyright",
                 -- "tailwindcss",
                 "svelte",
+                "volar",
             }
 
             for _, lsp in pairs(servers) do
