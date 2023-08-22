@@ -39,7 +39,6 @@ return {
                 "pyright",
                 -- "tailwindcss",
                 "svelte",
-                "volar",
             }
 
             for _, lsp in pairs(servers) do
@@ -162,6 +161,27 @@ return {
                         validate = true,
                         lint = {
                             unknownAtRules = "ignore",
+                        },
+                    },
+                },
+            })
+            lspconfig["volar"].setup({
+                on_attach = on_attach,
+                capabilities = capabilities,
+                filetypes = {
+                    "typescript",
+                    "javascript",
+                    "javascriptreact",
+                    "typescriptreact",
+                    "vue",
+                    "json",
+                },
+                settings = {
+                    volar = {
+                        codeLens = {
+                            references = true,
+                            pugTools = true,
+                            scriptSetupTools = true,
                         },
                     },
                 },
