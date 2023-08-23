@@ -73,6 +73,10 @@
             {
                 "language": "yaml",
                 "path": "./yaml.json"
+            },
+            {
+                "language": "vue",
+                "path": "./vue.json"
             }
         ]
     }
