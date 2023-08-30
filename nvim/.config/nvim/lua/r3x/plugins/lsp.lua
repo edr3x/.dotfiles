@@ -23,7 +23,6 @@ return {
         end,
     },
     {
-
         "neovim/nvim-lspconfig",
         dependencies = { "folke/neodev.nvim" },
         event = "BufReadPre",
@@ -161,28 +160,6 @@ return {
                         validate = true,
                         lint = {
                             unknownAtRules = "ignore",
-                        },
-                    },
-                },
-            })
-
-            lspconfig["volar"].setup({
-                on_attach = on_attach,
-                capabilities = capabilities,
-                filetypes = {
-                    "typescript",
-                    "javascript",
-                    "javascriptreact",
-                    "typescriptreact",
-                    "vue",
-                    "json",
-                },
-                settings = {
-                    volar = {
-                        codeLens = {
-                            references = true,
-                            pugTools = true,
-                            scriptSetupTools = true,
                         },
                     },
                 },
