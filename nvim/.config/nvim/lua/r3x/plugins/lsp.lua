@@ -58,6 +58,15 @@ return {
                 },
             })
 
+            local function organize_imports()
+                vim.lsp.buf.execute_command({
+                    command = "_typescript.organizeImports",
+                    arguments = {
+                        vim.api.nvim_buf_get_name(0),
+                    },
+                })
+            end
+
             lspconfig["tsserver"].setup({
                 on_attach = on_attach,
                 capabilities = capabilities,
@@ -83,6 +92,12 @@ return {
                             includeInlayPropertyDeclarationTypeHints = true,
                             includeInlayVariableTypeHints = true,
                         },
+                    },
+                },
+                commands = {
+                    OrganizeImports = {
+                        organize_imports,
+                        description = "Organize Imports",
                     },
                 },
             })
