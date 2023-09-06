@@ -52,8 +52,10 @@ return {
                 capabilities = capabilities,
                 settings = {
                     Lua = {
-                        diagnostics = { globals = { "vim" } },
                         hint = { enable = true },
+                        telemetry = { enable = false },
+                        diagnostics = { globals = { "vim" } },
+                        workspace = { checkThirdParty = false },
                     },
                 },
             })
