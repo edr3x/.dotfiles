@@ -90,7 +90,8 @@ end
 
 local opts = { noremap = true, silent = true }
 
-M.capabilities = require("cmp_nvim_lsp").default_capabilities()
+local cap = vim.lsp.protocol.make_client_capabilities()
+M.capabilities = require("cmp_nvim_lsp").default_capabilities(cap)
 
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
@@ -119,10 +120,17 @@ M.on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "i", "<M-t>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "<leader>ds",
+        "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>",
+        { desc = "Document symbols" }
+    )
 
     vim.api.nvim_buf_create_user_command(bufnr, "Fmt", function(_)
         vim.lsp.buf.format()
-    end, {})
+    end, { desc = "Format current buffer with LSP" })
 
     require("illuminate").on_attach(client)
 end
