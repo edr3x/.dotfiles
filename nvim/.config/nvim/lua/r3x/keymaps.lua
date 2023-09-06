@@ -8,6 +8,10 @@ map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 map("n", "G", "Gzzzv", opts)
 
+-- remap for dealing with word wrap
+map("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- remove mapping
 map({ "n", "x" }, "Q", "<nop>")
 
