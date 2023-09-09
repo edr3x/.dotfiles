@@ -44,7 +44,7 @@ font:
     family: Iosevka Nerd Font
     style: Bold Italic
 
-  size: 8
+  size: 10
 
 window:
   dynamic_padding: true
