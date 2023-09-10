@@ -9,7 +9,7 @@ external_left="External display on the left"
 external_right="External display on the right"
 duplicate="Duplicate display"
 
-options=("$turn_off_laptop" "$turn_on_laptop" "$external_left" "$external_right" "$duplicate")
+options=("$duplicate" "$turn_on_laptop" "$turn_off_laptop" "$external_left" "$external_right")
 
 selected_option=$(printf "%s\n" "${options[@]}" | fzf --prompt="Select a display configuration: " --height=~50% --layout=reverse --border --exit-0)
 
