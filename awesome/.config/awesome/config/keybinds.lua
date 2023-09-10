@@ -78,8 +78,8 @@ awful.keyboard.append_global_keybindings({
 
     -- Display
     awful.key({ modkey, "Control" }, "p", function()
-        awful.util.spawn("arandr")
-    end, { description = "multi display config", group = "display" }),
+        awful.util.spawn('xrandr --output "eDP-1" --auto')
+    end, { description = "duplicate screen", group = "display" }),
 })
 
 -- Tags related keybindings
