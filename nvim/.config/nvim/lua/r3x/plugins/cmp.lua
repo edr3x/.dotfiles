@@ -43,7 +43,7 @@ return {
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
             winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
         }
-
+        ---@diagnostic disable
         cmp.setup({
             snippet = {
                 expand = function(args)

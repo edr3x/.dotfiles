@@ -7,12 +7,14 @@ return {
     dependencies = {
         "windwp/nvim-ts-autotag",
         "nvim-treesitter/playground",
+        "nvim-treesitter/nvim-treesitter-textobjects",
         "JoosepAlviste/nvim-ts-context-commentstring",
         {
             "nvim-treesitter/nvim-treesitter-context",
             opts = {},
         },
     },
+    ---@diagnostic disable
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
@@ -53,6 +55,20 @@ return {
             auto_install = false,
             autotag = {
                 enable = true,
+            },
+            textobjects = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                    keymaps = {
+                        ["aa"] = "@parameter.outer",
+                        ["ia"] = "@parameter.inner",
+                        ["af"] = "@function.outer",
+                        ["if"] = "@function.inner",
+                        ["ac"] = "@class.outer",
+                        ["ic"] = "@class.inner",
+                    },
+                },
             },
             highlight = {
                 enable = true,

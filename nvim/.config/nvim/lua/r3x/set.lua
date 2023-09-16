@@ -23,7 +23,7 @@ set.ignorecase = true
 set.cursorline = true
 
 set.timeout = true
-set.timeoutlen = 200
+set.timeoutlen = 300
 
 set.smartindent = true
 set.wrap = false
