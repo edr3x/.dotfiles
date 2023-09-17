@@ -1,0 +1,23 @@
+{
+    
+    "deployment" :{
+        "prefix": "deployment_simple",
+        "description": "Simple deployment template",
+        "body": "apiVersion: extensions/v1beta1\nkind: Deployment\nmetadata:\n  name: ${name:Enter deployment name}\nspec:\n  replicas: ${replicas:Enter the number of replicas}\n  template:\n    metadata:\n      labels:\n        editor: vscode\n    spec:\n      containers:\n      - name: ${name}\n        image: ${image:Enter containers image}"
+    },
+    "deployment_complete":{
+        "prefix": "deployment_complete",
+        "description": "template for a complete deployment",
+        "body": "apiVersion: extensions/v1beta1\nkind: Deployment\nmetadata:\n  name: ${name: my-name}\n  labels:\n    name: ${name: my-name}\nspec:\n  strategy:\n    rollingUpdate:\n      maxSurge: 1\n      maxUnavailable: 1\n    type: RollingUpdate\n  template:\n    metadata:\n      labels:\n        name: ${name: my-name}\n    spec:\n      containers:\n      - image: ${image: ipedrazas/docmock}\n        name: ${name: my-name}\n        resources:\n          requests:\n            cpu: \"20m\"\n            memory: \"55M\"\n        livenessProbe:\n          httpGet:\n            path: /_status/healthz\n            port: 5000\n          initialDelaySeconds: 90\n          timeoutSeconds: 10\n        readinessProbe:\n          httpGet:\n            path: /_status/healthz\n            port: 5000\n          initialDelaySeconds: 30\n          timeoutSeconds: 10\n        env:\n        - name: ${ENVVARNAME: ENVVARNAME}\n          value: ${ENVVARVALUE: ENVVARVALUE}       \n        ports:\n        - containerPort: ${port: 5000}\n          name: ${name: my-name}\n        volumeMounts:\n        - mountPath: /data\n          name: data\n      volumes:\n        - name: data\n          emptyDir: {}\n      restartPolicy: Always\n      imagePullPolicy: Always"
+    },
+    "strategy": {
+        "prefix": "strategy",
+        "description": "strategy",
+        "body": "strategy:\n  "
+    },
+    "rollingUpdate": {
+        "prefix": "rollingUpdate",
+        "description": "rollingUpdate",
+        "body": "rollingUpdate:\n  maxSurge: 1\n  maxUnavailable: 1\ntype: RollingUpdate"
+    }
+}

@@ -1,0 +1,17 @@
+{    
+    "configmap_file" :{
+        "prefix": "configmap_file",
+        "description": "Configmap that contains a file",
+        "body": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: myconfigmap\n  labels:\n    app: myapplication\ndata:\n  my-properties-file.yaml: |\n    # yaml file\n    key: value\n"
+    },
+    "configmap" :{
+        "prefix": "configmap",
+        "description": "Configmap with a key/value pair",
+        "body": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: myconfigmap\n  labels:\n    app: myapplication\ndata:\n  my-key: my-value\n"
+    },
+    "configmap_kv_file" :{
+        "prefix": "configmap_kv_file",
+        "description": "Configmap with a key/value pair and file",
+        "body": "apiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: myconfigmap\n  labels:\n    app: myapplication\ndata:\n  my-key: my-value\n my-properties-file.yaml: |\n    # yaml file\n    key: value\n"
+    }
+}

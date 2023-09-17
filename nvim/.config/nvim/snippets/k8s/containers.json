@@ -1,0 +1,68 @@
+{
+    "name":{
+        "prefix": "name",
+        "description": "name",
+        "body": "name: ${name: name}"
+    },
+    "image":{
+        "prefix": "image",
+        "description": "image",
+        "body": "image: ${image: registry/user/image}"
+    },
+    "ports": {
+        "prefix": "ports",
+        "body": "ports:\n- name: ${name: Port Name}\n  port: ${port: Port}\n  protocol: TCP",
+        "description": "apiVersion"
+    },
+    "imagePullSecrets":{
+        "prefix": "imagePullSecrets",
+        "description": "Secret with registry credentials",
+        "body": "imagePullSecrets:\n  - name: ${secret: Secret with Registry credentials}" 
+    },
+    "volumeMounts":{
+        "prefix": "volumeMounts",
+        "description": "Entry for VolumeMounts",
+        "body": "volumeMounts:\n  - name: ${name: Name of the Volume}\n  mountPath: ${path: Path to mount}"
+    },
+    "volumes":{
+        "prefix": "volumes",
+        "description": "volumes",
+        "body": "volumes:\n  - name: ${name: name of the volume}\n  mountPath: ${path: Path to mount}"
+    },
+    "volumes_hostPath":{
+        "prefix": "volumes_hostPath",
+        "description": "Snippet for volumes hostPath",
+        "body": "volumes:\n  - name: ${name: Volume Name}\n  hostPath:\n    path: ${path: Path to mount}"
+    },
+    "command":{
+        "prefix": "command_container",
+        "description": "container command",
+        "body": "command:\n  - sleep\n  - \"3600\""
+    },
+    "imagePullPolicy": {
+        "prefix": "imagePullPolicy",
+        "description": "imagePullPolicy",
+        "body": "imagePullPolicy: Always"
+    },
+    "restartPolicy":{
+        "prefix": "restartPolicy",
+        "description": "restartPolicy",
+        "body": "restartPolicy: Never"
+    },
+    "containers": {
+        "prefix": "containers",
+        "description": "container",
+        "body": "containers:\n  - image: ${image: image}\n  name: ${name: my-name}\n  env:\n    - name: ${ENVVARNAME: ENVVARNAME}\n      value: ${ENVVARVALUE: ENVVARVALUE}"
+    },
+    "env_from_secret":{
+        "prefix": "env_from_secret",
+        "description": "Secret from secret",
+        "body": "env:\n  - name: ${envvar: ENV_VAR}\n    valueFrom:\n      secretKeyRef:\n        name: ${name: name}\n        key: ${key: key}"
+    },
+    "readiness_exec":{
+        "prefix": "readiness",
+        "description": "Template for readinessProbe exec",
+        "body": "livenessProbe:\n  exec:\n    command:\n      - /bin/my-script.sh\n  initialDelaySeconds: 60\n  timeoutSeconds: 10"
+    }
+}
+

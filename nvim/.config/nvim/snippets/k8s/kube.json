@@ -1,0 +1,55 @@
+{
+    "api_version": {
+        "prefix": "api",
+        "body": [
+            "apiVersion: ${api}",
+            "$0"
+        ],
+        "description": "apiVersion"
+    },
+    "api":{
+        "prefix": "apiVersion_v1",
+        "description": "Api v1",
+        "body": "apiVersion: v1"
+    },
+    
+    "ports_svc":{
+        "prefix": "ports_svc",
+        "description": "ports in services",
+        "body": "ports:\n- name: ${name: Port Name}\n  port: ${port: Port}\n  targetPort: ${target: Target port}"
+    },
+    "service_complete":{
+        "prefix": "service_complete",
+        "description": "template for a complete kubernetes service",
+        "body": "kind: Service\napiVersion: v1\nmetadata:\n  name: ${name: Service Name}\nspec:\n  selector:\n    app: ${selector: Selector Label}\n  type: ${type: LoadBalancer | ClusterIP | NodePort}\n  ports:\n  - name: ${portName: name-of-the-port}\n    port: ${port: 80}\n    targetPort: ${targetPort: 8080}"
+    },
+    "job":{
+        "prefix": "job",
+        "description": "kubernetes job",
+        "body": "apiVersion: batch/v1\nkind: Job\nmetadata:\n  name: ${name: name}\nspec:\n  template:\n    metadata:\n      name: ${name: name}\n    spec:\n      containers:"
+    },
+    "secret_for_registry":{
+        "body": "//kubectl create secret docker-registry NAME --docker-username=user --docker-password=password --docker-email=email [--docker-server=string] [--from-literal=key1=value1] [--dry-run] \n// dockerconfigjson is a base64 encoded string:  cat ~/.docker/config.json | base64 -w 0 \napiVersion: v1\nkind: Secret\nmetadata:\n  name: ${name: Name_of_the_Secret}\ndata:\n  .dockerconfigjson: ${secret: secret}\ntype: kubernetes.io/dockerconfigjson",
+        "prefix": "secret_for_registry",
+        "description": "complete secret to connect to private registry" 
+    },
+    "secret_template":{
+        "prefix": "secret_template",
+        "description": "Template to generate an opaque secret",
+        "body": "apiVersion: v1\nkind: Secret\nmetadata:\n  name: ${name: secretName}\ndata:\n  ${key: secretKey}: ${value: BASE64_ENCODED_VALUE}\ntype: Opaque"
+    },
+    "namespace":{
+        "prefix": "namespace",
+        "description": "Template to create a namespace",
+        "body": "apiVersion: v1\nkind: Namespace\nmetadata:\n	name: ${name: name}"
+    },
+        "serviceAccount":{
+        "prefix": "serviceAccount",
+        "description": "Template to create a ServiceAccount",
+        "body": "apiVersion: v1\nkind: ServiceAccount\nmetadata:\n	name: ${name: name}"
+    }
+}
+
+
+
+
