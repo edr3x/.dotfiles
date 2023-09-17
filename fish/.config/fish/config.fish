@@ -7,6 +7,7 @@ set fish_color_param '#04cc85'
 
 alias vi "nvim"
 alias vim "nvim"
+alias k "kubectl"
 alias e "thunar ."
 alias x "exit"
 alias c "clear"
