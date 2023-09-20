@@ -29,6 +29,7 @@ return {
         -- stylua: ignore
         section.buttons.val = {
             btn("o", " " .. " Current Session", "<cmd>lua require('persistence').load()<CR>"),
+            btn("t", " " .. " File Explorer", "<cmd>Oil<CR>"),
             btn("n", " " .. " New File", "<CMD>ene!<CR>"),
             btn("r", " " .. " Last Session", "<cmd>lua require('persistence').load({ last = true })<CR>"),
             btn("c", " " .. " Config", "<CMD>cd $HOME/.config/nvim | lua require('telescope.builtin').find_files()<CR>"),
