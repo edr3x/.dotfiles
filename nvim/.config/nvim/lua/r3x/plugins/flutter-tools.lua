@@ -14,8 +14,8 @@ return {
             widget_guides = { enabled = true, debug = false },
             dev_log = { enabled = true, open_cmd = "tabedit" },
             lsp = {
-                on_attach = require("r3x.handlers").on_attach,
-                capabilities = require("r3x.handlers").capabilities,
+                on_attach = require("r3x.lsp_settings").on_attach,
+                capabilities = require("cmp_nvim_lsp").default_capabilities(),
                 color = {
                     enabled = true,
                     background = true,
