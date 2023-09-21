@@ -82,9 +82,6 @@ end
 
 local opts = { noremap = true, silent = true }
 
-local cap = vim.lsp.protocol.make_client_capabilities()
-M.capabilities = require("cmp_nvim_lsp").default_capabilities(cap)
-
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
