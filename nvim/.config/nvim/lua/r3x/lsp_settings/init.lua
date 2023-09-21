@@ -1,5 +1,14 @@
 local M = {}
 
+-- language servers
+M.ts = require("r3x.lsp_settings.ts")
+M.go = require("r3x.lsp_settings.go")
+M.css = require("r3x.lsp_settings.css")
+M.lua = require("r3x.lsp_settings.lua")
+M.rust = require("r3x.lsp_settings.rust")
+M.yaml = require("r3x.lsp_settings.yaml")
+
+-- Handlers
 M.setup = function()
     local signs = {
         { name = "DiagnosticSignError", text = " " },
@@ -80,8 +89,6 @@ M.setup = function()
     vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 end
 
-local opts = { noremap = true, silent = true }
-
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
@@ -102,20 +109,22 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>de", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>df", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>di", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "i", "<M-t>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(
-        bufnr,
-        "n",
-        "<leader>ds",
-        "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>",
-        { desc = "Document symbols" }
-    )
+    local nmap = function(keys, func, desc)
+        if desc then
+            desc = "LSP: " .. desc
+        end
+        vim.keymap.set("n", keys, func, { buffer = bufnr, noremap = true, silent = true, desc = desc })
+    end
+
+    nmap("K", vim.lsp.buf.hover, "Open hover")
+    nmap("<leader>r", vim.lsp.buf.rename, "Rename")
+    nmap("<leader>ca", vim.lsp.buf.code_action, "Code action")
+    nmap("<leader>df", vim.lsp.buf.definition, "Goto definition")
+    nmap("<leader>de", vim.lsp.buf.declaration, "Goto declaration")
+    nmap("<leader>di", vim.lsp.buf.implementation, "Goto implementation")
+    nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "Document symbols")
+
+    vim.keymap.set("i", "<M-t>", vim.lsp.buf.signature_help, { buffer = bufnr })
 
     vim.api.nvim_buf_create_user_command(bufnr, "Fmt", function(_)
         vim.lsp.buf.format()

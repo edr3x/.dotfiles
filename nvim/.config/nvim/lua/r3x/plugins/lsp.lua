@@ -1,23 +1,11 @@
 return {
     {
-        "RRethy/vim-illuminate",
-        event = "LspAttach",
-        config = function()
-            require("illuminate").configure({
-                delay = 200,
-                large_file_cutoff = 2000,
-                large_file_overrides = {
-                    providers = { "lsp" },
-                },
-            })
-        end,
-    },
-    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "folke/neodev.nvim",
-            { "williamboman/mason.nvim", config = true },
+            "RRethy/vim-illuminate",
             "williamboman/mason-lspconfig.nvim",
+            { "williamboman/mason.nvim", config = true },
         },
         event = "BufReadPre",
         config = function()
@@ -25,7 +13,8 @@ return {
             local lspconfig = require("lspconfig")
             local mason_lspconfig = require("mason-lspconfig")
 
-            local on_attach = require("r3x.handlers").on_attach
+            local lsp_conf = require("r3x.lsp_settings")
+            local on_attach = require("r3x.lsp_settings").on_attach
             local cap = vim.lsp.protocol.make_client_capabilities()
             local capabilities = require("cmp_nvim_lsp").default_capabilities(cap)
 
@@ -34,15 +23,15 @@ return {
                 dockerls = {},
                 pyright = {},
                 clangd = {},
-                -- tailwindcss = {},
                 svelte = {},
+                -- tailwindcss = {},
+                gopls = lsp_conf.go,
+                cssls = lsp_conf.css,
+                lua_ls = lsp_conf.lua,
+                yamlls = lsp_conf.yaml,
+                tsserver = lsp_conf.ts,
+                rust_analyzer = lsp_conf.rust,
                 html = { filetypes = { "html", "hbs" } },
-                cssls = require("r3x.lsp_config.css"),
-                lua_ls = require("r3x.lsp_config.lua"),
-                tsserver = require("r3x.lsp_config.ts"),
-                rust_analyzer = require("r3x.lsp_config.rust"),
-                gopls = require("r3x.lsp_config.go"),
-                yamlls = require("r3x.lsp_config.yaml"),
             }
 
             mason_lspconfig.setup({
@@ -60,7 +49,15 @@ return {
                 end,
             })
 
-            require("r3x.handlers").setup()
+            require("r3x.lsp_settings").setup()
+
+            require("illuminate").configure({
+                delay = 200,
+                large_file_cutoff = 2000,
+                large_file_overrides = {
+                    providers = { "lsp" },
+                },
+            })
         end,
     },
     -- code formatters
