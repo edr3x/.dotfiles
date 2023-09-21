@@ -104,10 +104,9 @@ return {
                 },
             })
 
-            lspconfig["rust_analyzer"].setup({
+            lspconfig["rust_analyzer"].setup({ --TODO: `rustup component add rust-analyzer` to install LSP
                 on_attach = on_attach,
                 capabilities = capabilities,
-                cmd = { "rustup", "run", "stable", "rust-analyzer" }, --TODO: `rustup component add rust-analyzer` to install LSP
                 settings = {
                     ["rust-analyzer"] = {
                         procMacro = { enable = true },
@@ -208,41 +207,6 @@ return {
 
             require("r3x.handlers").setup()
         end,
-    },
-    -- inlay hints
-    {
-        "lvimuser/lsp-inlayhints.nvim",
-        event = "LspAttach",
-        keys = {
-            {
-                "<leader>lh",
-                function()
-                    require("lsp-inlayhints").toggle()
-                end,
-                desc = "Toggle inlay hints",
-            },
-        },
-        opts = {
-            inlay_hints = {
-                parameter_hints = {
-                    show = true,
-                    prefix = "<- ",
-                    separator = ", ",
-                    remove_colon_start = false,
-                    remove_colon_end = true,
-                },
-                type_hints = {
-                    show = true,
-                    prefix = " » ",
-                    separator = ", ",
-                    remove_colon_start = false,
-                    remove_colon_end = false,
-                },
-                only_current_line = false,
-                labels_separator = "  ", -- gap between type hints and parameter hints
-                highlight = "Comment", -- see `:highlight` for more options
-            },
-        },
     },
     -- code formatters
     {
