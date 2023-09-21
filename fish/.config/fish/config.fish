@@ -78,6 +78,7 @@ set PATH "$PATH":"$HOME/.cargo/env"
 set PATH "$PATH":"$HOME/.local/scripts/"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
+set PATH "$PATH":"$HOME/.local/share/bob/nvim-bin"
 
 # fnm
 set PATH "/home/r3x/.local/share/fnm" $PATH
