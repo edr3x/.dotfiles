@@ -8,30 +8,37 @@ set.nu = true
 set.relativenumber = true
 
 set.tabstop = 4
-set.softtabstop = 4
-set.shiftwidth = 4
-set.expandtab = true
-set.hlsearch = false
-set.incsearch = true
 set.scrolloff = 15
+set.shiftwidth = 4
+set.softtabstop = 4
+set.hlsearch = false
+set.expandtab = true
+set.incsearch = true
 
+set.showmode = false
 set.splitbelow = true
 set.splitright = true
-set.signcolumn = "yes"
-set.showmode = false
-set.ignorecase = true
 set.cursorline = true
+set.signcolumn = "yes"
+
+-- Case-insensitive searching UNLESS \C or capital in search
+set.smartcase = true
+set.ignorecase = true
 
 set.timeout = true
+set.updatetime = 300
 set.timeoutlen = 300
 
-set.smartindent = true
-set.wrap = false
-set.termguicolors = true
-set.list = false
+-- Better completion experience
+set.completeopt = "menuone,noselect"
 
-set.swapfile = false
+set.wrap = false
+set.list = false
+set.smartindent = true
+set.termguicolors = true
+
 set.backup = false
-set.undodir = os.getenv("HOME") .. "/.vim/undodir"
 set.undofile = true
+set.swapfile = false
 set.undolevels = 10000
+set.undodir = os.getenv("HOME") .. "/.vim/undodir"
