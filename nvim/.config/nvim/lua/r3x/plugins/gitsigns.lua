@@ -12,10 +12,10 @@ return {
     },
     opts = {
         signs = {
-            untracked = { text = "┆" },
             add = { text = " +" },
             change = { text = " " },
             delete = { text = " " },
+            untracked = { text = "┆" },
             topdelete = { text = " " },
             changedelete = { text = " " },
         },
@@ -30,15 +30,15 @@ return {
                 vim.keymap.set("v", keys, func, opts)
             end
 
-            vmap("ghs", function()
+            vmap("gs", function()
                 gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end, "Stage Selected")
 
-            vmap("ghu", function()
+            vmap("gu", function()
                 gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end, "Undo Staged")
 
-            vmap("ghr", function()
+            vmap("gr", function()
                 gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end, "Reset Selected")
         end,
