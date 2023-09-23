@@ -2,14 +2,14 @@ return {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
         "L3MON4D3/LuaSnip",
+        "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
         "js-everts/cmp-tailwind-colors",
     },
     config = function()
-        local luasnip = require("luasnip")
         local cmp = require("cmp")
+        local luasnip = require("luasnip")
 
         local kind_icons = {
             Text = "",
@@ -51,17 +51,19 @@ return {
                 end,
             },
             mapping = cmp.mapping.preset.insert({
+                ["<M-o>"] = cmp.mapping.scroll_docs(4),
+                ["<M-i>"] = cmp.mapping.scroll_docs(-4),
                 ["<M-k>"] = cmp.mapping.select_prev_item(),
                 ["<M-j>"] = cmp.mapping.select_next_item(),
-                ["<M-i>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-                ["<M-o>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
-                ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-                ["<C-y>"] = cmp.config.disable,
+                ["<C-Space>"] = cmp.mapping.complete({}),
                 ["<C-e>"] = cmp.mapping({
                     i = cmp.mapping.abort(),
                     c = cmp.mapping.close(),
                 }),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<CR>"] = cmp.mapping.confirm({
+                    select = true,
+                    behavior = cmp.ConfirmBehavior.Replace,
+                }),
             }),
             formatting = {
                 fields = { "kind", "abbr", "menu" },
@@ -76,7 +78,6 @@ return {
                     -- for tailwind colors
                     if vim_item.kind == "Color" then
                         vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
-
                         if vim_item.kind ~= "Color" then
                             vim_item.menu = "Color"
                             return vim_item
@@ -87,8 +88,6 @@ return {
                     return vim_item
                 end,
             },
-            preselect = cmp.PreselectMode.None,
-            completion = { completeopt = "noselect" },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
                 { name = "luasnip" },
@@ -102,10 +101,6 @@ return {
                 buffer = 1,
                 path = 1,
             },
-            confirm_opts = {
-                behavior = cmp.ConfirmBehavior.Replace,
-                select = false,
-            },
             window = {
                 completion = borderstyle,
                 documentation = borderstyle,
@@ -116,6 +111,8 @@ return {
             },
         })
 
-        require("luasnip/loaders/from_vscode").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
+        require("luasnip/loaders/from_vscode").lazy_load({
+            paths = vim.fn.stdpath("config") .. "/snippets",
+        })
     end,
 }
