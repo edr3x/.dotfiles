@@ -14,6 +14,7 @@ return {
         filetype_exclude = {
             "man",
             "help",
+            "dart",
             "lazy",
             "alpha",
             "aerial",
