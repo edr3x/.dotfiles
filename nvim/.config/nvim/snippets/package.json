@@ -19,10 +19,6 @@
                 "path": "./shell.json"
             },
             {
-                "language": "typescript",
-                "path": "./typescript.json"
-            },
-            {
                 "language": "rust",
                 "path": "./rust.json"
             },
@@ -39,40 +35,8 @@
                 "path": "./flutter/bloc.json"
             },
             {
-                "language": "c",
-                "path": "./c.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./cpp.json"
-            },
-            {
-                "language": "python",
-                "path": "./python/base.json"
-            },
-            {
-                "language": "python",
-                "path": "./python/comprehension.json"
-            },
-            {
-                "language": "python",
-                "path": "./python/debug.json"
-            },
-            {
-                "language": "python",
-                "path": "./python/python.json"
-            },
-            {
-                "language": "python",
-                "path": "./python/unittest.json"
-            },
-            {
                 "language": "json",
                 "path": "./json.json"
-            },
-            {
-                "language": "yaml",
-                "path": "./yaml.json"
             },
             {
                 "language": "yaml",
@@ -89,10 +53,6 @@
             {
                 "language": "yaml",
                 "path": "./k8s/deployment.json"
-            },
-            {
-                "language": "vue",
-                "path": "./vue.json"
             }
         ]
     }

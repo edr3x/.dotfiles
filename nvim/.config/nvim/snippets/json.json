@@ -1,9 +1,15 @@
 {
-    "pretteirrc": {
+    "prettierrc": {
         "prefix": "prettierrc",
         "body": [
-            "{\"trailingComma\": \"es5\", \"tabWidth\": 4, \"bracketSpacing\": true, \"semi\": true, \"singleQuote\": false }"
+            "{",
+            "    \"trailingComma\": \"es5\",",
+            "    \"tabWidth\": 4,",
+            "    \"bracketSpacing\": true,",
+            "    \"semi\": true,",
+            "    \"singleQuote\": false",
+            "}"
         ],
-        "description": "pretteirrc"
+        "description": "prettierrc"
     }
 }
