@@ -6,6 +6,7 @@ return {
         "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
         "js-everts/cmp-tailwind-colors",
+        "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function()
         local cmp = require("cmp")
@@ -90,6 +91,7 @@ return {
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "nvim_lsp_signature_help" },
                 { name = "luasnip" },
                 { name = "path" },
             }, {
