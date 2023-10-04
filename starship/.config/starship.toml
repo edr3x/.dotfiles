@@ -122,3 +122,6 @@ symbol = " "
 
 [rust]
 symbol = " "
+
+[terraform]
+symbol = "󱁢 "
