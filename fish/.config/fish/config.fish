@@ -1,32 +1,39 @@
 set fish_greeting
 set fish_color_normal brcyan
-set fish_color_autosuggestion '#7d7d7d'
 set fish_color_command brcyan
 set fish_color_error '#ff6c6b'
 set fish_color_param '#04cc85'
+set fish_color_autosuggestion '#7d7d7d'
 
+# me lazy
+alias c "clear"
+alias k "kubectl"
+alias t "terraform"
+alias x "exit"
 alias vi "nvim"
 alias vim "nvim"
-alias k "kubectl"
-alias e "thunar ."
-alias x "exit"
-alias c "clear"
 alias rm "trash"
 alias lf "lfimg"
 alias cc "clang"
 alias cxx "clang++"
-alias ls "exa -a --icons --group-directories-first"
-alias ll "exa -lah --icons --color automatic --no-user --no-time --git --group-directories-first"
-alias lt "exa -lh --icons --color automatic --no-user --git -T -L 4 --ignore-glob='.git|node_modules' --group-directories-first --no-permissions --no-filesize --no-time"
-alias .. "cd .."
-alias ... "cd ../.."
-alias .... "cd ../../.."
-alias ..... "cd ../../../.."
-alias cdd 'cd "$(fd -t d . | fzf)"'
+
+# utils
 alias dot "tmux-sessionizer ~/.dotfiles"
 alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
 alias scrkey "screenkey -s small --opacity 0.6 -p fixed -g 30%x7%+69%-2%"
 alias nodepurge "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+
+# directory aliases
+alias .. "cd .."
+alias ... "cd ../.."
+alias .... "cd ../../.."
+alias ..... "cd ../../../.."
+alias cdd 'cd "$(fd -t d . | fzf)"' # cd with steroids
+
+# better ls
+alias ls "exa -a --icons --group-directories-first"
+alias ll "exa -lah --icons --color automatic --no-user --no-time --git --group-directories-first"
+alias lt "exa -lh --icons --color automatic --no-user --git -T -L 4 --ignore-glob='.git|node_modules' --group-directories-first --no-permissions --no-filesize --no-time"
 
 # git
 alias gd "git diff"
@@ -38,9 +45,6 @@ alias fuckyou "git push --force"
 alias dps "docker ps"
 alias dcd "docker-compose down"
 alias dcu "docker-compose up -d"
-function dex
-    docker exec -it $argv bash
-end
 
 # Rick
 alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
@@ -75,14 +79,11 @@ set PATH "$PATH":"$HOME/go/bin"
 set PATH "$PATH":"$HOME/.bun/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
-set PATH "$PATH":"$HOME/.local/scripts/"
+set PATH "$PATH":"$HOME/.local/scripts"
+set PATH "$PATH":"$HOME/.local/share/fnm"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.local/share/bob/nvim-bin"
-
-# fnm
-set PATH "/home/r3x/.local/share/fnm" $PATH
-fnm env | source
 
 #pnpm
 alias p "pnpm"
@@ -95,4 +96,5 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export TERM="alacritty"
 
+fnm env | source
 starship init fish | source
