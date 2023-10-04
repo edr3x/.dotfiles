@@ -43,6 +43,7 @@ return {
                 "scss",
                 "svelte",
                 "sql",
+                "terraform",
                 "toml",
                 "tsx",
                 "typescript",

@@ -53,6 +53,10 @@
             {
                 "language": "yaml",
                 "path": "./k8s/deployment.json"
+            },
+            {
+                "language": "tf",
+                "path": ".terraform.json"
             }
         ]
     }
