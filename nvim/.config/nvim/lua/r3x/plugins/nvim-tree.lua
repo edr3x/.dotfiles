@@ -56,7 +56,6 @@ return {
                 number = false,
                 relativenumber = false,
                 signcolumn = "yes",
-                hide_root_folder = false,
                 side = "right",
                 float = {
                     enable = true,
@@ -72,9 +71,7 @@ return {
             },
             renderer = {
                 root_folder_modifier = ":~",
-                indent_markers = {
-                    enable = true,
-                },
+                indent_markers = { enable = true },
                 icons = {
                     glyphs = {
                         git = {

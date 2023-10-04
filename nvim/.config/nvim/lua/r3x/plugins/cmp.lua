@@ -1,12 +1,13 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = "LspAttach",
     dependencies = {
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
         "js-everts/cmp-tailwind-colors",
         "hrsh7th/cmp-nvim-lsp-signature-help",
+        { "stevearc/dressing.nvim", config = true },
     },
     config = function()
         local cmp = require("cmp")

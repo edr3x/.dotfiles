@@ -11,16 +11,6 @@ return {
         },
         opts = {},
     },
-    -- for better ui of code-actions
-    {
-        "stevearc/dressing.nvim",
-        event = "LspAttach",
-        opts = {
-            input = {
-                enabled = false,
-            },
-        },
-    },
     {
         "edr3x/lsp_lines.nvim",
         keys = {
