@@ -9,10 +9,7 @@ return {
         "nvim-treesitter/playground",
         "nvim-treesitter/nvim-treesitter-textobjects",
         "JoosepAlviste/nvim-ts-context-commentstring",
-        {
-            "nvim-treesitter/nvim-treesitter-context",
-            opts = {},
-        },
+        { "nvim-treesitter/nvim-treesitter-context", config = true },
     },
     ---@diagnostic disable
     config = function()
