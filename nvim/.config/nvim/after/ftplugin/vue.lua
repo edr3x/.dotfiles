@@ -1,6 +1,6 @@
 require("lspconfig")["volar"].setup({
-    on_attach = require("r3x.handlers").on_attach,
-    capabilities = require("r3x.handlers").capabilities,
+    on_attach = require("r3x.lsp_settings").on_attach,
+    capabilities = require("r3x.lsp_settings").capabilities,
     filetypes = {
         "typescript",
         "javascript",
