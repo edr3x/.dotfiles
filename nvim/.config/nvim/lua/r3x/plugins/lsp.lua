@@ -3,6 +3,7 @@ return {
         "neovim/nvim-lspconfig",
         dependencies = {
             "folke/neodev.nvim",
+            "folke/trouble.nvim",
             "RRethy/vim-illuminate",
             "williamboman/mason-lspconfig.nvim",
             { "williamboman/mason.nvim", config = true },
@@ -14,9 +15,6 @@ return {
             local mason_lspconfig = require("mason-lspconfig")
 
             local lsp_conf = require("r3x.lsp_settings")
-            local on_attach = require("r3x.lsp_settings").on_attach
-            local cap = vim.lsp.protocol.make_client_capabilities()
-            local capabilities = require("cmp_nvim_lsp").default_capabilities(cap)
 
             local servers = {
                 prismals = {},
@@ -42,15 +40,13 @@ return {
             mason_lspconfig.setup_handlers({
                 function(server_name)
                     lspconfig[server_name].setup({
-                        on_attach = on_attach,
-                        capabilities = capabilities,
+                        on_attach = lsp_conf.on_attach,
+                        capabilities = lsp_conf.capabilities,
                         settings = servers[server_name],
                         filetypes = (servers[server_name] or {}).filetypes,
                     })
                 end,
             })
-
-            require("r3x.lsp_settings").setup()
 
             require("illuminate").configure({
                 delay = 200,
@@ -59,6 +55,8 @@ return {
                     providers = { "lsp" },
                 },
             })
+
+            lsp_conf.setup()
         end,
     },
     -- code formatters

@@ -89,6 +89,8 @@ M.setup = function()
     vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 end
 
+M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
         client.server_capabilities.documentFormattingProvider = false
@@ -122,7 +124,16 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>df", vim.lsp.buf.definition, "Goto definition")
     nmap("<leader>de", vim.lsp.buf.declaration, "Goto declaration")
     nmap("<leader>di", vim.lsp.buf.implementation, "Goto implementation")
-    nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "Document symbols")
+
+    -- stylua: ignore start
+    nmap("<leader>tt", function() require("trouble").toggle() end, "Toggle Trouble")
+    nmap("<leader>tq", function() require("trouble").toggle("quickfix") end, "Quickfix List")
+    nmap("<leader>dr", function() require("trouble").toggle("lsp_references") end, "References")
+    nmap("<leader>dd", function() require("trouble").toggle("document_diagnostics") end, "Document Diagnostics")
+    nmap("<leader>dw", function() require("trouble").toggle("workspace_diagnostics") end, "Workspace Diagnostics")
+    -- stylua: ignore end
+
+    nmap("<leader>ds", "<cmd>vsp | lua vim.lsp.buf.definition()<cr>", "Goto definition (split)")
 
     vim.keymap.set("i", "<M-t>", vim.lsp.buf.signature_help, { buffer = bufnr })
 
