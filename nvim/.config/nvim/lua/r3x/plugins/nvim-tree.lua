@@ -57,17 +57,17 @@ return {
                 relativenumber = false,
                 signcolumn = "yes",
                 side = "right",
-                float = {
-                    enable = true,
-                    open_win_config = {
-                        relative = "editor",
-                        border = "rounded",
-                        width = 120,
-                        height = 35,
-                        row = 5,
-                        col = 75,
-                    },
-                },
+                -- float = {
+                --     enable = true,
+                --     open_win_config = {
+                --         relative = "editor",
+                --         border = "rounded",
+                --         width = 120,
+                --         height = 35,
+                --         row = 5,
+                --         col = 75,
+                --     },
+                -- },
             },
             renderer = {
                 root_folder_modifier = ":~",

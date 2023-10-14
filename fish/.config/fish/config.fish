@@ -8,7 +8,6 @@ set fish_color_autosuggestion '#7d7d7d'
 # me lazy
 alias c "clear"
 alias k "kubectl"
-alias t "terraform"
 alias x "exit"
 alias vi "nvim"
 alias vim "nvim"
@@ -16,6 +15,7 @@ alias rm "trash"
 alias lf "lfimg"
 alias cc "clang"
 alias cxx "clang++"
+alias tf "terraform"
 
 # utils
 alias dot "tmux-sessionizer ~/.dotfiles"
@@ -32,7 +32,7 @@ alias cdd 'cd "$(fd -t d . | fzf)"' # cd with steroids
 
 # better ls
 alias ls "exa -a --icons --group-directories-first"
-alias ll "exa -lah --icons --color automatic --no-user --no-time --git --group-directories-first"
+alias ll "exa -lah --icons --color automatic --no-time --git --group-directories-first"
 alias lt "exa -lh --icons --color automatic --no-user --git -T -L 4 --ignore-glob='.git|node_modules' --group-directories-first --no-permissions --no-filesize --no-time"
 
 # git
@@ -95,6 +95,7 @@ set -gx PATH "$PNPM_HOME" $PATH
 export VISUAL="nvim"
 export EDITOR="nvim"
 export TERM="alacritty"
+export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
 
 fnm env | source
 starship init fish | source
