@@ -31,4 +31,9 @@ return {
             { "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undotree" },
         },
     },
+    {
+        "stevearc/dressing.nvim",
+        event = "BufReadPre",
+        config = true,
+    },
 }

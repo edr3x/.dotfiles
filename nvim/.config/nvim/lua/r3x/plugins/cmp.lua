@@ -7,7 +7,6 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "js-everts/cmp-tailwind-colors",
         "hrsh7th/cmp-nvim-lsp-signature-help",
-        { "stevearc/dressing.nvim", config = true },
     },
     config = function()
         local cmp = require("cmp")
