@@ -126,11 +126,12 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>di", vim.lsp.buf.implementation, "Goto implementation")
 
     -- stylua: ignore start
-    nmap("<leader>tt", function() require("trouble").toggle() end, "Toggle Trouble")
-    nmap("<leader>tq", function() require("trouble").toggle("quickfix") end, "Quickfix List")
-    nmap("<leader>dr", function() require("trouble").toggle("lsp_references") end, "References")
-    nmap("<leader>dd", function() require("trouble").toggle("document_diagnostics") end, "Document Diagnostics")
-    nmap("<leader>dw", function() require("trouble").toggle("workspace_diagnostics") end, "Workspace Diagnostics")
+    local trouble = require("trouble").toggle
+    nmap("<leader>tt", function() trouble() end, "Toggle Trouble")
+    nmap("<leader>tq", function() trouble("quickfix") end, "Quickfix List")
+    nmap("<leader>dr", function() trouble("lsp_references") end, "References")
+    nmap("<leader>dd", function() trouble("document_diagnostics") end, "Document Diagnostics")
+    nmap("<leader>dw", function() trouble("workspace_diagnostics") end, "Workspace Diagnostics")
     -- stylua: ignore end
 
     nmap("<leader>ds", "<cmd>vsp | lua vim.lsp.buf.definition()<cr>", "Goto definition (split)")
