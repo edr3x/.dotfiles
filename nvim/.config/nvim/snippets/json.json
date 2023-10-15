@@ -3,11 +3,15 @@
         "prefix": "prettierrc",
         "body": [
             "{",
-            "    \"trailingComma\": \"es5\",",
-            "    \"tabWidth\": 4,",
-            "    \"bracketSpacing\": true,",
             "    \"semi\": true,",
-            "    \"singleQuote\": false",
+            "    \"tabWidth\": 4,",
+            "    \"useTabs\": false,",
+            "    \"printWidth\": 120,",
+            "    \"singleQuote\": false,",
+            "    \"bracketSpacing\": true,",
+            "    \"trailingComma\": \"all\",",
+            "    \"arrowParens\": \"always\",",
+            "    \"embeddedLanguageFormatting\": \"auto\"",
             "}"
         ],
         "description": "prettierrc"
