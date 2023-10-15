@@ -95,7 +95,7 @@ set -gx PATH "$PNPM_HOME" $PATH
 export VISUAL="nvim"
 export EDITOR="nvim"
 export TERM="alacritty"
-export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
+export KUBECONFIG="$HOME/.kube/config"
 
 fnm env | source
 starship init fish | source
