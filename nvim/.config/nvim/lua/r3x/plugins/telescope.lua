@@ -18,6 +18,7 @@ return {
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
     },
     opts = function()
+        local trouble = require("trouble.providers.telescope")
         local delta = require("telescope.previewers").new_termopen_previewer({
             get_command = function(entry)
                 if entry.status == "??" or "A " then
@@ -41,6 +42,10 @@ return {
                 mappings = {
                     n = {
                         ["dd"] = "delete_buffer",
+                        ["<a-t>"] = trouble.open_with_trouble,
+                    },
+                    i = {
+                        ["<a-t>"] = trouble.open_with_trouble,
                     },
                 },
                 prompt_prefix = "   ",
