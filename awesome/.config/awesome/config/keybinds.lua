@@ -68,13 +68,13 @@ awful.keyboard.append_global_keybindings({
         { description = "Take a screenshot of entire screen", group = "screenshot" }
     ),
     awful.key({}, "Print", scrot_selection, { description = "Take a screenshot of selection", group = "screenshot" }),
+
     awful.key(
-        { "Shift" },
+        { "Control" },
         "Print",
-        scrot_window,
-        { description = "Take a screenshot of focused window", group = "screenshot" }
+        scrot_selection_and_edit,
+        { description = "Take a screenshot of selection and edit", group = "screenshot" }
     ),
-    awful.key({ "Ctrl" }, "Print", scrot_delay, { description = "Take a screenshot of delay", group = "screenshot" }),
 
     -- Display
     awful.key({ modkey, "Control" }, "p", function()

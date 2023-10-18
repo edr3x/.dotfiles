@@ -16,7 +16,7 @@
 
 - `xclip` : for clip
 
-- `scrot` : for screenshot
+- `flameshot` : for screenshot
 
 - `acpi` : for battery
 
