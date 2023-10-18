@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+print_usage() {
+    echo " Usage: $0 <file_name>"
+    echo " file_name: Common Name for the root certificate"
+    echo " Example: $0 api.local"
+}
+
+if [ "$#" -ne 1 ]; then
+    echo "Error: Missing required argument."
+    print_usage
+    exit 1
+fi
+
+file_name="$1"
+
+# Create root key
+openssl genrsa -des3 -out "$file_name.key" 4096
+
+# Create and self-sign the Root Certificate
+openssl req -x509 -new -nodes -key "$file_name.key" -sha256 -days 1024 -out "$file_name.crt"
+
+echo "Root certificate generated successfully."

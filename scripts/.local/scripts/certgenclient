@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+print_usage() {
+    echo "Usage: certgenclient -f <filename> -c <rootCA.crt> -k <rootCA.key>"
+    echo "Options:"
+    echo "  -f : Output filename (without extension)"
+    echo "  -c : Relative path to root CA certificate"
+    echo "  -k : Relative path to root CA key"
+    echo "  -h : Display this help message"
+}
+
+while getopts "f:c:k:h" opt; do
+    case "$opt" in
+        f) filename="$OPTARG" ;;
+        c) rootCA_crt="$OPTARG" ;;
+        k) rootCA_key="$OPTARG" ;;
+        h) print_usage
+           exit 0
+           ;;
+        \?) echo "Invalid option: -$OPTARG" >&2
+            print_usage
+            exit 1
+            ;;
+    esac
+done
+
+if [ -z "$filename" ] || [ -z "$rootCA_crt" ] || [ -z "$rootCA_key" ]; then
+    echo "Error: Missing required arguments."
+    print_usage
+    exit 1
+fi
+
+openssl genrsa -out "$filename.key" 2048
+
+openssl req -new -sha256 -key "$filename.key" -subj "/C=US/ST=CA/O=MyOrg, Inc./CN=$filename" -out "$filename.csr"
+
+openssl x509 -req -in "$filename.csr" -CA "$rootCA_crt" -CAkey "$rootCA_key" -CAcreateserial -out "$filename.crt" -days 500 -sha256
+
+echo "Certificates generated successfully."
