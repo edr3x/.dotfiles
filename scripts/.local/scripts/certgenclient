@@ -30,10 +30,13 @@ if [ -z "$filename" ] || [ -z "$rootCA_crt" ] || [ -z "$rootCA_key" ]; then
     exit 1
 fi
 
+# Create api key for domain
 openssl genrsa -out "$filename.key" 2048
 
+# Create csr from the generated key 
 openssl req -new -sha256 -key "$filename.key" -subj "/C=US/ST=CA/O=MyOrg, Inc./CN=$filename" -out "$filename.csr"
 
+# Sign the csr with root CA and generate the certificate
 openssl x509 -req -in "$filename.csr" -CA "$rootCA_crt" -CAkey "$rootCA_key" -CAcreateserial -out "$filename.crt" -days 500 -sha256
 
 echo "Certificates generated successfully."
