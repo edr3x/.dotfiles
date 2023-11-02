@@ -12,7 +12,6 @@ return {
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "List Opened Buffers" },
         { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "List buffer diagnostics" },
         { "<leader>fs", "<cmd>Telescope symbols<CR>", desc = "List symbols" },
-        { "<leader>fc", "<cmd>Telescope flutter commands<CR>", desc = "Flutter Commands" },
         { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Git status" },
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
