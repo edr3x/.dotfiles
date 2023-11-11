@@ -7,14 +7,16 @@ return {
     },
     opts = {
         delete_to_trash = true,
-        default_file_explorer = false,
+        default_file_explorer = true,
         skip_confirm_for_simple_edits = true,
         view_options = { show_hidden = true },
         keymaps = {
-            ["<C-v>"] = "actions.select_vsplit",
-            ["<C-x>"] = "actions.select_split",
-            ["<A-w>"] = "actions.preview",
+            ["<C-s>"] = false,
+            ["<C-h>"] = false,
             ["<A-d>"] = "actions.close",
+            ["<A-w>"] = "actions.preview",
+            ["<C-x>"] = "actions.select_split",
+            ["<C-v>"] = "actions.select_vsplit",
         },
     },
 }
