@@ -9,6 +9,7 @@ return {
         { "<leader>ff", "<cmd>Telescope find_files<CR>", desc = "Find Files" },
         { "<leader>fg", "<cmd>Telescope live_grep<CR>", desc = "Find texts" },
         { "<leader>fh", "<cmd>Telescope help_tags<CR>", desc = "Find Help tags" },
+        { "<leader>fr", "<cmd>Telescope resume<CR>", desc = "Resume last search" },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "List Opened Buffers" },
         { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "List buffer diagnostics" },
         { "<leader>fs", "<cmd>Telescope symbols<CR>", desc = "List symbols" },
