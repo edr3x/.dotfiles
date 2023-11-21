@@ -16,6 +16,7 @@ alias lf "lfimg"
 alias cc "clang"
 alias cxx "clang++"
 alias tf "terraform"
+alias unset 'set --erase'
 
 # utils
 alias dot "tmux-sessionizer ~/.dotfiles"
