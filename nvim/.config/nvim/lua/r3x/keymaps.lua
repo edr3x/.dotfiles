@@ -1,6 +1,8 @@
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
+vim.api.nvim_create_user_command("E", "Oil", { desc = "Open Oil instead of NetRW" })
+
 -- center screen
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
