@@ -78,7 +78,6 @@ disabled = true
 disabled = true
 
 [aws]
-disabled= true
 symbol = "  "
 
 [c]
