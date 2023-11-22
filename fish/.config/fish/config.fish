@@ -33,8 +33,8 @@ alias cdd 'cd "$(fd -t d . | fzf)"' # cd with steroids
 
 # better ls
 alias ls "exa -a --icons --group-directories-first"
-alias ll "exa -lah --icons --color automatic --no-time --git --group-directories-first"
-alias lt "exa -lh --icons --color automatic --no-user --git -T -L 4 --ignore-glob='.git|node_modules' --group-directories-first --no-permissions --no-filesize --no-time"
+alias ll "exa -lah --icons --no-time --git --group-directories-first"
+alias lt "exa -lh --icons --no-user --git -T -L 4 --ignore-glob='.git|node_modules' --group-directories-first --no-permissions --no-filesize --no-time"
 
 # git
 alias gd "git diff"
