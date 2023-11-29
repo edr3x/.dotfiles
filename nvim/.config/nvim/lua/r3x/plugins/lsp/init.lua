@@ -13,7 +13,7 @@ return {
     },
     -- code formatters
     {
-        "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
         event = "LspAttach",
         config = function()
             local nls = require("null-ls")
