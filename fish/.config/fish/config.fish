@@ -24,6 +24,11 @@ alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
 alias scrkey "screenkey -s small --opacity 0.6 -p fixed -g 30%x7%+69%-2%"
 alias nodepurge "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
 
+# assume cli
+alias ac="source /usr/local/bin/assume.fish -c"
+alias at="source /usr/local/bin/assume.fish -t"
+alias assume="source /usr/local/bin/assume.fish"
+
 # directory aliases
 alias .. "cd .."
 alias ... "cd ../.."
