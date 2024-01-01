@@ -9,7 +9,6 @@ return function()
         prismals = {},
         dockerls = {},
         pyright = {},
-        clangd = {},
         svelte = {},
         -- tailwindcss = {},
         gopls = lsp_conf.go,
