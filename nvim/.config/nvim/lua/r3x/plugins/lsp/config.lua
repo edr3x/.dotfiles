@@ -36,6 +36,15 @@ return function()
         end,
     })
 
+    lspconfig.clangd.setup({
+        on_attach = require("r3x.plugins.lsp.settings").on_attach,
+        capabilities = require("r3x.plugins.lsp.settings").capabilities,
+        cmd = {
+            "clangd",
+            "--offset-encoding=utf-16",
+        },
+    })
+
     require("illuminate").configure({
         delay = 200,
         large_file_cutoff = 2000,
