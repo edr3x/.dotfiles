@@ -13,6 +13,7 @@ return {
         keymaps = {
             ["<C-s>"] = false,
             ["<C-h>"] = false,
+            ["<C-l>"] = false,
             ["<A-d>"] = "actions.close",
             ["<A-w>"] = "actions.preview",
             ["<C-x>"] = "actions.select_split",
