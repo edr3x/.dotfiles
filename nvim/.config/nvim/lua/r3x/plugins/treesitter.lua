@@ -23,6 +23,7 @@ return {
                 "fish",
                 "go",
                 "graphql",
+                "hcl",
                 "html",
                 "java",
                 "javascript",
