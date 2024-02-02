@@ -63,10 +63,20 @@ M.setup = function()
         end,
     })
 
-    -- format on save
-    vim.api.nvim_create_autocmd("BufWritePre", {
+    -- ignore some filetypes on format on save
+    vim.api.nvim_create_autocmd("FileType", {
+        pattern = "*",
         callback = function()
-            vim.lsp.buf.format()
+            if vim.bo.filetype == "html" then
+                return
+            end
+
+            -- format on save
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                callback = function()
+                    vim.lsp.buf.format()
+                end,
+            })
         end,
     })
 
