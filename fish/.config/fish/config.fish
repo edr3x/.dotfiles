@@ -18,6 +18,9 @@ alias cxx "clang++"
 alias tf "terraform"
 alias unset 'set --erase'
 
+# change ownership of file to oneself
+alias own 'sudo chown $(id -u):$(id -g)'
+
 # utils
 alias dot "tmux-sessionizer ~/.dotfiles"
 alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
