@@ -21,6 +21,9 @@ alias unset 'set --erase'
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
 
+# get only status code from curl response
+alias cures 'curl -I -s -o /dev/null -w "%{http_code}"'
+
 # utils
 alias dot "tmux-sessionizer ~/.dotfiles"
 alias fetch "neofetch --config ~/.config/neofetch/config.old.conf"
