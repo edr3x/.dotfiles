@@ -10,7 +10,7 @@ else
         ~/projects/work/webpoint \
         ~/projects/of_all_things \
         ~/projects/of_all_things/playground \
-        -mindepth 1 -maxdepth 1 -type d | fzf)
+        -mindepth 1 -maxdepth 1 -type d | fzf --prompt="Select project: " --height=~80% --layout=reverse --border --exit-0)
 fi
 
 if [[ -z $selected ]]; then
