@@ -7,8 +7,12 @@ return {
         cmd = { "G", "Git" },
     },
     {
-        "github/copilot.vim",
-        event = "BufReadPre",
+        "Exafunction/codeium.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+        },
+        opts = {},
     },
     {
         "andweeb/presence.nvim",

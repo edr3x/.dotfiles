@@ -85,12 +85,20 @@ return {
                         end
                     end
 
+                    -- for codeium
+                    if vim_item.kind == "Codeium" then
+                        vim_item.menu = "[󱚤 ]"
+                        vim_item.kind = " "
+                        return vim_item
+                    end
+
                     vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                     return vim_item
                 end,
             },
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
+                { name = "codeium" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "luasnip" },
                 { name = "path" },
