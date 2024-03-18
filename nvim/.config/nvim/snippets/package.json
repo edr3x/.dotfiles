@@ -27,6 +27,10 @@
                 "path": "./go.json"
             },
             {
+                "language": "html",
+                "path": "./html.json"
+            },
+            {
                 "language": "dart",
                 "path": "./flutter/dart.json"
             },
