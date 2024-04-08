@@ -80,6 +80,10 @@ disabled = true
 [aws]
 symbol = "  "
 
+[kubernetes]
+format = '[󱃾 $context \($namespace\)](#7dfa94) '
+disabled = false
+
 [c]
 symbol = " "
 
