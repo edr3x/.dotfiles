@@ -19,6 +19,7 @@ alias tf "terraform"
 alias unset 'set --erase'
 alias kctx 'kubectx'
 alias ssh "TERM=xterm-256color $(which ssh)"
+alias kns "kubens | fzf --prompt='Select namespace: ' --height=~50% --layout=reverse --border | xargs kubens"
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
