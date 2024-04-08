@@ -17,6 +17,8 @@ alias cc "clang"
 alias cxx "clang++"
 alias tf "terraform"
 alias unset 'set --erase'
+alias kctx 'kubectx'
+alias ssh "TERM=xterm-256color $(which ssh)"
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
@@ -63,7 +65,7 @@ alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/m
 
 # TMUX
 alias tls  "tmux ls"              # lists currently running sessions
-alias ta   "tmux a -t "           # attach to any of running session ( specify session name after this command )
+alias ta   "tmux a"               # attach to any of running session
 alias tnew "tmux new -s"          # creates new tmux session
 alias tkl  "tmux kill-server"     # kills all tmux sessions
 alias tk1  "tmux kill-session -t" # kill specific running session ( specify session name after this command )
