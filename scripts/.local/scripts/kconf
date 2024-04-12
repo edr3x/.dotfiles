@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+#-------------------------------------------------
+# ------------ kconf ------------------
+# author: github.com/razzkumar
+#-------------------------------------------------
+
+# Disclaimer
+# must put all k8s configs inside ~/.kube/conf/ before running this script 
+
+unset KUBECONFIG
+
+export KUBECONFIG=$(find ~/.kube/conf/ -type f | tr '\n' ':')
+
+kubectl config view --flatten > ~/.kube/flatten-kubeconfig.yaml
+
+cp ~/.kube/flatten-kubeconfig.yaml ~/.kube/config
+
+chmod 600 ~/.kube/config
+
+export KUBECONFIG=~/.kube/config
+
+kubectx
