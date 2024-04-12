@@ -10,11 +10,7 @@
 
 unset KUBECONFIG
 
-export KUBECONFIG=$(find ~/.kube/conf/ -type f | tr '\n' ':')
-
-kubectl config view --flatten > ~/.kube/flatten-kubeconfig.yaml
-
-cp ~/.kube/flatten-kubeconfig.yaml ~/.kube/config
+KUBECONFIG=$(find ~/.kube/conf/ -type f | tr '\n' ':') kubectl config view --flatten > ~/.kube/config 
 
 chmod 600 ~/.kube/config
 
