@@ -38,6 +38,10 @@ map("n", "<M-l>", "<cmd>bnext<CR>", opts)
 -- map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Close current buffer" })
 map("n", "<leader>ba", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but not current one" })
 
+-- navigate around quickfix list
+map("n", "<C-n>", "<cmd>cnext<CR>", opts)
+map("n", "<C-p>", "<cmd>cprev<CR>", opts)
+
 -- avoid vim register for some operations
 map("n", "x", [["_x]], opts)
 map("x", "p", [["_dP]], opts)
