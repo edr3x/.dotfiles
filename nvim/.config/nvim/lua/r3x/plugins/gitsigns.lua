@@ -34,7 +34,7 @@ return {
                 gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end, "Stage Selected")
 
-            vmap("gu", function()
+            vmap("gz", function()
                 gs.undo_stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
             end, "Undo Staged")
 
