@@ -1,37 +1,6 @@
-local awful = require("awful")
 local gears = require("gears")
-local beautiful = require("beautiful")
-local xresources = require("beautiful.xresources")
-local dpi = xresources.apply_dpi
-local wibox = require("wibox")
 
 local helpers = {}
-
-function helpers.contains(_table, _c)
-    for _, c in ipairs(_table) do
-        if _c == c then
-            return true
-        end
-    end
-    return false
-end
-
-function helpers.find(rule)
-    local function matcher(c)
-        return awful.rules.match(c, rule)
-    end
-
-    local clients = client.get()
-    local findex = gears.table.hasitem(clients, client.focus) or 1
-    local start = gears.math.cycle(#clients, findex + 1)
-
-    local matches = {}
-    for c in awful.client.iterate(matcher, start) do
-        matches[#matches + 1] = c
-    end
-
-    return matches
-end
 
 -- Create rounded rectangle shape (in one line)
 helpers.rrect = function(radius)
@@ -84,53 +53,6 @@ function helpers.colorize_text(txt, fg)
     return "<span foreground='" .. fg .. "'>" .. txt .. "</span>"
 end
 
-function helpers.client_menu_toggle()
-    local instance = nil
-
-    return function()
-        if instance and instance.wibox.visible then
-            instance:hide()
-            instance = nil
-        else
-            instance = awful.menu.clients({ theme = { width = dpi(250) } })
-        end
-    end
-end
-
--- Escapes a string so that it can be displayed inside pango markup
--- tags. Modified from:
--- https://github.com/kernelsauce/turbo/blob/master/turbo/escape.lua
-function helpers.pango_escape(s)
-    return (string.gsub(s, "[&<>]", { ["&"] = "&amp;", ["<"] = "&lt;", [">"] = "&gt;" }))
-end
-
-function helpers.vertical_pad(height)
-    return wibox.widget({
-        forced_height = height,
-        layout = wibox.layout.fixed.vertical,
-    })
-end
-
-function helpers.horizontal_pad(width)
-    return wibox.widget({
-        forced_width = width,
-        layout = wibox.layout.fixed.horizontal,
-    })
-end
-
--- Maximizes client and also respects gaps
-function helpers.maximize(c)
-    c.maximized = not c.maximized
-    if c.maximized then
-        awful.placement.maximize(c, {
-            honor_padding = true,
-            honor_workarea = true,
-            margins = beautiful.useless_gap * 2,
-        })
-    end
-    c:raise()
-end
-
 function helpers.add_hover_cursor(w, hover_cursor)
     local original_cursor = "left_ptr"
 
@@ -153,40 +75,6 @@ end
 function helpers.round(number, decimals)
     local power = 10 ^ decimals
     return math.floor(number * power) / power
-end
-
-function helpers.run_or_raise(match, move, spawn_cmd, spawn_args)
-    local matcher = function(c)
-        return awful.rules.match(c, match)
-    end
-
-    -- Find and raise
-    local found = false
-    for c in awful.client.iterate(matcher) do
-        found = true
-        c.minimized = false
-        if move then
-            c:move_to_tag(mouse.screen.selected_tag)
-            client.focus = c
-        else
-            c:jump_to()
-        end
-        break
-    end
-
-    -- Spawn if not found
-    if not found then
-        awful.spawn(spawn_cmd, spawn_args)
-    end
-end
-
-function helpers.scratchpad(match, spawn_cmd, spawn_args)
-    local cf = client.focus
-    if cf and awful.rules.match(cf, match) then
-        cf.minimized = true
-    else
-        helpers.run_or_raise(match, true, spawn_cmd, spawn_args)
-    end
 end
 
 return helpers

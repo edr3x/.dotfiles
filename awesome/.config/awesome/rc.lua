@@ -49,9 +49,6 @@ require("ui.bar")
 
 -- notifications
 require("ui.notifications")
-
--- popup
-require("ui.popup.action")
 --}}}
 
 -- Enable sloppy focus, so that focus follows mouse.

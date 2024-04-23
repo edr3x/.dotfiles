@@ -1,5 +1,6 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local gears = require("gears")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
@@ -30,16 +31,6 @@ local time = wibox.widget({
 
 helpers.add_hover_cursor(time, "hand1")
 
-local action_icon = require("ui.gooey").make_button({
-    icon = "bell2",
-    width = 34,
-    margins = 6.9,
-    hover = true,
-    exec = function()
-        F.action.toggle()
-    end,
-})
-
 -- Battery
 battery = require("config.battery")
 
@@ -52,12 +43,10 @@ function battery_update()
 end
 
 battery_update()
-battery_timer = timer({ timeout = 10 })
+battery_timer = gears.timer({ timeout = 10 })
 battery_timer:connect_signal("timeout", battery_update)
 battery_timer:start()
 --
-
-helpers.add_hover_cursor(action_icon, "hand1")
 
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag(
@@ -193,8 +182,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
                         margins = dpi(9.7),
                         widget = wibox.container.margin,
                     },
+                    {
+                        { widget = wibox.widget.systray() },
+                        layout = wibox.layout.flex.horizontal,
+                        spacing = 15,
+                    },
                     battery_widget,
-                    action_icon,
                     layout = wibox.layout.fixed.horizontal,
                 },
             },
