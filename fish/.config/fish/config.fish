@@ -17,9 +17,8 @@ alias cc "clang"
 alias cxx "clang++"
 alias tf "terraform"
 alias unset 'set --erase'
-alias kctx 'kubectx'
 alias ssh "TERM=xterm-256color $(which ssh)"
-alias kns "kubens | fzf --prompt='Select namespace: ' --height=~50% --layout=reverse --border | xargs kubens"
+
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
@@ -60,6 +59,10 @@ alias fuckyou "git push --force"
 alias dps "docker ps"
 alias dcd "docker-compose down"
 alias dcu "docker-compose up -d"
+
+# kubernetes
+alias kns "kubens | fzf --prompt='Select namespace: ' --height=~50% --layout=reverse --border | xargs kubens"
+alias kctx "kubectx | fzf --prompt='Select context: ' --height=~50% --layout=reverse --border | xargs kubectx"
 
 # Rick
 alias rick "curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash"
