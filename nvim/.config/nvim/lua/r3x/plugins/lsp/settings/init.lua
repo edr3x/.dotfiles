@@ -15,17 +15,6 @@ M.on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
     end
 
-    if client.name == "volar" then
-        local active_clients = vim.lsp.get_active_clients()
-        client.server_capabilities.documentFormattingProvider = false
-        for _, client_ in pairs(active_clients) do
-            -- prevent tsserver from starting if volar is already active
-            if client_.name == "tsserver" then
-                client_.stop()
-            end
-        end
-    end
-
     if client.name == "lua_ls" then
         client.server_capabilities.documentFormattingProvider = false
     end
