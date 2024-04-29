@@ -12,10 +12,11 @@ return {
         { "<leader>fr", "<cmd>Telescope resume<CR>", desc = "Resume last search" },
         { "<leader>fb", "<cmd>Telescope buffers<CR>", desc = "List Opened Buffers" },
         { "<leader>fd", "<cmd>Telescope diagnostics<CR>", desc = "List buffer diagnostics" },
-        { "<leader>fs", "<cmd>Telescope symbols<CR>", desc = "List symbols" },
+        { "<leader>fe", "<cmd>Telescope symbols<CR>", desc = "List emoji" },
         { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "Git status" },
         { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "Git status" },
         { "<leader>gt", "<cmd>Telescope git_branches<CR>", desc = "Git branches" },
+        { "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", desc = "List lsp symbols" },
     },
     opts = function()
         local trouble = require("trouble.providers.telescope")

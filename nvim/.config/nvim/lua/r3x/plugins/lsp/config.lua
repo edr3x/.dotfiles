@@ -6,20 +6,20 @@ return function()
     local lsp_conf = require("r3x.plugins.lsp.settings")
 
     local servers = {
-        prismals = {},
-        dockerls = {},
-        pyright = {},
-        svelte = {},
-        bufls = {},
-        htmx = {},
+        -- prismals = {},
+        -- dockerls = {},
+        -- pyright = {},
+        -- svelte = {},
+        -- bufls = {},
+        -- htmx = {},
         -- tailwincss = {},
         gopls = lsp_conf.go,
-        cssls = lsp_conf.css,
+        -- cssls = lsp_conf.css,
         lua_ls = lsp_conf.lua,
         yamlls = lsp_conf.yaml,
         tsserver = lsp_conf.ts,
         rust_analyzer = lsp_conf.rust,
-        html = { filetypes = { "html", "hbs" } },
+        -- html = { filetypes = { "html", "hbs" } },
         terraformls = { filetypes = { "terraform", "tf" } },
     }
 
