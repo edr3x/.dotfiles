@@ -6,14 +6,14 @@ return {
         "tpope/vim-fugitive",
         cmd = { "G", "Git" },
     },
-    {
-        "Exafunction/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        opts = {},
-    },
+    -- {
+    --     "Exafunction/codeium.nvim",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    --     opts = {},
+    -- },
     {
         "andweeb/presence.nvim",
         event = "BufReadPre",
