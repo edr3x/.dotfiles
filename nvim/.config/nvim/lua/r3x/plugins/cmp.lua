@@ -5,7 +5,6 @@ return {
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp",
         "saadparwaiz1/cmp_luasnip",
-        "js-everts/cmp-tailwind-colors",
         "hrsh7th/cmp-nvim-lsp-signature-help",
     },
     config = function()
@@ -75,15 +74,6 @@ return {
                         buffer = "[Buff]",
                         path = "[Path]",
                     })[entry.source.name]
-
-                    -- for tailwind colors
-                    if vim_item.kind == "Color" then
-                        vim_item = require("cmp-tailwind-colors").format(entry, vim_item)
-                        if vim_item.kind ~= "Color" then
-                            vim_item.menu = "Color"
-                            return vim_item
-                        end
-                    end
 
                     -- for codeium
                     -- if vim_item.kind == "Codeium" then
