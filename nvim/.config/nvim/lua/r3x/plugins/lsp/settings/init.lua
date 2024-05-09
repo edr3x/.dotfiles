@@ -42,7 +42,8 @@ M.on_attach = function(client, bufnr)
     nmap("<leader>dw", function() trouble("workspace_diagnostics") end, "Workspace Diagnostics")
     -- stylua: ignore end
 
-    nmap("<leader>ds", "<cmd>vsp | lua vim.lsp.buf.definition()<cr>", "Goto definition (split)")
+    nmap("<leader>ds", "<cmd>vs | lua vim.lsp.buf.definition()<cr>", "Goto definition (v-split)")
+    nmap("<leader>dh", "<cmd>sp | lua vim.lsp.buf.definition()<cr>", "Goto definition (h-split)")
 
     vim.keymap.set("i", "<M-t>", vim.lsp.buf.signature_help, { buffer = bufnr })
 

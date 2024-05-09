@@ -10,7 +10,7 @@ return function()
         -- dockerls = {},
         -- pyright = {},
         -- svelte = {},
-        -- bufls = {},
+        bufls = {},
         -- htmx = {},
         -- tailwincss = {},
         gopls = lsp_conf.go,
@@ -38,14 +38,14 @@ return function()
         end,
     })
 
-    lspconfig.clangd.setup({
-        on_attach = require("r3x.plugins.lsp.settings").on_attach,
-        capabilities = require("r3x.plugins.lsp.settings").capabilities,
-        cmd = {
-            "clangd",
-            "--offset-encoding=utf-16",
-        },
-    })
+    -- lspconfig.clangd.setup({
+    --     on_attach = require("r3x.plugins.lsp.settings").on_attach,
+    --     capabilities = require("r3x.plugins.lsp.settings").capabilities,
+    --     cmd = {
+    --         "clangd",
+    --         "--offset-encoding=utf-16",
+    --     },
+    -- })
 
     require("illuminate").configure({
         delay = 200,
