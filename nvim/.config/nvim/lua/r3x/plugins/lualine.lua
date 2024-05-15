@@ -84,7 +84,7 @@ return {
                 lualine_b = { "branch" },
                 lualine_c = { buffer },
                 lualine_x = { lsp_progress, diff, diagnostic },
-                lualine_y = { lspStatus, "filetype" },
+                lualine_y = { lspStatus, "filetype", "location" },
                 lualine_z = { "progress" },
             },
         }

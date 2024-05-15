@@ -111,6 +111,14 @@ return {
             },
         })
 
+        -- Setup up vim-dadbod
+        cmp.setup.filetype({ "sql" }, {
+            sources = {
+                { name = "vim-dadbod-completion" },
+                { name = "buffer" },
+            },
+        })
+
         require("luasnip/loaders/from_vscode").lazy_load({
             paths = vim.fn.stdpath("config") .. "/snippets",
         })

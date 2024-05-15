@@ -20,7 +20,6 @@ return {
     },
     {
         "kylechui/nvim-surround",
-        event = "BufReadPre",
         version = "*",
         opts = {},
     },

@@ -51,6 +51,8 @@ map({ "n", "x" }, "<leader>y", [["+y]], opts) -- copy to system clipboard
 map({ "n", "x" }, "<leader>p", [["+p]], opts) -- paste from system clipboard
 map("n", "YY", "va{Vy", opts)
 
+map("n", "<S-Tab>", "<cmd>tabNext<CR>") -- cycle between tabs
+
 -- split resize
 map("n", "<C-Up>", ":resize -2<CR>", opts)
 map("n", "<C-Down>", ":resize +2<CR>", opts)
