@@ -5,9 +5,6 @@ return {
         require("nvim-treesitter.install").update({ with_sync = true })
     end or ":TSUpdate",
     dependencies = {
-        "windwp/nvim-ts-autotag",
-        "nvim-treesitter/playground",
-        "nvim-treesitter/nvim-treesitter-textobjects",
         { "nvim-treesitter/nvim-treesitter-context", config = true },
     },
     ---@diagnostic disable
@@ -54,20 +51,6 @@ return {
             autotag = {
                 enable = true,
             },
-            textobjects = {
-                select = {
-                    enable = true,
-                    lookahead = true,
-                    keymaps = {
-                        ["aa"] = "@parameter.outer",
-                        ["ia"] = "@parameter.inner",
-                        ["af"] = "@function.outer",
-                        ["if"] = "@function.inner",
-                        ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
-                    },
-                },
-            },
             highlight = {
                 enable = true,
                 extended_mode = true,
@@ -88,9 +71,6 @@ return {
                     scope_incremental = "<c-s>",
                     node_decremental = "<c-backspace>",
                 },
-            },
-            playground = {
-                enable = true,
             },
             query_linter = {
                 enable = true,

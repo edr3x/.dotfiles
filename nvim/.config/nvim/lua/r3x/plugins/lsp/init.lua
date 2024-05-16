@@ -29,4 +29,9 @@ return {
             })
         end,
     },
+    -- Lsp notifications
+    {
+        "j-hui/fidget.nvim",
+        opts = {},
+    },
 }

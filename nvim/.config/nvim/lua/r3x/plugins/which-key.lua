@@ -24,8 +24,7 @@ return {
             f = { name = "Telescope" },
             g = { name = "Git" },
             l = { name = "LSP" },
-            m = { name = "Minimap and md" },
-            n = { name = "Tree prefix", t = "tree" },
+            m = { name = "Markdown" },
             s = { name = "Search and replace current highlight" },
             t = { name = "Trouble" },
         }, { prefix = "<leader>" })

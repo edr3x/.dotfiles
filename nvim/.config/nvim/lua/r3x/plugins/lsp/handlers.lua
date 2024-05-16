@@ -25,7 +25,7 @@ M.setup = function()
             focusable = true,
             style = "minimal",
             border = "rounded",
-            source = "always",
+            source = true,
             header = "",
             prefix = "",
         },
@@ -44,7 +44,7 @@ M.setup = function()
         underline = true,
         virtual_text = {
             spacing = 5,
-            severity_limit = "Hint",
+            severity_limit = vim.diagnostic.severity.HINT,
         },
         update_in_insert = true,
     })
@@ -71,11 +71,11 @@ M.setup = function()
     })
 
     -- inlay hints
-    if vim.lsp.inlay_hint then
-        vim.keymap.set("n", "<leader>lh", function()
-            vim.lsp.inlay_hint(0, nil)
-        end, { desc = "Toggle inlay hints" })
-    end
+    local inlay_hints_enabled = false
+    vim.keymap.set("n", "<leader>lh", function()
+        inlay_hints_enabled = not inlay_hints_enabled
+        vim.lsp.inlay_hint.enable(inlay_hints_enabled)
+    end, { desc = "Toggle inlay hints" })
 
     vim.cmd([[autocmd FileType * set formatoptions-=ro]])
 end
