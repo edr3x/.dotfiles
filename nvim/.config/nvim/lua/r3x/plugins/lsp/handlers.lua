@@ -68,10 +68,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- inlay hints
-local inlay_hints_enabled = false
 vim.keymap.set("n", "<leader>lh", function()
-    inlay_hints_enabled = not inlay_hints_enabled
-    vim.lsp.inlay_hint.enable(inlay_hints_enabled)
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }))
 end, { desc = "Toggle inlay hints" })
 
 vim.cmd([[autocmd FileType * set formatoptions-=ro]])
