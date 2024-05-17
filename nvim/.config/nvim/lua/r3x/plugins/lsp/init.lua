@@ -9,7 +9,11 @@ return {
             { "williamboman/mason.nvim", config = true },
         },
         event = "BufReadPre",
-        config = require("r3x.plugins.lsp.config"),
+        config = function()
+            require("neodev").setup()
+            require("r3x.plugins.lsp.config")
+            require("r3x.plugins.lsp.handlers")
+        end,
     },
     -- code formatters
     {

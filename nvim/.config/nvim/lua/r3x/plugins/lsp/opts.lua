@@ -1,13 +1,5 @@
 local M = {}
 
--- language servers
-M.ts = require("r3x.plugins.lsp.settings.ts")
-M.go = require("r3x.plugins.lsp.settings.go")
-M.css = require("r3x.plugins.lsp.settings.css")
-M.lua = require("r3x.plugins.lsp.settings.lua")
-M.rust = require("r3x.plugins.lsp.settings.rust")
-M.yaml = require("r3x.plugins.lsp.settings.yaml")
-
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 M.on_attach = function(client, bufnr)
@@ -50,6 +42,14 @@ M.on_attach = function(client, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, "Fmt", function(_)
         vim.lsp.buf.format()
     end, { desc = "Format current buffer with LSP" })
+
+    require("illuminate").configure({
+        delay = 200,
+        large_file_cutoff = 2000,
+        large_file_overrides = {
+            providers = { "lsp" },
+        },
+    })
 
     require("illuminate").on_attach(client)
 end
