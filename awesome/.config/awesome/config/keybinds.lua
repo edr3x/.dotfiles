@@ -12,6 +12,10 @@ awful.keyboard.append_global_keybindings({
         awful.util.spawn("wezterm")
     end, { description = "open wezterm", group = "launcher" }),
 
+    awful.key({ modkey }, "c", function()
+        awful.util.spawn("clipboard")
+    end, { description = "open clipmenu", group = "launcher" }),
+
     awful.key({ altkey }, "Return", function()
         awful.util.spawn("rofi -show drun")
     end, { description = "run prompt", group = "launcher" }),

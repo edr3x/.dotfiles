@@ -24,7 +24,7 @@
 ## Installing
 
 ```bash
-sudo pacman -S alacritty fish neofetch neovim picom btop rofi starship tmux stow git-delta
+sudo pacman -S alacritty fish neofetch neovim picom btop rofi clipmenu starship tmux stow git-delta
 ```
 
 You will need `git` and GNU `stow`
