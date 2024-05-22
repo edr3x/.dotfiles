@@ -22,6 +22,6 @@ end)
 
 client.connect_signal("manage", function(c)
     c.shape = function(cr, w, h)
-        gears.shape.rounded_rect(cr, w, h, 0)
+        gears.shape.rounded_rect(cr, w, h, 8)
     end
 end)

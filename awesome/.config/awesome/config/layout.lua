@@ -1,7 +1,6 @@
 local awful = require("awful")
 
-tag.connect_signal("request::default_layouts", function()
-    awful.layout.append_default_layouts({
+awful.layout.layouts = {
         awful.layout.suit.fair,
         awful.layout.suit.tile.bottom,
         awful.layout.suit.spiral,
@@ -15,5 +14,4 @@ tag.connect_signal("request::default_layouts", function()
         --awful.layout.suit.max.fullscreen,
         --awful.layout.suit.magnifier,
         --awful.layout.suit.corner.nw,
-    })
-end)
+}

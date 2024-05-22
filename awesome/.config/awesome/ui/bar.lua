@@ -133,7 +133,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         visible = true,
         height = dpi(38),
         width = s.geometry.width - dpi(30),
-        shape = helpers.rrect(0),
+        shape = helpers.rrect(8),
         screen = s,
     })
 
