@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+encode() {
+  local input="$1"
+  if [ -z "$input" ]; then
+    input=$(cat)
+  fi
+  echo -n "$input" | base64 -w0 | tr '+/' '-_' | tr -d '='
+}
+
+decode() {
+  local input="$1"
+  if [ -z "$input" ]; then
+    input=$(cat)
+  fi
+  local len=$(( ${#input} % 4 ))
+  if [ $len -eq 2 ]; then input="${input}=="
+  elif [ $len -eq 3 ]; then input="${input}="
+  fi
+  echo -n "$input" | tr '_-' '/+' | base64 -d
+}
+
+if [ "$1" == "-d" ]; then
+  if [ -n "$2" ]; then
+    decode "$2"
+  else
+    decode
+  fi
+else
+  if [ -n "$1" ]; then
+    encode "$1"
+  else
+    encode
+  fi
+fi
