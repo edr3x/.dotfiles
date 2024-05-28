@@ -26,6 +26,7 @@ return {
                 debug = false,
                 sources = {
                     nls.builtins.formatting.stylua,
+                    nls.builtins.diagnostics.yamllint,
                     nls.builtins.formatting.prettierd.with({
                         disabled_filetypes = { "markdown", "yaml" },
                     }),
