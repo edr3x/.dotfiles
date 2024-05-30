@@ -20,16 +20,10 @@
 
 - `acpi` : for battery
 
-- `network-manager-applet` : for network
+- `nm-connection-editor` : for network
 
 - `blueman` : for [bluetooth](https://wiki.archlinux.org/title/bluetooth#Installation)
 
 - `pulseaudio-bluetooth` : for bluetooth speakers
 
 - `arandr` : for multi monitor config
-
-### For awesomeness
-
-```sh
-git clone https://github.com/andOrlando/rubato.git ~/.config/awesome/lib/rubato
-```

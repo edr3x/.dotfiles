@@ -1,52 +1,17 @@
 local awful = require("awful")
 local wibox = require("wibox")
-local gears = require("gears")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 
--- Keyboard map indicator and switcher
-mykeyboardlayout = awful.widget.keyboardlayout()
-
--- Text clock
-local time = wibox.widget({
-    widget = wibox.container.background,
-    bg = beautiful.bg_normal,
-    buttons = {
-        awful.button({}, 1, function()
-            require("ui.popup.calender")()
-        end),
-    },
-    {
-        widget = wibox.container.margin,
-        margins = 10,
-        {
-            widget = wibox.widget.textclock("%l:%M %p"),
-            font = beautiful.font_name .. " Bold 11",
-            align = "center",
-        },
-    },
-})
-
-helpers.add_hover_cursor(time, "hand1")
-
--- Battery
-battery = require("config.battery")
-
-battery_widget = wibox.widget.textbox()
-battery_widget:set_align("right")
-battery_closure = battery.closure()
-
-function battery_update()
-    battery_widget:set_text(" " .. battery_closure() .. " ")
+--{{ Battery
+local battery_widget = wibox.widget.textbox()
+local function update_battery_widget(widget, stdout)
+    widget:set_markup(stdout)
 end
-
-battery_update()
-battery_timer = gears.timer({ timeout = 10 })
-battery_timer:connect_signal("timeout", battery_update)
-battery_timer:start()
---
+awful.widget.watch("battery-status", 10, update_battery_widget, battery_widget)
+--}}
 
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag(
@@ -171,23 +136,26 @@ screen.connect_signal("request::desktop_decoration", function(s)
             {
                 layout = wibox.layout.align.horizontal,
                 expand = "none",
+                -- tags
                 {
                     s.mytaglist,
                     margins = dpi(2),
                     widget = wibox.container.margin,
                 },
-                time,
+                -- clock
                 {
+                    widget = wibox.widget.textclock("%l:%M %p"),
+                    font = beautiful.font_name .. " Bold 11",
+                    align = "center",
+                },
+                -- systray
+                {
+                    wibox.widget.systray(),
                     {
-                        margins = dpi(9.7),
-                        widget = wibox.container.margin,
+                        widget = battery_widget,
+                        font = beautiful.font_name .. " Bold 11",
+                        align = "center",
                     },
-                    {
-                        { widget = wibox.widget.systray() },
-                        layout = wibox.layout.flex.horizontal,
-                        spacing = 15,
-                    },
-                    battery_widget,
                     layout = wibox.layout.fixed.horizontal,
                 },
             },
