@@ -10,7 +10,18 @@ local battery_widget = wibox.widget.textbox()
 local function update_battery_widget(widget, stdout)
     widget:set_markup(stdout)
 end
+
 awful.widget.watch("battery-status", 10, update_battery_widget, battery_widget)
+
+local battery_status = {
+    widget = wibox.container.margin,
+    {
+        widget = battery_widget,
+        font = beautiful.font_name .. " Bold 11",
+        align = "center",
+    },
+    left = 10,
+}
 --}}
 
 screen.connect_signal("request::desktop_decoration", function(s)
@@ -151,11 +162,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 -- systray
                 {
                     wibox.widget.systray(),
-                    {
-                        widget = battery_widget,
-                        font = beautiful.font_name .. " Bold 11",
-                        align = "center",
-                    },
+                    battery_status,
                     layout = wibox.layout.fixed.horizontal,
                 },
             },
