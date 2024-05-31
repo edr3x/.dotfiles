@@ -20,7 +20,7 @@ decode() {
   echo -n "$input" | tr '_-' '/+' | base64 -d
 }
 
-if [ "$1" == "-d" ]; then
+if [ "$1" == "-d" ] || [ "$1" == "--decode" ]; then
   if [ -n "$2" ]; then
     decode "$2"
   else
