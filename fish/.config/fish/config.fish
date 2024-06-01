@@ -42,7 +42,7 @@ alias .. "cd .."
 alias ... "cd ../.."
 alias .... "cd ../../.."
 alias ..... "cd ../../../.."
-alias cdd 'cd "$(fd -t d . | fzf)"' # cd with steroids
+alias cdd 'cd "$(fd -t d . | fzf --prompt="Select directory to jump: " --height=~30% --layout=reverse --border --exit-0)"' # cd with steroids
 
 # better ls
 alias ls "exa -a --icons --group-directories-first"
