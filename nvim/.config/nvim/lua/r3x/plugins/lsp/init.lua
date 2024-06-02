@@ -26,7 +26,9 @@ return {
                 debug = false,
                 sources = {
                     nls.builtins.formatting.stylua,
-                    nls.builtins.diagnostics.yamllint,
+                    nls.builtins.diagnostics.yamllint.with({
+                        args = require("r3x.plugins.lsp.lang.yamllint"),
+                    }),
                     nls.builtins.formatting.prettierd.with({
                         disabled_filetypes = { "markdown", "yaml" },
                     }),
