@@ -4,7 +4,9 @@ local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
-local battary_arc = require("config.batteryarc")
+
+local battary_arc = require("widgets.batteryarc")
+local todo_widget = require("widgets.todo")
 
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag(
@@ -143,6 +145,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 },
                 -- systray
                 {
+                    todo_widget(),
                     wibox.widget.systray(),
                     battary_arc({
                         show_current_level = true,
