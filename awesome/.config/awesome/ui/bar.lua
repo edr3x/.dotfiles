@@ -149,6 +149,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     wibox.widget.systray(),
                     battary_arc({
                         show_current_level = true,
+                        show_notification_mode = "on_click",
                     }),
                     layout = wibox.layout.fixed.horizontal,
                 },
