@@ -1,0 +1,9 @@
+[status]
+separator_open  = ""
+separator_close = ""
+separator_style = { fg = "black", bg = "black" }
+
+# Mode
+mode_normal = { fg = "#89DDFF", bg = "black", bold = true }
+mode_select = { fg = "#89DDFF", bg = "black", bold = true }
+mode_unset  = { fg = "#89DDFF", bg = "black", bold = true }

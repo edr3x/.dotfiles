@@ -1,0 +1,8 @@
+[manager]
+ratio = [1, 2, 3]
+sort_dir_first = true
+show_symlink = true
+
+[preview]
+max_width = 1000
+image_quality = 70
