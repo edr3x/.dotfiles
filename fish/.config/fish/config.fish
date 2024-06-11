@@ -12,13 +12,12 @@ alias x "exit"
 alias vi "nvim"
 alias vim "nvim"
 alias rm "trash"
-alias lf "lfimg"
+alias lf "yazi"
 alias cc "clang"
 alias cxx "clang++"
 alias tf "terraform"
 alias unset 'set --erase'
 alias ssh "TERM=xterm-256color $(which ssh)"
-
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
