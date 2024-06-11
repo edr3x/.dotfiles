@@ -1,9 +1,12 @@
 [status]
 separator_open  = ""
 separator_close = ""
-separator_style = { fg = "black", bg = "black" }
+separator_style = { fg = "reset", bg = "reset" }
 
 # Mode
-mode_normal = { fg = "#89DDFF", bg = "black", bold = true }
-mode_select = { fg = "#89DDFF", bg = "black", bold = true }
-mode_unset  = { fg = "#89DDFF", bg = "black", bold = true }
+mode_normal = { fg = "#89DDFF", bg = "reset" }
+mode_select = { fg = "#e78a4e", bg = "reset" }
+mode_unset  = { fg = "#e78a4e", bg = "reset" }
+
+[manager]
+border_symbol = " "
