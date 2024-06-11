@@ -3,9 +3,12 @@ local colors = {
 	background = "#000000",
 	cursor_bg = "#c0caf5",
 	cursor_border = "#c0caf5",
-	cursor_fg = "#000000",
-	selection_bg = "#ffffff",
-	selection_fg = "#000000",
+	cursor_fg = "#1a1b26",
+	selection_bg = "#283457",
+	selection_fg = "#c0caf5",
+	split = "#7aa2f7",
+	compose_cursor = "#ff9e64",
+	scrollbar_thumb = "#292e42",
 
 	ansi = {
 		"#15161e", -- black

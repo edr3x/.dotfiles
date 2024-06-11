@@ -10,7 +10,7 @@ return {
 
 	font_size = 11,
 	font = wezterm.font_with_fallback({
-		"Fira Code Nerd Font",
+		{ family = "Fira Code Nerd Font", weight = "Regular" },
 		"Caskaydia Cove Nerd Font",
 		"Iosevka Nerd Font",
 	}),
