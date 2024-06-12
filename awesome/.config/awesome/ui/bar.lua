@@ -8,6 +8,29 @@ local helpers = require("helpers")
 local battary_arc = require("widgets.batteryarc")
 local todo_widget = require("widgets.todo")
 
+local calender = require("widgets.calender")()
+
+local time = wibox.widget({
+    widget = wibox.container.background,
+    bg = beautiful.bg_normal,
+    buttons = {
+        awful.button({}, 1, function()
+            calender.toggle()
+        end),
+    },
+    {
+        widget = wibox.container.margin,
+        margins = 10,
+        {
+            widget = wibox.widget.textclock("%l:%M %p"),
+            font = beautiful.font_name .. " Bold 11",
+            align = "center",
+        },
+    },
+})
+
+helpers.add_hover_cursor(time, "hand1")
+
 screen.connect_signal("request::desktop_decoration", function(s)
     awful.tag(
         { " ", "  ", " 󰙯 ", "  ", " 󰘳 ", "  ", " 󱙋 ", " 󱘗 ", "  " },
@@ -138,11 +161,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     widget = wibox.container.margin,
                 },
                 -- clock
-                {
-                    widget = wibox.widget.textclock("%l:%M %p"),
-                    font = beautiful.font_name .. " Bold 11",
-                    align = "center",
-                },
+                time,
                 -- systray
                 {
                     todo_widget(),
