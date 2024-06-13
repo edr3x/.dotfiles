@@ -6,3 +6,8 @@ show_symlink = true
 [preview]
 max_width = 1000
 image_quality = 70
+
+[open]
+prepend_rules = [
+    { mime = "video/*", use = "open" },
+]
