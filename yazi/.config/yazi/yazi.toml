@@ -7,6 +7,11 @@ show_symlink = true
 max_width = 1000
 image_quality = 70
 
+[opener]
+open = [
+	{ run = 'xdg-open "$@"', block = false, desc = "Open" },
+]
+
 [open]
 prepend_rules = [
     { mime = "video/*", use = "open" },
