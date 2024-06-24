@@ -24,6 +24,10 @@ awful.keyboard.append_global_keybindings({
         awful.util.spawn("Thunar")
     end, { description = "run Thunar", group = "launcher" }),
 
+    awful.key({ "Control", altkey, "Shift" }, "l", function()
+        awful.util.spawn("lock")
+    end, { description = "lock screen", group = "launcher" }),
+
     awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show hotkeys", group = "awesome" }),
 
     awful.key({ modkey }, "w", function()
