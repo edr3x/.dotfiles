@@ -4,8 +4,11 @@
 image=$(mktemp --tmpdir --suffix=.png lock.XXXXXXXXXX)
 trap 'rm -f "$image"' SIGINT SIGTERM EXIT
 
+# Adjust the blur strength
+blur_strength=4
+
 maim -u -m 1 \
-    | magick png:- -scale 40% -scale 250% \
+    | magick png:- -blur 0x$blur_strength \
     -fill "#282828" -colorize 10% \
     "$image"
 
@@ -19,23 +22,23 @@ i3lock \
     --ringver-color=FABD2FFF \
     --ringwrong-color=FB4934FF \
     --separator-color=282828FF \
-    --line-color=EBDBB2FF \
+    --line-color=8cedffFF \
     --keyhl-color=EBDBB2FF \
     --bshl-color=FB4934FF \
     --ring-width=4 \
     --radius=32 \
     --ind-pos="x+w/2:y+h/2" \
-    --time-color=A89984FF \
+    --time-color=8cedffFF \
     --time-pos='ix-180:iy+12' \
     --time-pos='ix-r-50:iy+12' \
-    --time-str='%H:%M:%S' \
+    --time-str='%I:%M:%S %p' \
     --time-font='monospace' \
     --time-align=2 \
     --time-size=32 \
-    --date-color=A89984FF \
+    --date-color=8cedffFF \
     --date-pos='ix+180:iy+12' \
     --date-pos='ix+r+50:iy+12' \
-    --date-str='%d.%m' \
+    --date-str='%d %B %Y' \
     --date-font='monospace' \
     --date-align=1 \
     --date-size=32 \
