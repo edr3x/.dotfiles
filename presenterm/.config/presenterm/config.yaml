@@ -1,0 +1,34 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mfontanini/presenterm/master/config-file-schema.json
+defaults:
+  # override the terminal font size when in windows or when using sixel.
+  terminal_font_size: 16
+
+  # the theme to use by default in every presentation unless overridden.
+  theme: dark
+
+  # the image protocol to use.
+  image_protocol: kitty-local
+
+options:
+  # whether slides are automatically terminated when a slide title is found.
+  implicit_slide_ends: false
+
+  # the prefix to use for commands.
+  command_prefix: ""
+
+  # show all lists incrementally, by implicitly adding pauses in between elements.
+  incremental_lists: false
+
+  # this option tells presenterm you don't care about extra parameters in
+  # presentation's front matter. This can be useful if you're trying to load a
+  # presentation made for another tool
+  strict_front_matter_parsing: true
+
+  # whether to treat a thematic break as a slide end.
+  end_slide_shorthand: false
+snippet:
+  exec:
+    enable: true
+  render:
+    threads: 2
