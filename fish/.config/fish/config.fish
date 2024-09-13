@@ -18,6 +18,7 @@ alias cxx "clang++"
 alias tf "terraform"
 alias unset 'set --erase'
 alias ssh "TERM=xterm-256color $(which ssh)"
+alias xclip "xclip -selection clipboard"
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
@@ -79,6 +80,8 @@ bind \cf "tmux-sessionizer"
 # Path variables
 set PATH "$PATH":"$HOME/go/bin"
 set PATH "$PATH":"$HOME/.bun/bin"
+set PATH "$PATH":"$HOME/.krew/bin"
+set PATH "$PATH":"$HOME/.local/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
 set PATH "$PATH":"$HOME/.local/scripts"
