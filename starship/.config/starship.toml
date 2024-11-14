@@ -81,7 +81,7 @@ time_format = '%I:%M %p'
 disabled = true
 
 [aws]
-symbol = " "
+symbol = "  "
 
 [kubernetes]
 format = '[󱃾 $context \($namespace\)](#7dfa94) '

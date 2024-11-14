@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+session=$(tmux list-sessions -F "#{session_name}" | fzf --prompt="Select tmux session: " --height=~80% --layout=reverse --border --exit-0)
+
+# If a session was selected, switch to it
+if [ -n "$session" ]; then
+  tmux switch-client -t "$session"
+else
+  echo "No session selected."
+fi
