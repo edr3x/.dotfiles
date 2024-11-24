@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+svc=$1
+if [ -z "$svc" ]; then
+    echo "Usage: $0 <service-name>"
+    exit 1
+fi
+
+aws ecr describe-images --repository-name $svc --query 'imageDetails[*].[imagePushedAt, imageTags]' --output json | jq -r '. | sort_by(.[0]) | reverse | .[:10] | map(select(.[1] != null)) | .[] | "\(.[])"'
