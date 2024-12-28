@@ -1,0 +1,17 @@
+foreground = c0caf5
+background = 000000
+
+theme = tokyonight
+
+window-decoration = false
+background-opacity = 0.47
+
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+font-size = 15
+font-family = "Fira Code Nerd Font"
+font-family-bold = "Fira Code Nerd Font"
+font-family-italic = "Iosevka Nerd Font"
+font-family-bold-italic = "Iosevka Nerd Font"
