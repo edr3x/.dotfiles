@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <container_id>"
+  exit 1
+fi
+
+CONTAINER_ID=$1
+
+TOTAL_CPUS=$(nproc)
+
+CPU_USAGE=$(docker stats --no-stream --format "{{.CPUPerc}}" $CONTAINER_ID | tr -d '%')
+
+ABSOLUTE_CPU_USAGE=$(echo "$CPU_USAGE * $TOTAL_CPUS / 100" | bc -l)
+
+echo "Usage: $ABSOLUTE_CPU_USAGE%"

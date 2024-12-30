@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <container-id>"
+  exit 1
+fi
+
+CONTAINER_ID=$1
+
+CPU_PERCENT=$(docker stats $CONTAINER_ID --no-stream --format "{{.CPUPerc}}" | tr -d '%')
+
+echo "CPU_PERCENT: $CPU_PERCENT"
+
+if [ -z "$CPU_PERCENT" ]; then
+  echo "Could not retrieve CPU usage for container $CONTAINER_ID"
+  exit 1
+fi
+
+TOTAL_CORES=$(nproc)
+
+echo "TOTAL_CORES: $TOTAL_CORES"
+
+TOTAL_CAPACITY=$(echo "$TOTAL_CORES * 100" | bc)
+
+echo "TOTAL_CAPACITY: $TOTAL_CAPACITY"
+
+ABSOLUTE_CPU_USAGE=$(echo "scale=2; $CPU_PERCENT / 100 * $TOTAL_CAPACITY" | bc)
+
+echo "Absolute CPU usage of container $CONTAINER_ID: $ABSOLUTE_CPU_USAGE CPU units"

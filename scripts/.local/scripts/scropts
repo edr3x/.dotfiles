@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-laptop_display="eDP-1"
-external_display="HDMI-1"
+laptop_display="eDP1"
+external_display="HDMI1"
 
 duplicate="Duplicate"
 extend_top="Extend top"
