@@ -38,11 +38,14 @@ alias ac="source /usr/local/bin/assume.fish -c"
 alias at="source /usr/local/bin/assume.fish -t"
 alias assume="source /usr/local/bin/assume.fish"
 
-# directory aliases
-alias .. "cd .."
-alias ... "cd ../.."
-alias .... "cd ../../.."
-alias ..... "cd ../../../.."
+# abbreviation for cd .. alias
+function multicd
+    set -l length (math (string length -- $argv) - 1)
+    echo cd (string repeat -n $length ../)
+end
+
+abbr --add dotdot --regex '^\.\.+$' --function multicd
+
 alias cdd 'cd "$(fd -t d . | fzf --prompt="Select directory to jump: " --height=~30% --layout=reverse --border --exit-0)"' # cd with steroids
 
 # better ls
