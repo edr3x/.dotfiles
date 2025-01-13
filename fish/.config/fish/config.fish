@@ -57,6 +57,7 @@ alias lt "exa -lh --icons --no-user --git -T -L 4 --ignore-glob='.git|node_modul
 alias gd "git diff"
 alias gs "git status"
 alias ggpush "git push"
+alias ggpull "git pull --rebase"
 alias fuckyou "git push --force"
 
 # docker
