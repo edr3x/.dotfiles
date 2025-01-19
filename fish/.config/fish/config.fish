@@ -95,7 +95,12 @@ set PATH "$PATH":"$HOME/.dev/flutter/bin"
 set PATH "$PATH":"$HOME/.dev/android-studio/bin"
 set PATH "$PATH":"$HOME/.local/share/bob/nvim-bin"
 
-#pnpm
+# node stuffs
+set FNM_PATH "/home/r3x/.local/share/fnm"
+if [ -d "$FNM_PATH" ]
+  set PATH "$FNM_PATH" $PATH
+  fnm env | source
+end
 alias p "pnpm"
 alias px "pnpx"
 set -gx PNPM_HOME "/home/r3x/.local/share/pnpm"
@@ -107,5 +112,4 @@ export EDITOR="nvim"
 export TERM="alacritty"
 export KUBECONFIG="$HOME/.kube/config"
 
-fnm env | source
 starship init fish | source
