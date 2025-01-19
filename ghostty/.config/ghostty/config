@@ -10,6 +10,11 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 
+# disable all font ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
 font-size = 13
 font-family = "Fira Code Nerd Font"
 font-family-bold = "Fira Code Nerd Font"
