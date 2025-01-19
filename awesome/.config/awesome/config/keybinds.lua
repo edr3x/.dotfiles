@@ -6,11 +6,11 @@ require("config.screenshot")
 awful.keyboard.append_global_keybindings({
     awful.key({ modkey }, "Return", function()
         awful.spawn(terminal)
-    end, { description = "open a terminal", group = "launcher" }),
+    end, { description = "open default terminal", group = "launcher" }),
 
     awful.key({ modkey, "Control" }, "Return", function()
-        awful.util.spawn("wezterm")
-    end, { description = "open wezterm", group = "launcher" }),
+        awful.util.spawn("ghostty")
+    end, { description = "open ghostty", group = "launcher" }),
 
     awful.key({ modkey }, "c", function()
         awful.util.spawn("clipboard")
