@@ -82,6 +82,10 @@ alias tk1  "tmux kill-session -t" # kill specific running session ( specify sess
 # sessionizer script
 bind \cf "tmux-sessionizer"
 
+# arrow left and right on alt + h/l
+bind \eh backward-char
+bind \el forward-char
+
 # Path variables
 set PATH "$PATH":"$HOME/go/bin"
 set PATH "$PATH":"$HOME/.bun/bin"
@@ -89,6 +93,7 @@ set PATH "$PATH":"$HOME/.krew/bin"
 set PATH "$PATH":"$HOME/.local/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
+set PATH "$PATH":"$HOME/.linkerd2/bin"
 set PATH "$PATH":"$HOME/.local/scripts"
 set PATH "$PATH":"$HOME/.local/share/fnm"
 set PATH "$PATH":"$HOME/.dev/flutter/bin"
