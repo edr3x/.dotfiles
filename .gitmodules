@@ -1,9 +1,3 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = https://github.com/edr3x/nvim.git
-[submodule "tmux/.config/tmux/tmux-resurrect"]
-	path = tmux/.config/tmux/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect
-[submodule "tmux/.config/tmux/tmux-continuum"]
-	path = tmux/.config/tmux/tmux-continuum
-	url = https://github.com/tmux-plugins/tmux-continuum
