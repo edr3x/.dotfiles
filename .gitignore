@@ -4,3 +4,7 @@ nvim/.config/nvim/lazy-lock.json
 fish/.config/fish/**
 # allow .fish files inside fish directory
 !fish/.config/fish/*.fish
+# allow the completions directory itself
+!fish/.config/fish/completions/
+# allow .fish files inside fish/.config/fish/completions/
+!fish/.config/fish/completions/*.fish
