@@ -1,0 +1,37 @@
+[init]
+    defaultBranch = main
+
+[pull]
+    ff = only
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+    
+[diff]
+    colorMoved = default
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    
+[mergetool]
+    keepBackup = false
+
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[alias]
+    lg = log --oneline --graph --decorate --all
+
+[user]
+    name = edr3x
+    email = dhunganaannanta@gmail.com
