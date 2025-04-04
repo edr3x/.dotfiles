@@ -128,6 +128,8 @@ awful.screen.connect_for_each_screen(function(s)
         screen = s,
     })
 
+    awful.placement.top(s.mywibar, { margins = dpi(8) })
+
     --{{{ Remove wibar on full screen
     local function remove_wibar(c)
         if c.fullscreen or c.maximized then
@@ -152,10 +154,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     client.connect_signal("property::fullscreen", remove_wibar)
 
-    client.connect_signal("property::fullscreen", remove_wibar)
-    client.connect_signal("property::maximized", remove_wibar)
-
-    client.connect_signal("unfocus", add_wibar)
+    client.connect_signal("request::unmanage", add_wibar)
 
     -- Add widgets to the wibox
     s.mywibar:setup({
