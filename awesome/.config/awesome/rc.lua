@@ -29,7 +29,6 @@ do
             return
         end
         in_error = true
-
         naughty.notify({
             preset = naughty.config.presets.critical,
             title = "Oops, an error happened!",
@@ -41,10 +40,10 @@ end
 -- }}}
 
 -- {{{ Variable definitions
-local theme = dofile(os.getenv("HOME") .. "/.config/awesome/themes/night/theme.lua")
 
-beautiful.init(theme)
+-- Initialize theme
 -- Themes define colours, icons, font and wallpapers.
+beautiful.init("~/.config/awesome/themes/night/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"
@@ -94,4 +93,14 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
+
+-- change border colors
+client.connect_signal("focus", function(c)
+    c.border_color = beautiful.border_color_active
+end)
+
+client.connect_signal("unfocus", function(c)
+    c.border_color = beautiful.border_color_normal
+end)
+
 -- }}}

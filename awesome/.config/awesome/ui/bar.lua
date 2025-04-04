@@ -74,7 +74,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytaglist = awful.widget.taglist({
         screen = s,
         filter = awful.widget.taglist.filter.all,
-        buttons = {
+        buttons = gears.table.join(
             awful.button({}, 1, function(t)
                 t:view_only()
             end),
@@ -90,19 +90,19 @@ awful.screen.connect_for_each_screen(function(s)
                 end
             end),
             awful.button({}, 4, function(t)
-                awful.tag.viewprev(t.screen)
-            end),
-            awful.button({}, 5, function(t)
                 awful.tag.viewnext(t.screen)
             end),
-        },
+            awful.button({}, 5, function(t)
+                awful.tag.viewprev(t.screen)
+            end)
+        ),
     })
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist({
         screen = s,
         filter = awful.widget.tasklist.filter.currenttags,
-        buttons = {
+        buttons = gears.table.join(
             awful.button({}, 1, function(c)
                 c:activate({ context = "tasklist", action = "toggle_minimization" })
             end),
@@ -114,8 +114,8 @@ awful.screen.connect_for_each_screen(function(s)
             end),
             awful.button({}, 5, function()
                 awful.client.focus.byidx(1)
-            end),
-        },
+            end)
+        ),
     })
 
     s.mywibar = awful.wibar({
