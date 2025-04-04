@@ -4,7 +4,6 @@ local wibox = require("wibox")
 local awful = require("awful")
 local dpi = beautiful.xresources.apply_dpi
 local helpers = require("helpers")
-local ruled = require("ruled")
 local menubar = require("menubar")
 local gears = require("gears")
 
@@ -56,12 +55,16 @@ naughty.config.presets.ok = naughty.config.presets.normal
 naughty.config.presets.info = naughty.config.presets.normal
 naughty.config.presets.warn = naughty.config.presets.critical
 
-ruled.notification.connect_signal("request::rules", function()
-    ruled.notification.append_rule({
-        rule = {},
-        properties = { screen = awful.screen.preferred, implicit_timeout = 6 },
-    })
-end)
+-- ruled.notification.connect_signal("request::rules", function()
+--     ruled.notification.append_rule({
+--         rule = {},
+--         properties = { screen = awful.screen.preferred, implicit_timeout = 6 },
+--     })
+-- end)
+
+-- for stable awesomewm 4.3
+naughty.config.defaults.screen = awful.screen.preferred
+naughty.config.defaults.timeout = 6
 
 naughty.connect_signal("request::display", function(n)
     -- action widget

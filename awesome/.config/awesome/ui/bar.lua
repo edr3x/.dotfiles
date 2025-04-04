@@ -1,4 +1,5 @@
 local awful = require("awful")
+local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
@@ -42,23 +43,21 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox({
-        screen = s,
-        buttons = {
-            awful.button({}, 1, function()
-                awful.layout.inc(1)
-            end),
-            awful.button({}, 3, function()
-                awful.layout.inc(-1)
-            end),
-            awful.button({}, 4, function()
-                awful.layout.inc(-1)
-            end),
-            awful.button({}, 5, function()
-                awful.layout.inc(1)
-            end),
-        },
-    })
+    s.mylayoutbox = awful.widget.layoutbox(s)
+    s.mylayoutbox:buttons(gears.table.join(
+        awful.button({}, 1, function()
+            awful.layout.inc(1)
+        end),
+        awful.button({}, 3, function()
+            awful.layout.inc(-1)
+        end),
+        awful.button({}, 4, function()
+            awful.layout.inc(-1)
+        end),
+        awful.button({}, 5, function()
+            awful.layout.inc(1)
+        end)
+    ))
 
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist({
@@ -112,8 +111,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         type = "dock",
         ontop = true,
         stretch = false,
-        margins = dpi(4),
-        visible = true,
         height = dpi(38),
         width = s.geometry.width - dpi(30),
         shape = helpers.rrect(8),
@@ -146,7 +143,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     client.connect_signal("property::fullscreen", remove_wibar)
 
-    client.connect_signal("request::unmanage", add_wibar)
+    client.connect_signal("property::fullscreen", remove_wibar)
+    client.connect_signal("property::maximized", remove_wibar)
+
+    client.connect_signal("unfocus", add_wibar)
 
     -- Create the wibox
     s.mywibar:setup({
@@ -160,6 +160,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     margins = dpi(2),
                     widget = wibox.container.margin,
                 },
+
                 -- clock
                 time,
                 -- systray

@@ -1,6 +1,5 @@
 local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
-local rnotification = require("ruled.notification")
 local dpi = xresources.apply_dpi
 local gears = require("gears")
 local gfs = require("gears.filesystem")
@@ -82,11 +81,11 @@ theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus
 theme.icon_theme = nil
 
 -- Set different colors for urgent notifications.
-rnotification.connect_signal("request::rules", function()
-    rnotification.append_rule({
-        rule = { urgency = "critical" },
-        properties = { bg = "#ff0000", fg = "#ffffff" },
-    })
-end)
+-- rnotification.connect_signal("request::rules", function()
+--     rnotification.append_rule({
+--         rule = { urgency = "critical" },
+--         properties = { bg = "#ff0000", fg = "#ffffff" },
+--     })
+-- end)
 
 return theme
