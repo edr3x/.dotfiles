@@ -2,7 +2,6 @@
 
 ![desktop](https://user-images.githubusercontent.com/45848083/203314137-03c75847-dde5-427a-aff3-5bef0d3d11ff.png)
 ![rofi](https://user-images.githubusercontent.com/45848083/203314240-ec3effc0-8929-477d-8f36-8b5bac64c711.png)
-![tiles](https://user-images.githubusercontent.com/45848083/203383190-4a23bbc3-47c7-4f0e-a499-6226eecf965c.png)
 ![neovim](https://user-images.githubusercontent.com/45848083/214559991-f42dfa79-ff39-41b4-8475-58351cf5d20a.png)
 ![md-prev](https://user-images.githubusercontent.com/45848083/214560444-5b380255-f07c-41e8-a803-cfcc581fd9f6.png)
 ![firefox](https://user-images.githubusercontent.com/45848083/203314824-737c6de0-8ed5-4fd0-af41-0c4d1d566a18.png)
@@ -24,7 +23,7 @@
 ## Installing
 
 ```bash
-sudo pacman -S alacritty fish neofetch neovim picom btop rofi clipmenu starship tmux stow git-delta
+sudo pacman -S awesome alacritty fish neofetch neovim picom btop rofi clipmenu starship tmux stow git-delta
 ```
 
 You will need `git` and GNU `stow`
