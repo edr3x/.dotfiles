@@ -14,7 +14,11 @@ globalkeys = gears.table.join(
         awful.util.spawn("ghostty")
     end, { description = "open ghostty", group = "launcher" }),
 
-    awful.key({ modkey }, "c", function()
+    awful.key({ modkey }, "b", function()
+        awful.util.spawn("firefox")
+    end, { description = "open firefox", group = "launcher" }),
+
+    awful.key({ modkey }, "v", function()
         awful.util.spawn("clipboard")
     end, { description = "open clipmenu", group = "launcher" }),
 
