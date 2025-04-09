@@ -1,9 +1,11 @@
+local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
-require("awful.hotkeys_popup.keys")
-require("config.screenshot")
 
-awful.keyboard.append_global_keybindings({
+local beautiful = require("beautiful")
+
+-- {{{ Key bindings
+globalkeys = gears.table.join(
     awful.key({ modkey }, "Return", function()
         awful.spawn(terminal)
     end, { description = "open default terminal", group = "launcher" }),
@@ -12,7 +14,11 @@ awful.keyboard.append_global_keybindings({
         awful.util.spawn("ghostty")
     end, { description = "open ghostty", group = "launcher" }),
 
-    awful.key({ modkey }, "c", function()
+    awful.key({ modkey }, "b", function()
+        awful.util.spawn("firefox")
+    end, { description = "open firefox", group = "launcher" }),
+
+    awful.key({ modkey }, "v", function()
         awful.util.spawn("clipboard")
     end, { description = "open clipmenu", group = "launcher" }),
 
@@ -87,11 +93,11 @@ awful.keyboard.append_global_keybindings({
     -- Display
     awful.key({ modkey, "Control" }, "p", function()
         awful.util.spawn('xrandr --output "eDP-1" --auto')
-    end, { description = "duplicate screen", group = "display" }),
-})
+    end, { description = "duplicate screen", group = "display" })
+)
 
--- Tags related keybindings
-awful.keyboard.append_global_keybindings({
+globalkeys = gears.table.join(
+    globalkeys,
     -- Switch to the previous tag
     awful.key({ modkey, altkey }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 
@@ -99,11 +105,13 @@ awful.keyboard.append_global_keybindings({
     awful.key({ modkey, altkey }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
 
     -- Go back to the tag
-    awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
-})
+    awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" })
+)
 
 -- Focus related keybindings
-awful.keyboard.append_global_keybindings({
+globalkeys = gears.table.join(
+    globalkeys,
+
     awful.key({ modkey }, "j", function()
         awful.client.focus.byidx(1)
     end, { description = "focus next by index", group = "client" }),
@@ -127,15 +135,16 @@ awful.keyboard.append_global_keybindings({
 
     awful.key({ modkey, "Control" }, "n", function()
         local c = awful.client.restore()
-        -- Focus restored client
         if c then
-            c:activate({ raise = true, context = "key.unminimize" })
+            c.minimized = false
         end
-    end, { description = "restore minimized", group = "client" }),
-})
+    end, { description = "restore minimized", group = "client" })
+)
 
 -- Layout related keybindings
-awful.keyboard.append_global_keybindings({
+globalkeys = gears.table.join(
+    globalkeys,
+
     awful.key({ modkey, "Shift" }, "j", function()
         awful.client.swap.byidx(1)
     end, { description = "swap with next client by index", group = "client" }),
@@ -154,7 +163,7 @@ awful.keyboard.append_global_keybindings({
         awful.tag.incmwfact(-0.05)
     end, { description = "decrease master width factor", group = "layout" }),
 
-    awful.key({ modkey }, "h", function()
+    awful.key({ modkey, "Shift" }, "h", function()
         awful.tag.incnmaster(1, nil, true)
     end, { description = "increase the number of master clients", group = "layout" }),
 
@@ -176,141 +185,185 @@ awful.keyboard.append_global_keybindings({
 
     awful.key({ modkey, "Shift" }, "space", function()
         awful.layout.inc(-1)
-    end, { description = "select previous", group = "layout" }),
-})
+    end, { description = "select previous", group = "layout" })
+)
 
-awful.keyboard.append_global_keybindings({
-    awful.key({
-        modifiers = { altkey },
-        keygroup = "numrow",
-        description = "only view tag",
-        group = "tag",
-        on_press = function(index)
+-- window related keybinds
+for i = 1, 9 do
+    globalkeys = gears.table.join(
+        globalkeys,
+        -- View tag only.
+        awful.key({ altkey }, "#" .. i + 9, function()
             local screen = awful.screen.focused()
-            local tag = screen.tags[index]
+            local tag = screen.tags[i]
             if tag then
                 tag:view_only()
             end
-        end,
-    }),
-    awful.key({
-        modifiers = { altkey, "Control" },
-        keygroup = "numrow",
-        description = "toggle tag",
-        group = "tag",
-        on_press = function(index)
+        end, { description = "view tag #" .. i, group = "tag" }),
+        -- Toggle tag display.
+        awful.key({ altkey, "Control" }, "#" .. i + 9, function()
             local screen = awful.screen.focused()
-            local tag = screen.tags[index]
+            local tag = screen.tags[i]
             if tag then
                 awful.tag.viewtoggle(tag)
             end
-        end,
-    }),
-    awful.key({
-        modifiers = { altkey, "Shift" },
-        keygroup = "numrow",
-        description = "move focused client to tag",
-        group = "tag",
-        on_press = function(index)
+        end, { description = "toggle tag #" .. i, group = "tag" }),
+        -- Move client to tag.
+        awful.key({ altkey, "Shift" }, "#" .. i + 9, function()
             if client.focus then
-                local tag = client.focus.screen.tags[index]
+                local tag = client.focus.screen.tags[i]
                 if tag then
                     client.focus:move_to_tag(tag)
                 end
             end
-        end,
-    }),
-    awful.key({
-        modifiers = { altkey, "Control", "Shift" },
-        keygroup = "numrow",
-        description = "toggle focused client on tag",
-        group = "tag",
-        on_press = function(index)
+        end, { description = "move focused client to tag #" .. i, group = "tag" }),
+        -- Toggle tag on focused client.
+        awful.key({ altkey, "Control", "Shift" }, "#" .. i + 9, function()
             if client.focus then
-                local tag = client.focus.screen.tags[index]
+                local tag = client.focus.screen.tags[i]
                 if tag then
                     client.focus:toggle_tag(tag)
                 end
             end
-        end,
-    }),
-    awful.key({
-        modifiers = { modkey },
-        keygroup = "numpad",
-        description = "select layout directly",
-        group = "layout",
-        on_press = function(index)
-            local t = awful.screen.focused().selected_tag
-            if t then
-                t.layout = t.layouts[index] or t.layout
-            end
-        end,
-    }),
-})
+        end, { description = "toggle focused client on tag #" .. i, group = "tag" })
+    )
+end
 
-client.connect_signal("request::default_mousebindings", function()
-    awful.mouse.append_client_mousebindings({
-        awful.button({}, 1, function(c)
-            c:activate({ context = "mouse_click" })
-        end),
-        awful.button({ modkey }, 1, function(c)
-            c:activate({ context = "mouse_click", action = "mouse_move" })
-        end),
-        awful.button({ modkey }, 3, function(c)
-            c:activate({ context = "mouse_click", action = "mouse_resize" })
-        end),
-    })
-end)
+clientkeys = gears.table.join(
+    awful.key({ altkey }, "f", function(c)
+        c.fullscreen = not c.fullscreen
+        c:raise()
+    end, { description = "toggle fullscreen", group = "client" }),
+    awful.key({ modkey, "Shift" }, "x", function(c)
+        c:kill()
+    end, { description = "close", group = "client" }),
+    awful.key(
+        { modkey, "Control" },
+        "space",
+        awful.client.floating.toggle,
+        { description = "toggle floating", group = "client" }
+    ),
+    awful.key({ modkey, "Control" }, "Return", function(c)
+        c:swap(awful.client.getmaster())
+    end, { description = "move to master", group = "client" }),
+    awful.key({ modkey }, "o", function(c)
+        c:move_to_screen()
+    end, { description = "move to another screen", group = "screen" }),
+    awful.key({ modkey }, "t", function(c)
+        c.ontop = not c.ontop
+    end, { description = "toggle keep on top", group = "client" }),
+    awful.key({ modkey }, "n", function(c)
+        -- The client currently has the input focus, so it cannot be
+        -- minimized, since minimized clients can't have the focus.
+        c.minimized = true
+    end, { description = "minimize", group = "client" }),
 
-client.connect_signal("request::default_keybindings", function()
-    awful.keyboard.append_client_keybindings({
-        awful.key({ altkey }, "f", function(c)
-            c.fullscreen = not c.fullscreen
-            c:raise()
-        end, { description = "toggle fullscreen", group = "client" }),
-        awful.key({ modkey, "Shift" }, "x", function(c)
-            c:kill()
-        end, { description = "close", group = "client" }),
-        awful.key(
-            { modkey, "Control" },
-            "space",
-            awful.client.floating.toggle,
-            { description = "toggle floating", group = "client" }
-        ),
-        awful.key({ modkey, "Control" }, "Return", function(c)
-            c:swap(awful.client.getmaster())
-        end, { description = "move to master", group = "client" }),
-        awful.key({ modkey }, "o", function(c)
-            c:move_to_screen()
-        end, { description = "move to another screen", group = "screen" }),
-        awful.key({ modkey }, "t", function(c)
-            c.ontop = not c.ontop
-        end, { description = "toggle keep on top", group = "client" }),
-        awful.key({ modkey }, "n", function(c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end, { description = "minimize", group = "client" }),
-        awful.key({ modkey }, "m", function(c)
-            c.maximized = not c.maximized
-            c:raise()
-        end, { description = "(un)maximize", group = "client" }),
-        awful.key({ modkey, "Control" }, "m", function(c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
-        end, { description = "(un)maximize vertically", group = "client" }),
-        awful.key({ modkey, "Shift" }, "m", function(c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end, { description = "(un)maximize horizontally", group = "client" }),
-    })
-end)
+    awful.key({ modkey }, "n", function(c)
+        -- The client currently has the input focus, so it cannot be
+        -- minimized, since minimized clients can't have the focus.
+        c.minimized = true
+    end, { description = "minimize", group = "client" }),
 
--- Mouse binds
-awful.mouse.append_global_mousebindings({
+    awful.key({ modkey }, "m", function(c)
+        c.maximized = not c.maximized
+        c:raise()
+    end, { description = "(un)maximize", group = "client" }),
+    awful.key({ modkey, "Control" }, "m", function(c)
+        c.maximized_vertical = not c.maximized_vertical
+        c:raise()
+    end, { description = "(un)maximize vertically", group = "client" }),
+    awful.key({ modkey, "Shift" }, "m", function(c)
+        c.maximized_horizontal = not c.maximized_horizontal
+        c:raise()
+    end, { description = "(un)maximize horizontally", group = "client" })
+)
+
+clientbuttons = gears.table.join(
+    awful.button({}, 1, function(c)
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
+    end),
+    awful.button({ modkey }, 1, function(c)
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
+        awful.mouse.client.move(c)
+    end),
+    awful.button({ modkey }, 3, function(c)
+        c:emit_signal("request::activate", "mouse_click", { raise = true })
+        awful.mouse.client.resize(c)
+    end)
+)
+
+-- Set keys
+root.keys(globalkeys)
+-- }}}
+
+-- {{{ Mouse bindings
+root.buttons(gears.table.join(
     awful.button({}, 3, function()
         mymainmenu:toggle()
     end),
-    awful.button({}, 4, awful.tag.viewprev),
-    awful.button({}, 5, awful.tag.viewnext),
-})
+    awful.button({}, 4, awful.tag.viewnext),
+    awful.button({}, 5, awful.tag.viewprev)
+))
+-- }}}
+
+-- {{{ Rules
+-- Rules to apply to new clients (through the "manage" signal).
+awful.rules.rules = {
+    -- All clients will match this rule.
+    {
+        rule = {},
+        properties = {
+            border_width = beautiful.border_width,
+            border_color = beautiful.border_normal,
+            focus = awful.client.focus.filter,
+            raise = true,
+            keys = clientkeys,
+            buttons = clientbuttons,
+            screen = awful.screen.preferred,
+            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
+        },
+    },
+
+    -- Floating clients.
+    {
+        rule_any = {
+            instance = {
+                "DTA", -- Firefox addon DownThemAll.
+                "copyq", -- Includes session name in class.
+                "pinentry",
+            },
+            class = {
+                "Arandr",
+                "Blueman-manager",
+                "Gpick",
+                "Kruler",
+                "MessageWin", -- kalarm.
+                "Sxiv",
+                "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
+                "Wpa_gui",
+                "veromix",
+                "xtightvncviewer",
+            },
+
+            -- Note that the name property shown in xprop might be set slightly after creation of the client
+            -- and the name shown there might not match defined rules here.
+            name = {
+                "Event Tester", -- xev.
+            },
+            role = {
+                "AlarmWindow", -- Thunderbird's calendar.
+                "ConfigManager", -- Thunderbird's about:config.
+                "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+            },
+        },
+        properties = { floating = true },
+    },
+
+    -- Add titlebars to normal clients and dialogs
+    { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = true } },
+
+    -- Set Firefox to always map on the tag named "2" on screen 1.
+    -- { rule = { class = "Firefox" },
+    --   properties = { screen = 1, tag = "2" } },
+}
+-- }}

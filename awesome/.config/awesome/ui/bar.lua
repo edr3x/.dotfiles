@@ -1,23 +1,32 @@
 local awful = require("awful")
+local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local helpers = require("helpers")
 
+local function set_wallpaper(s)
+    -- Wallpaper
+    if beautiful.wallpaper then
+        local wallpaper = beautiful.wallpaper
+        -- If wallpaper is a function, call it with the screen
+        if type(wallpaper) == "function" then
+            wallpaper = wallpaper(s)
+        end
+        gears.wallpaper.maximized(wallpaper, s, true)
+    end
+end
+
+-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+screen.connect_signal("property::geometry", set_wallpaper)
+
 local battary_arc = require("widgets.batteryarc")
 local todo_widget = require("widgets.todo")
-
-local calender = require("widgets.calender")()
 
 local time = wibox.widget({
     widget = wibox.container.background,
     bg = beautiful.bg_normal,
-    buttons = {
-        awful.button({}, 1, function()
-            calender.toggle()
-        end),
-    },
     {
         widget = wibox.container.margin,
         margins = 10,
@@ -29,42 +38,43 @@ local time = wibox.widget({
     },
 })
 
-helpers.add_hover_cursor(time, "hand1")
+awful.screen.connect_for_each_screen(function(s)
+    -- Wallpaper
+    set_wallpaper(s)
 
-screen.connect_signal("request::desktop_decoration", function(s)
+    -- Each screen has its own tag table.
     awful.tag(
         { " ", "  ", " 󰙯 ", "  ", " 󰘳 ", "  ", " 󱙋 ", " 󱘗 ", "  " },
         s,
         awful.layout.layouts[1]
     )
+
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
 
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
-    s.mylayoutbox = awful.widget.layoutbox({
-        screen = s,
-        buttons = {
-            awful.button({}, 1, function()
-                awful.layout.inc(1)
-            end),
-            awful.button({}, 3, function()
-                awful.layout.inc(-1)
-            end),
-            awful.button({}, 4, function()
-                awful.layout.inc(-1)
-            end),
-            awful.button({}, 5, function()
-                awful.layout.inc(1)
-            end),
-        },
-    })
+    s.mylayoutbox = awful.widget.layoutbox(s)
+    s.mylayoutbox:buttons(gears.table.join(
+        awful.button({}, 1, function()
+            awful.layout.inc(1)
+        end),
+        awful.button({}, 3, function()
+            awful.layout.inc(-1)
+        end),
+        awful.button({}, 4, function()
+            awful.layout.inc(-1)
+        end),
+        awful.button({}, 5, function()
+            awful.layout.inc(1)
+        end)
+    ))
 
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist({
         screen = s,
         filter = awful.widget.taglist.filter.all,
-        buttons = {
+        buttons = gears.table.join(
             awful.button({}, 1, function(t)
                 t:view_only()
             end),
@@ -80,19 +90,19 @@ screen.connect_signal("request::desktop_decoration", function(s)
                 end
             end),
             awful.button({}, 4, function(t)
-                awful.tag.viewprev(t.screen)
-            end),
-            awful.button({}, 5, function(t)
                 awful.tag.viewnext(t.screen)
             end),
-        },
+            awful.button({}, 5, function(t)
+                awful.tag.viewprev(t.screen)
+            end)
+        ),
     })
 
     -- Create a tasklist widget
     s.mytasklist = awful.widget.tasklist({
         screen = s,
         filter = awful.widget.tasklist.filter.currenttags,
-        buttons = {
+        buttons = gears.table.join(
             awful.button({}, 1, function(c)
                 c:activate({ context = "tasklist", action = "toggle_minimization" })
             end),
@@ -104,23 +114,21 @@ screen.connect_signal("request::desktop_decoration", function(s)
             end),
             awful.button({}, 5, function()
                 awful.client.focus.byidx(1)
-            end),
-        },
+            end)
+        ),
     })
 
     s.mywibar = awful.wibar({
         type = "dock",
         ontop = true,
         stretch = false,
-        margins = dpi(4),
-        visible = true,
         height = dpi(38),
         width = s.geometry.width - dpi(30),
         shape = helpers.rrect(8),
         screen = s,
     })
 
-    awful.placement.top(s.mywibar, { margins = dpi(10) })
+    awful.placement.top(s.mywibar, { margins = dpi(8) })
 
     --{{{ Remove wibar on full screen
     local function remove_wibar(c)
@@ -148,7 +156,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
 
     client.connect_signal("request::unmanage", add_wibar)
 
-    -- Create the wibox
+    -- Add widgets to the wibox
     s.mywibar:setup({
         {
             {
@@ -160,6 +168,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
                     margins = dpi(2),
                     widget = wibox.container.margin,
                 },
+
                 -- clock
                 time,
                 -- systray
