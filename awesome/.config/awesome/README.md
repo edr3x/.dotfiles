@@ -2,7 +2,7 @@
 
 ## Requirement
 
-- [awesome-git](https://github.com/codic12/worm)
+- [awesome](https://github.com/awesomeWM/awesome)
 - [pamixer](https://github.com/cdemoulins/pamixer)
 - [alacritty](https://github.com/alacritty/alacritty)
 - [rofi](https://github.com/davatorium/rofi)
