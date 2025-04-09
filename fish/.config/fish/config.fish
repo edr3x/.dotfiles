@@ -60,6 +60,12 @@ alias ggpush "git push"
 alias ggpull "git pull --rebase"
 alias fuckyou "git push --force"
 
+## git worktree
+alias gls "git worktree list"
+alias gadd "git worktree add"
+alias gmv "git worktree move"
+alias grm "git worktree remove"
+
 # docker
 alias dps "docker ps"
 alias dcd "docker-compose down"
