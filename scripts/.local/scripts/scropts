@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-laptop_display="eDP1"
-external_display="HDMI1"
+laptop_display="$(xrandr | awk '/ primary/{print $1}')"
+external_display="$(xrandr | awk '/ connected/ && !/ primary/ {print $1}')"
 
 duplicate="Duplicate"
 extend_top="Extend top"
