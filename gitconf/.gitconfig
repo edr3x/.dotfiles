@@ -31,6 +31,7 @@
 
 [alias]
     lg = log --oneline --graph --decorate --all
+    contributors = shortlog -s -n --all --no-merges
 
 [user]
     name = edr3x
