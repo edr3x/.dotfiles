@@ -43,7 +43,7 @@ end
 
 -- Initialize theme
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/night/theme.lua")
+beautiful.init("~/.config/awesome/theme/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
 editor = os.getenv("EDITOR") or "nvim"

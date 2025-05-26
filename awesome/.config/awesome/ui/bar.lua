@@ -26,7 +26,6 @@ local todo_widget = require("widgets.todo")
 
 local time = wibox.widget({
     widget = wibox.container.background,
-    bg = beautiful.bg_normal,
     {
         widget = wibox.container.margin,
         margins = 10,
@@ -123,6 +122,7 @@ awful.screen.connect_for_each_screen(function(s)
         ontop = true,
         stretch = false,
         height = dpi(38),
+        bg = beautiful.bg_wibar,
         width = s.geometry.width - dpi(30),
         shape = helpers.rrect(8),
         screen = s,

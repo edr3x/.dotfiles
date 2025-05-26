@@ -7,7 +7,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.confdir = os.getenv("HOME") .. "/.config/awesome/themes/night"
+theme.confdir = os.getenv("HOME") .. "/.config/awesome/theme"
 theme.wallpaper = theme.confdir .. "/wall/night.jpg"
 theme.font_name = "Iosevka Nerd Font"
 theme.taglist_font = "FiraCode Nerd Font, 14"
@@ -33,8 +33,7 @@ theme.darker_bg = "#0A1419"
 theme.lighter_bg = "#162026"
 theme.transparent = "#00000000"
 
-theme.notification_icon = gears.surface.load_uncached(gfs.get_configuration_dir() .. "themes/night/hello.jpg")
-
+theme.notification_icon = gears.surface.load_uncached(gfs.get_configuration_dir() .. "theme/hello.jpg")
 theme.font = "Iosevka Nerd Font, Bold 10"
 theme.font_name = "Iosevka Nerd Font"
 theme.icon_font = "Iosevka Nerd Font"
@@ -46,6 +45,7 @@ theme.bg_focus = "#1C252C"
 theme.bg_cal = "#78B892"
 theme.bg_urgent = "#DF5B61"
 theme.bg_minimize = "#484e5b"
+theme.bg_wibar = "#00000073"
 theme.bg_systray = theme.bg_normal
 
 theme.fg_normal = "#D9D7D6"
@@ -64,12 +64,13 @@ theme.titlebar_bg_normal = theme.bg_normal
 
 theme.taglist_fg_focus = "#8cedff"
 theme.taglist_fg_occupied = "#e4ad7b"
-theme.taglist_bg_focus = "#061115"
+theme.taglist_bg_focus = "#00000000"
+theme.taglist_bg_occupied = "#00000000"
+theme.taglist_bg_empty = "#00000000"
+theme.taglist_fg_empty = "#666666"
 
--- Generate taglist squares:
-local taglist_square_size = dpi(0)
-theme.taglist_squares_sel = theme_assets.taglist_squares_sel(taglist_square_size, theme.fg_normal)
-theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(taglist_square_size, theme.fg_normal)
+theme.taglist_squares_sel = nil
+theme.taglist_squares_unsel = nil
 
 theme.menu_submenu_icon = themes_path .. "default/submenu.png"
 theme.menu_height = dpi(15)

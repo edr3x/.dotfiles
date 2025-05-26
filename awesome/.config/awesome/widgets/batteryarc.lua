@@ -5,7 +5,7 @@ local wibox = require("wibox")
 local watch = require("awful.widget.watch")
 
 local HOME = os.getenv("HOME")
-local WIDGET_DIR = HOME .. "/.config/awesome/themes/night"
+local WIDGET_DIR = HOME .. "/.config/awesome/theme"
 
 local batteryarc_widget = {}
 
