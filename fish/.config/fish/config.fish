@@ -57,9 +57,15 @@ alias lt "exa -lh --icons --no-user --git -T -L 4 --ignore-glob='.git|node_modul
 alias gd "git diff"
 alias gs "git status --short"
 alias gl "git log --all --graph --pretty=format:'%C(magenta)%h %C(white) %an  %ar%C(auto)   %D%n%s%n'"
-alias gpull "git pull origin $(git rev-parse --abbrev-ref HEAD) --rebase"
-alias gpush "git push origin $(git rev-parse --abbrev-ref HEAD)"
 alias fuckyou "git push --force"
+
+function gpull
+    git pull origin $(git branch | grep '*' | awk '{print $2}') --rebase
+end
+
+function gpush
+    git push origin $(git branch | grep '*' | awk '{print $2}')
+end
 
 ## git worktree
 alias gls "git worktree list"
