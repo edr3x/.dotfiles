@@ -1,11 +1,33 @@
+[user]
+    name = edr3x
+    email = dhunganaannanta@gmail.com
+
 [init]
     defaultBranch = main
 
 [pull]
     ff = only
+    default = current
+    rebase = true
+
+[rebase]
+    autoStash = true
+    missingCommitsCheck = warn
+
+[push]
+    autoSetupRemote = true
+    default = current
+    followTags = true
 
 [core]
     pager = delta
+    compression = 9
+    whitesppace = error
+    preloadindex = true
+
+[log]
+    abbrevCommit = true
+    graphColors = blue,yellow,cyan,magenta,green,red
 
 [interactive]
     diffFilter = delta --color-only
@@ -18,6 +40,8 @@
     
 [diff]
     colorMoved = default
+    renames = copies
+    interHunkContext = 10
 
 [merge]
     tool = vimdiff
@@ -32,7 +56,3 @@
 [alias]
     lg = log --oneline --graph --decorate --all
     contributors = shortlog -s -n --all --no-merges
-
-[user]
-    name = edr3x
-    email = dhunganaannanta@gmail.com
