@@ -192,6 +192,13 @@ globalkeys = gears.table.join(
 for i = 1, 9 do
     globalkeys = gears.table.join(
         globalkeys,
+        -- Change layout with number row
+        awful.key({ modkey }, "#" .. (i + 9), function()
+            local t = awful.screen.focused().selected_tag
+            if t and t.layouts and t.layouts[i] then
+                t.layout = t.layouts[i]
+            end
+        end, { description = "select layout " .. i, group = "layout" }),
         -- View tag only.
         awful.key({ altkey }, "#" .. i + 9, function()
             local screen = awful.screen.focused()
