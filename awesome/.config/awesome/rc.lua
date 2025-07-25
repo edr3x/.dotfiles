@@ -63,6 +63,9 @@ require("config.layout")
 -- keybinds
 require("config.keybinds")
 
+-- rules
+require("config.rules")
+
 -- bar
 require("ui.bar")
 

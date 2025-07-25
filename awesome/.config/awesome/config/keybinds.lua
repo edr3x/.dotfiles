@@ -2,8 +2,6 @@ local gears = require("gears")
 local awful = require("awful")
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-local beautiful = require("beautiful")
-
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey }, "Return", function()
@@ -188,17 +186,47 @@ globalkeys = gears.table.join(
     end, { description = "select previous", group = "layout" })
 )
 
+--{{ Numpad layout selection using keycodes (KP_1 to KP_9)
+-- Keypad layout:
+-- 7 8 9
+-- 4 5 6
+-- 1 2 3
+local numpad_keys_to_layout = {
+    [87] = 1, -- KP_1
+    [88] = 2, -- KP_2
+    [89] = 3, -- KP_3
+    [83] = 4, -- KP_4
+    [84] = 5, -- KP_5
+    [85] = 6, -- KP_6
+    [79] = 7, -- KP_7
+    [80] = 8, -- KP_8
+    [81] = 9, -- KP_9
+}
+
+local layoutswapkeys = {}
+
+for keycode, layout_index in pairs(numpad_keys_to_layout) do
+    layoutswapkeys = gears.table.join(
+        layoutswapkeys,
+        awful.key({ modkey }, "#" .. keycode, function()
+            local t = awful.screen.focused().selected_tag
+            if t and t.layouts and t.layouts[layout_index] then
+                t.layout = t.layouts[layout_index]
+            end
+        end, {
+            description = "select layout #" .. layout_index .. " (numpad)",
+            group = "layout",
+        })
+    )
+end
+
+globalkeys = gears.table.join(globalkeys, layoutswapkeys)
+-- }}
+
 -- window related keybinds
 for i = 1, 9 do
     globalkeys = gears.table.join(
         globalkeys,
-        -- Change layout with number row
-        awful.key({ modkey }, "#" .. (i + 9), function()
-            local t = awful.screen.focused().selected_tag
-            if t and t.layouts and t.layouts[i] then
-                t.layout = t.layouts[i]
-            end
-        end, { description = "select layout " .. i, group = "layout" }),
         -- View tag only.
         awful.key({ altkey }, "#" .. i + 9, function()
             local screen = awful.screen.focused()
@@ -312,65 +340,3 @@ root.buttons(gears.table.join(
     awful.button({}, 5, awful.tag.viewprev)
 ))
 -- }}}
-
--- {{{ Rules
--- Rules to apply to new clients (through the "manage" signal).
-awful.rules.rules = {
-    -- All clients will match this rule.
-    {
-        rule = {},
-        properties = {
-            border_width = beautiful.border_width,
-            border_color = beautiful.border_normal,
-            focus = awful.client.focus.filter,
-            raise = true,
-            keys = clientkeys,
-            buttons = clientbuttons,
-            screen = awful.screen.preferred,
-            placement = awful.placement.no_overlap + awful.placement.no_offscreen,
-        },
-    },
-
-    -- Floating clients.
-    {
-        rule_any = {
-            instance = {
-                "DTA", -- Firefox addon DownThemAll.
-                "copyq", -- Includes session name in class.
-                "pinentry",
-            },
-            class = {
-                "Arandr",
-                "Blueman-manager",
-                "Gpick",
-                "Kruler",
-                "MessageWin", -- kalarm.
-                "Sxiv",
-                "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-                "Wpa_gui",
-                "veromix",
-                "xtightvncviewer",
-            },
-
-            -- Note that the name property shown in xprop might be set slightly after creation of the client
-            -- and the name shown there might not match defined rules here.
-            name = {
-                "Event Tester", -- xev.
-            },
-            role = {
-                "AlarmWindow", -- Thunderbird's calendar.
-                "ConfigManager", -- Thunderbird's about:config.
-                "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
-            },
-        },
-        properties = { floating = true },
-    },
-
-    -- Add titlebars to normal clients and dialogs
-    { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = true } },
-
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
-}
--- }}
