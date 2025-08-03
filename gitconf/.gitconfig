@@ -55,4 +55,4 @@
 
 [alias]
     lg = log --oneline --graph --decorate --all
-    contributors = shortlog -s -n --all --no-merges
+    contributors = shortlog -s -n --no-merges HEAD

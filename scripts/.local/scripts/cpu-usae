@@ -1,3 +1,29 @@
 #!/usr/bin/env bash
 
-cat /proc/stat | grep cpu | tail -1 | awk '{print ($5*100)/($2+$3+$4+$5+$6+$7+$8+$9+$10)}' | awk '{print 100-$1}' | xargs printf "%.1f"
+# Read /proc/stat
+cpu1=($(grep '^cpu ' /proc/stat))
+idle1=${cpu1[4]}
+total1=0
+for value in "${cpu1[@]:1}"; do
+  total1=$((total1 + value))
+done
+
+# Wait 1 second
+sleep 1
+
+# Read /proc/stat again
+cpu2=($(grep '^cpu ' /proc/stat))
+idle2=${cpu2[4]}
+total2=0
+for value in "${cpu2[@]:1}"; do
+  total2=$((total2 + value))
+done
+
+# Calculate CPU usage
+idle_diff=$((idle2 - idle1))
+
+total_diff=$((total2 - total1))
+
+cpu_usage=$(echo "scale=1; 100 * ($total_diff - $idle_diff) / $total_diff" | bc)
+
+echo "$cpu_usage"

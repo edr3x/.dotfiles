@@ -8,5 +8,5 @@ mode_normal = { fg = "#89DDFF", bg = "reset" }
 mode_select = { fg = "#e78a4e", bg = "reset" }
 mode_unset  = { fg = "#e78a4e", bg = "reset" }
 
-[manager]
+[mgr]
 border_symbol = " "
