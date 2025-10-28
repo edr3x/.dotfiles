@@ -20,6 +20,7 @@ alias unset 'set --erase'
 alias ssh "TERM=xterm-256color $(which ssh)"
 alias xclip "xclip -selection clipboard"
 alias nocaps 'setxkbmap -option "caps:escape"'
+alias celar "clear"
 
 # change ownership of file to oneself
 alias own 'sudo chown $(id -u):$(id -g)'
