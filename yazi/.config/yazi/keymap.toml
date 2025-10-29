@@ -2,3 +2,13 @@
 on   = [ "l" ]
 run  = "plugin smart-enter"
 desc = "Enter the child directory, or open the file"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "t" ]
+run  = "cd ~/.local/share/Trash/files/"
+desc = "Open Trash"
+
+[[mgr.prepend_keymap]]
+on   = [ "g", "s" ]
+run  = "cd ~/screenshots/"
+desc = "Screenshots"
