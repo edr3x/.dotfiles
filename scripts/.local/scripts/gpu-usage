@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
 
+if ! command -v nvidia-smi &> /dev/null; then
+    echo "Error: nvidia-smi not found. Please install NVIDIA drivers."
+    exit 1
+fi
+
 nvidia-smi --query-gpu=utilization.gpu,memory.used --format=csv,noheader,nounits | awk '{printf " %d%  󰍛 %dMB\n", $1, $2}'

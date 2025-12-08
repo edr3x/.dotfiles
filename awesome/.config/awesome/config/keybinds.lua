@@ -17,7 +17,7 @@ globalkeys = gears.table.join(
     end, { description = "open firefox", group = "launcher" }),
 
     awful.key({ modkey }, "v", function()
-        awful.util.spawn("clipboard")
+        awful.util.spawn("clipmenu")
     end, { description = "open clipmenu", group = "launcher" }),
 
     awful.key({ altkey }, "Return", function()

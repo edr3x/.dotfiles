@@ -3,6 +3,9 @@ background = 000000
 
 theme = tokyonight
 
+shell-integration = fish
+command = /usr/sbin/fish --login --interactive
+
 window-decoration = false
 background-opacity = 0.47
 
@@ -15,7 +18,7 @@ font-feature = -calt
 font-feature = -liga
 font-feature = -dlig
 
-font-size = 13
+font-size = 10
 font-family = "Fira Code Nerd Font"
 font-family-bold = "Fira Code Nerd Font"
 font-family-italic = "Iosevka Nerd Font"

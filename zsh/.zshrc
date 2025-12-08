@@ -27,4 +27,11 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export KUBECONFIG=~/.kube/config
 
+# Path variables
+export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.local/scripts"
+
 eval "$(starship init zsh)"
