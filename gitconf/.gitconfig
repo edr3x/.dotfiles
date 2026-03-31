@@ -1,6 +1,7 @@
 [user]
     name = edr3x
     email = dhunganaannanta@gmail.com
+    signingkey = 6618E9653D9F0F5A
 
 [init]
     defaultBranch = main
@@ -56,3 +57,11 @@
 [alias]
     lg = log --oneline --graph --decorate --all
     contributors = shortlog -s -n --no-merges HEAD
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    program = gpg
+[url "https://github.com/"]
+	insteadOf = gh:
