@@ -47,6 +47,11 @@ end
 
 abbr --add dotdot --regex '^\.\.+$' --function multicd
 
+# import local image on local k3s
+function k3s-import
+    docker save $argv[1] | sudo k3s ctr images import -
+end
+
 alias cdd 'cd "$(fd -t d . | fzf --prompt="Select directory to jump: " --height=~30% --layout=reverse --border --exit-0)"' # cd with steroids
 
 # better ls
@@ -107,6 +112,7 @@ set PATH "$PATH":"$HOME/.krew/bin"
 set PATH "$PATH":"$HOME/.local/bin"
 set PATH "$PATH":"$HOME/.cargo/bin"
 set PATH "$PATH":"$HOME/.cargo/env"
+set PATH "$PATH":"$HOME/.opencode/bin"
 set PATH "$PATH":"$HOME/.linkerd2/bin"
 set PATH "$PATH":"$HOME/.local/scripts"
 set PATH "$PATH":"$HOME/.local/share/fnm"
@@ -130,5 +136,7 @@ export VISUAL="nvim"
 export EDITOR="nvim"
 export TERM="alacritty"
 export KUBECONFIG="$HOME/.kube/config"
+
+direnv hook fish | source
 
 starship init fish | source
