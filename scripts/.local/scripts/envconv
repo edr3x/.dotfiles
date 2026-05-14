@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+prog=${0##*/}
+
+usage() {
+    cat <<EOF
+$prog — convert between JSON and .env formats
+
+Usage:
+  $prog <input-file> [output-file]
+  $prog -h | --help
+
+Direction is auto-detected from the input file extension:
+  *.json         → .env  (printed to stdout, or written to [output-file])
+  *.env / other  → JSON  (printed to stdout, or written to [output-file])
+
+Examples:
+  $prog config.json config.env
+  $prog config.env  config.json
+  $prog config.json            # prints .env to stdout
+
+Requires: jq
+EOF
+}
+
+die() { echo "error: $*" >&2; echo "try '$prog --help'" >&2; exit 1; }
+
+case "${1-}" in
+    -h|--help) usage; exit 0 ;;
+    "")        usage >&2; exit 2 ;;
+esac
+
+[[ $# -ge 1 && $# -le 2 ]] || die "expected 1 or 2 arguments, got $#"
+
+input=$1
+output=${2:-}
+
+[[ -f "$input" ]] || die "input file not found: $input"
+command -v jq >/dev/null || die "this script requires 'jq'"
+
+json_to_env() {
+    # Validate that the JSON is a flat object of string/number/bool values.
+    jq -e 'type == "object" and (all(.[]; type == "string" or type == "number" or type == "boolean"))' \
+        "$1" >/dev/null \
+        || die "input must be a flat JSON object with string/number/boolean values"
+
+    # Emit KEY="VALUE", escaping backslashes and double quotes inside the value.
+    jq -r '
+        to_entries[] |
+        .key as $k |
+        (.value | tostring) as $v |
+        "\($k)=\"\($v | gsub("\\\\"; "\\\\") | gsub("\""; "\\\""))\""
+    ' "$1"
+}
+
+env_to_json() {
+    # Read line-by-line, skip blanks/comments, strip optional surrounding quotes,
+    # then build a JSON object with jq using --args for safe key/value handling.
+    local -a kv=()
+    local line key val
+
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        # trim leading whitespace and optional `export `
+        line=${line#"${line%%[![:space:]]*}"}
+        [[ -z "$line" || "$line" == \#* ]] && continue
+        line=${line#export }
+
+        [[ "$line" == *=* ]] || die "malformed line (no '='): $line"
+
+        key=${line%%=*}
+        val=${line#*=}
+
+        # trim trailing whitespace on key
+        key=${key%"${key##*[![:space:]]}"}
+        [[ "$key" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]] || die "invalid key: $key"
+
+        # strip a single pair of matching surrounding quotes, if present
+        if   [[ ${#val} -ge 2 && ${val:0:1} == '"' && ${val: -1} == '"' ]]; then
+            val=${val:1:${#val}-2}
+            # unescape \" and \\ inside a double-quoted value
+            val=${val//\\\"/\"}
+            val=${val//\\\\/\\}
+        elif [[ ${#val} -ge 2 && ${val:0:1} == "'" && ${val: -1} == "'" ]]; then
+            val=${val:1:${#val}-2}
+        fi
+
+        kv+=( "$key" "$val" )
+    done < "$1"
+
+    # Pair up the args into a JSON object.
+    jq -n --args '
+        [ $ARGS.positional
+          | _nwise(2)
+          | { (.[0]): .[1] }
+        ] | add // {}
+    ' -- "${kv[@]}"
+}
+
+# Detect direction from the input extension.
+case "${input,,}" in
+    *.json) result=$(json_to_env "$input") ;;
+    *)      result=$(env_to_json "$input") ;;
+esac
+
+if [[ -n "$output" ]]; then
+    printf '%s\n' "$result" > "$output"
+else
+    printf '%s\n' "$result"
+fi
