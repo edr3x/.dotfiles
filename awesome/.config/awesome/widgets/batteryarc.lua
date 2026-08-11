@@ -12,7 +12,7 @@ local batteryarc_widget = {}
 local function worker(user_args)
     local args = user_args or {}
 
-    local font = args.font or beautiful.font_name .. " Bold 9"
+    local font = args.font or beautiful.font_name .. " Bold 6"
     local arc_thickness = args.arc_thickness or 2
     local show_current_level = args.show_current_level or false
     local size = args.size or 24

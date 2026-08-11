@@ -22,7 +22,6 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 local battary_arc = require("widgets.batteryarc")
-local todo_widget = require("widgets.todo")
 
 local time = wibox.widget({
     widget = wibox.container.background,
@@ -174,7 +173,6 @@ awful.screen.connect_for_each_screen(function(s)
                 time,
                 -- systray
                 {
-                    todo_widget(),
                     wibox.widget.systray(),
                     battary_arc({
                         show_current_level = true,
