@@ -91,10 +91,9 @@ env_to_json() {
 
     # Pair up the args into a JSON object.
     jq -n --args '
-        [ $ARGS.positional
-          | _nwise(2)
-          | { (.[0]): .[1] }
-        ] | add // {}
+        $ARGS.positional as $a
+        | [ range(0; $a | length; 2) | { ($a[.]): $a[. + 1] } ]
+        | add // {}
     ' -- "${kv[@]}"
 }
 
