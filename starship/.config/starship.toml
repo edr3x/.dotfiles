@@ -1,7 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 add_newline = true
 
-right_format = """$git_metrics$memory_usage$time"""
+format = "$all$fill$git_metrics$memory_usage$time$line_break$character"
+
+[fill]
+symbol = " "
 
 [battery]
 charging_symbol = ' '

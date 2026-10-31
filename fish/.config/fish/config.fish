@@ -131,11 +131,35 @@ alias px "pnpx"
 set -gx PNPM_HOME "/home/r3x/.local/share/pnpm"
 set -gx PATH "$PNPM_HOME" $PATH
 
+set -gx PATH $PATH /home/r3x/.lmstudio/bin
+
 # defaults
 export VISUAL="nvim"
 export EDITOR="nvim"
 export TERM="alacritty"
 export KUBECONFIG="$HOME/.kube/config"
+export CHROME_EXECUTABLE="/usr/sbin/google-chrome-stable"
+
+# word wrap for smaller screens
+functions -c fish_prompt __starship_fish_prompt
+function fish_prompt
+    set -l lines
+    for line in (__starship_fish_prompt $argv)
+        set -l words (string split ' ' -- $line)
+        set -l out $words[1]
+        for word in $words[2..]
+            if test (string length --visible -- "$out $word") -gt $COLUMNS
+                set -a lines $out
+                set out $word
+            else
+                set out "$out $word"
+            end
+        end
+        set -a lines $out
+    end
+    printf "%s\n" $lines[..-2]
+    printf %s $lines[-1]
+end
 
 direnv hook fish | source
 
