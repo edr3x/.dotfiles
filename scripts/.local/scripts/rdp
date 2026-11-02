@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+x11vnc -display :0 -auth guess -rfbauth ~/.vnc/passwd \
+  -listen $(tailscale ip -4) -forever -shared -noxdamage -bg
