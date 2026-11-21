@@ -30,7 +30,7 @@ local time = wibox.widget({
         margins = 10,
         {
             widget = wibox.widget.textclock("%l:%M %p"),
-            font = beautiful.font_name .. " Bold 8",
+            font = beautiful.font_name .. " Bold 11",
             align = "center",
         },
     },
@@ -120,15 +120,15 @@ awful.screen.connect_for_each_screen(function(s)
         type = "dock",
         ontop = true,
         stretch = false,
-        height = dpi(25),
+        height = dpi(38),
         bg = beautiful.bg_wibar,
-        width = s.geometry.width - dpi(15),
+        width = s.geometry.width - dpi(30),
         shape = helpers.rrect(8),
         screen = s,
     })
 
     -- top margin for wibar
-    awful.placement.top(s.mywibar, { margins = dpi(4) })
+    awful.placement.top(s.mywibar, { margins = dpi(8) })
 
     --{{{ Remove wibar on full screen
     local function remove_wibar(c)
@@ -165,7 +165,7 @@ awful.screen.connect_for_each_screen(function(s)
                 -- tags
                 {
                     s.mytaglist,
-                    margins = dpi(0),
+                    margins = dpi(2),
                     widget = wibox.container.margin,
                 },
 
@@ -181,8 +181,8 @@ awful.screen.connect_for_each_screen(function(s)
                     layout = wibox.layout.fixed.horizontal,
                 },
             },
-            left = dpi(10),
-            right = dpi(10),
+            left = dpi(15),
+            right = dpi(15),
             widget = wibox.container.margin,
         },
         shape = helpers.rrect(beautiful.border_radius),
